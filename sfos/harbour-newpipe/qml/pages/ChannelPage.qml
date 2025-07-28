@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Sailfish.Silica.private 1.0
 import harbour.newpipe.extractor 1.0
 import "../components"
 
@@ -13,7 +12,7 @@ Page {
     property ChannelInfo channelInfo: ChannelInfo { }
     property LinkHandlerModel linkHandlerModel: LinkHandlerModel { }
     readonly property real iconScale: 1.5
-    property ChannelModel videoModel: ChannelModel { }
+    property alias tabListModel: tabs.model
 
     Component.onCompleted: {
         extractor.getChannelInfo(channelInfo, linkHandlerModel, url);
@@ -29,9 +28,8 @@ Page {
                 var tab = linkHandlerModel.getLinkHandler(pos);
                 console.log("Tab: " + tab.contentFilters()[0]);
             }
-            videoModel.linkHandler = linkHandlerModel.getLinkHandler(0);
-            console.log("Extracted URL: " + url);
-            videoModel.search(extractor);
+
+            tabListModel.generateModel(extractor, linkHandlerModel);
         }
     }
 
@@ -40,7 +38,7 @@ Page {
 
         anchors.fill: parent
         currentIndex: 0
-
+/*
         header: Column {
             id: column
             width: parent.width
@@ -85,149 +83,9 @@ Page {
                     }
                 }
             }
-
-            TabBar {
-                width: parent.width
-                model: tabBarModel
-            }
         }
-
-        model: [aboutView, videoView, shortsView, liveView, playlistsView]
-
-        Component {
-            id: aboutView
-            TabItem {
-                anchors.fill: parent
-                flickable: flickable
-
-                SilicaFlickable {
-                    id: flickable
-                    anchors.fill: parent
-
-                    ViewPlaceholder {
-                        enabled: true
-                        textFormat: Text.RichText
-                        text: "About"
-                        hintText: "Under Construction"
-                    }
-                }
-            }
-        }
-        Component {
-            id: videoView
-            TabItem {
-                anchors.fill: parent
-                flickable: flickable
-
-                SilicaListView {
-                    id: flickable
-                    anchors.fill: parent
-
-                    model: videoModel
-
-                    VerticalScrollDecorator {}
-
-                    onContentYChanged: {
-                        var pos = contentHeight + originY - height - contentY;
-                        if ((pos < height) && !videoModel.loading && videoModel.more && videoModel.nextPage) {
-                            var linkHandler = linkHandlerModel.getLinkHandler(0);
-                            videoModel.searchMore(extractor);
-                        }
-                    }
-
-                    ViewPlaceholder {
-                        enabled: flickable.count === 0
-                        textFormat: Text.RichText
-                        text: "No videos"
-                    }
-
-                    delegate: SearchDelegate {
-                        infoType: model.infoType
-                        thumbnail: model.thumbnail
-                        name: model.name
-                        url: model.url
-                        infoRow: model.infoRow
-                    }
-                }
-            }
-        }
-        Component {
-            id: shortsView
-            TabItem {
-                anchors.fill: parent
-                flickable: flickable
-
-                SilicaFlickable {
-                    id: flickable
-                    anchors.fill: parent
-
-                    ViewPlaceholder {
-                        enabled: true
-                        textFormat: Text.RichText
-                        text: "Shorts"
-                        hintText: "Under Construction"
-                    }
-                }
-            }
-        }
-        Component {
-            id: liveView
-            TabItem {
-                anchors.fill: parent
-                flickable: flickable
-
-                SilicaFlickable {
-                    id: flickable
-                    anchors.fill: parent
-
-                    ViewPlaceholder {
-                        enabled: true
-                        textFormat: Text.RichText
-                        text: "Live feeds"
-                        hintText: "Under Construction"
-                    }
-                }
-            }
-        }
-        Component {
-            id: playlistsView
-            TabItem {
-                anchors.fill: parent
-                flickable: flickable
-
-                SilicaFlickable {
-                    id: flickable
-                    anchors.fill: parent
-
-                    ViewPlaceholder {
-                        enabled: true
-                        textFormat: Text.RichText
-                        text: "Playlists"
-                        hintText: "Under Construction"
-                    }
-                }
-            }
-        }
-    }
-
-    ListModel {
-        id: tabBarModel
-
-        ListElement {
-            title: "About"
-        }
-        ListElement {
-            title: "Videos"
-        }
-        ListElement {
-            title: "Shorts"
-        }
-        ListElement {
-            title: "Live"
-        }
-        ListElement {
-            title: "Playlists"
-        }
+*/
+        model: ChannelTabListModel { }
     }
 }
 

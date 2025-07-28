@@ -35,4 +35,6 @@ private:
   ChannelTabInfo* m_channelTabInfo;
 };
 
+Q_DECLARE_METATYPE(ChannelModel*)
+
 #endif // CHANNELMODEL_H

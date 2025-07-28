@@ -14,6 +14,7 @@
 #include "channeltabinfo.h"
 #include "listlinkhandler.h"
 #include "linkhandlermodel.h"
+#include "channeltablistmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -39,6 +40,7 @@ int main(int argc, char *argv[])
   qmlRegisterType<ChannelTabInfo>("harbour.newpipe.extractor", 1, 0, "ChannelTabInfo");
   qmlRegisterType<ListLinkHandler>("harbour.newpipe.extractor", 1, 0, "ListLinkHandler");
   qmlRegisterType<LinkHandlerModel>("harbour.newpipe.extractor", 1, 0, "LinkHandlerModel");
+  qmlRegisterType<ChannelTabListModel>("harbour.newpipe.extractor", 1, 0, "ChannelTabListModel");
   qmlRegisterSingletonType<Utils>("harbour.newpipe.extractor", 1, 0, "Utils", Utils::provider);
 
   engine->addImageProvider(QLatin1String("newpipe"), new ImageProvider());
