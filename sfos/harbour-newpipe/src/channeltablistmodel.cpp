@@ -37,12 +37,15 @@ QVariant ChannelTabListModel::data(const QModelIndex & index, int role) const
   if ((index.row() >= 0) && (index.row() < m_components.count())) {
     QObject* component = m_components[index.row()];
     ChannelModel* model = m_models[index.row()];
+    QString title;
     switch (role) {
       case ModelDataRole:
         result = QVariant::fromValue(component);
         break;
       case TitleRole:
-        result = QVariant(QString("Tab %1").arg(index.row()));
+        title = model->linkHandler()->contentFilters()[0];
+        title[0] = title[0].toUpper();
+        result = QVariant(title);
         break;
       case ModelRole:
         result = QVariant::fromValue(model);

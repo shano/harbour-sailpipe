@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 import harbour.newpipe.extractor 1.0
 import "../components"
@@ -38,11 +38,13 @@ Page {
 
         anchors.fill: parent
         currentIndex: 0
-/*
+        tabBarPosition: Qt.AlignBottom
+
         header: Column {
             id: column
             width: parent.width
             spacing: Theme.paddingLarge
+            bottomPadding: Theme.paddingLarge
 
             PageHeader {
                 id: header
@@ -84,7 +86,7 @@ Page {
                 }
             }
         }
-*/
+
         model: ChannelTabListModel { }
     }
 }

@@ -35,15 +35,17 @@ PagedView {
 
     property int __silica_tab_view
 
-    header: _tabBarIsTop ? tabBarComponent : null
+    anchors.topMargin: headerLoader.height
+
+    header: null
     footer: _tabBarIsTop ? null : tabBarComponent
 
     verticalAlignment: hasFooter ? PagedView.AlignTop : PagedView.AlignBottom
-    cacheSize: 0
+    cacheSize: 5
 
     contentItem {
-        y: root.hasFooter ? 0 : tabBarLoader.height
-        height: root.height - tabBarLoader.height
+        y: 0
+        height: root.height
     }
 
     Item {
@@ -65,11 +67,54 @@ PagedView {
         }
     }
 
+    Component {
+        id: tabBarHeaderComponent
+
+        Column {
+            Loader {
+                sourceComponent: root.header
+                width: root.width
+            }
+
+            TabBar {
+                model: root.model
+                width: root.width
+            }
+        }
+    }
+
+    Loader {
+        id: headerLoader
+
+        visible: root.tabBarVisible
+        sourceComponent: _tabBarIsTop ? tabBarHeaderComponent : root.header
+        width: parent.width
+        z: 1
+        y: Math.max(0, -root.yOffset) - height
+
+        Item {
+            id: backgroundRectangleContainerHeader
+            property Item item
+
+            anchors {
+                fill: parent
+                topMargin: (root.yOffset > Theme.paddingSmall) || root.hasFooter
+                    ? 0 : Theme.paddingSmall
+
+                // FIXME Why was this here in the original code?
+                // It could make space for the scrollbar but the scrollbar
+                // doesn't go into the tab bar region.
+                // It leaks the edge of the pulley menu.
+                // rightMargin: Theme.paddingSmall
+            }
+        }
+    }
+
     Loader {
         id: tabBarLoader
 
         visible: root.tabBarVisible
-        sourceComponent: root.hasFooter ? root.footer : root.header
+        sourceComponent: _tabBarIsTop ? null : tabBarComponent
         width: parent.width
         z: root.yOffset < 0 && !root.hasFooter ? -1 : 1
         y: root.hasFooter ? root.height - tabBarLoader.height : Math.max(0, -root.yOffset)
@@ -161,6 +206,21 @@ PagedView {
             }
         ".arg('Sailfish.Silica.private'),
             backgroundRectangleContainer,
+            'BackgroundRectangle'
+        )
+
+        backgroundRectangleContainerHeader.item = Qt.createQmlObject("\
+            import QtQuick 2.6
+            import %1 1.0
+
+            BackgroundRectangle {
+                id: backgroundRectangleHeader
+                visible: _headerBackgroundVisible
+                anchors.fill: parent
+                color: __silica_applicationwindow_instance._backgroundColor
+            }
+        ".arg('Sailfish.Silica.private'),
+            backgroundRectangleContainerHeader,
             'BackgroundRectangle'
         )
     }
