@@ -7,16 +7,24 @@
 #include "listlinkhandler.h"
 #include "linkhandlermodel.h"
 #include "channelmodel.h"
+#include "titlebarlookup.h"
 
 #include "channeltablistmodel.h"
 
 ChannelTabListModel::ChannelTabListModel(QObject *parent)
   : QAbstractListModel(parent)
 {
-  m_roles[TitleRole] = "title";
+  m_roles[TitleRole] = "titlehidden";
+  m_roles[IconRole] = "icon";
   m_roles[ModelDataRole] = "modelData";
   m_roles[ModelRole] = "channelmodel";
   m_roles[NoitemsRole] = "noitems";
+
+  m_titleBarLookup.insert("about", new TitleBarLookup("About", "image://newpipe/icon-tab-about", this));
+  m_titleBarLookup.insert("videos", new TitleBarLookup("Videos", "image://newpipe/icon-tab-video-full", this));
+  m_titleBarLookup.insert("shorts", new TitleBarLookup("Shorts", "image://newpipe/icon-tab-video-short", this));
+  m_titleBarLookup.insert("livestreams", new TitleBarLookup("Live", "image://newpipe/icon-tab-video-live", this));
+  m_titleBarLookup.insert("playlists", new TitleBarLookup("Playlists", "image://newpipe/icon-tab-playlists", this));
 }
 
 QHash<int, QByteArray> ChannelTabListModel::roleNames() const
@@ -37,22 +45,41 @@ QVariant ChannelTabListModel::data(const QModelIndex & index, int role) const
   if ((index.row() >= 0) && (index.row() < m_components.count())) {
     QObject* component = m_components[index.row()];
     ChannelModel* model = m_models[index.row()];
-    QString title;
     switch (role) {
-      case ModelDataRole:
+      case ModelDataRole: {
         result = QVariant::fromValue(component);
-        break;
-      case TitleRole:
-        title = model->linkHandler()->contentFilters()[0];
-        title[0] = title[0].toUpper();
-        result = QVariant(title);
-        break;
-      case ModelRole:
+      }
+      break;
+      case TitleRole: {
+        TitleBarLookup*lookup = m_titleBarLookup.value(model->linkHandler()->contentFilters()[0]);
+        if (lookup) {
+          result = QVariant(lookup->title());
+        }
+        else {
+          QString title = model->linkHandler()->contentFilters()[0];
+          title[0] = title[0].toUpper();
+          result = QVariant(title);
+        }
+      }
+      break;
+      case IconRole: {
+        TitleBarLookup*lookup = m_titleBarLookup.value(model->linkHandler()->contentFilters()[0]);
+        if (lookup) {
+          result = QVariant(lookup->icon());
+        }
+        else {
+          result = QString("");
+        }
+      }
+      break;
+      case ModelRole: {
         result = QVariant::fromValue(model);
-        break;
-      case NoitemsRole:
-      result = QVariant(QString("No items %1").arg(index.row()));
-        break;
+      }
+      break;
+      case NoitemsRole: {
+        result = QVariant(QString("No items %1").arg(index.row()));
+      }
+      break;
     }
   }
 

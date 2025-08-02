@@ -95,7 +95,7 @@ SilicaControl {
 
             readonly property alias tabView: root._tabView
             readonly property alias tabCount: _tabButtons.count
-            readonly property real extraMargin: {
+            readonly property real extraPreMargin: {
                 var buttons = tabRow.children
                 var buttonsWidth = 0
                 for (var i = 0; i < buttons.length; i++) {
@@ -103,6 +103,8 @@ SilicaControl {
                 }
                 return Math.max(0, flickable.width - buttonsWidth) / 2
             }
+            readonly property real buttonMargin: Math.min(extraPreMargin / tabCount, Theme.paddingLarge)
+            readonly property real extraMargin: extraPreMargin - (buttonMargin * tabCount)
             readonly property int buttonFontSize: {
                 if (root._tabView) {
                     var buttons = tabRow.children
@@ -129,6 +131,7 @@ SilicaControl {
 
                     _tabView: root._tabView
                     _extraMargin: tabRow.extraMargin
+                    _buttonMargin: tabRow.buttonMargin
 
                     tabCount: _tabButtons.count
                     titleFontSize: tabRow.buttonFontSize

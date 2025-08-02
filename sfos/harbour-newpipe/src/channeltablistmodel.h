@@ -8,6 +8,7 @@
 class LinkHandlerModel;
 class ChannelModel;
 class Extractor;
+class TitleBarLookup;
 
 class ChannelTabListModel : public QAbstractListModel
 {
@@ -16,6 +17,7 @@ public:
   enum ChannelTabListRoles {
     ModelDataRole = Qt::UserRole + 1,
     TitleRole,
+    IconRole,
     ModelRole,
     NoitemsRole,
   };
@@ -40,6 +42,7 @@ private:
   QHash<int, QByteArray> m_roles;
   QList<QObject*> m_components;
   QList<ChannelModel*> m_models;
+  QMap<QString, TitleBarLookup*> m_titleBarLookup;
 };
 
 #endif // CHANNELTABLISTMODEL_H

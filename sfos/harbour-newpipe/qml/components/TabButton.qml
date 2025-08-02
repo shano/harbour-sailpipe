@@ -31,12 +31,14 @@ MouseArea {
     readonly property Item _tabItem: _tabView ? (_tabView.exposedItems, _tabView.itemAt(tabIndex)) : null
     property alias contentItem: contentColumn
     property real _extraMargin: parent && parent.extraMargin || 0
+    property real _buttonMargin: parent && parent.buttonMargin || 0
     // contentWidth is used to calculate TabButtonRow width except of extraMargin
     property real contentWidth: 2 * Theme.paddingLarge + contentColumn.implicitWidth
                                 + (bubble.active && highlightImage.width === 0 ? bubble.width : 0)
     implicitWidth: contentWidth
                 + (root.tabIndex == 0 ? _extraMargin : 0)
                 + (root.tabIndex == root.tabCount - 1 ? _extraMargin : 0)
+                + (2 * _buttonMargin)
 
     implicitHeight: Math.max(_portrait ? Theme.itemSizeLarge : Theme.itemSizeSmall,
                              contentColumn.implicitHeight + 2 * (_portrait ? Theme.paddingLarge : Theme.paddingMedium))
@@ -81,9 +83,9 @@ MouseArea {
 
         x: {
             if (root.tabCount > 1 && root.tabIndex == 0) {
-                return root.width - width - Theme.paddingMedium
+                return ((root.width - width - root._extraMargin) / 2) + root._extraMargin
             } else if (root.tabCount > 1 && root.tabIndex == root.tabCount - 1) {
-                return Theme.paddingMedium
+                return ((root.width - width - root._extraMargin) / 2)
             } else {
                 return ((root.width - width) / 2)
                             - (highlightImage.status === Image.Ready ? bubble.width * 0.5 : 0)
