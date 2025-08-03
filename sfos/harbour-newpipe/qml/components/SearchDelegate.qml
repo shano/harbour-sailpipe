@@ -26,9 +26,9 @@ BackgroundItem {
     }
 
     Row {
-        x: Theme.paddingLarge
+        x: Theme.horizontalPageMargin
         y: Theme.paddingMedium
-        width: parent.width - (2 * Theme.paddingLarge)
+        width: parent.width - (2 * Theme.horizontalPageMargin)
         height: thumbnail.height
         spacing: Theme.paddingLarge
 

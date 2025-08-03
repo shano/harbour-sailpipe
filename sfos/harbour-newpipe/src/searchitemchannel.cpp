@@ -28,7 +28,7 @@ qint64 SearchItemChannel::subscriberCount() const
   return m_subscriberCount;
 }
 
-qint64 SearchItemChannel::viewCount() const
+qint64 SearchItemChannel::streamCount() const
 {
   return m_streamCount;
 }

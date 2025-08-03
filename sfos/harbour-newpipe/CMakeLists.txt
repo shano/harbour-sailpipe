@@ -51,7 +51,8 @@ target_sources(harbour-newpipe PRIVATE
     "src/linkhandlermodel.cpp"
     "src/channelmodel.cpp"
     "src/channeltablistmodel.cpp"
-    "src/titlebarlookup.cpp"
+    "src/tabbarlookup.cpp"
+    "src/tabbartabinfo.cpp"
 )
 
 # Update the translations
@@ -127,6 +128,8 @@ add_custom_target(distfiles
         qml/components/Tab.qml
         qml/components/TabView.qml
         qml/components/Util.js
+        qml/components/ChannelAbout.qml
+        qml/components/AboutKeyValue.qml
         qml/icons/
         rpm/harbour-newpipe.changes.in
         rpm/harbour-newpipe.changes.run.in

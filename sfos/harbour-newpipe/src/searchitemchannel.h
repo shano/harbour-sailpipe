@@ -13,7 +13,7 @@ public:
 
   QString description() const;
   qint64 subscriberCount() const;
-  qint64 viewCount() const;
+  qint64 streamCount() const;
   bool verified() const;
   virtual QString getInfoRow() const override;
 

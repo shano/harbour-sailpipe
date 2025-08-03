@@ -14,7 +14,13 @@ Page {
     readonly property real iconScale: 1.5
     property alias tabListModel: tabs.model
 
+    property string description: "This is a test description, not the actual description of the channel."
+    property int subscriberCount: 99
+    property int streamCount: 98
+    property bool verified: false
+
     Component.onCompleted: {
+        tabListModel.addAboutTab(extractor, aboutTab);
         extractor.getChannelInfo(channelInfo, linkHandlerModel, url);
     }
 
@@ -22,14 +28,23 @@ Page {
         target: extractor
         onExtracted: {
             var length = linkHandlerModel.count();
-            console.log("Number of tabs: " + length);
 
             for (var pos = 0; pos < length; pos++) {
                 var tab = linkHandlerModel.getLinkHandler(pos);
-                console.log("Tab: " + tab.contentFilters()[0]);
             }
 
             tabListModel.generateModel(extractor, linkHandlerModel);
+        }
+    }
+
+    Component {
+        id: aboutTab
+
+        ChannelAbout {
+            description: root.description
+            subscriberCount: root.subscriberCount
+            streamCount: root.streamCount
+            verified: root.verified
         }
     }
 

@@ -8,7 +8,8 @@
 class LinkHandlerModel;
 class ChannelModel;
 class Extractor;
-class TitleBarLookup;
+class TabBarLookup;
+class TabBarTabInfo;
 
 class ChannelTabListModel : public QAbstractListModel
 {
@@ -35,14 +36,19 @@ public slots:
 
   void generateModel(Extractor* extractor, LinkHandlerModel* linkHandlerModel);
   ChannelModel* getModel(int row) const;
+  void addAboutTab(Extractor* extractor, QQmlComponent* tab);
 
 signals:
 
 private:
+  QObject* createTabObject(QQmlComponent* component);
+  TabBarTabInfo* createTabInfo(QQmlComponent* tab, QString const& icon);
+
+private:
   QHash<int, QByteArray> m_roles;
-  QList<QObject*> m_components;
-  QList<ChannelModel*> m_models;
-  QMap<QString, TitleBarLookup*> m_titleBarLookup;
+  QMap<QString, TabBarLookup*> m_tabBarLookup;
+  QList<TabBarTabInfo*> m_tabInfo;
+  TabBarTabInfo* m_aboutTab;
 };
 
 #endif // CHANNELTABLISTMODEL_H

@@ -162,12 +162,14 @@ PagedView {
             tabFadeAnimation.target = null
             item.focus = true
             item.opacity = 0
-            item.channelmodel = model.channelmodel
-            item.noitems = model.noitems
             tabFadeAnimation.target = item
             tabFadeAnimation.from = 0
             tabFadeAnimation.to = 1
             tabFadeAnimation.restart()
+            if (model.channelmodel) {
+                item.channelmodel = model.channelmodel
+                item.noitems = model.noitems
+            }
         }
 
         FadeAnimation {
