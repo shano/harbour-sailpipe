@@ -114,33 +114,33 @@
         <translation>%0 • %1</translation>
     </message>
     <message id="newpipe-channel_details-detail_description">
-        <location filename="../qml/components/ChannelAbout.qml" line="30"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="31"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_subscribers">
-        <location filename="../qml/components/ChannelAbout.qml" line="36"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="37"/>
         <source>Subscribers</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-channel_details-detail_streams">
-        <location filename="../qml/components/ChannelAbout.qml" line="42"/>
-        <source>Items</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe-channel_details-detail_verified">
-        <location filename="../qml/components/ChannelAbout.qml" line="48"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="43"/>
         <source>Verified</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_verified_yes">
-        <location filename="../qml/components/ChannelAbout.qml" line="51"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="46"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_verified_no">
-        <location filename="../qml/components/ChannelAbout.qml" line="53"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="48"/>
         <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channel_details-detail_tags">
+        <location filename="../qml/components/ChannelAbout.qml" line="53"/>
+        <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

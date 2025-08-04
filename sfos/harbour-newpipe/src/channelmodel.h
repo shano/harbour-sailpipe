@@ -9,10 +9,10 @@ class ChannelTabInfo;
 
 class ChannelModel : public SearchModel
 {
+  Q_OBJECT
+
   Q_PROPERTY(ListLinkHandler* linkHandler READ linkHandler WRITE setLinkHandler NOTIFY linkHandlerChanged)
   Q_PROPERTY(ChannelTabInfo* channelTabInfo READ channelTabInfo WRITE setChannelTabInfo NOTIFY channelTabInfoChanged)
-
-  Q_OBJECT
 public:
   explicit ChannelModel(QObject *parent = nullptr);
 

@@ -14,11 +14,6 @@ Page {
     readonly property real iconScale: 1.5
     property alias tabListModel: tabs.model
 
-    property string description: "This is a test description, not the actual description of the channel."
-    property int subscriberCount: 99
-    property int streamCount: 98
-    property bool verified: false
-
     Component.onCompleted: {
         tabListModel.addAboutTab(extractor, aboutTab);
         extractor.getChannelInfo(channelInfo, linkHandlerModel, url);
@@ -41,10 +36,10 @@ Page {
         id: aboutTab
 
         ChannelAbout {
-            description: root.description
-            subscriberCount: root.subscriberCount
-            streamCount: root.streamCount
-            verified: root.verified
+            description: root.channelInfo.description
+            subscriberCount: root.channelInfo.subscriberCount
+            verified: root.channelInfo.verified
+            tags: root.channelInfo.tags
         }
     }
 

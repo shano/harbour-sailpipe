@@ -102,10 +102,6 @@
         <source>Subscribers</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-channel_details-detail_streams">
-        <source>Items</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe-channel_details-detail_verified">
         <source>Verified</source>
         <translation type="unfinished"></translation>
@@ -116,6 +112,10 @@
     </message>
     <message id="newpipe-channel_details-detail_verified_no">
         <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channel_details-detail_tags">
+        <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

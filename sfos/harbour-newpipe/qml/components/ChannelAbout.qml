@@ -9,6 +9,7 @@ TabItem {
     property int subscriberCount
     property int streamCount
     property bool verified
+    property string tags
 
     anchors.fill: parent
     flickable: flickable
@@ -16,31 +17,36 @@ TabItem {
     SilicaFlickable {
         id: flickable
         anchors.fill: parent
+        contentHeight: content.height + (2 * Theme.paddingLarge)
 
         VerticalScrollDecorator {}
 
         Column {
+            id: content
             x: Theme.horizontalPageMargin
             y: Theme.paddingLarge
             width: parent.width - (2 * Theme.horizontalPageMargin)
             spacing: Theme.paddingLarge
 
             AboutKeyValue {
-                //% "Description"
-                key: qsTrId("newpipe-channel_details-detail_description")
+                key: ""
                 value: root.description
+            }
+
+            GlassItem {
+                anchors.horizontalCenter: parent.horizontalCenter
+                height: 27
+                width: parent.width / 3
+                falloffRadius: 0.15
+                radius: 0.15
+                ratio: 0.0
+                color: palette.highlightColor
             }
 
             AboutKeyValue {
                 //% "Subscribers"
                 key: qsTrId("newpipe-channel_details-detail_subscribers")
                 value: root.subscriberCount
-            }
-
-            AboutKeyValue {
-                //% "Items"
-                key: qsTrId("newpipe-channel_details-detail_streams")
-                value: root.streamCount
             }
 
             AboutKeyValue {
@@ -51,6 +57,12 @@ TabItem {
                        ? qsTrId("newpipe-channel_details-detail_verified_yes")
                          //% "No"
                        : qsTrId("newpipe-channel_details-detail_verified_no")
+            }
+
+            AboutKeyValue {
+                //% "Tags"
+                key: qsTrId("newpipe-channel_details-detail_tags")
+                value: root.tags
             }
         }
     }

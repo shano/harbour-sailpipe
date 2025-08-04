@@ -11,18 +11,10 @@ ChannelInfo::ChannelInfo(QObject *parent)
   , m_name()
   , m_url()
   , m_description()
+  , m_subscriberCount(0)
+  , m_verified(false)
+  , m_tags()
   , m_tabs()
-{
-
-}
-
-ChannelInfo::ChannelInfo(QString const& id, QString const& name, QString const& url, QString const& description, QList<ListLinkHandler*> const& tabs, QObject *parent)
-  : QObject(parent)
-  , m_id(id)
-  , m_name(name)
-  , m_url(url)
-  , m_description(description)
-  , m_tabs(tabs)
 {
 
 }
@@ -75,12 +67,58 @@ void ChannelInfo::setUrl(QString const& url)
 
 void ChannelInfo::setDescription(QString const& description)
 {
-  m_description = description;
+  if (m_description != description) {
+    m_description = description;
+
+    emit descriptionChanged();
+  }
 }
 
 void ChannelInfo::setTabs(QList<ListLinkHandler*> const& tabs)
 {
   m_tabs = tabs;
+}
+
+qint64 ChannelInfo::subscriberCount() const
+{
+  return m_subscriberCount;
+}
+
+void ChannelInfo::setSubscriberCount(qint64 subscriberCount)
+{
+  if (m_subscriberCount != subscriberCount) {
+    m_subscriberCount = subscriberCount;
+
+    emit subscriberCountChanged();
+  }
+}
+
+bool ChannelInfo::verified() const
+{
+  return m_verified;
+}
+
+void ChannelInfo::setVerified(bool verified)
+{
+  if (m_verified != verified) {
+    m_verified = verified;
+
+    emit verifiedChanged();
+  }
+}
+
+QString ChannelInfo::tags() const
+{
+  return m_tags;
+}
+
+void ChannelInfo::setTags(QString& tags)
+{
+  if (m_tags != tags) {
+    m_tags = tags;
+
+    emit tagsChanged();
+  }
 }
 
 void ChannelInfo::parseJson(QJsonObject const& json)
@@ -89,6 +127,15 @@ void ChannelInfo::parseJson(QJsonObject const& json)
   m_name = json["name"].toString();
   m_url = json["url"].toString();
   m_description = json["description"].toString();
+  m_subscriberCount = json["subscriberCount"].toInt();
+  m_verified = json["verified"].toBool();
+
+  QJsonArray tags = json["tags"].toArray();
+  QStringList tagList;
+  for (QJsonValue const& tag : tags) {
+    tagList.append(tag.toString());
+  }
+  m_tags = tagList.join(", ");
 
   QJsonArray tabs = json["tabs"].toArray();
   m_tabs.clear();
