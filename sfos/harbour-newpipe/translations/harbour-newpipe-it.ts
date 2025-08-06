@@ -97,7 +97,7 @@
     </message>
     <message id="newpipe-channel_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished">Descrizione</translation>
+        <translation type="obsolete">Descrizione</translation>
     </message>
     <message id="newpipe-channel_details-detail_subscribers">
         <source>Subscribers</source>

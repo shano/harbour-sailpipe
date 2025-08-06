@@ -9,6 +9,7 @@
 #include "invoke.h"
 #include "searchmodel.h"
 #include "commentmodel.h"
+#include "playlistmodel.h"
 #include "mediainfo.h"
 #include "pageref.h"
 #include "lifetimecheck.h"
@@ -389,4 +390,72 @@ void Extractor::getMoreChannelItems(ListLinkHandler* linkHandler, PageRef* page,
     delete watcher;
   });
   watcher->setFuture(invokeAsync("getMoreChannelItems", &document));
+}
+
+void Extractor::getPlaylistInfo(PlaylistModel* playlistModel, QString const& url)
+{
+  QJsonObject json;
+  QJsonArray filters;
+  QJsonDocument document;
+
+  json["service"] = QStringLiteral("YouTube");
+  json["url"] = url;
+  json["page"] = QJsonValue();
+  document = QJsonDocument(json);
+
+  QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();
+  LifetimeCheck* lifetimeCheck = new LifetimeCheck(playlistModel, watcher);
+  QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, playlistModel]() {
+    if (!lifetimeCheck->destroyed()) {
+      QJsonDocument result = watcher->result();
+      qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
+
+      QJsonArray items = result.object()["relatedItems"].toArray();
+      QList<SearchItem const*> playlistResults;
+      for (QJsonValue const& item : items) {
+        SearchItem const* deserialised = SearchItem::createSearchItem(item.toObject(), playlistModel);
+        playlistResults.append(deserialised);
+      }
+      playlistModel->replaceAll(playlistResults);
+      PageRef* page = new PageRef(result.object()["nextPage"].toObject(), playlistModel);
+      playlistModel->setNextPage(page);
+    }
+
+    delete watcher;
+  });
+  watcher->setFuture(invokeAsync("getPlaylistInfo", &document));
+}
+
+void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const& url, PageRef* page)
+{
+  QJsonObject json;
+  QJsonArray filters;
+  QJsonDocument document;
+
+  json["service"] = QStringLiteral("YouTube");
+  json["url"] = url;
+  json["page"] = page->toJson();
+  document = QJsonDocument(json);
+
+  QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();
+  LifetimeCheck* lifetimeCheck = new LifetimeCheck(playlistModel, watcher);
+  QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, playlistModel]() {
+    if (!lifetimeCheck->destroyed()) {
+      QJsonDocument result = watcher->result();
+      qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
+
+      QJsonArray items = result.object()["itemsList"].toArray();
+      QList<SearchItem const*> playlistResults;
+      for (QJsonValue const& item : items) {
+        SearchItem const* deserialised = SearchItem::createSearchItem(item.toObject(), playlistModel);
+        playlistResults.append(deserialised);
+      }
+      playlistModel->append(playlistResults);
+      PageRef* page = new PageRef(result.object()["nextPage"].toObject(), playlistModel);
+      playlistModel->setNextPage(page);
+    }
+
+    delete watcher;
+  });
+  watcher->setFuture(invokeAsync("getMorePlaylistItems", &document));
 }

@@ -113,33 +113,28 @@
         <source>%0 • %1</source>
         <translation>%0 • %1</translation>
     </message>
-    <message id="newpipe-channel_details-detail_description">
-        <location filename="../qml/components/ChannelAbout.qml" line="31"/>
-        <source>Description</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe-channel_details-detail_subscribers">
-        <location filename="../qml/components/ChannelAbout.qml" line="37"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="48"/>
         <source>Subscribers</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_verified">
-        <location filename="../qml/components/ChannelAbout.qml" line="43"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="54"/>
         <source>Verified</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_verified_yes">
-        <location filename="../qml/components/ChannelAbout.qml" line="46"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="57"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_verified_no">
-        <location filename="../qml/components/ChannelAbout.qml" line="48"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="59"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-channel_details-detail_tags">
-        <location filename="../qml/components/ChannelAbout.qml" line="53"/>
+        <location filename="../qml/components/ChannelAbout.qml" line="64"/>
         <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>

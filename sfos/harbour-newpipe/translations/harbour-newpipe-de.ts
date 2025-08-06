@@ -94,10 +94,6 @@
         <source>%0 • %1</source>
         <translation>%0 • %1</translation>
     </message>
-    <message id="newpipe-channel_details-detail_description">
-        <source>Description</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe-channel_details-detail_subscribers">
         <source>Subscribers</source>
         <translation type="unfinished"></translation>

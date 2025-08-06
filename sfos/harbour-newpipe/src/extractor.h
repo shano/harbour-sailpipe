@@ -9,6 +9,7 @@
 
 class SearchModel;
 class CommentModel;
+class PlaylistModel;
 class MediaInfo;
 class PageRef;
 class ChannelInfo;
@@ -35,6 +36,8 @@ public slots:
   void getChannelInfo(ChannelInfo* channelInfo, LinkHandlerModel* linkHandlerModel, QString const& url);
   void getChannelTabInfo(ChannelTabInfo* channelTabInfo, ListLinkHandler* linkHandler, SearchModel* videoModel);
   void getMoreChannelItems(ListLinkHandler* linkHandler, PageRef* page, SearchModel* videoModel);
+  void getPlaylistInfo(PlaylistModel* playlistModel, QString const& url);
+  void getMorePlaylistItems(PlaylistModel* playlistModel, QString const& url, PageRef* page);
 
 signals:
   void extracted(QString const& url);

@@ -53,6 +53,7 @@ target_sources(harbour-newpipe PRIVATE
     "src/channeltablistmodel.cpp"
     "src/tabbarlookup.cpp"
     "src/tabbartabinfo.cpp"
+    "src/playlistmodel.cpp"
 )
 
 # Update the translations
