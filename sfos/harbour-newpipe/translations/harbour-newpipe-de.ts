@@ -114,6 +114,33 @@
         <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-playlist_no-entries">
+        <source>No entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-playlist_no-videos">
+        <source>There are no videos in this playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_uploader">
+        <source>Uploader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_description">
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_detail-item-count" numerus="yes">
+        <source>%n items</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>

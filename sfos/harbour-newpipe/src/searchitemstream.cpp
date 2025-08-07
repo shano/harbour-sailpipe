@@ -10,6 +10,7 @@ SearchItemStream::SearchItemStream(QObject *parent)
   : SearchItem(parent)
   , m_uploaderName()
   , m_uploadDate(0)
+  , m_duration(0)
 {
   m_infoType = Stream;
 }
@@ -36,6 +37,11 @@ QString SearchItemStream::textualUploadDate() const
   return m_textualUploadDate;
 }
 
+quint64 SearchItemStream::duration() const
+{
+  return m_duration;
+}
+
 void SearchItemStream::setUploaderName(QString const& uploaderName)
 {
   m_uploaderName = uploaderName;
@@ -51,6 +57,11 @@ void SearchItemStream::setTextualUploadDate(QString const& textualUploadDate)
   m_textualUploadDate = textualUploadDate;
 }
 
+void SearchItemStream::setDuration(quint64 duration)
+{
+  m_duration = duration;
+}
+
 void SearchItemStream::parseJson(QJsonObject const& json)
 {
   SearchItem::parseJson(json);
@@ -58,6 +69,7 @@ void SearchItemStream::parseJson(QJsonObject const& json)
   m_uploaderName = json["uploaderName"].toString();
   m_uploadDate = json["uploadDate"].toObject()["offsetDateTime"].toInt(0);
   m_textualUploadDate = json["textualUploadDate"].toString();
+  m_duration = json["duration"].toInt(0);
 }
 
 QString SearchItemStream::getInfoRow() const

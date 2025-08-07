@@ -41,7 +41,7 @@ function generate {
 #generate 303 86 "newpipe-title"
 
 # Generate small icons
-generate 32 32 "icon-s-media-view"
+generate 32 32 "icon-s-media-view icon-s-media-count"
 
 # Generate medium icons
 generate 64 64 "icon-tab-about icon-tab-playlists icon-tab-video-full icon-tab-video-live icon-tab-video-short"

@@ -126,3 +126,8 @@ QString SearchItem::getInfoRow() const
 {
   return QString();
 }
+
+quint64 SearchItem::duration() const
+{
+  return 0;
+}

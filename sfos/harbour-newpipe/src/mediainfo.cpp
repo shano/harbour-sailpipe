@@ -198,8 +198,8 @@ QList<MediaInfo::MediaInfoSignal> MediaInfo::parseJsonChanges(QJsonObject const&
   QString name;
   QString uploaderName;
   QString category;
-  int viewCount;
-  int likeCount;
+  qint64 viewCount;
+  qint64 likeCount;
   QString content;
   QDateTime uploadDate;
   QString description;

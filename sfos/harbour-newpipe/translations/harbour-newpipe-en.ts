@@ -72,7 +72,7 @@
         <translation>Description</translation>
     </message>
     <message id="newpipe-searchitem-stream_inforow">
-        <location filename="../src/searchitemstream.cpp" line="66"/>
+        <location filename="../src/searchitemstream.cpp" line="78"/>
         <source>%0 • %1</source>
         <translation>%0 • %1</translation>
     </message>
@@ -136,6 +136,46 @@
     <message id="newpipe-channel_details-detail_tags">
         <location filename="../qml/components/ChannelAbout.qml" line="64"/>
         <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-playlist_page-header">
+        <location filename="../qml/pages/PlaylistPage.qml" line="40"/>
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-playlist_no-entries">
+        <location filename="../qml/pages/PlaylistPage.qml" line="61"/>
+        <source>No entries</source>
+        <translation type="unfinished">No entries</translation>
+    </message>
+    <message id="newpipe-playlist_no-videos">
+        <location filename="../qml/pages/PlaylistPage.qml" line="63"/>
+        <source>There are no videos in this playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_detail-video-count" numerus="yes">
+        <source>%n videos</source>
+        <translation type="obsolete">
+            <numerusform>%n video</numerusform>
+            <numerusform>%n videos</numerusform>
+        </translation>
+    </message>
+    <message id="newpipe_playlist_detail-item-count" numerus="yes">
+        <location filename="../qml/components/PlaylistDetails.qml" line="53"/>
+        <source>%n items</source>
+        <translation type="unfinished">
+            <numerusform>%n item</numerusform>
+            <numerusform>%n items</numerusform>
+        </translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_uploader">
+        <location filename="../qml/components/PlaylistDetails.qml" line="64"/>
+        <source>Uploader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_description">
+        <location filename="../qml/components/PlaylistDetails.qml" line="70"/>
+        <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

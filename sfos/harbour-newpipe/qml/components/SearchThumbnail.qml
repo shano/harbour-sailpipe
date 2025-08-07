@@ -7,6 +7,7 @@ Image {
     id: thumbnail
 
     property int infoType
+    property bool pressed
 
     fillMode: Image.PreserveAspectCrop
     verticalAlignment: Image.AlignVCenter
@@ -40,7 +41,7 @@ Image {
             GradientStop { position: 0.8; color: "transparent"; }
         }
     }
-    Image {
+    Icon {
         visible: (infoType === SearchItem.Playlist) && (thumbnail.status === Image.Ready)
         x: (3.0 * parent.width / 4.0) - (width / 2.0)
         y: (parent.height - height) / 2.0
@@ -49,5 +50,6 @@ Image {
         height: Theme.iconSizeMedium
         fillMode: Image.PreserveAspectFit
         source: "image://theme/icon-m-media-playlists"
+        highlighted: thumbnail.pressed
     }
 }

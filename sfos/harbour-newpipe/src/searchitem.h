@@ -27,6 +27,7 @@ public:
   QString getThumbnail() const;
   QString getUrl() const;
   virtual QString getInfoRow() const;
+  virtual quint64 duration() const;
 
   void setInfoType(InfoType infoType);
   void setName(QString const& name);

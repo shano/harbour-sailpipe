@@ -11,7 +11,6 @@ BackgroundItem {
     property string url
     property string infoRow
 
-
     focus: false
     height: thumbnail.height + (2 * Theme.paddingMedium)
     readonly property real iconScale: 1.5
@@ -38,6 +37,7 @@ BackgroundItem {
             source: delegate.thumbnail
             width: Theme.iconSizeLarge * iconScale
             height: Theme.iconSizeMedium * iconScale
+            pressed: delegate.pressed
         }
 
         Column {
@@ -76,7 +76,11 @@ BackgroundItem {
                 });
                 break;
             case SearchItem.Playlist:
-                // Do nothing
+                pageStack.push(Qt.resolvedUrl("../pages/PlaylistPage.qml"), {
+                    name: name,
+                    thumbnail: delegate.thumbnail,
+                    url: url
+                });
                 break;
             case SearchItem.Stream:
                 pageStack.push(Qt.resolvedUrl("../pages/VideoPage.qml"), {

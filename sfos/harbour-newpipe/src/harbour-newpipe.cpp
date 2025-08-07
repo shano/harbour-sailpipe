@@ -15,6 +15,7 @@
 #include "listlinkhandler.h"
 #include "linkhandlermodel.h"
 #include "channeltablistmodel.h"
+#include "playlistmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
   qmlRegisterType<SearchModel>("harbour.newpipe.extractor", 1, 0, "SearchModel");
   qmlRegisterType<ChannelModel>("harbour.newpipe.extractor", 1, 0, "ChannelModel");
   qmlRegisterType<CommentModel>("harbour.newpipe.extractor", 1, 0, "CommentModel");
+  qmlRegisterType<PlaylistModel>("harbour.newpipe.extractor", 1, 0, "PlaylistModel");
   qmlRegisterType<MediaInfo>("harbour.newpipe.extractor", 1, 0, "MediaInfo");
   qmlRegisterType<PageRef>("harbour.newpipe.extractor", 1, 0, "PageRef");
   qmlRegisterType<SearchItem>("harbour.newpipe.extractor", 1, 0, "SearchItem");

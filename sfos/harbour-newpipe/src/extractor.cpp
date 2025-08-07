@@ -408,7 +408,7 @@ void Extractor::getPlaylistInfo(PlaylistModel* playlistModel, QString const& url
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, playlistModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
-      qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
+      //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["relatedItems"].toArray();
       QList<SearchItem const*> playlistResults;
@@ -419,6 +419,10 @@ void Extractor::getPlaylistInfo(PlaylistModel* playlistModel, QString const& url
       playlistModel->replaceAll(playlistResults);
       PageRef* page = new PageRef(result.object()["nextPage"].toObject(), playlistModel);
       playlistModel->setNextPage(page);
+
+      playlistModel->parseJson(result.object());
+
+      playlistModel->calculateDuration();
     }
 
     delete watcher;
@@ -442,7 +446,7 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, playlistModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
-      qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
+      //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["itemsList"].toArray();
       QList<SearchItem const*> playlistResults;
@@ -453,6 +457,8 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
       playlistModel->append(playlistResults);
       PageRef* page = new PageRef(result.object()["nextPage"].toObject(), playlistModel);
       playlistModel->setNextPage(page);
+
+      playlistModel->calculateDuration();
     }
 
     delete watcher;

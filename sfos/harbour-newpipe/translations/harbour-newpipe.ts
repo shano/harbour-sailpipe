@@ -114,5 +114,39 @@
         <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-playlist_no-entries">
+        <source>No entries</source>
+        <translation type="unfinished">No entries</translation>
+    </message>
+    <message id="newpipe-playlist_no-videos">
+        <source>There are no videos in this playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_detail-video-count" numerus="yes">
+        <source>%n videos</source>
+        <translation type="obsolete">
+            <numerusform>%n video</numerusform>
+            <numerusform>%n videos</numerusform>
+        </translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_uploader">
+        <source>Uploader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_description">
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_detail-item-count" numerus="yes">
+        <source>%n items</source>
+        <translation type="unfinished">
+            <numerusform>%n item</numerusform>
+            <numerusform>%n items</numerusform>
+        </translation>
+    </message>
 </context>
 </TS>

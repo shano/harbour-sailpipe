@@ -114,6 +114,7 @@ add_custom_target(distfiles
         qml/pages/VideoPage.qml
         qml/pages/RepliesPage.qml
         qml/pages/ChannelPage.qml
+        qml/pages/PlaylistPage.qml
         qml/components/VideoPlayer.qml
         qml/components/IconButtonDual.qml
         qml/components/CommentItem.qml
@@ -131,6 +132,7 @@ add_custom_target(distfiles
         qml/components/Util.js
         qml/components/ChannelAbout.qml
         qml/components/AboutKeyValue.qml
+        qml/components/PlaylistDetails.qml
         qml/icons/
         rpm/harbour-newpipe.changes.in
         rpm/harbour-newpipe.changes.run.in
