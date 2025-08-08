@@ -98,5 +98,53 @@
         <source>%0 • %1</source>
         <translation>%0 • %1</translation>
     </message>
+    <message id="newpipe-channel_details-detail_subscribers">
+        <source>Subscribers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channel_details-detail_verified">
+        <source>Verified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channel_details-detail_verified_yes">
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channel_details-detail_verified_no">
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channel_details-detail_tags">
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_detail-item-count" numerus="yes">
+        <source>%n items</source>
+        <translation type="unfinished">
+            <numerusform>%n прадмет</numerusform>
+            <numerusform>%n прадмета</numerusform>
+            <numerusform>%n прадметаў</numerusform>
+        </translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_uploader">
+        <source>Uploader</source>
+        <translation type="unfinished">Загрузчык</translation>
+    </message>
+    <message id="newpipe_playlist_details-detail_description">
+        <source>Description</source>
+        <translation type="unfinished">Апісанне</translation>
+    </message>
+    <message id="newpipe-playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-playlist_no-entries">
+        <source>No entries</source>
+        <translation type="unfinished">Няма запісаў</translation>
+    </message>
+    <message id="newpipe-playlist_no-videos">
+        <source>There are no videos in this playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

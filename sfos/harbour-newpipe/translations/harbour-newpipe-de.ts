@@ -120,7 +120,7 @@
     </message>
     <message id="newpipe-playlist_no-entries">
         <source>No entries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keine Einträge</translation>
     </message>
     <message id="newpipe-playlist_no-videos">
         <source>There are no videos in this playlist</source>
@@ -128,17 +128,17 @@
     </message>
     <message id="newpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uploader</translation>
     </message>
     <message id="newpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Beschreibung</translation>
     </message>
     <message id="newpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n Eintrag</numerusform>
+            <numerusform>%n Einträge</numerusform>
         </translation>
     </message>
 </context>

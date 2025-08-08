@@ -171,12 +171,12 @@
     <message id="newpipe_playlist_details-detail_uploader">
         <location filename="../qml/components/PlaylistDetails.qml" line="64"/>
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uploader</translation>
     </message>
     <message id="newpipe_playlist_details-detail_description">
         <location filename="../qml/components/PlaylistDetails.qml" line="70"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Description</translation>
     </message>
 </context>
 </TS>
