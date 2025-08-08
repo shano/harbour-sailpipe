@@ -26,6 +26,7 @@ ChannelTabListModel::ChannelTabListModel(QObject *parent)
   m_tabBarLookup.insert("shorts", new TabBarLookup("Shorts", "image://newpipe/icon-tab-video-short", this));
   m_tabBarLookup.insert("livestreams", new TabBarLookup("Live", "image://newpipe/icon-tab-video-live", this));
   m_tabBarLookup.insert("playlists", new TabBarLookup("Playlists", "image://newpipe/icon-tab-playlists", this));
+  m_tabBarLookup.insert("albums", new TabBarLookup("Albums", "image://newpipe/icon-tab-albums", this));
 }
 
 QHash<int, QByteArray> ChannelTabListModel::roleNames() const
