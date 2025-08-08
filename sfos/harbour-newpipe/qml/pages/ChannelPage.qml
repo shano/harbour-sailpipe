@@ -48,7 +48,7 @@ Page {
 
         anchors.fill: parent
         currentIndex: 0
-        tabBarPosition: Qt.AlignBottom
+        tabBarPosition: Qt.AlignTop
 
         header: Column {
             id: column
