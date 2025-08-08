@@ -20,11 +20,11 @@
     </message>
     <message id="newpipe-proglist_search-no-entries">
         <source>No entries</source>
-        <translation>Ei tuloksia</translation>
+        <translation>Ei näytettävää sisältöä</translation>
     </message>
     <message id="newpipe-proglist_search-enter-some-text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Aloita haku kirjoittamalla jotakin</translation>
     </message>
     <message id="newpipe-video_page-header">
         <source>YouTube Video</source>
