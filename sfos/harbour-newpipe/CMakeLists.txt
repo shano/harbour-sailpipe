@@ -123,13 +123,11 @@ add_custom_target(distfiles
         qml/components/StatItem.qml
         qml/components/SearchThumbnail.qml
         qml/components/SearchDelegate.qml
-        qml/components/ColorInterpolator.qml
         qml/components/TabBar.qml
         qml/components/TabButton.qml
         qml/components/TabItem.qml
         qml/components/Tab.qml
         qml/components/TabView.qml
-        qml/components/Util.js
         qml/components/ChannelAbout.qml
         qml/components/AboutKeyValue.qml
         qml/components/PlaylistDetails.qml
