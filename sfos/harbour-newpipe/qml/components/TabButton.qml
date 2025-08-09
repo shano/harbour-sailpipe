@@ -7,7 +7,6 @@
 
 import QtQuick 2.6
 import Sailfish.Silica 1.0
-import "Util.js" as Util
 
 MouseArea {
     id: root
@@ -25,7 +24,7 @@ MouseArea {
 
     property Item _tabView: parent && parent.tabView || null
 
-    readonly property Item _page: _tabView ? _tabView._page : null
+    readonly property Item _page: _tabView ? _tabView.page : null
     readonly property bool _portrait: _page && _page.isPortrait
 
     readonly property Item _tabItem: _tabView ? (_tabView.exposedItems, _tabView.itemAt(tabIndex)) : null
@@ -51,32 +50,21 @@ MouseArea {
         }
     }
 
-    ColorInterpolator {
-        id: colorInterpolator
-
-        from: Theme.primaryColor
-        to: Theme.highlightColor
-
-        progress: {
-            if (root.pressed) {
-                return 1.0
-            } else if (!root._tabView || !root._tabItem) {
-                return 0.0
-            } else if (isCurrentTab && !root._tabView.dragging) {
-                return 1.0
-            } else {
-                // FIXME this is wrong
-                return Math.abs(1.0 - Math.abs(root._tabItem.x / (root._tabView.width + root._tabView.horizontalSpacing)))
-            }
+    property double progress: {
+        if (root.pressed) {
+            return 1.0
+        } else if (!root._tabView || !root._tabItem) {
+            return 0.0
+        } else if (isCurrentTab && !root._tabView.dragging) {
+            return 1.0
+        } else {
+            // FIXME this is wrong
+            return Math.max(0.0, 1.0 - Math.abs(root._tabItem.x / (root._tabView.width + root._tabView.horizontalSpacing)))
         }
     }
 
-    ColorInterpolator {
-        id: secondaryColorInterpolator
-        from: Theme.secondaryColor
-        to: Theme.secondaryHighlightColor
-        progress: colorInterpolator.progress
-    }
+    readonly property color interpolatedPrimary: Qt.tint(Theme.primaryColor, Qt.rgba(Theme.highlightColor.r, Theme.highlightColor.g, Theme.highlightColor.b, progress))
+    readonly property color interpolatedSecondary: Qt.tint(Theme.secondaryColor, Qt.rgba(Theme.secondaryHighlightColor.r, Theme.secondaryHighlightColor.g, Theme.secondaryHighlightColor.b, progress))
 
     Column {
         id: contentColumn
@@ -105,7 +93,7 @@ MouseArea {
             id: titleLabel
 
             x: (contentColumn.width - width) / 2
-            color: highlighted ? Theme.highlightColor : colorInterpolator.value
+            color: highlighted ? Theme.highlightColor : interpolatedPrimary
             font.pixelSize: highlightImage.status === Image.Ready ? Theme.fontSizeTiny : root.titleFontSize
         }
 
@@ -113,7 +101,7 @@ MouseArea {
             id: descriptionLabel
 
             x: (contentColumn.width - width) / 2
-            color: highlighted ? Theme.secondaryHighlightColor : secondaryColorInterpolator.value
+            color: highlighted ? Theme.secondaryHighlightColor : interpolatedSecondary
             font.pixelSize: highlightImage.status === Image.Ready ? Theme.fontSizeTiny : 0.8 * root.titleFontSize
         }
     }

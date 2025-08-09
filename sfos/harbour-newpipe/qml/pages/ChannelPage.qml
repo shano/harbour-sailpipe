@@ -49,6 +49,7 @@ Page {
         anchors.fill: parent
         currentIndex: 0
         tabBarPosition: Qt.AlignTop
+        page: root
 
         header: Column {
             id: column

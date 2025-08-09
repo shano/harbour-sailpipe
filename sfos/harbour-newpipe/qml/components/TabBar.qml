@@ -8,25 +8,24 @@
 import QtQuick 2.6
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
-import "Util.js" as Util
 
 SilicaControl {
     id: root
 
     property alias model: _tabButtons.model
     property alias delegate: _tabButtons.delegate
-    readonly property Item _tabView: Util.findParentWithProperty(root, '__silica_tab_view')
+    property Item tabView
     property bool _oversize: flickable.contentWidth > flickable.width
-    property bool _isFooter: _tabView && _tabView.hasFooter
+    property bool _isFooter: tabView && tabView.hasFooter
     readonly property bool _vanillaStyle: tabBarStyle.value === "vanilla"
-    readonly property int _currentIndex: _tabView ? _tabView.currentIndex : 0
+    readonly property int _currentIndex: tabView ? tabView.currentIndex : 0
     readonly property Item _currentTabButton: _currentIndex >= 0 && _currentIndex < _tabButtons.count
             ? (tabRow.children, _tabButtons.itemAt(_currentIndex))
             : null
 
-    // FIXME this is broken because _tabView._distance does not exist
-    readonly property real _normalizedDragDistance: _tabView && _tabView.dragging
-            ? _tabView._distance / _tabView.width + _tabView.horizontalSpacing
+    // FIXME this is broken because tabView._distance does not exist
+    readonly property real _normalizedDragDistance: tabView && tabView.dragging
+            ? tabView._distance / tabView.width + tabView.horizontalSpacing
             : 0
     readonly property int _dragDirection: {
         if (_normalizedDragDistance < 0) {
@@ -81,7 +80,7 @@ SilicaControl {
 
         Behavior on contentX {
             id: contentXBehavior
-            enabled: root._tabView && root._tabView.moving
+            enabled: root.tabView && root.tabView.moving
 
             SmoothedAnimation {
                 duration: 250
@@ -93,7 +92,7 @@ SilicaControl {
         Row {
             id: tabRow
 
-            readonly property alias tabView: root._tabView
+            readonly property alias tabView: root.tabView
             readonly property alias tabCount: _tabButtons.count
             readonly property real extraPreMargin: {
                 var buttons = tabRow.children
@@ -129,7 +128,7 @@ SilicaControl {
                 TabButton {
                     id: tabButton
 
-                    _tabView: root._tabView
+                    _tabView: root.tabView
                     _extraMargin: tabRow.extraMargin
                     _buttonMargin: tabRow.buttonMargin
 

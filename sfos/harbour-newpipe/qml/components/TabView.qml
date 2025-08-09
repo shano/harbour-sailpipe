@@ -8,7 +8,6 @@
 
 import QtQuick 2.4
 import Sailfish.Silica 1.0
-import "Util.js" as Util
 
 PagedView {
     id: root
@@ -31,7 +30,7 @@ PagedView {
     property real yOffset: currentItem && currentItem._yOffset || 0
     property bool _headerBackgroundVisible: true
 
-    property Item _page: Util.findPage(root)
+    property Item page
 
     property int __silica_tab_view
 
@@ -53,7 +52,7 @@ PagedView {
         width: 0
         height: 0
 
-        property Item _ctxPage: _page
+        property Item _ctxPage: page
         property Item _ctxTabContainer: parent
         property int _ctxTopMargin: _tabBarIsTop ? tabBarHeight : 0
         property int _ctxBottomMargin: _tabBarIsTop ? 0 : tabBarHeight
@@ -64,6 +63,7 @@ PagedView {
 
         TabBar {
             model: root.model
+            tabView: root
         }
     }
 
@@ -79,6 +79,7 @@ PagedView {
             TabBar {
                 model: root.model
                 width: root.width
+                tabView: root
             }
         }
     }
@@ -142,7 +143,7 @@ PagedView {
         id: tabLoader
 
         // properties are passed on to the TabItem that is being loaded
-        property Item _ctxPage: root._page
+        property Item _ctxPage: root.page
         property Item _ctxTabContainer: tabLoader
         property int _ctxTopMargin: _tabBarIsTop ? tabBarHeight : 0
         property int _ctxBottomMargin: _tabBarIsTop ? 0 : tabBarHeight
@@ -196,7 +197,7 @@ PagedView {
 
     Component.onCompleted: {
         // Avoid hard dependency on private Silica components
-        backgroundRectangleContainer.item = Qt.createQmlObject("\
+        var background = "\
             import QtQuick 2.6
             import %1 1.0
 
@@ -206,22 +207,16 @@ PagedView {
                 anchors.fill: parent
                 color: __silica_applicationwindow_instance._backgroundColor
             }
-        ".arg('Sailfish.Silica.private'),
+        ".arg('Sailfish.Silica.private')
+
+        backgroundRectangleContainer.item = Qt.createQmlObject(
+            background,
             backgroundRectangleContainer,
             'BackgroundRectangle'
         )
 
-        backgroundRectangleContainerHeader.item = Qt.createQmlObject("\
-            import QtQuick 2.6
-            import %1 1.0
-
-            BackgroundRectangle {
-                id: backgroundRectangleHeader
-                visible: _headerBackgroundVisible
-                anchors.fill: parent
-                color: __silica_applicationwindow_instance._backgroundColor
-            }
-        ".arg('Sailfish.Silica.private'),
+        backgroundRectangleContainerHeader.item = Qt.createQmlObject(
+            background,
             backgroundRectangleContainerHeader,
             'BackgroundRectangle'
         )

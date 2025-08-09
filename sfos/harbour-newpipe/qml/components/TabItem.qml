@@ -7,7 +7,6 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "Util.js" as Util
 
 // WARNING possible future issue: this component uses private __silica_page.isPortrait
 
