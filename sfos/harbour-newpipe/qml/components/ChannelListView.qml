@@ -5,7 +5,7 @@ import harbour.newpipe.extractor 1.0
 TabItem {
     id: root
     property alias channelmodel: flickable.model
-    property alias noitems: placeholder.text
+    property alias noitems: processIndicator.text
 
     anchors.fill: parent
     flickable: flickable
@@ -18,16 +18,15 @@ TabItem {
 
         onContentYChanged: {
             var pos = contentHeight + originY - height - contentY;
-            if ((pos < height) && !root.channelmodel.loading && root.channelmodel.more && root.channelmodel.nextPage) {
-                root.channelmodel.searchMore(extractor);
+            if ((pos < height) && !channelmodel.loading && channelmodel.more && channelmodel.nextPage) {
+                channelmodel.searchMore(extractor);
             }
         }
 
-        ViewPlaceholder {
-            id: placeholder
-            enabled: flickable.count === 0
-            textFormat: Text.RichText
-            text: "No videos"
+        ProcessIndicator {
+            id: processIndicator
+            loading: channelmodel.loading
+            count: flickable.count
         }
 
         delegate: SearchDelegate {

@@ -80,9 +80,9 @@ Page {
             }
         }
 
-        ViewPlaceholder {
-            enabled: listView.count === 0
-            textFormat: Text.RichText
+        ProcessIndicator {
+            loading: searchModel.loading
+            count: listView.count
             //% "No entries"
             text: qsTrId("newpipe-proglist_search-no-entries")
             //% "Enter some text to search"

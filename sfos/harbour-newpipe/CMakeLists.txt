@@ -131,6 +131,7 @@ add_custom_target(distfiles
         qml/components/ChannelAbout.qml
         qml/components/AboutKeyValue.qml
         qml/components/PlaylistDetails.qml
+        qml/components/ProcessIndicator.qml
         qml/icons/
         rpm/harbour-newpipe.changes.in
         rpm/harbour-newpipe.changes.run.in

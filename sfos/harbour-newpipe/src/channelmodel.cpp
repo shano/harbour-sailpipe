@@ -15,6 +15,7 @@ ChannelModel::ChannelModel(QObject *parent)
 
 void ChannelModel::search(Extractor* extractor)
 {
+  setLoading(true);
   extractor->getChannelTabInfo(m_channelTabInfo, m_linkHandler, this);
 }
 

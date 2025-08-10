@@ -13,6 +13,11 @@ MediaInfo::MediaInfo(QObject *parent)
   , m_viewCount(0)
   , m_likeCount(0)
   , m_content()
+  , m_uploadDate()
+  , m_description()
+  , m_descriptionType(DescType::PlainText)
+  , m_length(0)
+  , m_licence()
 {
 }
 

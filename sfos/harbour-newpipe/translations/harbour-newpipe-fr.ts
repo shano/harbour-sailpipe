@@ -141,5 +141,53 @@
         <source>There are no videos in this playlist</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-channeltab-header_about">
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_videos">
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-videos">
+        <source>No videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_shorts">
+        <source>Shorts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-shorts">
+        <source>No shorts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_live">
+        <source>Live</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-livestreams">
+        <source>No livestreams</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_playlists">
+        <source>Playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-playlists">
+        <source>No playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_albums">
+        <source>Albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-albums">
+        <source>No albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-utils_length_unknown">
+        <source>??:??:??</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
