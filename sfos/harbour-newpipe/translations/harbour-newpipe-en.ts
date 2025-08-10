@@ -178,5 +178,65 @@
         <source>Description</source>
         <translation type="unfinished">Description</translation>
     </message>
+    <message id="newpipe-channeltab-header_about">
+        <location filename="../src/channeltablistmodel.cpp" line="26"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_videos">
+        <location filename="../src/channeltablistmodel.cpp" line="32"/>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-videos">
+        <location filename="../src/channeltablistmodel.cpp" line="35"/>
+        <source>No videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_shorts">
+        <location filename="../src/channeltablistmodel.cpp" line="39"/>
+        <source>Shorts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-shorts">
+        <location filename="../src/channeltablistmodel.cpp" line="42"/>
+        <source>No shorts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_live">
+        <location filename="../src/channeltablistmodel.cpp" line="46"/>
+        <source>Live</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-livestreams">
+        <location filename="../src/channeltablistmodel.cpp" line="49"/>
+        <source>No livestreams</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_playlists">
+        <location filename="../src/channeltablistmodel.cpp" line="53"/>
+        <source>Playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-playlists">
+        <location filename="../src/channeltablistmodel.cpp" line="56"/>
+        <source>No playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-header_albums">
+        <location filename="../src/channeltablistmodel.cpp" line="60"/>
+        <source>Albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-albums">
+        <location filename="../src/channeltablistmodel.cpp" line="63"/>
+        <source>No albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-utils_length_unknown">
+        <location filename="../src/utils.cpp" line="54"/>
+        <source>??:??:??</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

@@ -21,12 +21,47 @@ ChannelTabListModel::ChannelTabListModel(QObject *parent)
   m_roles[ModelRole] = "channelmodel";
   m_roles[NoitemsRole] = "noitems";
 
-  m_tabBarLookup.insert("about", new TabBarLookup("About", "image://newpipe/icon-tab-about", this));
-  m_tabBarLookup.insert("videos", new TabBarLookup("Videos", "image://newpipe/icon-tab-video-full", this));
-  m_tabBarLookup.insert("shorts", new TabBarLookup("Shorts", "image://newpipe/icon-tab-video-short", this));
-  m_tabBarLookup.insert("livestreams", new TabBarLookup("Live", "image://newpipe/icon-tab-video-live", this));
-  m_tabBarLookup.insert("playlists", new TabBarLookup("Playlists", "image://newpipe/icon-tab-playlists", this));
-  m_tabBarLookup.insert("albums", new TabBarLookup("Albums", "image://newpipe/icon-tab-albums", this));
+  m_tabBarLookup.insert("about", new TabBarLookup(
+    //% "About"
+    qtTrId("newpipe-channeltab-header_about"),
+    "image://newpipe/icon-tab-about",
+    "",
+    this));
+  m_tabBarLookup.insert("videos", new TabBarLookup(
+    //% "Videos"
+    qtTrId("newpipe-channeltab-header_videos"),
+    "image://newpipe/icon-tab-video-full",
+    //% "No videos"
+    qtTrId("newpipe-channeltab-placeholder_no-videos"),
+    this));
+  m_tabBarLookup.insert("shorts", new TabBarLookup(
+    //% "Shorts"
+    qtTrId("newpipe-channeltab-header_shorts"),
+    "image://newpipe/icon-tab-video-short",
+    //% "No shorts"
+    qtTrId("newpipe-channeltab-placeholder_no-shorts"),
+    this));
+  m_tabBarLookup.insert("livestreams", new TabBarLookup(
+    //% "Live"
+    qtTrId("newpipe-channeltab-header_live"),
+    "image://newpipe/icon-tab-video-live",
+    //% "No livestreams"
+    qtTrId("newpipe-channeltab-placeholder_no-livestreams"),
+    this));
+  m_tabBarLookup.insert("playlists", new TabBarLookup(
+    //% "Playlists"
+    qtTrId("newpipe-channeltab-header_playlists"),
+    "image://newpipe/icon-tab-playlists",
+    //% "No playlists"
+    qtTrId("newpipe-channeltab-placeholder_no-playlists"),
+    this));
+  m_tabBarLookup.insert("albums", new TabBarLookup(
+    //% "Albums"
+    qtTrId("newpipe-channeltab-header_albums"),
+    "image://newpipe/icon-tab-albums",
+    //% "No albums"
+    qtTrId("newpipe-channeltab-placeholder_no-albums"),
+    this));
 }
 
 QHash<int, QByteArray> ChannelTabListModel::roleNames() const
@@ -64,7 +99,7 @@ QVariant ChannelTabListModel::data(const QModelIndex & index, int role) const
       }
       break;
       case NoitemsRole: {
-        result = QVariant(QString("No items %1").arg(index.row()));
+        result = QVariant(tabInfo->noitems());
       }
       break;
     }
@@ -121,6 +156,7 @@ void ChannelTabListModel::generateModel(Extractor* extractor, LinkHandlerModel* 
     if (lookup) {
       tabInfo->setTitle(lookup->title());
       tabInfo->setIcon(lookup->icon());
+      tabInfo->setNoitems(lookup->noitems());
     }
     m_tabInfo.append(tabInfo);
 

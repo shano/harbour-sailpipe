@@ -4,6 +4,7 @@ TabBarTabInfo::TabBarTabInfo(QObject *parent)
   : QObject(parent)
   , m_title()
   , m_icon()
+  , m_noitems()
   , m_component(nullptr)
   , m_model(nullptr)
 {
@@ -18,6 +19,11 @@ void TabBarTabInfo::setTitle(QString const& title)
 void TabBarTabInfo::setIcon(QString const& icon)
 {
   m_icon = icon;
+}
+
+void TabBarTabInfo::setNoitems(const QString &noitems)
+{
+  m_noitems = noitems;
 }
 
 void TabBarTabInfo::setComponent(QObject* component)
@@ -38,6 +44,11 @@ QString TabBarTabInfo::title() const
 QString TabBarTabInfo::icon() const
 {
   return m_icon;
+}
+
+QString TabBarTabInfo::noitems() const
+{
+  return m_noitems;
 }
 
 QObject* TabBarTabInfo::component() const
