@@ -16,6 +16,7 @@ class ChannelInfo;
 class ChannelTabInfo;
 class ListLinkHandler;
 class LinkHandlerModel;
+class FilterModel;
 
 class Extractor : public QObject
 {
@@ -38,6 +39,7 @@ public slots:
   void getMoreChannelItems(ListLinkHandler* linkHandler, PageRef* page, SearchModel* videoModel);
   void getPlaylistInfo(PlaylistModel* playlistModel, QString const& url);
   void getMorePlaylistItems(PlaylistModel* playlistModel, QString const& url, PageRef* page);
+  void getAvailableContentFilter(FilterModel* filterModel);
 
 signals:
   void extracted(QString const& url);

@@ -16,7 +16,7 @@
     </message>
     <message id="newpipe-proglist_search-placeholder">
         <source>Search</source>
-        <translation>Haku</translation>
+        <translation type="vanished">Haku</translation>
     </message>
     <message id="newpipe-proglist_search-no-entries">
         <source>No entries</source>
@@ -187,6 +187,62 @@
     </message>
     <message id="newpipe-utils_length_unknown">
         <source>??:??:??</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_page-page_header">
+        <source>Search Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_search_page-menu_about">
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_search_page-menu_filter">
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_search_page-search_placeholder">
+        <source>Search</source>
+        <translation type="unfinished">Haku</translation>
+    </message>
+    <message id="newpipe_search_page-search_no_entries">
+        <source>No entries</source>
+        <translation type="unfinished">Ei tuloksia</translation>
+    </message>
+    <message id="newpipe_search_page-search_enter_some_text">
+        <source>Enter some text to search</source>
+        <translation type="unfinished">Enter some text to search</translation>
+    </message>
+    <message id="newpipe-filter-name_all">
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_videos">
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_channels">
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_playlists">
+        <source>Playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-congs">
+        <source>Music songs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-videos">
+        <source>Music videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-albums">
+        <source>Music albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-playlists">
+        <source>Music playlists</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

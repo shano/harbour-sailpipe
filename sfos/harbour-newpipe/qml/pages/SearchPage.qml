@@ -12,7 +12,15 @@ Page {
     property bool busy: false
     property int displayCount: 0
     readonly property alias pendingSearch: searchTimer.running
-    property SearchModel searchModel: SearchModel { id: searchModel }
+    property FilterModel filterModel: FilterModel { id: filterModel }
+    property SearchModel searchModel: SearchModel {
+        id: searchModel
+        onContentFilterChanged: searchTimer.restart()
+    }
+
+    Component.onCompleted: {
+        filterModel.populate(extractor);
+    }
 
     onSearchTermChanged: {
         searchTimer.restart()
@@ -51,6 +59,23 @@ Page {
             }
         }
 
+        PullDownMenu {
+            MenuItem {
+                //% "About"
+                text: qsTrId("newpipe_search_page-menu_about")
+            }
+            MenuItem {
+                //% "Filter"
+                text: qsTrId("newpipe_search_page-menu_filter")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("../pages/FilterPage.qml"), {
+                        filterModel: page.filterModel,
+                        searchModel: page.searchModel
+                    });
+                }
+            }
+        }
+
         header: Column {
             id: headerColumn
             width: page.width
@@ -65,7 +90,7 @@ Page {
                 id: searchField
                 width: parent.width
                 //% "Search"
-                placeholderText: qsTrId("newpipe-proglist_search-placeholder")
+                placeholderText: qsTrId("newpipe_search_page-search_placeholder")
                 // Predictive text actually messes up the clear button so it only
                 // works if there's more than one word (weird!), but predictive
                 // is likely to be the more useful of the two, so I've left it on
@@ -84,9 +109,9 @@ Page {
             loading: searchModel.loading
             count: listView.count
             //% "No entries"
-            text: qsTrId("newpipe-proglist_search-no-entries")
+            text: qsTrId("newpipe_search_page-search_no_entries")
             //% "Enter some text to search"
-            hintText: qsTrId("newpipe-proglist_search-enter-some-text")
+            hintText: qsTrId("newpipe_search_page-search_enter_some_text")
         }
 
         delegate: SearchDelegate {

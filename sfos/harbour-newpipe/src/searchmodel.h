@@ -15,6 +15,7 @@ class SearchModel : public QAbstractListModel
   Q_PROPERTY(bool loading READ loading WRITE setLoading NOTIFY loadingChanged)
   Q_PROPERTY(bool more READ more WRITE setMore NOTIFY moreChanged)
   Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm NOTIFY searchTermChanged)
+  Q_PROPERTY(QString contentFilter READ contentFilter WRITE setContentFilter NOTIFY contentFilterChanged)
 
   Q_OBJECT
 public:
@@ -56,8 +57,8 @@ public:
   QString searchTerm() const;
   void setSearchTerm(QString const& searchTerm);
 
-  QStringList contentFilters() const;
-  void setContentFilters(QStringList const& contentFilter);
+  QString contentFilter() const;
+  void setContentFilter(QString const& contentFilter);
 
   QString sortFilter() const;
   void setSortFilter(QString const& sortFilter);
@@ -67,6 +68,7 @@ signals:
   void loadingChanged();
   void moreChanged();
   void searchTermChanged();
+  void contentFilterChanged();
 
 protected:
   QHash<int, QByteArray> m_roles;
