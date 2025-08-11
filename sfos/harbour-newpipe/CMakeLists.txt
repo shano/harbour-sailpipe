@@ -31,6 +31,7 @@ target_link_libraries(harbour-newpipe
 )
 target_sources(harbour-newpipe PRIVATE
     "src/extractor.cpp"
+    "src/filtermodel.cpp"
     "src/invoke.cpp"
     "src/searchmodel.cpp"
     "src/searchitem.cpp"

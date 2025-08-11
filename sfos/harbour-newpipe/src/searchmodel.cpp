@@ -22,6 +22,8 @@ SearchModel::SearchModel(QObject *parent)
   m_roles[UrlRole] = "url";
   m_roles[InfoTypeRole] = "infoType";
   m_roles[InfoRowRole] = "infoRow";
+
+  m_contentFilters.append("all");
 }
 
 QHash<int, QByteArray> SearchModel::roleNames() const
@@ -89,7 +91,7 @@ void SearchModel::search(Extractor* extractor)
     m_nextPage = nullptr;
     delete m_nextPage;
   }
-  m_contentFilters.clear();
+  //m_contentFilters.clear();
   m_sortFilter.clear();
   setLoading(true);
   if (!m_searchTerm.isEmpty()) {
@@ -189,14 +191,21 @@ void SearchModel::setSearchTerm(QString const& searchTerm)
   }
 }
 
-QStringList SearchModel::contentFilters() const
+QString SearchModel::contentFilter() const
 {
-  return m_contentFilters;
+  return m_contentFilters.isEmpty() ? QString() : m_contentFilters.first();
 }
 
-void SearchModel::setContentFilters(QStringList const& contentFilters)
+void SearchModel::setContentFilter(QString const& contentFilter)
 {
-  m_contentFilters = contentFilters;
+  QString const& first = m_contentFilters.isEmpty() ? QString() : m_contentFilters.first();
+
+  if (first != contentFilter) {
+    m_contentFilters.clear();
+    m_contentFilters.append(contentFilter);
+
+    emit contentFilterChanged();
+  }
 }
 
 QString SearchModel::sortFilter() const

@@ -17,6 +17,7 @@
 #include "channeltabinfo.h"
 #include "listlinkhandler.h"
 #include "linkhandlermodel.h"
+#include "filtermodel.h"
 
 #include "extractor.h"
 
@@ -338,7 +339,12 @@ void Extractor::getChannelTabInfo(ChannelTabInfo* channelTabInfo, ListLinkHandle
       channelTabInfo->parseJson(result.object());
 
       QStringList const& contentFilters = channelTabInfo->contentFilters();
-      videoModel->setContentFilters(contentFilters);
+      if (contentFilters.isEmpty()) {
+        videoModel->setContentFilter(QString());
+      }
+      else {
+        videoModel->setContentFilter(contentFilters.first());
+      }
       QString const& sortFilter = channelTabInfo->sortFilter();
       videoModel->setSortFilter(sortFilter);
 
@@ -464,4 +470,34 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
     delete watcher;
   });
   watcher->setFuture(invokeAsync("getMorePlaylistItems", &document));
+}
+
+void Extractor::getAvailableContentFilter(FilterModel* filterModel)
+{
+  QJsonObject json;
+  QJsonArray filters;
+  QJsonDocument document;
+
+  json["string"] = QStringLiteral("YouTube");
+  document = QJsonDocument(json);
+
+  QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();
+  LifetimeCheck* lifetimeCheck = new LifetimeCheck(filterModel, watcher);
+  QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, filterModel]() {
+    if (!lifetimeCheck->destroyed()) {
+      QJsonDocument result = watcher->result();
+      //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
+
+      QJsonArray items = result.object()["stringList"].toArray();
+      QStringList filterResults;
+      for (QJsonValue const& item : items) {
+        QString name = item.toString();
+        filterResults.append(name);
+      }
+      filterModel->replaceAll(filterResults);
+    }
+
+    delete watcher;
+  });
+  watcher->setFuture(invokeAsync("getAvailableContentFilter", &document));
 }
