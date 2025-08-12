@@ -97,18 +97,18 @@
     </message>
     <message id="newpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n post</numerusform>
+            <numerusform>%n poster</numerusform>
         </translation>
     </message>
     <message id="newpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished">Uppladdare</translation>
+        <translation>Uppladdare</translation>
     </message>
     <message id="newpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished">Beskrivning</translation>
+        <translation>Beskrivning</translation>
     </message>
     <message id="newpipe-playlist_no-entries">
         <source>No entries</source>
@@ -236,23 +236,23 @@
     </message>
     <message id="newpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Prenumeranter</translation>
     </message>
     <message id="newpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifierad</translation>
     </message>
     <message id="newpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message id="newpipe_channel_details-detail_verified_no">
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nej</translation>
     </message>
     <message id="newpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketter</translation>
     </message>
     <message id="newpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
@@ -284,7 +284,7 @@
     </message>
     <message id="newpipe_media_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished">Beskrivning</translation>
+        <translation>Beskrivning</translation>
     </message>
     <message id="newpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
@@ -303,7 +303,7 @@
     </message>
     <message id="newpipe_playlist_page-header">
         <source>YouTube Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Spellista</translation>
     </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
@@ -311,7 +311,7 @@
     </message>
     <message id="newpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga videor i spellistan</translation>
     </message>
     <message id="newpipe_replies-page_header">
         <source>Replies</source>
