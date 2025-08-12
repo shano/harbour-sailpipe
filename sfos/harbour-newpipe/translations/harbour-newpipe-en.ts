@@ -241,27 +241,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-menu_about">
-        <location filename="../qml/pages/SearchPage.qml" line="65"/>
+        <location filename="../qml/pages/SearchPage.qml" line="73"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe_search_page-menu_service">
+        <location filename="../qml/pages/SearchPage.qml" line="77"/>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="newpipe_search_page-menu_filter">
-        <location filename="../qml/pages/SearchPage.qml" line="69"/>
+        <location filename="../qml/pages/SearchPage.qml" line="84"/>
         <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-search_placeholder">
-        <location filename="../qml/pages/SearchPage.qml" line="93"/>
+        <location filename="../qml/pages/SearchPage.qml" line="108"/>
         <source>Search</source>
         <translation type="unfinished">Search</translation>
     </message>
     <message id="newpipe_search_page-search_no_entries">
-        <location filename="../qml/pages/SearchPage.qml" line="112"/>
+        <location filename="../qml/pages/SearchPage.qml" line="127"/>
         <source>No entries</source>
         <translation type="unfinished">No entries</translation>
     </message>
     <message id="newpipe_search_page-search_enter_some_text">
-        <location filename="../qml/pages/SearchPage.qml" line="114"/>
+        <location filename="../qml/pages/SearchPage.qml" line="129"/>
         <source>Enter some text to search</source>
         <translation type="unfinished">Enter some text to search</translation>
     </message>
@@ -303,6 +308,11 @@
     <message id="newpipe-filter-name_music-playlists">
         <location filename="../src/filtermodel.cpp" line="62"/>
         <source>Music playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_service_page-page_header">
+        <location filename="../qml/pages/ServicePage.qml" line="17"/>
+        <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

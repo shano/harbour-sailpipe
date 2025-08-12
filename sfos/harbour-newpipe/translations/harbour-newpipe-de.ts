@@ -245,6 +245,14 @@
         <source>Music playlists</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe_search_page-menu_service">
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_service_page-page_header">
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
