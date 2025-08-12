@@ -58,6 +58,7 @@ BackgroundItem {
                 textFormat: Text.PlainText
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: infoRow || ""
+                width: parent.width
                 truncationMode: TruncationMode.Fade
                 focus: false
                 visible: !!infoRow

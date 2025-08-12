@@ -6,6 +6,7 @@ FilterModel::FilterModel(QObject *parent)
   : QAbstractListModel(parent)
   , m_loading(false)
   , m_filterData()
+  , m_defaultFilter("all")
 {
   m_roles[NameRole] = "name";
   m_roles[FilterRole] = "filter";
@@ -76,10 +77,22 @@ QString FilterModel::filterToName(QString const& filter)
 
 void FilterModel::replaceAll(QStringList const& filterResults)
 {
+  QString defaultFilter("");
+
   beginResetModel();
   m_filterData = filterResults;
   endResetModel();
   m_loading = false;
+
+  if (!m_filterData.isEmpty()) {
+    defaultFilter = m_filterData.first();
+  }
+
+  if (m_defaultFilter != defaultFilter) {
+    m_defaultFilter = defaultFilter;
+
+    emit defaultFilterChnaged();
+  }
 }
 
 void FilterModel::populate(Extractor* extractor)
@@ -88,4 +101,23 @@ void FilterModel::populate(Extractor* extractor)
     m_loading = true;
     extractor->getAvailableContentFilter(this);
   }
+}
+
+QString FilterModel::defaultFilter() const
+{
+  return m_defaultFilter;
+}
+
+bool FilterModel::filterValid(QString const& filter) const
+{
+  bool valid = false;
+
+  if (m_filterData.isEmpty()) {
+    valid = filter.isEmpty();
+  }
+  else {
+    valid = m_filterData.contains(filter);
+  }
+
+  return valid;
 }

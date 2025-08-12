@@ -23,6 +23,7 @@
 
 Extractor::Extractor(QObject *parent)
   : QObject(parent)
+  , m_service(YouTubeService)
 {
   QFuture<QString> initialise;
   m_threadPool.setExpiryTimeout(-1);
@@ -59,6 +60,39 @@ Extractor::~Extractor()
   m_threadPool.releaseThread();
 }
 
+QString Extractor::serviceToString(Service service)
+{
+  static const QStringList serviceMap = {
+    "YouTube",
+    "SoundCloud",
+    "MediaCCC",
+    "PeerTube",
+    "Bandcamp"
+  };
+
+  QString result = QString();
+
+  if ((service > ServiceInvalid) && (service < ServiceNum)) {
+    result = serviceMap[service];
+  }
+
+  return result;
+}
+
+Extractor::Service Extractor::service() const
+{
+  return m_service;
+}
+
+void Extractor::setService(Service service)
+{
+  if (m_service != service) {
+    m_service = service;
+
+    emit serviceChanged();
+  }
+}
+
 QJsonDocument Extractor::invokeSync(QString const methodName, QJsonDocument const* in)
 {
   Invoke* invoke = new Invoke(this, methodName, in);
@@ -77,7 +111,7 @@ void Extractor::search(SearchModel* searchModel, QString const& searchTerm, QStr
   QJsonArray filters;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["searchString"] = searchTerm;
 
   for (QString const& filter : contentFilter) {
@@ -120,7 +154,7 @@ void Extractor::searchMore(SearchModel* searchModel, QString const& searchTerm, 
   QJsonArray filters;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["searchString"] = searchTerm;
 
   for (QString const& filter : contentFilter) {
@@ -177,7 +211,7 @@ void Extractor::downloadExtract(MediaInfo* mediaInfo, QString const& url)
   QJsonObject json;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   document = QJsonDocument(json);
 
@@ -201,7 +235,7 @@ void Extractor::getComments(CommentModel* commentModel, QString const& url)
   QJsonObject json;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   json["page"] = QJsonValue();
   document = QJsonDocument(json);
@@ -234,7 +268,7 @@ void Extractor::getMoreComments(CommentModel* commentModel, QString const& url, 
   QJsonObject json;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   json["page"] = page->toJson();
   document = QJsonDocument(json);
@@ -266,7 +300,7 @@ void Extractor::appendMoreComments(CommentModel* commentModel, QString const& ur
   QJsonObject json;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   json["page"] = page->toJson();
   document = QJsonDocument(json);
@@ -298,7 +332,7 @@ void Extractor::getChannelInfo(ChannelInfo* channelInfo, LinkHandlerModel* linkH
   QJsonObject json;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   document = QJsonDocument(json);
 
@@ -325,7 +359,7 @@ void Extractor::getChannelTabInfo(ChannelTabInfo* channelTabInfo, ListLinkHandle
   QJsonDocument document;
 
   json = linkHandler->toJson();
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   document = QJsonDocument(json);
 
   QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();
@@ -371,7 +405,7 @@ void Extractor::getMoreChannelItems(ListLinkHandler* linkHandler, PageRef* page,
   QJsonDocument document;
 
   json = linkHandler->toJson();
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["page"] = page->toJson();
   document = QJsonDocument(json);
 
@@ -404,7 +438,7 @@ void Extractor::getPlaylistInfo(PlaylistModel* playlistModel, QString const& url
   QJsonArray filters;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   json["page"] = QJsonValue();
   document = QJsonDocument(json);
@@ -442,7 +476,7 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
   QJsonArray filters;
   QJsonDocument document;
 
-  json["service"] = QStringLiteral("YouTube");
+  json["service"] = serviceToString(m_service);
   json["url"] = url;
   json["page"] = page->toJson();
   document = QJsonDocument(json);
@@ -478,7 +512,7 @@ void Extractor::getAvailableContentFilter(FilterModel* filterModel)
   QJsonArray filters;
   QJsonDocument document;
 
-  json["string"] = QStringLiteral("YouTube");
+  json["string"] = serviceToString(m_service);
   document = QJsonDocument(json);
 
   QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();

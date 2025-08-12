@@ -116,6 +116,8 @@ add_custom_target(distfiles
         qml/pages/RepliesPage.qml
         qml/pages/ChannelPage.qml
         qml/pages/PlaylistPage.qml
+        qml/pages/FilterPage.qml
+        qml/pages/ServicePage.qml
         qml/components/VideoPlayer.qml
         qml/components/IconButtonDual.qml
         qml/components/CommentItem.qml

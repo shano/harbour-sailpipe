@@ -20,8 +20,23 @@ class FilterModel;
 
 class Extractor : public QObject
 {
+  Q_PROPERTY(Service service READ service WRITE setService NOTIFY serviceChanged)
+
   Q_OBJECT
 public:
+  enum Service {
+    ServiceInvalid = -1,
+
+    YouTubeService = 0,
+    SoundcloudService= 1,
+    MediaCCCService = 2,
+    PeertubeService = 3,
+    BandcampService = 4,
+
+    ServiceNum
+  };
+  Q_ENUM(Service)
+
   explicit Extractor(QObject *parent = nullptr);
   ~Extractor();
 
@@ -41,8 +56,13 @@ public slots:
   void getMorePlaylistItems(PlaylistModel* playlistModel, QString const& url, PageRef* page);
   void getAvailableContentFilter(FilterModel* filterModel);
 
+  static QString serviceToString(Service service);
+  Service service() const;
+  void setService(Service service);
+
 signals:
   void extracted(QString const& url);
+  void serviceChanged();
 
 private:
   QJsonDocument invokeSync(QString const methodName, QJsonDocument const* in);
@@ -53,6 +73,7 @@ public:
   graal_isolate_t* m_isolate;
   graal_isolatethread_t* m_thread;
   QThreadPool m_threadPool;
+  Service m_service;
 };
 
 #endif // EXTRACTOR_H

@@ -8,6 +8,8 @@ class Extractor;
 
 class FilterModel : public QAbstractListModel
 {
+  Q_PROPERTY(QString defaultFilter READ defaultFilter NOTIFY defaultFilterChanged)
+
   Q_OBJECT
 public:
   enum FilterRoles {
@@ -25,16 +27,23 @@ public:
 
   void replaceAll(QStringList const& filterResults);
 
+  QString defaultFilter() const;
+
 private:
   static QString filterToName(QString const& filter);
 
 public slots:
   void populate(Extractor* extractor);
+  bool filterValid(QString const& filter) const;
+
+signals:
+  void defaultFilterChnaged();
 
 private:
   bool m_loading;
   QHash<int, QByteArray> m_roles;
   QStringList m_filterData;
+  QString m_defaultFilter;
 };
 
 #endif // FILTERMODEL_H

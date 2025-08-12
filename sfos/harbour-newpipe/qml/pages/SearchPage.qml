@@ -12,7 +12,14 @@ Page {
     property bool busy: false
     property int displayCount: 0
     readonly property alias pendingSearch: searchTimer.running
-    property FilterModel filterModel: FilterModel { id: filterModel }
+    property FilterModel filterModel: FilterModel {
+        id: filterModel
+        onModelReset: {
+            if (!filterValid(searchModel.contentFilter)) {
+                searchModel.contentFilter = defaultFilter;
+            }
+        }
+    }
     property SearchModel searchModel: SearchModel {
         id: searchModel
         onContentFilterChanged: searchTimer.restart()
@@ -24,6 +31,14 @@ Page {
 
     onSearchTermChanged: {
         searchTimer.restart()
+    }
+
+    Connections {
+        target: extractor
+        onServiceChanged: {
+            filterModel.populate(extractor);
+            searchTimer.restart()
+        }
     }
 
     Timer {
@@ -63,6 +78,13 @@ Page {
             MenuItem {
                 //% "About"
                 text: qsTrId("newpipe_search_page-menu_about")
+            }
+            MenuItem {
+                //% "Service"
+                text: qsTrId("newpipe_search_page-menu_service")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("../pages/ServicePage.qml"));
+                }
             }
             MenuItem {
                 //% "Filter"
