@@ -95,4 +95,62 @@
         <translation>%0 • %1</translation>
     </message>
 </context>
+<message id="newpipe-playlist_page-header">
+    <location filename="../qml/pages/PlaylistPage.qml" line="40"></location>
+    <source>YouTube Playlist</source>
+    <translation>Spellista</translation>
+</message>
+<message id="newpipe-playlist_no-entries">
+    <location filename="../qml/pages/PlaylistPage.qml" line="61"></location>
+    <source>No entries</source>
+    <translation>Inga poster</translation>
+</message>
+<message id="newpipe-playlist_no-videos">
+    <location filename="../qml/pages/PlaylistPage.qml" line="63"></location>
+    <source>There are no videos in this playlist</source>
+    <translation>Inga videor i spellistan</translation>
+</message>
+<message id="newpipe_playlist_detail-item-count" numerus="yes">
+    <location filename="../qml/components/PlaylistDetails.qml" line="53"></location>
+    <source>%n items</source>
+    <translation>
+        <numerusform>%n post</numerusform>
+        <numerusform>%n poster</numerusform>
+    </translation>
+</message>
+<message id="newpipe_playlist_details-detail_uploader">
+    <location filename="../qml/components/PlaylistDetails.qml" line="64"></location>
+    <source>Uploader</source>
+    <translation>Uppladdare</translation>
+</message>
+<message id="newpipe-channel_details-detail_tags">
+    <location filename="../qml/components/ChannelAbout.qml" line="64"></location>
+    <source>Tags</source>
+    <translation>Etiketter</translation>
+</message>
+<message id="newpipe_playlist_details-detail_description">
+    <location filename="../qml/components/PlaylistDetails.qml" line="70"></location>
+    <source>Description</source>
+    <translation>Beskrivning</translation>
+</message>
+<message id="newpipe-channel_details-detail_subscribers">
+    <location filename="../qml/components/ChannelAbout.qml" line="48"></location>
+    <source>Subscribers</source>
+    <translation>Prenumeranter</translation>
+</message>
+<message id="newpipe-channel_details-detail_verified">
+    <location filename="../qml/components/ChannelAbout.qml" line="54"></location>
+    <source>Verified</source>
+    <translation>Verifierad</translation>
+</message>
+<message id="newpipe-channel_details-detail_verified_yes">
+    <location filename="../qml/components/ChannelAbout.qml" line="57"></location>
+    <source>Yes</source>
+    <translation>Ja</translation>
+</message>
+<message id="newpipe-channel_details-detail_verified_no">
+    <location filename="../qml/components/ChannelAbout.qml" line="59"></location>
+    <source>No</source>
+    <translation>Nej</translation>
+</message>
 </TS>
