@@ -22,12 +22,6 @@ Page {
     Connections {
         target: extractor
         onExtracted: {
-            var length = linkHandlerModel.count();
-
-            for (var pos = 0; pos < length; pos++) {
-                var tab = linkHandlerModel.getLinkHandler(pos);
-            }
-
             tabListModel.generateModel(extractor, linkHandlerModel);
         }
     }

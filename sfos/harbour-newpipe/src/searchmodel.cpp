@@ -110,7 +110,7 @@ void SearchModel::searchMore(Extractor* extractor)
       extractor->search(this, m_searchTerm, m_contentFilters, m_sortFilter);
     }
     else {
-      if (!(m_nextPage->id().isEmpty() && m_nextPage->ids().empty())) {
+      if (!(m_nextPage->id().isEmpty() && m_nextPage->ids().empty() && m_nextPage->url().isEmpty())) {
         setLoading(true);
         extractor->searchMore(this, m_searchTerm, m_contentFilters, m_sortFilter, m_nextPage);
       }
@@ -144,7 +144,7 @@ void SearchModel::setNextPage(PageRef* nextPage)
 
     emit nextPageChanged();
 
-    bool more = m_nextPage && !(m_nextPage->id().isEmpty() && m_nextPage->ids().isEmpty());
+    bool more = m_nextPage && !(m_nextPage->id().isEmpty() && m_nextPage->ids().isEmpty() && m_nextPage->url().isEmpty());
     setMore(more);
   }
 }

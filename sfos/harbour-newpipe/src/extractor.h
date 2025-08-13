@@ -40,8 +40,6 @@ public:
   explicit Extractor(QObject *parent = nullptr);
   ~Extractor();
 
-  static int compareResolutions(QString const& first, QString const& second);
-
 public slots:
   void search(SearchModel* searchModel, QString const& searchTerm, QStringList const& contentFilter, QString const& sortFilter);
   void searchMore(SearchModel* searchModel, QString const& searchTerm, QStringList const& contentFilter, QString const& sortFilter, PageRef* page);

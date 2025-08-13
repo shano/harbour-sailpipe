@@ -253,5 +253,21 @@
         <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-channeltab-header_tracks">
+        <source>Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-tracks">
+        <source>No tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-media_details-detail_views_not_applicable">
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-media_details-detail_likes_not_applicable">
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

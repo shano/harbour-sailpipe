@@ -1,5 +1,6 @@
 #include <QJsonObject>
 #include <QJsonArray>
+#include <cmath>
 
 #include "playlistmodel.h"
 #include "pageref.h"
@@ -178,15 +179,19 @@ QList<PlaylistModel::PlaylistModelSignal> PlaylistModel::parseJsonChanges(QJsonO
     emissions << &PlaylistModel::uploaderNameChanged;
   }
 
+  const int idealWidth = 64;
+  const int idealHeight = 64;
   QString uploaderAvatarUrl;
   QJsonArray uploaderAvatars = json["uploaderAvatars"].toArray();
-  QString resolutionLevel;
+  float minRmse = -1.0;
   for (QJsonValue const& uploaderAvatar : uploaderAvatars) {
     QJsonObject details = uploaderAvatar.toObject();
-    QString estimatedResolutionLevel = details["estimatedResolutionLevel"].toString();
-    if (resolutionLevel.isEmpty() || Extractor::compareResolutions(resolutionLevel, estimatedResolutionLevel) < 0) {
+    int width = details["width"].toInt();
+    int height = details["height"].toInt();
+    float rmse = std::pow(std::pow(idealWidth - width, 2) + std::pow(idealHeight - height, 2), 0.5f);
+    if ((minRmse < 0) || (rmse < minRmse)) {
       uploaderAvatarUrl = details["url"].toString();
-      resolutionLevel = estimatedResolutionLevel;
+      minRmse = rmse;
     }
   }
   m_uploaderAvatar = uploaderAvatarUrl;

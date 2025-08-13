@@ -76,7 +76,7 @@ void CommentModel::loadComments(Extractor* extractor, QString const& url)
       extractor->getComments(this, url);
     }
     else {
-      if (!m_nextPage->id().isEmpty()) {
+      if (!(m_nextPage->id().isEmpty() && m_nextPage->url().isEmpty())) {
         if (m_commentResults.isEmpty()) {
           setLoading(true);
           extractor->getMoreComments(this, url, m_nextPage);
@@ -105,7 +105,7 @@ void CommentModel::setNextPage(PageRef* nextPage)
 
     emit nextPageChanged();
 
-    bool more = m_nextPage && !m_nextPage->id().isEmpty();
+    bool more = m_nextPage && !(m_nextPage->id().isEmpty() && m_nextPage->url().isEmpty());
     setMore(more);
   }
 }

@@ -44,7 +44,7 @@ function generate {
 generate 32 32 "icon-s-media-view icon-s-media-count"
 
 # Generate medium icons
-generate 64 64 "icon-tab-about icon-tab-playlists icon-tab-video-full icon-tab-video-live icon-tab-video-short icon-tab-albums"
+generate 64 64 "icon-tab-about icon-tab-playlists icon-tab-video-full icon-tab-video-live icon-tab-video-short icon-tab-albums icon-tab-tracks"
 
 # Generate large icons
 generate 96 96 "icon-l-replay icon-l-skip"
