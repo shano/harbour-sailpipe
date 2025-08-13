@@ -49,12 +49,14 @@ SilicaControl {
 
                 StatItem {
                     source: "image://newpipe/icon-s-media-view?" + Theme.highlightColor
-                    text: mediaInfo.viewCount
+                    //% "N/A"
+                    text: mediaInfo.viewCount >= 0 ? mediaInfo.viewCount : qsTrId("newpipe-media_details-detail_views_not_applicable")
                 }
 
                 StatItem {
+                    //% "N/A"
                     source: "image://theme/icon-s-like?" + Theme.highlightColor
-                    text: mediaInfo.likeCount
+                    text: mediaInfo.likeCount >= 0 ? mediaInfo.likeCount : qsTrId("newpipe-media_details-detail_likes_not_applicable")
                 }
             }
 

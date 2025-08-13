@@ -78,20 +78,30 @@ QString FilterModel::filterToName(QString const& filter)
 void FilterModel::replaceAll(QStringList const& filterResults)
 {
   QString defaultFilter("");
+  int oldCount = m_filterData.count();
+  bool emitDefaultFilterChanged = false;
+
+  if (!filterResults.isEmpty()) {
+    defaultFilter = filterResults.first();
+  }
+
+  if (m_defaultFilter != defaultFilter) {
+    m_defaultFilter = defaultFilter;
+
+    emitDefaultFilterChanged = true;
+  }
 
   beginResetModel();
   m_filterData = filterResults;
   endResetModel();
   m_loading = false;
 
-  if (!m_filterData.isEmpty()) {
-    defaultFilter = m_filterData.first();
+  if (m_filterData.count() != oldCount) {
+    emit countChanged();
   }
 
-  if (m_defaultFilter != defaultFilter) {
-    m_defaultFilter = defaultFilter;
-
-    emit defaultFilterChnaged();
+  if (emitDefaultFilterChanged) {
+    emit defaultFilterChanged();
   }
 }
 
@@ -120,4 +130,9 @@ bool FilterModel::filterValid(QString const& filter) const
   }
 
   return valid;
+}
+
+int FilterModel::count() const
+{
+  return m_filterData.count();
 }

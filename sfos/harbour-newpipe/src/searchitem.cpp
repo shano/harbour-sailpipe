@@ -1,5 +1,6 @@
 #include <QJsonObject>
 #include <QJsonArray>
+#include <cmath>
 
 #include "extractor.h"
 #include "searchitemstream.h"
@@ -75,15 +76,19 @@ void SearchItem::setUrl(QString const& url)
 
 void SearchItem::parseJson(QJsonObject const& json)
 {
+  const int idealWidth = 96 * 1.5;
+  const int idealHeight = 64 * 1.5;
   QString thumbnailUrl;
   QJsonArray thumbnails = json["thumbnails"].toArray();
-  QString resolutionLevel;
+  float minRmse = -1.0;
   for (QJsonValue const& thumbnail : thumbnails) {
     QJsonObject details = thumbnail.toObject();
-    QString estimatedResolutionLevel = details["estimatedResolutionLevel"].toString();
-    if (resolutionLevel.isEmpty() || Extractor::compareResolutions(resolutionLevel, estimatedResolutionLevel) < 0) {
+    int width = details["width"].toInt();
+    int height = details["height"].toInt();
+    float rmse = std::pow(std::pow(idealWidth - width, 2) + std::pow(idealHeight - height, 2), 0.5f);
+    if ((minRmse < 0) || (rmse < minRmse)) {
       thumbnailUrl = details["url"].toString();
-      resolutionLevel = estimatedResolutionLevel;
+      minRmse = rmse;
     }
   }
   m_name = json["name"].toString();

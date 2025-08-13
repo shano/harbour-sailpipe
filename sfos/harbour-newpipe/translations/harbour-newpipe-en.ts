@@ -38,33 +38,43 @@
         <source>NewPipe</source>
         <translation>NewPipe</translation>
     </message>
+    <message id="newpipe-media_details-detail_views_not_applicable">
+        <location filename="../qml/components/MediaDetails.qml" line="53"/>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-media_details-detail_likes_not_applicable">
+        <location filename="../qml/components/MediaDetails.qml" line="59"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="newpipe-media_details-detail_uploader">
-        <location filename="../qml/components/MediaDetails.qml" line="63"/>
+        <location filename="../qml/components/MediaDetails.qml" line="65"/>
         <source>Uploader</source>
         <translation>Uploader</translation>
     </message>
     <message id="newpipe-media_details-detail_date">
-        <location filename="../qml/components/MediaDetails.qml" line="69"/>
+        <location filename="../qml/components/MediaDetails.qml" line="71"/>
         <source>Upload date</source>
         <translation>Upload date</translation>
     </message>
     <message id="newpipe-media_details-detail_length">
-        <location filename="../qml/components/MediaDetails.qml" line="75"/>
+        <location filename="../qml/components/MediaDetails.qml" line="77"/>
         <source>Length</source>
         <translation>Length</translation>
     </message>
     <message id="newpipe-media_details-detail_category">
-        <location filename="../qml/components/MediaDetails.qml" line="81"/>
+        <location filename="../qml/components/MediaDetails.qml" line="83"/>
         <source>Category</source>
         <translation>Category</translation>
     </message>
     <message id="newpipe-media_details-detail_licence">
-        <location filename="../qml/components/MediaDetails.qml" line="87"/>
+        <location filename="../qml/components/MediaDetails.qml" line="89"/>
         <source>Licence</source>
         <translation>Licence</translation>
     </message>
     <message id="newpipe-media_details-detail_description">
-        <location filename="../qml/components/MediaDetails.qml" line="93"/>
+        <location filename="../qml/components/MediaDetails.qml" line="95"/>
         <source>Description</source>
         <translation>Description</translation>
     </message>
@@ -230,6 +240,16 @@
         <source>No albums</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-channeltab-header_tracks">
+        <location filename="../src/channeltablistmodel.cpp" line="67"/>
+        <source>Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-channeltab-placeholder_no-tracks">
+        <location filename="../src/channeltablistmodel.cpp" line="70"/>
+        <source>No tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="newpipe-utils_length_unknown">
         <location filename="../src/utils.cpp" line="54"/>
         <source>??:??:??</source>
@@ -241,72 +261,72 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-menu_about">
-        <location filename="../qml/pages/SearchPage.qml" line="73"/>
+        <location filename="../qml/pages/SearchPage.qml" line="81"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-menu_service">
-        <location filename="../qml/pages/SearchPage.qml" line="77"/>
+        <location filename="../qml/pages/SearchPage.qml" line="85"/>
         <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-menu_filter">
-        <location filename="../qml/pages/SearchPage.qml" line="84"/>
+        <location filename="../qml/pages/SearchPage.qml" line="92"/>
         <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-search_placeholder">
-        <location filename="../qml/pages/SearchPage.qml" line="108"/>
+        <location filename="../qml/pages/SearchPage.qml" line="117"/>
         <source>Search</source>
         <translation type="unfinished">Search</translation>
     </message>
     <message id="newpipe_search_page-search_no_entries">
-        <location filename="../qml/pages/SearchPage.qml" line="127"/>
+        <location filename="../qml/pages/SearchPage.qml" line="136"/>
         <source>No entries</source>
         <translation type="unfinished">No entries</translation>
     </message>
     <message id="newpipe_search_page-search_enter_some_text">
-        <location filename="../qml/pages/SearchPage.qml" line="129"/>
+        <location filename="../qml/pages/SearchPage.qml" line="138"/>
         <source>Enter some text to search</source>
         <translation type="unfinished">Enter some text to search</translation>
     </message>
     <message id="newpipe-filter-name_all">
-        <location filename="../src/filtermodel.cpp" line="48"/>
+        <location filename="../src/filtermodel.cpp" line="49"/>
         <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_videos">
-        <location filename="../src/filtermodel.cpp" line="50"/>
+        <location filename="../src/filtermodel.cpp" line="51"/>
         <source>Videos</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_channels">
-        <location filename="../src/filtermodel.cpp" line="52"/>
+        <location filename="../src/filtermodel.cpp" line="53"/>
         <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_playlists">
-        <location filename="../src/filtermodel.cpp" line="54"/>
+        <location filename="../src/filtermodel.cpp" line="55"/>
         <source>Playlists</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_music-congs">
-        <location filename="../src/filtermodel.cpp" line="56"/>
+        <location filename="../src/filtermodel.cpp" line="57"/>
         <source>Music songs</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_music-videos">
-        <location filename="../src/filtermodel.cpp" line="58"/>
+        <location filename="../src/filtermodel.cpp" line="59"/>
         <source>Music videos</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_music-albums">
-        <location filename="../src/filtermodel.cpp" line="60"/>
+        <location filename="../src/filtermodel.cpp" line="61"/>
         <source>Music albums</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe-filter-name_music-playlists">
-        <location filename="../src/filtermodel.cpp" line="62"/>
+        <location filename="../src/filtermodel.cpp" line="63"/>
         <source>Music playlists</source>
         <translation type="unfinished"></translation>
     </message>

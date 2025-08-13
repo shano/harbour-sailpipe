@@ -192,20 +192,6 @@ void Extractor::searchMore(SearchModel* searchModel, QString const& searchTerm, 
   watcher->setFuture(invokeAsync("getMoreSearchItems", &document));
 }
 
-int Extractor::compareResolutions(QString const& first, QString const& second)
-{
-  static QStringList const ordering = {"", "HIGH", "MEDIUM", "LOW"};
-  int result = 0;
-  int firstIndex;
-  int secondIndex;
-
-  firstIndex = ordering.indexOf(first);
-  secondIndex = ordering.indexOf(second);
-  result = qBound(-1, firstIndex - secondIndex, 1);
-
-  return result;
-}
-
 void Extractor::downloadExtract(MediaInfo* mediaInfo, QString const& url)
 {
   QJsonObject json;

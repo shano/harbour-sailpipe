@@ -62,6 +62,13 @@ ChannelTabListModel::ChannelTabListModel(QObject *parent)
     //% "No albums"
     qtTrId("newpipe-channeltab-placeholder_no-albums"),
     this));
+  m_tabBarLookup.insert("tracks", new TabBarLookup(
+    //% "Tracks"
+    qtTrId("newpipe-channeltab-header_tracks"),
+    "image://newpipe/icon-tab-tracks",
+    //% "No tracks"
+    qtTrId("newpipe-channeltab-placeholder_no-tracks"),
+    this));
 }
 
 QHash<int, QByteArray> ChannelTabListModel::roleNames() const

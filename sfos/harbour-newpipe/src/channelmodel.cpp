@@ -22,7 +22,7 @@ void ChannelModel::search(Extractor* extractor)
 void ChannelModel::searchMore(Extractor* extractor)
 {
   if (m_more) {
-    if (m_nextPage && !(m_nextPage->id().isEmpty() && m_nextPage->ids().empty())) {
+    if (m_nextPage && !(m_nextPage->id().isEmpty() && m_nextPage->ids().empty() && m_nextPage->url().isEmpty())) {
       setLoading(true);
       extractor->getMoreChannelItems(m_linkHandler, m_nextPage, this);
     }

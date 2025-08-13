@@ -6,14 +6,17 @@ Item {
     property int count
     property alias text: placeholder.text
     property alias hintText: placeholder.hintText
-    anchors.horizontalCenter: parent.horizontalCenter
+
+    width: parent.width
+    height: parent.height
+    y: parent.originY - parent.contentY
 
     BusyIndicator {
         visible: loading && (count === 0)
         running: visible
         size: BusyIndicatorSize.Large
         anchors.horizontalCenter: parent.horizontalCenter
-        y: Math.round(Screen.height/3 - height/2)
+        y: Math.round((Screen.height / 3) - (height / 2))
     }
 
     ViewPlaceholder {

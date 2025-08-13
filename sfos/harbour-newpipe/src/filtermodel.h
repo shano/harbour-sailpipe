@@ -9,6 +9,7 @@ class Extractor;
 class FilterModel : public QAbstractListModel
 {
   Q_PROPERTY(QString defaultFilter READ defaultFilter NOTIFY defaultFilterChanged)
+  Q_PROPERTY(int count READ count NOTIFY countChanged)
 
   Q_OBJECT
 public:
@@ -28,6 +29,7 @@ public:
   void replaceAll(QStringList const& filterResults);
 
   QString defaultFilter() const;
+  int count() const;
 
 private:
   static QString filterToName(QString const& filter);
@@ -37,7 +39,8 @@ public slots:
   bool filterValid(QString const& filter) const;
 
 signals:
-  void defaultFilterChnaged();
+  void defaultFilterChanged();
+  void countChanged();
 
 private:
   bool m_loading;

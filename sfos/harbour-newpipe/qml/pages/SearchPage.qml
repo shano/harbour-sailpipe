@@ -36,6 +36,7 @@ Page {
     Connections {
         target: extractor
         onServiceChanged: {
+            searchModel.clear();
             filterModel.populate(extractor);
             searchTimer.restart()
         }
@@ -95,6 +96,7 @@ Page {
                         searchModel: page.searchModel
                     });
                 }
+                enabled: filterModel.count > 0
             }
         }
 
