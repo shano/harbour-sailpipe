@@ -4,17 +4,15 @@
 <context>
     <name></name>
     <message id="newpipe-comment_item-replies" numerus="yes">
-        <location filename="../qml/components/CommentItem.qml" line="116"/>
         <source>%n replies</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n reply</numerusform>
             <numerusform>%n replies</numerusform>
         </translation>
     </message>
     <message id="newpipe-replies_page-header">
-        <location filename="../qml/pages/RepliesPage.qml" line="43"/>
         <source>Replies</source>
-        <translation>Replies</translation>
+        <translation type="vanished">Replies</translation>
     </message>
     <message id="newpipe-proglist_search-placeholder">
         <source>Search</source>
@@ -28,55 +26,33 @@
         <source>Enter some text to search</source>
         <translation type="vanished">Enter some text to search</translation>
     </message>
-    <message id="newpipe-video_page-header">
-        <location filename="../qml/pages/VideoPage.qml" line="41"/>
-        <source>YouTube Video</source>
-        <translation>YouTube Video</translation>
-    </message>
     <message id="newpipe-cover-title">
-        <location filename="../qml/cover/CoverPage.qml" line="9"/>
         <source>NewPipe</source>
-        <translation>NewPipe</translation>
-    </message>
-    <message id="newpipe-media_details-detail_views_not_applicable">
-        <location filename="../qml/components/MediaDetails.qml" line="53"/>
-        <source>N/A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-media_details-detail_likes_not_applicable">
-        <location filename="../qml/components/MediaDetails.qml" line="59"/>
-        <source></source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">NewPipe</translation>
     </message>
     <message id="newpipe-media_details-detail_uploader">
-        <location filename="../qml/components/MediaDetails.qml" line="65"/>
         <source>Uploader</source>
-        <translation>Uploader</translation>
+        <translation type="vanished">Uploader</translation>
     </message>
     <message id="newpipe-media_details-detail_date">
-        <location filename="../qml/components/MediaDetails.qml" line="71"/>
         <source>Upload date</source>
-        <translation>Upload date</translation>
+        <translation type="vanished">Upload date</translation>
     </message>
     <message id="newpipe-media_details-detail_length">
-        <location filename="../qml/components/MediaDetails.qml" line="77"/>
         <source>Length</source>
-        <translation>Length</translation>
+        <translation type="vanished">Length</translation>
     </message>
     <message id="newpipe-media_details-detail_category">
-        <location filename="../qml/components/MediaDetails.qml" line="83"/>
         <source>Category</source>
-        <translation>Category</translation>
+        <translation type="vanished">Category</translation>
     </message>
     <message id="newpipe-media_details-detail_licence">
-        <location filename="../qml/components/MediaDetails.qml" line="89"/>
         <source>Licence</source>
-        <translation>Licence</translation>
+        <translation type="vanished">Licence</translation>
     </message>
     <message id="newpipe-media_details-detail_description">
-        <location filename="../qml/components/MediaDetails.qml" line="95"/>
         <source>Description</source>
-        <translation>Description</translation>
+        <translation type="vanished">Description</translation>
     </message>
     <message id="newpipe-searchitem-stream_inforow">
         <location filename="../src/searchitemstream.cpp" line="78"/>
@@ -120,45 +96,9 @@
         <source>%0 • %1</source>
         <translation>%0 • %1</translation>
     </message>
-    <message id="newpipe-channel_details-detail_subscribers">
-        <location filename="../qml/components/ChannelAbout.qml" line="48"/>
-        <source>Subscribers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_verified">
-        <location filename="../qml/components/ChannelAbout.qml" line="54"/>
-        <source>Verified</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_verified_yes">
-        <location filename="../qml/components/ChannelAbout.qml" line="57"/>
-        <source>Yes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_verified_no">
-        <location filename="../qml/components/ChannelAbout.qml" line="59"/>
-        <source>No</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_tags">
-        <location filename="../qml/components/ChannelAbout.qml" line="64"/>
-        <source>Tags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-playlist_page-header">
-        <location filename="../qml/pages/PlaylistPage.qml" line="40"/>
-        <source>YouTube Playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe-playlist_no-entries">
-        <location filename="../qml/pages/PlaylistPage.qml" line="61"/>
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
-    </message>
-    <message id="newpipe-playlist_no-videos">
-        <location filename="../qml/pages/PlaylistPage.qml" line="63"/>
-        <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">No entries</translation>
     </message>
     <message id="newpipe_playlist_detail-video-count" numerus="yes">
         <source>%n videos</source>
@@ -333,6 +273,126 @@
     <message id="newpipe_service_page-page_header">
         <location filename="../qml/pages/ServicePage.qml" line="17"/>
         <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_subscribers">
+        <location filename="../qml/components/ChannelAbout.qml" line="48"/>
+        <source>Subscribers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_subscribers_not_applicable">
+        <location filename="../qml/components/ChannelAbout.qml" line="50"/>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_verified">
+        <location filename="../qml/components/ChannelAbout.qml" line="55"/>
+        <source>Verified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_verified_yes">
+        <location filename="../qml/components/ChannelAbout.qml" line="58"/>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_verified_no">
+        <location filename="../qml/components/ChannelAbout.qml" line="60"/>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_tags">
+        <location filename="../qml/components/ChannelAbout.qml" line="65"/>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media_details-detail_views_not_applicable">
+        <location filename="../qml/components/MediaDetails.qml" line="53"/>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media_details-detail_likes_not_applicable">
+        <location filename="../qml/components/MediaDetails.qml" line="59"/>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media_details-detail_uploader">
+        <location filename="../qml/components/MediaDetails.qml" line="65"/>
+        <source>Uploader</source>
+        <translation type="unfinished">Uploader</translation>
+    </message>
+    <message id="newpipe_media_details-detail_date">
+        <location filename="../qml/components/MediaDetails.qml" line="71"/>
+        <source>Upload date</source>
+        <translation type="unfinished">Upload date</translation>
+    </message>
+    <message id="newpipe_media_details-detail_length">
+        <location filename="../qml/components/MediaDetails.qml" line="77"/>
+        <source>Length</source>
+        <translation type="unfinished">Length</translation>
+    </message>
+    <message id="newpipe_media_details-detail_category">
+        <location filename="../qml/components/MediaDetails.qml" line="83"/>
+        <source>Category</source>
+        <translation type="unfinished">Category</translation>
+    </message>
+    <message id="newpipe_media_details-detail_licence">
+        <location filename="../qml/components/MediaDetails.qml" line="89"/>
+        <source>Licence</source>
+        <translation type="unfinished">Licence</translation>
+    </message>
+    <message id="newpipe_media_details-detail_description">
+        <location filename="../qml/components/MediaDetails.qml" line="95"/>
+        <source>Description</source>
+        <translation type="unfinished">Description</translation>
+    </message>
+    <message id="newpipe_comment_item-replies" numerus="yes">
+        <location filename="../qml/components/CommentItem.qml" line="116"/>
+        <source>%n replies</source>
+        <translation type="unfinished">
+            <numerusform>%n reply</numerusform>
+            <numerusform>%n replies</numerusform>
+        </translation>
+    </message>
+    <message id="newpipe_cover-title">
+        <location filename="../qml/cover/CoverPage.qml" line="9"/>
+        <source>NewPipe</source>
+        <translation type="unfinished">NewPipe</translation>
+    </message>
+    <message id="newpipe_playlist_page-header">
+        <location filename="../qml/pages/PlaylistPage.qml" line="40"/>
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist-no_entries">
+        <location filename="../qml/pages/PlaylistPage.qml" line="61"/>
+        <source>No entries</source>
+        <translation type="unfinished">No entries</translation>
+    </message>
+    <message id="newpipe_playlist-no_videos">
+        <location filename="../qml/pages/PlaylistPage.qml" line="63"/>
+        <source>There are no videos in this playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_replies-page_header">
+        <location filename="../qml/pages/RepliesPage.qml" line="43"/>
+        <source>Replies</source>
+        <translation type="unfinished">Replies</translation>
+    </message>
+    <message id="newpipe_media-page_header_video">
+        <location filename="../qml/pages/VideoPage.qml" line="47"/>
+        <source>%0 Video</source>
+        <oldsource>%1 Video</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media-page_header_audio">
+        <location filename="../qml/pages/VideoPage.qml" line="52"/>
+        <source>%0 Audio</source>
+        <oldsource>%1 Audio</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media-page_header_media">
+        <location filename="../qml/pages/VideoPage.qml" line="56"/>
+        <source>Media</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -21,6 +21,7 @@ class FilterModel;
 class Extractor : public QObject
 {
   Q_PROPERTY(Service service READ service WRITE setService NOTIFY serviceChanged)
+  Q_PROPERTY(QString serviceName READ serviceName NOTIFY serviceChanged)
 
   Q_OBJECT
 public:
@@ -57,6 +58,7 @@ public slots:
   static QString serviceToString(Service service);
   Service service() const;
   void setService(Service service);
+  QString serviceName() const;
 
 signals:
   void extracted(QString const& url);

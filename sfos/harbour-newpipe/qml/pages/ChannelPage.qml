@@ -62,6 +62,7 @@ Page {
                 spacing: Theme.paddingLarge
 
                 SearchThumbnail {
+                    id: thumbnail
                     infoType: SearchItem.Channel
                     source: root.thumbnail
                     width: Theme.iconSizeLarge * iconScale
@@ -85,6 +86,7 @@ Page {
                         textFormat: Text.PlainText
                         font.pixelSize: Theme.fontSizeExtraSmall
                         text: root.infoRow || ""
+                        width: parent.width
                         truncationMode: TruncationMode.Fade
                         visible: !!root.infoRow
                     }

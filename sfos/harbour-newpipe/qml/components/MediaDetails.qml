@@ -50,49 +50,49 @@ SilicaControl {
                 StatItem {
                     source: "image://newpipe/icon-s-media-view?" + Theme.highlightColor
                     //% "N/A"
-                    text: mediaInfo.viewCount >= 0 ? mediaInfo.viewCount : qsTrId("newpipe-media_details-detail_views_not_applicable")
+                    text: mediaInfo.viewCount >= 0 ? mediaInfo.viewCount : qsTrId("newpipe_media_details-detail_views_not_applicable")
                 }
 
                 StatItem {
-                    //% "N/A"
                     source: "image://theme/icon-s-like?" + Theme.highlightColor
-                    text: mediaInfo.likeCount >= 0 ? mediaInfo.likeCount : qsTrId("newpipe-media_details-detail_likes_not_applicable")
+                    //% "N/A"
+                    text: mediaInfo.likeCount >= 0 ? mediaInfo.likeCount : qsTrId("newpipe_media_details-detail_likes_not_applicable")
                 }
             }
 
             KeyValue {
                 //% "Uploader"
-                key: qsTrId("newpipe-media_details-detail_uploader")
+                key: qsTrId("newpipe_media_details-detail_uploader")
                 value: mediaInfo.uploaderName
             }
 
             KeyValue {
                 //% "Upload date"
-                key: qsTrId("newpipe-media_details-detail_date")
+                key: qsTrId("newpipe_media_details-detail_date")
                 value: Format.formatDate(mediaInfo.uploadDate, Format.DateLong)
             }
 
             KeyValue {
                 //% "Length"
-                key: qsTrId("newpipe-media_details-detail_length")
+                key: qsTrId("newpipe_media_details-detail_length")
                 value: Utils.lengthToTimeString(mediaInfo.length)
             }
 
             KeyValue {
                 //% "Category"
-                key: qsTrId("newpipe-media_details-detail_category")
+                key: qsTrId("newpipe_media_details-detail_category")
                 value: mediaInfo.category
             }
 
             KeyValue {
                 //% "Licence"
-                key: qsTrId("newpipe-media_details-detail_licence")
+                key: qsTrId("newpipe_media_details-detail_licence")
                 value: mediaInfo.licence
             }
 
             KeyValue {
                 //% "Description"
-                key: qsTrId("newpipe-media_details-detail_description")
+                key: qsTrId("newpipe_media_details-detail_description")
                 value: mediaInfo.description
             }
         }

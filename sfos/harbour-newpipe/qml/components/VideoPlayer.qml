@@ -13,7 +13,7 @@ Item {
     readonly property int controlgap: 2 * Theme.paddingLarge
     readonly property bool playing: (media.playbackState == MediaPlayer.PlayingState)
     property bool controllable: isControllable()
-    property bool forceVisible: false
+    property bool forceVisible: controllable
 
     width: parent.width
     height: width * (9 / 16)
@@ -30,23 +30,20 @@ Item {
         return result;
     }
 
-    onControllableChanged: {
-        if (controllable == true) {
-            forceVisible = true;
+    onForceVisibleChanged: {
+        if ((forceVisible == true) && (controllable == true)) {
             openControls();
         }
     }
 
     function toggleControls() {
         if ((!controlsvisible) || (fadeout.running)) {
-            console.log("Display controls")
             fadeout.stop()
             controls.opacity = 1
             controlsvisible = true
             controlsTimer.restart()
         }
         else {
-            console.log("Remove controls")
             controlsTimer.stop()
             fadeout.stop()
             controlsvisible = false
@@ -54,7 +51,6 @@ Item {
     }
 
     function openControls () {
-        console.log("Display controls")
         fadeout.stop()
         controls.opacity = 1
         controlsvisible = true
@@ -66,6 +62,12 @@ Item {
         }
     }
 
+    function closeControls () {
+        controlsTimer.stop()
+        fadeout.stop()
+        controlsvisible = false
+    }
+
     MediaPlayer {
         id: media
         autoPlay: false
@@ -73,8 +75,13 @@ Item {
         onPositionChanged: {
             mediaslider.value = position
         }
-        onAvailabilityChanged: console.log("Availability: " + availability)
-        onSourceChanged: console.log("Source: " + source)
+        onStatusChanged: {
+            if (status == MediaPlayer.EndOfMedia) {
+                seek(0);
+                forceVisible = true;
+                openControls();
+            }
+        }
     }
 
     VideoOutput {
@@ -89,7 +96,7 @@ Item {
             id: image
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
-            visible: !controllable || forceVisible
+            visible: !controllable || forceVisible || !media.hasVideo
         }
     }
 
@@ -100,7 +107,6 @@ Item {
         repeat: false
         triggeredOnStart: false
         onTriggered: {
-            console.log("Control fadeout")
             fadeout.start()
         }
     }
@@ -108,7 +114,6 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            console.log("Video clicked")
             toggleControls()
         }
     }
@@ -126,7 +131,6 @@ Item {
             duration: 1000
             onRunningChanged: {
                 if (!running) {
-                    console.log("Faded out, making invisible")
                     controlsvisible = false
                 }
             }
@@ -135,7 +139,6 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("Rectangle clicked")
                 toggleControls()
             }
         }
@@ -156,18 +159,15 @@ Item {
             onClicked: {
                 if (forceVisible) {
                     forceVisible = false;
-                    toggleControls();
+                    closeControls();
                 }
                 else {
                     openControls()
                 }
-                console.log("MouseArea click 2")
                 if (playing) {
-                    console.log("Pause 2")
                     media.pause()
                 }
                 else {
-                    console.log("Play 2")
                     media.play()
                 }
             }

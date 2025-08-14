@@ -40,7 +40,7 @@ Page {
             PageHeader {
                 id: header
                 //% "Replies"
-                title: qsTrId("newpipe-replies_page-header")
+                title: qsTrId("newpipe_replies-page_header")
             }
         }
 

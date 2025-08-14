@@ -45,23 +45,24 @@ TabItem {
 
             AboutKeyValue {
                 //% "Subscribers"
-                key: qsTrId("newpipe-channel_details-detail_subscribers")
-                value: root.subscriberCount
+                key: qsTrId("newpipe_channel_details-detail_subscribers")
+                //% "N/A"
+                value: root.subscriberCount >= 0 ? root.subscriberCount : qsTrId("newpipe_channel_details-detail_subscribers_not_applicable")
             }
 
             AboutKeyValue {
                 //% "Verified"
-                key: qsTrId("newpipe-channel_details-detail_verified")
+                key: qsTrId("newpipe_channel_details-detail_verified")
                 value: root.verified
                          //% "Yes"
-                       ? qsTrId("newpipe-channel_details-detail_verified_yes")
+                       ? qsTrId("newpipe_channel_details-detail_verified_yes")
                          //% "No"
-                       : qsTrId("newpipe-channel_details-detail_verified_no")
+                       : qsTrId("newpipe_channel_details-detail_verified_no")
             }
 
             AboutKeyValue {
                 //% "Tags"
-                key: qsTrId("newpipe-channel_details-detail_tags")
+                key: qsTrId("newpipe_channel_details-detail_tags")
                 value: root.tags
             }
         }

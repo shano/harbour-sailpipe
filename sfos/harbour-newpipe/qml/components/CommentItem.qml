@@ -113,7 +113,7 @@ ListItem {
         ContextMenu {
             MenuItem {
                 //% "%n replies"
-                text: qsTrId("newpipe-comment_item-replies", replyCount)
+                text: qsTrId("newpipe_comment_item-replies", replyCount)
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("../pages/RepliesPage.qml"), {
                         url: root.url,

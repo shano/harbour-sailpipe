@@ -93,6 +93,11 @@ void Extractor::setService(Service service)
   }
 }
 
+QString Extractor::serviceName() const
+{
+  return serviceToString(m_service);
+}
+
 QJsonDocument Extractor::invokeSync(QString const methodName, QJsonDocument const* in)
 {
   Invoke* invoke = new Invoke(this, methodName, in);
