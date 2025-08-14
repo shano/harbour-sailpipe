@@ -358,7 +358,7 @@
 <message id="newpipe_playlist_details-detail_uploader">
     <location filename="../qml/components/PlaylistDetails.qml" line="64"></location>
     <source>Uploader</source>
-    <translation>Uppladdare</translation>
+    <translation type="unfinished">Uppladdare</translation>
 </message>
 <message id="newpipe-channel_details-detail_tags">
     <location filename="../qml/components/ChannelAbout.qml" line="64"></location>
@@ -368,7 +368,7 @@
 <message id="newpipe_playlist_details-detail_description">
     <location filename="../qml/components/PlaylistDetails.qml" line="70"></location>
     <source>Description</source>
-    <translation>Beskrivning</translation>
+    <translation type="unfinished">Beskrivning</translation>
 </message>
 <message id="newpipe-channel_details-detail_subscribers">
     <location filename="../qml/components/ChannelAbout.qml" line="48"></location>
