@@ -37,7 +37,7 @@ Page {
             PageHeader {
                 id: header
                 //% "YouTube Playlist"
-                title: qsTrId("newpipe-playlist_page-header")
+                title: qsTrId("newpipe_playlist_page-header")
             }
 
             Label {
@@ -58,9 +58,9 @@ Page {
             enabled: playlist.count === 0
             textFormat: Text.RichText
             //% "No entries"
-            text: qsTrId("newpipe-playlist_no-entries")
+            text: qsTrId("newpipe_playlist-no_entries")
             //% "There are no videos in this playlist"
-            hintText: qsTrId("newpipe-playlist_no-videos")
+            hintText: qsTrId("newpipe_playlist-no_videos")
         }
 
         delegate: SearchDelegate {

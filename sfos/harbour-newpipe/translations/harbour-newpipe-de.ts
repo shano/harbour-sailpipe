@@ -5,14 +5,14 @@
     <name></name>
     <message id="newpipe-comment_item-replies" numerus="yes">
         <source>%n replies</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n Antwort</numerusform>
             <numerusform>%n Antworten</numerusform>
         </translation>
     </message>
     <message id="newpipe-replies_page-header">
         <source>Replies</source>
-        <translation>Antworten</translation>
+        <translation type="vanished">Antworten</translation>
     </message>
     <message id="newpipe-proglist_search-placeholder">
         <source>Search</source>
@@ -27,36 +27,37 @@
         <translation type="vanished">Gib Text ein um zu suchen</translation>
     </message>
     <message id="newpipe-video_page-header">
-        <source>YouTube Video</source>
-        <translation>YouTube-Video</translation>
+        <source>%1 Video</source>
+        <oldsource>%0 Video</oldsource>
+        <translation type="obsolete">YouTube-Video</translation>
     </message>
     <message id="newpipe-cover-title">
         <source>NewPipe</source>
-        <translation>NewPipe</translation>
+        <translation type="vanished">NewPipe</translation>
     </message>
     <message id="newpipe-media_details-detail_uploader">
         <source>Uploader</source>
-        <translation>Uploader</translation>
+        <translation type="vanished">Uploader</translation>
     </message>
     <message id="newpipe-media_details-detail_category">
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation type="vanished">Kategorie</translation>
     </message>
     <message id="newpipe-media_details-detail_description">
         <source>Description</source>
-        <translation>Beschreibung</translation>
+        <translation type="vanished">Beschreibung</translation>
     </message>
     <message id="newpipe-media_details-detail_date">
         <source>Upload date</source>
-        <translation>Veröffentlichungsdatum</translation>
+        <translation type="vanished">Veröffentlichungsdatum</translation>
     </message>
     <message id="newpipe-media_details-detail_length">
         <source>Length</source>
-        <translation>Länge</translation>
+        <translation type="vanished">Länge</translation>
     </message>
     <message id="newpipe-media_details-detail_licence">
         <source>Licence</source>
-        <translation>Lizenz</translation>
+        <translation type="vanished">Lizenz</translation>
     </message>
     <message id="newpipe-searchitem-stream_inforow">
         <source>%0 • %1</source>
@@ -94,37 +95,9 @@
         <source>%0 • %1</source>
         <translation>%0 • %1</translation>
     </message>
-    <message id="newpipe-channel_details-detail_subscribers">
-        <source>Subscribers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_verified">
-        <source>Verified</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_verified_yes">
-        <source>Yes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_verified_no">
-        <source>No</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-channel_details-detail_tags">
-        <source>Tags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-playlist_page-header">
-        <source>YouTube Playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe-playlist_no-entries">
         <source>No entries</source>
-        <translation type="unfinished">Keine Einträge</translation>
-    </message>
-    <message id="newpipe-playlist_no-videos">
-        <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Keine Einträge</translation>
     </message>
     <message id="newpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
@@ -261,12 +234,101 @@
         <source>No tracks</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-media_details-detail_views_not_applicable">
+    <message id="newpipe_channel_details-detail_subscribers">
+        <source>Subscribers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_verified">
+        <source>Verified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_verified_yes">
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_verified_no">
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel_details-detail_tags">
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-media_details-detail_likes_not_applicable">
-        <source></source>
+    <message id="newpipe_media_details-detail_likes_not_applicable">
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media_details-detail_uploader">
+        <source>Uploader</source>
+        <translation type="unfinished">Uploader</translation>
+    </message>
+    <message id="newpipe_media_details-detail_date">
+        <source>Upload date</source>
+        <translation type="unfinished">Veröffentlichungsdatum</translation>
+    </message>
+    <message id="newpipe_media_details-detail_length">
+        <source>Length</source>
+        <translation type="unfinished">Länge</translation>
+    </message>
+    <message id="newpipe_media_details-detail_category">
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message id="newpipe_media_details-detail_licence">
+        <source>Licence</source>
+        <translation type="unfinished">Lizenz</translation>
+    </message>
+    <message id="newpipe_media_details-detail_description">
+        <source>Description</source>
+        <translation type="unfinished">Beschreibung</translation>
+    </message>
+    <message id="newpipe_channel_details-detail_subscribers_not_applicable">
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_comment_item-replies" numerus="yes">
+        <source>%n replies</source>
+        <translation type="unfinished">
+            <numerusform>%n Antwort</numerusform>
+            <numerusform>%n Antworten</numerusform>
+        </translation>
+    </message>
+    <message id="newpipe_cover-title">
+        <source>NewPipe</source>
+        <translation type="unfinished">NewPipe</translation>
+    </message>
+    <message id="newpipe_playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist-no_entries">
+        <source>No entries</source>
+        <translation type="unfinished">Keine Einträge</translation>
+    </message>
+    <message id="newpipe_playlist-no_videos">
+        <source>There are no videos in this playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_replies-page_header">
+        <source>Replies</source>
+        <translation type="unfinished">Antworten</translation>
+    </message>
+    <message id="newpipe_media-page_header_video">
+        <source>%0 Video</source>
+        <oldsource>%1 Video</oldsource>
+        <translation type="unfinished">YouTube-Video</translation>
+    </message>
+    <message id="newpipe_media-page_header_audio">
+        <source>%0 Audio</source>
+        <oldsource>%1 Audio</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_media-page_header_media">
+        <source>Media</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
