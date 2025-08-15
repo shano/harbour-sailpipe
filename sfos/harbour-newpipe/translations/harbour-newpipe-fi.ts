@@ -177,7 +177,7 @@
     <message id="newpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Haku</translation>
+        <translation type="unfinished">Haku %0</translation>
     </message>
     <message id="newpipe_search_page-search_no_entries">
         <source>No entries</source>
@@ -366,6 +366,10 @@
     </message>
     <message id="newpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_transfer_engine-newpipe_download">
+        <source>NewPipe download</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
