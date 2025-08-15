@@ -306,6 +306,10 @@
         <source>NewPipe</source>
         <translation type="unfinished">NewPipe</translation>
     </message>
+    <message id="newpipe_playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
         <translation type="unfinished">Nessuna ricerca</translation>

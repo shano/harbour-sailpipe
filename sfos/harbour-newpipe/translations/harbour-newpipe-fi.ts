@@ -20,11 +20,11 @@
     </message>
     <message id="newpipe-proglist_search-no-entries">
         <source>No entries</source>
-        <translation type="vanished">Ei näytettävää sisältöä</translation>
+        <translation>Ei näytettävää sisältöä</translation>
     </message>
     <message id="newpipe-proglist_search-enter-some-text">
         <source>Enter some text to search</source>
-        <translation type="vanished">Aloita haku kirjoittamalla jotakin</translation>
+        <translation>Aloita haku kirjoittamalla jotakin</translation>
     </message>
     <message id="newpipe-video_page-header">
         <source>%1 Video</source>
@@ -300,6 +300,10 @@
     <message id="newpipe_cover-title">
         <source>NewPipe</source>
         <translation type="unfinished">NewPipe</translation>
+    </message>
+    <message id="newpipe_playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
