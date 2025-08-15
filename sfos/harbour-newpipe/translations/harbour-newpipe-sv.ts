@@ -303,7 +303,7 @@
     </message>
     <message id="newpipe_playlist_page-header">
         <source>YouTube Playlist</source>
-        <translation>Spellista</translation>
+        <translation type="vanished">Spellista</translation>
     </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
@@ -329,6 +329,26 @@
     </message>
     <message id="newpipe_media-page_header_media">
         <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_channel">
+        <source>%0 Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_user">
+        <source>%0 User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_artist">
+        <source>%0 Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_channel_default">
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_playlist_page-header_playlist">
+        <source>%0 Playlist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

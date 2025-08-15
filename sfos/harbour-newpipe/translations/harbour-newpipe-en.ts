@@ -358,9 +358,9 @@
         <source>NewPipe</source>
         <translation type="unfinished">NewPipe</translation>
     </message>
-    <message id="newpipe_playlist_page-header">
+    <message id="newpipe_playlist_page-header_playlist">
         <location filename="../qml/pages/PlaylistPage.qml" line="40"/>
-        <source>YouTube Playlist</source>
+        <source>%0 Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_playlist-no_entries">
@@ -393,6 +393,26 @@
     <message id="newpipe_media-page_header_media">
         <location filename="../qml/pages/VideoPage.qml" line="56"/>
         <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_channel">
+        <location filename="../qml/pages/ChannelPage.qml" line="63"/>
+        <source>%0 Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_user">
+        <location filename="../qml/pages/ChannelPage.qml" line="67"/>
+        <source>%0 User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_artist">
+        <location filename="../qml/pages/ChannelPage.qml" line="71"/>
+        <source>%0 Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_channel-page_header_channel_default">
+        <location filename="../qml/pages/ChannelPage.qml" line="75"/>
+        <source>Channel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
