@@ -46,21 +46,31 @@ QString FilterModel::filterToName(QString const& filter)
 {
   static const QMap<QString, QString> convert = {
     //% "All"
-    {"all", qtTrId("newpipe-filter-name_all")},
+    {"all", qtTrId("newpipe_filter_name-all")},
     //% "Videos"
-    {"videos", qtTrId("newpipe-filter-name_videos")},
+    {"videos", qtTrId("newpipe_filter_name-videos")},
     //% "Channels"
-    {"channels", qtTrId("newpipe-filter-name_channels")},
+    {"channels", qtTrId("newpipe_filter_name-channels")},
     //% "Playlists"
-    {"playlists", qtTrId("newpipe-filter-name_playlists")},
+    {"playlists", qtTrId("newpipe_filter_name-playlists")},
     //% "Music songs"
-    {"music_songs", qtTrId("newpipe-filter-name_music-congs")},
+    {"music_songs", qtTrId("newpipe_filter_name-music_songs")},
     //% "Music videos"
-    {"music_videos", qtTrId("newpipe-filter-name_music-videos")},
+    {"music_videos", qtTrId("newpipe_filter_name-music_videos")},
     //% "Music albums"
-    {"music_albums", qtTrId("newpipe-filter-name_music-albums")},
+    {"music_albums", qtTrId("newpipe_filter_name-music_albums")},
     //% "Music playlists"
-    {"music_playlists", qtTrId("newpipe-filter-name_music-playlists")}
+    {"music_playlists", qtTrId("newpipe_filter_name-music_playlists")},
+    //% "Tracks"
+    {"tracks", qtTrId("newpipe_filter_name-tracks")},
+    //% "Users"
+    {"users", qtTrId("newpipe_filter_name-users")},
+    //% "Conferences"
+    {"conferences", qtTrId("newpipe_filter_name-conferences")},
+    //% "Events"
+    {"events", qtTrId("newpipe_filter_name-events")},
+    //% "Sepia videos"
+    {"sepia_videos", qtTrId("newpipe_filter_name-sepia_videos")}
   };
   QString result;
 

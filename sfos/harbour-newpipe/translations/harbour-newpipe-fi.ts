@@ -20,11 +20,11 @@
     </message>
     <message id="newpipe-proglist_search-no-entries">
         <source>No entries</source>
-        <translation>Ei näytettävää sisältöä</translation>
+        <translation type="vanished">Ei näytettävää sisältöä</translation>
     </message>
     <message id="newpipe-proglist_search-enter-some-text">
         <source>Enter some text to search</source>
-        <translation>Aloita haku kirjoittamalla jotakin</translation>
+        <translation type="vanished">Aloita haku kirjoittamalla jotakin</translation>
     </message>
     <message id="newpipe-video_page-header">
         <source>%1 Video</source>
@@ -301,10 +301,6 @@
         <source>NewPipe</source>
         <translation type="unfinished">NewPipe</translation>
     </message>
-    <message id="newpipe_playlist_page-header">
-        <source>YouTube Playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
         <translation type="unfinished">Ei tuloksia</translation>
@@ -349,6 +345,26 @@
     </message>
     <message id="newpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_tracks">
+        <source>Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_users">
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_conferences">
+        <source>Conferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_events">
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_sepia_videos">
+        <source>Sepia videos</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

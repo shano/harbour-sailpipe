@@ -353,5 +353,25 @@
         <source>%0 Playlist</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-filter-name_tracks">
+        <source>Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_users">
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_conferences">
+        <source>Conferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_events">
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_sepia_videos">
+        <source>Sepia videos</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

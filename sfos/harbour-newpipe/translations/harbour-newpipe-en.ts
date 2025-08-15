@@ -270,6 +270,31 @@
         <source>Music playlists</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="newpipe-filter-name_tracks">
+        <location filename="../src/filtermodel.cpp" line="65"/>
+        <source>Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_users">
+        <location filename="../src/filtermodel.cpp" line="67"/>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_conferences">
+        <location filename="../src/filtermodel.cpp" line="69"/>
+        <source>Conferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_events">
+        <location filename="../src/filtermodel.cpp" line="71"/>
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_sepia_videos">
+        <location filename="../src/filtermodel.cpp" line="73"/>
+        <source>Sepia videos</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="newpipe_service_page-page_header">
         <location filename="../qml/pages/ServicePage.qml" line="17"/>
         <source>Service</source>
