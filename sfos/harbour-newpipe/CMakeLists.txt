@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(harbour-newpipe CXX)
 
-find_package(Qt5 COMPONENTS Core Network Qml Gui Quick LinguistTools REQUIRED)
+find_package(Qt5 COMPONENTS Core Network Qml Gui Quick LinguistTools Multimedia REQUIRED)
 
 include(FindPkgConfig)
 pkg_search_module(SAILFISH sailfishapp REQUIRED)
@@ -22,6 +22,9 @@ target_include_directories(harbour-newpipe PRIVATE
     ${SAILFISH_INCLUDE_DIRS}>
     ${SILICA_INCLUDE_DIRS}
     PRIVATE "${CMAKE_SOURCE_DIR}/include"
+    "/usr/include/qt5/QtMultimediaQuick_p/5.6.2/QtMultimediaQuick_p/"
+    "/usr/include/qt5/QtMultimedia/5.6.2/QtMultimedia/"
+    "/usr/include/qt5/QtMultimedia/"
 )
 target_link_libraries(harbour-newpipe
     Qt5::Quick
@@ -55,6 +58,7 @@ target_sources(harbour-newpipe PRIVATE
     "src/tabbarlookup.cpp"
     "src/tabbartabinfo.cpp"
     "src/playlistmodel.cpp"
+    "src/declarativevideooutput.cpp"
 )
 
 # Update the translations
@@ -118,6 +122,7 @@ add_custom_target(distfiles
         qml/pages/PlaylistPage.qml
         qml/pages/FilterPage.qml
         qml/pages/ServicePage.qml
+        qml/pages/FullscreenVideoPage.qml
         qml/components/VideoPlayer.qml
         qml/components/IconButtonDual.qml
         qml/components/CommentItem.qml
