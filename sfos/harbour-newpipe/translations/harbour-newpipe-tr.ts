@@ -33,39 +33,36 @@
     </message>
     <message id="newpipe-searchitem-stream_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="newpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n öge</numerusform>
         </translation>
     </message>
     <message id="newpipe-searchitem-channel_subscriber_count" numerus="yes">
         <source>%n subscribers</source>
         <oldsource>%n subscriber(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n subscriber</numerusform>
-            <numerusform>%n subscribers</numerusform>
+        <translation>
+            <numerusform>%n abone</numerusform>
         </translation>
     </message>
     <message id="newpipe-searchitem-channel_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="newpipe-searchitem-playlist_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n öge</numerusform>
         </translation>
     </message>
     <message id="newpipe-searchitem-playlist_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="newpipe-playlist_no-entries">
         <source>No entries</source>
@@ -80,205 +77,203 @@
     </message>
     <message id="newpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükleyen</translation>
     </message>
     <message id="newpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
     <message id="newpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n öge</numerusform>
         </translation>
     </message>
     <message id="newpipe-channeltab-header_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakkında</translation>
     </message>
     <message id="newpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videolar</translation>
     </message>
     <message id="newpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Video yok</translation>
     </message>
     <message id="newpipe-channeltab-header_shorts">
         <source>Shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Kısa videolar</translation>
     </message>
     <message id="newpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Kısa video yok</translation>
     </message>
     <message id="newpipe-channeltab-header_live">
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Canlı</translation>
     </message>
     <message id="newpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation type="unfinished"></translation>
+        <translation>Canlı yayın yok</translation>
     </message>
     <message id="newpipe-channeltab-header_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Oynatma listeleri</translation>
     </message>
     <message id="newpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Oynatma listesi yok</translation>
     </message>
     <message id="newpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Albümler</translation>
     </message>
     <message id="newpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm yok</translation>
     </message>
     <message id="newpipe-utils_length_unknown">
         <source>??:??:??</source>
-        <translation type="unfinished"></translation>
+        <translation>??:??:??</translation>
     </message>
     <message id="newpipe_filter_page-page_header">
         <source>Search Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Arama Filtresi</translation>
     </message>
     <message id="newpipe_search_page-menu_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakkında</translation>
     </message>
     <message id="newpipe_search_page-menu_filter">
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtre</translation>
     </message>
     <message id="newpipe_search_page-search_placeholder">
         <source>Search</source>
-        <translation type="unfinished">Search</translation>
+        <translation>Ara</translation>
     </message>
     <message id="newpipe_search_page-search_no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Girdi yok</translation>
     </message>
     <message id="newpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Aramak için metin girin</translation>
     </message>
     <message id="newpipe-filter-name_all">
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tümü</translation>
     </message>
     <message id="newpipe-filter-name_videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videolar</translation>
     </message>
     <message id="newpipe-filter-name_channels">
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanallar</translation>
     </message>
     <message id="newpipe-filter-name_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Oynatma listeleri</translation>
     </message>
     <message id="newpipe-filter-name_music-congs">
         <source>Music songs</source>
-        <translation type="unfinished"></translation>
+        <translation>Müzik şarkıları</translation>
     </message>
     <message id="newpipe-filter-name_music-videos">
         <source>Music videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Müzik videoları</translation>
     </message>
     <message id="newpipe-filter-name_music-albums">
         <source>Music albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Müzik albümleri</translation>
     </message>
     <message id="newpipe-filter-name_music-playlists">
         <source>Music playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Müzik oynatma listeleri</translation>
     </message>
     <message id="newpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Hizmet</translation>
     </message>
     <message id="newpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Hizmet</translation>
     </message>
     <message id="newpipe-channeltab-header_tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Şarkılar</translation>
     </message>
     <message id="newpipe-channeltab-placeholder_no-tracks">
         <source>No tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Şarkı yok</translation>
     </message>
     <message id="newpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Aboneler</translation>
     </message>
     <message id="newpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation type="unfinished"></translation>
+        <translation>Doğrulandı</translation>
     </message>
     <message id="newpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet</translation>
     </message>
     <message id="newpipe_channel_details-detail_verified_no">
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Hayır</translation>
     </message>
     <message id="newpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketler</translation>
     </message>
     <message id="newpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Yok</translation>
     </message>
     <message id="newpipe_media_details-detail_likes_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Yok</translation>
     </message>
     <message id="newpipe_media_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükleyen</translation>
     </message>
     <message id="newpipe_media_details-detail_date">
         <source>Upload date</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükleme tarihi</translation>
     </message>
     <message id="newpipe_media_details-detail_length">
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzunluk</translation>
     </message>
     <message id="newpipe_media_details-detail_category">
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategori</translation>
     </message>
     <message id="newpipe_media_details-detail_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisans</translation>
     </message>
     <message id="newpipe_media_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
     <message id="newpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Yok</translation>
     </message>
     <message id="newpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
-        <translation type="unfinished">
-            <numerusform>%n reply</numerusform>
-            <numerusform>%n replies</numerusform>
+        <translation>
+            <numerusform>%n yanıt</numerusform>
         </translation>
     </message>
     <message id="newpipe_cover-title">
         <source>NewPipe</source>
-        <translation type="unfinished"></translation>
+        <translation>NewPipe</translation>
     </message>
     <message id="newpipe_playlist_page-header">
         <source>YouTube Playlist</source>
@@ -286,49 +281,49 @@
     </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Girdi yok</translation>
     </message>
     <message id="newpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu oynatma listesinde video yok</translation>
     </message>
     <message id="newpipe_replies-page_header">
         <source>Replies</source>
-        <translation type="unfinished">Replies</translation>
+        <translation>Yanıtlar</translation>
     </message>
     <message id="newpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation type="unfinished">YouTube Video</translation>
+        <translation>%0 Videosu</translation>
     </message>
     <message id="newpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>%0 Sesi</translation>
     </message>
     <message id="newpipe_media-page_header_media">
         <source>Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Medya</translation>
     </message>
     <message id="newpipe_channel-page_header_channel">
         <source>%0 Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Kanalı</translation>
     </message>
     <message id="newpipe_channel-page_header_user">
         <source>%0 User</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Kullanıcısı</translation>
     </message>
     <message id="newpipe_channel-page_header_artist">
         <source>%0 Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Sanatçısı</translation>
     </message>
     <message id="newpipe_channel-page_header_channel_default">
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanal</translation>
     </message>
     <message id="newpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Oynatma Listesi</translation>
     </message>
 </context>
 </TS>
