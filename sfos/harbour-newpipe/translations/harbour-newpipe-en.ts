@@ -15,7 +15,7 @@
         <translation type="vanished">Replies</translation>
     </message>
     <message id="newpipe-proglist_search-placeholder">
-        <source>Search %0</source>
+        <source>Search</source>
         <translation type="vanished">Search</translation>
     </message>
     <message id="newpipe-proglist_search-no-entries">
@@ -217,9 +217,8 @@
     </message>
     <message id="newpipe_search_page-search_placeholder">
         <location filename="../qml/pages/SearchPage.qml" line="117"/>
-        <source>Search %0</source>
-        <oldsource>Search</oldsource>
-        <translation type="unfinished">Search %0</translation>
+        <source>Search</source>
+        <translation type="unfinished">Search</translation>
     </message>
     <message id="newpipe_search_page-search_no_entries">
         <location filename="../qml/pages/SearchPage.qml" line="136"/>
@@ -230,6 +229,71 @@
         <location filename="../qml/pages/SearchPage.qml" line="138"/>
         <source>Enter some text to search</source>
         <translation type="unfinished">Enter some text to search</translation>
+    </message>
+    <message id="newpipe-filter-name_all">
+        <location filename="../src/filtermodel.cpp" line="49"/>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_videos">
+        <location filename="../src/filtermodel.cpp" line="51"/>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_channels">
+        <location filename="../src/filtermodel.cpp" line="53"/>
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_playlists">
+        <location filename="../src/filtermodel.cpp" line="55"/>
+        <source>Playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-congs">
+        <location filename="../src/filtermodel.cpp" line="57"/>
+        <source>Music songs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-videos">
+        <location filename="../src/filtermodel.cpp" line="59"/>
+        <source>Music videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-albums">
+        <location filename="../src/filtermodel.cpp" line="61"/>
+        <source>Music albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_music-playlists">
+        <location filename="../src/filtermodel.cpp" line="63"/>
+        <source>Music playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_tracks">
+        <location filename="../src/filtermodel.cpp" line="65"/>
+        <source>Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_users">
+        <location filename="../src/filtermodel.cpp" line="67"/>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_conferences">
+        <location filename="../src/filtermodel.cpp" line="69"/>
+        <source>Conferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_events">
+        <location filename="../src/filtermodel.cpp" line="71"/>
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe-filter-name_sepia_videos">
+        <location filename="../src/filtermodel.cpp" line="73"/>
+        <source>Sepia videos</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_service_page-page_header">
         <location filename="../qml/pages/ServicePage.qml" line="17"/>
@@ -374,71 +438,6 @@
     <message id="newpipe_channel-page_header_channel_default">
         <location filename="../qml/pages/ChannelPage.qml" line="75"/>
         <source>Channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-all">
-        <location filename="../src/filtermodel.cpp" line="49"/>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-videos">
-        <location filename="../src/filtermodel.cpp" line="51"/>
-        <source>Videos</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-channels">
-        <location filename="../src/filtermodel.cpp" line="53"/>
-        <source>Channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-playlists">
-        <location filename="../src/filtermodel.cpp" line="55"/>
-        <source>Playlists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-music_songs">
-        <location filename="../src/filtermodel.cpp" line="57"/>
-        <source>Music songs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-music_videos">
-        <location filename="../src/filtermodel.cpp" line="59"/>
-        <source>Music videos</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-music_albums">
-        <location filename="../src/filtermodel.cpp" line="61"/>
-        <source>Music albums</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-music_playlists">
-        <location filename="../src/filtermodel.cpp" line="63"/>
-        <source>Music playlists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-tracks">
-        <location filename="../src/filtermodel.cpp" line="65"/>
-        <source>Tracks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-users">
-        <location filename="../src/filtermodel.cpp" line="67"/>
-        <source>Users</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-conferences">
-        <location filename="../src/filtermodel.cpp" line="69"/>
-        <source>Conferences</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-events">
-        <location filename="../src/filtermodel.cpp" line="71"/>
-        <source>Events</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe_filter_name-sepia_videos">
-        <location filename="../src/filtermodel.cpp" line="73"/>
-        <source>Sepia videos</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

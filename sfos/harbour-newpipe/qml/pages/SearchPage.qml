@@ -113,8 +113,8 @@ Page {
             SearchField {
                 id: searchField
                 width: parent.width
-                //% "Search %0"
-                placeholderText: qsTrId("newpipe_search_page-search_placeholder").arg(extractor.serviceName)
+                //% "Search"
+                placeholderText: qsTrId("newpipe_search_page-search_placeholder")
                 // Predictive text actually messes up the clear button so it only
                 // works if there's more than one word (weird!), but predictive
                 // is likely to be the more useful of the two, so I've left it on
