@@ -118,6 +118,7 @@ add_custom_target(distfiles
         qml/pages/PlaylistPage.qml
         qml/pages/FilterPage.qml
         qml/pages/ServicePage.qml
+        qml/pages/FullscreenVideoPage.qml
         qml/components/VideoPlayer.qml
         qml/components/IconButtonDual.qml
         qml/components/CommentItem.qml

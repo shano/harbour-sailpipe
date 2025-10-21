@@ -4,6 +4,7 @@ import QtMultimedia 5.0
 import harbour.newpipe.extractor 1.0
 
 Item {
+    id: root
     property alias source: media.source
     property alias thumbnail: image.source
     property bool controlsvisible: false
@@ -233,6 +234,25 @@ Item {
             onReleased: {
                 media.seek(sliderValue)
                 openControls()
+            }
+        }
+
+        IconButton {
+            id: fullscreenbutton
+            width: Theme.iconSizeMedium
+            height: Theme.iconSizeMedium
+            icon.sourceSize.width: width
+            icon.sourceSize.height: height
+            icon.fillMode: Image.PreserveAspectFit
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.paddingLarge
+            anchors.top: parent.top
+            anchors.topMargin: Theme.paddingLarge
+            icon.source: Qt.resolvedUrl("image://theme/icon-m-scale?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
+
+            onClicked: {
+                console.log("Pressed: fullscreen");
+                pageStack.push(Qt.resolvedUrl("../pages/FullscreenVideoPage.qml"), {media: media});
             }
         }
     }

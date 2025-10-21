@@ -180,7 +180,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-search_placeholder">
-        <source>Search</source>
+        <source>Search %0</source>
+        <oldsource>Search</oldsource>
         <translation type="unfinished">Пошук</translation>
     </message>
     <message id="newpipe_search_page-search_no_entries">
@@ -190,38 +191,6 @@
     <message id="newpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
         <translation type="unfinished">Увядзіце тэкст для пошуку</translation>
-    </message>
-    <message id="newpipe-filter-name_all">
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_videos">
-        <source>Videos</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_channels">
-        <source>Channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_playlists">
-        <source>Playlists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_music-congs">
-        <source>Music songs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_music-videos">
-        <source>Music videos</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_music-albums">
-        <source>Music albums</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="newpipe-filter-name_music-playlists">
-        <source>Music playlists</source>
-        <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_search_page-menu_service">
         <source>Service</source>
@@ -353,23 +322,55 @@
         <source>%0 Playlist</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-filter-name_tracks">
+    <message id="newpipe_filter_name-all">
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-videos">
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-channels">
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-playlists">
+        <source>Playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-music_songs">
+        <source>Music songs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-music_videos">
+        <source>Music videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-music_albums">
+        <source>Music albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-music_playlists">
+        <source>Music playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="newpipe_filter_name-tracks">
         <source>Tracks</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-filter-name_users">
+    <message id="newpipe_filter_name-users">
         <source>Users</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-filter-name_conferences">
+    <message id="newpipe_filter_name-conferences">
         <source>Conferences</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-filter-name_events">
+    <message id="newpipe_filter_name-events">
         <source>Events</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="newpipe-filter-name_sepia_videos">
+    <message id="newpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
         <translation type="unfinished"></translation>
     </message>
