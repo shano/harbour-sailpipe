@@ -60,12 +60,28 @@ Page {
                 }
             }
 
-            VideoPlayer {
-                id: video
+            Connections {
+                target: root
+
+                onStatusChanged: {
+                    if (status === PageStatus.Active) {
+                        video.parent = video.oldparent;
+                        video.state = ""
+                    }
+                }
+            }
+
+            Item {
                 width: parent.width
                 height: width * (9 / 16)
-                source: root.source
-                thumbnail: root.thumbnail
+
+                VideoPlayer {
+                    id: video
+                    width: parent.width
+                    height: parent.height
+                    source: root.source
+                    thumbnail: root.thumbnail
+                }
             }
 
             Label {

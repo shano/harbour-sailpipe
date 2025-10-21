@@ -5,12 +5,18 @@ import harbour.newpipe.extractor 1.0
 
 FullscreenContentPage {
     id: root
-    property alias media: video.source
+    property var video
 
-    VideoOutput {
-        id: video
+    onStatusChanged: {
+        if (status === PageStatus.Activating) {
+            video.finaliseFullscreen(root);
+        }
+    }
+
+    MouseArea {
         anchors.fill: parent
-        fillMode: Image.PreserveAspectFit
-        orientation: 270
+        onClicked: {
+            pageStack.pop();
+        }
     }
 }

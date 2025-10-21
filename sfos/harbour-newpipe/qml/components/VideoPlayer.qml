@@ -5,6 +5,8 @@ import harbour.newpipe.extractor 1.0
 
 Item {
     id: root
+    property var oldparent: parent
+
     property alias source: media.source
     property alias thumbnail: image.source
     property bool controlsvisible: false
@@ -252,7 +254,7 @@ Item {
 
             onClicked: {
                 console.log("Pressed: fullscreen");
-                pageStack.push(Qt.resolvedUrl("../pages/FullscreenVideoPage.qml"), {media: media});
+                pageStack.push(Qt.resolvedUrl("../pages/FullscreenVideoPage.qml"), {video: root});
             }
         }
     }
@@ -263,4 +265,25 @@ Item {
         visible: !controllable
         size: BusyIndicatorSize.Medium
     }
+
+    function finaliseFullscreen(parent) {
+        root.state = "fullscreen";
+        root.oldparent = root.parent
+        root.parent = parent;
+    }
+
+    states: [
+        State {
+            name: "fullscreen"
+            PropertyChanges {
+                target: root
+                width: parent.height
+                height: parent.width
+                rotation: 90
+                x: (Screen.width / 2.0) - (Screen.height / 2.0)
+                y: (Screen.height / 2.0) - (Screen.width / 2.0)
+                opacity: 1.0
+            }
+        }
+    ]
 }
