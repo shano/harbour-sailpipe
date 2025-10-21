@@ -65,6 +65,7 @@ Page {
 
                 onStatusChanged: {
                     if (status === PageStatus.Active) {
+                        video.state = "hidden"
                         video.parent = video.oldparent;
                         video.state = ""
                     }

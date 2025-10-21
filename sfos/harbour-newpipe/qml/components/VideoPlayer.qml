@@ -253,8 +253,7 @@ Item {
             icon.source: Qt.resolvedUrl("image://theme/icon-m-scale?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
             onClicked: {
-                console.log("Pressed: fullscreen");
-                pageStack.push(Qt.resolvedUrl("../pages/FullscreenVideoPage.qml"), {video: root});
+                root.state = "hidden"
             }
         }
     }
@@ -274,6 +273,13 @@ Item {
 
     states: [
         State {
+            name: "hidden"
+            PropertyChanges {
+                target: root
+                opacity: 0.0
+            }
+        },
+        State {
             name: "fullscreen"
             PropertyChanges {
                 target: root
@@ -283,6 +289,19 @@ Item {
                 x: (Screen.width / 2.0) - (Screen.height / 2.0)
                 y: (Screen.height / 2.0) - (Screen.width / 2.0)
                 opacity: 1.0
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            from: ""; to: "hidden"; reversible: true
+            NumberAnimation { properties: "opacity"; duration: 100; easing.type: Easing.InOutQuad }
+            onRunningChanged: {
+                if ((!running) && (root.state == "hidden")) {
+                    root.state = "fullscreen"
+                    pageStack.push(Qt.resolvedUrl("../pages/FullscreenVideoPage.qml"), {video: root});
+                }
             }
         }
     ]
