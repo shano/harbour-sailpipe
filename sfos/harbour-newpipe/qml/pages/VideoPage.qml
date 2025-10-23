@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Sailfish.Share 1.0
 import harbour.newpipe.extractor 1.0
 import "../components"
 
@@ -82,6 +83,29 @@ Page {
                     height: parent.height
                     source: root.source
                     thumbnail: root.thumbnail
+                }
+            }
+
+            ActionBar {
+                x: Theme.paddingLarge
+                width: parent.width - (2 * Theme.paddingLarge)
+
+                onFullscreenPressed: {
+                    video.state = "hidden"
+                }
+
+                onSharePressed: {
+                    shareAction.resources = [{ "type": "text/x-url", "status": root.url.toString() }];
+                    shareAction.trigger();
+                }
+
+                onDownloadPressed: {
+                    video.state = "hidden"
+                }
+
+                ShareAction {
+                    id: shareAction
+                    mimeType: "text/x-url"
                 }
             }
 

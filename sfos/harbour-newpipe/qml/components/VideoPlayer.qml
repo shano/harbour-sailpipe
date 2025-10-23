@@ -250,10 +250,11 @@ Item {
             anchors.rightMargin: Theme.paddingLarge
             anchors.top: parent.top
             anchors.topMargin: Theme.paddingLarge
-            icon.source: Qt.resolvedUrl("image://theme/icon-m-scale?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
+            icon.source: Qt.resolvedUrl("image://theme/icon-m-dismiss?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
+            visible: root.state == "fullscreen"
 
             onClicked: {
-                root.state = "hidden"
+                pageStack.pop();
             }
         }
     }
