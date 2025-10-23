@@ -17,6 +17,20 @@ Item {
     readonly property bool playing: (media.playbackState == MediaPlayer.PlayingState)
     property bool controllable: isControllable()
     property bool forceVisible: controllable
+    readonly property bool portrait: video.sourceRect.width < video.sourceRect.height
+
+    onPortraitChanged: {
+        if (portrait) {
+            if (state == "fullscreenLandscape") {
+                state = "fullscreenPortrait";
+            }
+        }
+        else {
+            if (state == "fullscreenPortrait") {
+                state = "fullscreenLandscape";
+            }
+        }
+    }
 
     width: parent.width
     height: width * (9 / 16)
@@ -251,7 +265,7 @@ Item {
             anchors.top: parent.top
             anchors.topMargin: Theme.paddingLarge
             icon.source: Qt.resolvedUrl("image://theme/icon-m-dismiss?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
-            visible: root.state == "fullscreen"
+            visible: root.state == "fullscreenLandscape" || root.state == "fullscreenPortrait"
 
             onClicked: {
                 pageStack.pop();
@@ -267,7 +281,7 @@ Item {
     }
 
     function finaliseFullscreen(parent) {
-        root.state = "fullscreen";
+        root.state = root.portrait ? "fullscreenPortrait" : "fullscreenLandscape";
         root.oldparent = root.parent
         root.parent = parent;
     }
@@ -281,7 +295,7 @@ Item {
             }
         },
         State {
-            name: "fullscreen"
+            name: "fullscreenLandscape"
             PropertyChanges {
                 target: root
                 width: parent.height
@@ -289,6 +303,18 @@ Item {
                 rotation: 90
                 x: (Screen.width / 2.0) - (Screen.height / 2.0)
                 y: (Screen.height / 2.0) - (Screen.width / 2.0)
+                opacity: 1.0
+            }
+        },
+        State {
+            name: "fullscreenPortrait"
+            PropertyChanges {
+                target: root
+                width: parent.width
+                height: parent.height
+                rotation: 0
+                x: 0
+                y: 0
                 opacity: 1.0
             }
         }
@@ -300,10 +326,14 @@ Item {
             NumberAnimation { properties: "opacity"; duration: 100; easing.type: Easing.InOutQuad }
             onRunningChanged: {
                 if ((!running) && (root.state == "hidden")) {
-                    root.state = "fullscreen"
+                    root.state = root.portrait ? "fullscreenPortrait" : "fullscreenLandscape";
                     pageStack.push(Qt.resolvedUrl("../pages/FullscreenVideoPage.qml"), {video: root});
                 }
             }
+        },
+        Transition {
+            from: "fullscreenLandscape"; to: "fullscreenPortrait"; reversible: true
+            NumberAnimation { properties: "rotation,width,height,x,y"; duration: 200; easing.type: Easing.InOutQuad }
         }
     ]
 }
