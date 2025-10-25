@@ -17,6 +17,7 @@
 #include "channeltablistmodel.h"
 #include "playlistmodel.h"
 #include "filtermodel.h"
+#include "downloadmanager.h"
 
 int main(int argc, char *argv[])
 {
@@ -30,6 +31,7 @@ int main(int argc, char *argv[])
   QQmlEngine* engine = view->engine();
   QScopedPointer<Extractor> extractor(new Extractor(app.data()));
   Utils::instantiate();
+  DownloadManager::instantiate();
 
   qmlRegisterType<Extractor>("harbour.newpipe.extractor", 1, 0, "Extractor");
   qmlRegisterType<SearchModel>("harbour.newpipe.extractor", 1, 0, "SearchModel");
@@ -46,6 +48,7 @@ int main(int argc, char *argv[])
   qmlRegisterType<ChannelTabListModel>("harbour.newpipe.extractor", 1, 0, "ChannelTabListModel");
   qmlRegisterType<FilterModel>("harbour.newpipe.extractor", 1, 0, "FilterModel");
   qmlRegisterSingletonType<Utils>("harbour.newpipe.extractor", 1, 0, "Utils", Utils::provider);
+  qmlRegisterSingletonType<DownloadManager>("harbour.newpipe.extractor", 1, 0, "DownloadManager", DownloadManager::provider);
 
   engine->addImageProvider(QLatin1String("newpipe"), new ImageProvider());
 

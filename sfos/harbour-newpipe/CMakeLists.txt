@@ -55,6 +55,7 @@ target_sources(harbour-newpipe PRIVATE
     "src/tabbarlookup.cpp"
     "src/tabbartabinfo.cpp"
     "src/playlistmodel.cpp"
+    "src/downloadmanager.cpp"
 )
 
 # Update the translations

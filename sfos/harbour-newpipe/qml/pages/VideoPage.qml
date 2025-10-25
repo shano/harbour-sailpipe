@@ -100,7 +100,7 @@ Page {
                 }
 
                 onDownloadPressed: {
-                    video.state = "hidden"
+                    DownloadManager.downloadFile(root.source);
                 }
 
                 ShareAction {
