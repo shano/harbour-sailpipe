@@ -1,8 +1,10 @@
+#include <transferengineclient.h>
+
 #include "downloadcontext.h"
 
 #define DONE_TIMEOUT (60000)
 
-DownloadContext::DownloadContext(QString const& page, QObject *parent)
+DownloadContext::DownloadContext(QString const& page, TransferEngineClient* transferClient, QObject *parent)
   : QObject(parent)
   , m_file()
   , m_page(page)
@@ -10,6 +12,8 @@ DownloadContext::DownloadContext(QString const& page, QObject *parent)
   , m_progress(0.0)
   , m_timer()
   , m_downloadStatus(DownloadManager::Running)
+  , m_transferClient(transferClient)
+  , m_transferId(0)
 {
   m_timer.setInterval(DONE_TIMEOUT);
   m_timer.setSingleShot(true);
@@ -24,10 +28,13 @@ DownloadContext::~DownloadContext()
   }
 }
 
-void DownloadContext::open(QString const& filename)
+void DownloadContext::open(QString const& filename, QString const& mimetype, qlonglong length)
 {
   m_file.setFileName(filename);
   m_file.open(QIODevice::WriteOnly);
+
+  m_transferId = m_transferClient->createDownloadEvent("NewPipe download",  QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length);
+  m_transferClient->startTransfer(m_transferId);
 }
 
 bool DownloadContext::ready() const
@@ -55,6 +62,8 @@ QString DownloadContext::page() const
 void DownloadContext::setProgress(double progress)
 {
   m_progress = progress;
+
+  m_transferClient->updateTransferProgress(m_transferId, m_progress);
 }
 
 double DownloadContext::progress() const
@@ -74,6 +83,8 @@ void DownloadContext::done()
   }
   setDownloadStatus(DownloadManager::Done);
   m_timer.start();
+
+  m_transferClient->finishTransfer(m_transferId, TransferEngineClient::TransferFinished, QString());
 }
 
 DownloadManager::DownloadStatus DownloadContext::downloadStatus() const

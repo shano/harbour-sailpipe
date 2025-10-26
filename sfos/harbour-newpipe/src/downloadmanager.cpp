@@ -1,5 +1,6 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <transferengineclient.h>
 
 #include "downloadcontext.h"
 #include "downloadmanager.h"
@@ -18,6 +19,7 @@ DownloadManager::DownloadManager(QObject *parent)
   , m_page()
   , m_downloadStatus(None)
   , m_progress(0.0)
+  , m_transferClient(new TransferEngineClient(this))
 {
   connect(m_manager, &QNetworkAccessManager::finished, this, &DownloadManager::onFinished);
 }
@@ -109,9 +111,8 @@ void DownloadManager::downloadFile(QString const url)
 {
   QNetworkRequest request;
 
-  qDebug() << "String: " << url;
+  qDebug() << "Download URL: " << url;
   request.setUrl(QUrl(url));
-  qDebug() << "downloadFile: max redirections" << request.maximumRedirectsAllowed();
   request.setMaximumRedirectsAllowed(5);
   QNetworkReply* reply = m_manager->get(request);
 
@@ -119,7 +120,7 @@ void DownloadManager::downloadFile(QString const url)
   connect(reply, &QNetworkReply::downloadProgress, this, &DownloadManager::onDownloadProgress);
   connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &DownloadManager::onError);
 
-  DownloadContext* context = new DownloadContext(m_page, this);
+  DownloadContext* context = new DownloadContext(m_page, m_transferClient, this);
   reply->setProperty("context", QVariant::fromValue(context));
 
   if (m_running.contains(m_page)) {
@@ -147,13 +148,11 @@ void DownloadManager::onReadyRead()
     context = reply->property("context").value<DownloadContext*>();
 
     if (!context->ready()) {
-      QString contentType;
-      if (reply->hasRawHeader("Content-Type")) {
-        contentType = QString::fromLatin1(reply->rawHeader("Content-Type"));
-      }
+      QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
       QString extension = mimetypes.value(contentType, QString::fromLatin1("dat"));
       QString filename = QString::fromLatin1("/home/defaultuser/Downloads/%1.%2").arg(QString::fromLatin1("video"), extension);
-      context->open(filename);
+      qlonglong length = reply->header(QNetworkRequest::ContentLengthHeader).toInt();
+      context->open(filename, contentType, length);
     }
 
     more = true;
@@ -172,9 +171,9 @@ void DownloadManager::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal
   QNetworkReply* reply = dynamic_cast<QNetworkReply*>(sender());
   if (reply != nullptr ) {
     DownloadContext* context = reply->property("context").value<DownloadContext*>();
-    qDebug() << "onDownloadProgress: progress: " << bytesReceived << " out of " << bytesTotal;
+    float progress = (float)bytesReceived / (float)bytesTotal;
+    context->setProgress(progress);
     if (m_page == context->page()) {
-      float progress = (float)bytesReceived / (float)bytesTotal;
       setProgress(progress);
     }
   }
@@ -186,11 +185,9 @@ void DownloadManager::onFinished(QNetworkReply* reply)
     DownloadContext* context = reply->property("context").value<DownloadContext*>();
     qDebug() << "onFinished: written: " << context->written();
     QList<QNetworkReply::RawHeaderPair> const headers = reply->rawHeaderPairs();
-    qDebug() << "onFinished: headers start: " << headers.length();
     for (QNetworkReply::RawHeaderPair const header : headers) {
       qDebug() << "onFinished: header: " << header.first << " = " << header.second;
     }
-    qDebug() << "onFinished: headers end";
 
     context->done();
     reply->deleteLater();

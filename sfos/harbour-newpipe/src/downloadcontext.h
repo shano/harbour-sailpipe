@@ -8,6 +8,8 @@
 
 #include "downloadmanager.h"
 
+class TransferEngineClient;
+
 class DownloadContext : public QObject
 {
   Q_OBJECT
@@ -15,12 +17,12 @@ class DownloadContext : public QObject
   Q_PROPERTY(DownloadManager::DownloadStatus downloadStatus READ downloadStatus NOTIFY downloadStatusChanged)
 
 public:
-  DownloadContext(QString const& page, QObject *parent = nullptr);
+  DownloadContext(QString const& page, TransferEngineClient* transferClient, QObject *parent = nullptr);
   ~DownloadContext();
 
   qint64 write(QByteArray const& bytes);
 
-  void open(QString const& filename);
+  void open(QString const& filename, QString const& mimetype, qlonglong length);
   QString page() const;
   bool ready() const;
   void done();
@@ -47,6 +49,8 @@ private:
   double m_progress;
   QTimer m_timer;
   DownloadManager::DownloadStatus m_downloadStatus;
+  TransferEngineClient* m_transferClient;
+  int m_transferId;
 };
 
 #endif // DOWNLOADCONTEXT_H

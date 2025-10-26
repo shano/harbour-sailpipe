@@ -9,6 +9,7 @@
 class QQmlEngine;
 class QJSEngine;
 class DownloadContext;
+class TransferEngineClient;
 
 class DownloadManager : public QObject
 {
@@ -64,6 +65,7 @@ private:
   QString m_page;
   DownloadStatus m_downloadStatus;
   float m_progress;
+  TransferEngineClient* m_transferClient;
 };
 
 #endif // DOWNLOADMANAGER_H
