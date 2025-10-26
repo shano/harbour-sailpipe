@@ -15,6 +15,7 @@ Page {
     Component.onCompleted: {
         extractor.downloadExtract(mediaInfo, url);
         comments.model.loadComments(extractor, url);
+        DownloadManager.page = url;
     }
 
     SilicaListView {
@@ -89,6 +90,7 @@ Page {
             ActionBar {
                 x: Theme.paddingLarge
                 width: parent.width - (2 * Theme.paddingLarge)
+                downloadable: (root.source != "")
 
                 onFullscreenPressed: {
                     video.state = "hidden"

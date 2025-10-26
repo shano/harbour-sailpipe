@@ -56,6 +56,7 @@ target_sources(harbour-newpipe PRIVATE
     "src/tabbartabinfo.cpp"
     "src/playlistmodel.cpp"
     "src/downloadmanager.cpp"
+    "src/downloadcontext.cpp"
 )
 
 # Update the translations

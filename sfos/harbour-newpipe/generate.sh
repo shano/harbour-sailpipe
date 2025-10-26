@@ -44,7 +44,7 @@ function generate {
 generate 32 32 "icon-s-media-view icon-s-media-count"
 
 # Generate splus icons
-generate 48 48 "icon-splus-cloud-download icon-splus-scale icon-splus-share"
+generate 48 48 "icon-splus-cloud-download icon-splus-scale icon-splus-share icon-splus-download-success"
 
 # Generate medium icons
 generate 64 64 "icon-tab-about icon-tab-playlists icon-tab-video-full icon-tab-video-live icon-tab-video-short icon-tab-albums icon-tab-tracks"
