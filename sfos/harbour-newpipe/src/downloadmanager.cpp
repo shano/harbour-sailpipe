@@ -1,7 +1,9 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QDBusConnection>
 #include <transferengineclient.h>
 
+#include "dbusadapter.h"
 #include "downloadcontext.h"
 #include "downloadmanager.h"
 
@@ -16,12 +18,21 @@ DownloadManager::DownloadManager(QObject *parent)
   : QObject(parent)
   , m_manager(new QNetworkAccessManager(this))
   , m_running()
+  , m_transferIds()
   , m_page()
   , m_downloadStatus(None)
   , m_progress(0.0)
   , m_transferClient(new TransferEngineClient(this))
+  , m_dbusRegistered(false)
 {
   connect(m_manager, &QNetworkAccessManager::finished, this, &DownloadManager::onFinished);
+
+  m_dbusAdapter = new DBusAdapter(this);
+  QDBusConnection connection = QDBusConnection::sessionBus();
+  m_dbusRegistered = connection.registerObject(QString::fromLatin1("/"), this);
+  if (m_dbusRegistered) {
+    m_dbusRegistered = connection.registerService(QString::fromLatin1("uk.co.flypig.newpipe"));
+  }
 }
 
 void DownloadManager::instantiate(QObject* parent) {
@@ -120,11 +131,11 @@ void DownloadManager::downloadFile(QString const url)
   connect(reply, &QNetworkReply::downloadProgress, this, &DownloadManager::onDownloadProgress);
   connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &DownloadManager::onError);
 
-  DownloadContext* context = new DownloadContext(m_page, m_transferClient, this);
+  DownloadContext* context = new DownloadContext(m_page, reply, m_transferClient, this);
   reply->setProperty("context", QVariant::fromValue(context));
 
   if (m_running.contains(m_page)) {
-    delete m_running.value(m_page);
+    destroyContext(m_running.value(m_page));
   }
   m_running.insert(m_page, context);
 
@@ -153,6 +164,7 @@ void DownloadManager::onReadyRead()
       QString filename = QString::fromLatin1("/home/defaultuser/Downloads/%1.%2").arg(QString::fromLatin1("video"), extension);
       qlonglong length = reply->header(QNetworkRequest::ContentLengthHeader).toInt();
       context->open(filename, contentType, length);
+      m_transferIds.insert(context->transferId(), context);
     }
 
     more = true;
@@ -208,7 +220,37 @@ void DownloadManager::onFinalise()
     }
     disconnect(context, &DownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
     disconnect(context, &DownloadContext::finalise, this, &DownloadManager::onFinalise);
-    m_running.remove(context->page());
+    destroyContext(context);
+  }
+}
+
+void DownloadManager::destroyContext(DownloadContext* context)
+{
+  if (context) {
+    if (m_transferIds.contains(context->transferId())) {
+      m_transferIds.remove(context->transferId());
+    }
+    if (m_running.contains(context->page())) {
+      m_running.remove(context->page());
+    }
     delete context;
   }
+}
+
+void DownloadManager::cancelDownload(int transferId)
+{
+  qDebug() << "DownloadManager cancelDownload: " << transferId;
+  if (m_transferIds.contains(transferId)) {
+    DownloadContext* context = m_transferIds.value(transferId);
+    QNetworkReply* reply = context->reply();
+    reply->abort();
+  }
+  else {
+    qDebug() << "Transfer ID to cancel not found: " << transferId;
+  }
+}
+
+void DownloadManager::restartDownload(int transferId)
+{
+  qDebug() << "DownloadManager restartDownload: " << transferId;
 }

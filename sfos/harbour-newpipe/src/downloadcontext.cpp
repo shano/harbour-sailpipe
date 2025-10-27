@@ -4,7 +4,7 @@
 
 #define DONE_TIMEOUT (60000)
 
-DownloadContext::DownloadContext(QString const& page, TransferEngineClient* transferClient, QObject *parent)
+DownloadContext::DownloadContext(QString const& page, QNetworkReply* reply, TransferEngineClient* transferClient, QObject *parent)
   : QObject(parent)
   , m_file()
   , m_page(page)
@@ -14,6 +14,7 @@ DownloadContext::DownloadContext(QString const& page, TransferEngineClient* tran
   , m_downloadStatus(DownloadManager::Running)
   , m_transferClient(transferClient)
   , m_transferId(0)
+  , m_reply(reply)
 {
   m_timer.setInterval(DONE_TIMEOUT);
   m_timer.setSingleShot(true);
@@ -26,6 +27,7 @@ DownloadContext::~DownloadContext()
   if (m_file.isOpen()) {
     m_file.close();
   }
+  m_timer.stop();
 }
 
 void DownloadContext::open(QString const& filename, QString const& mimetype, qlonglong length)
@@ -33,8 +35,10 @@ void DownloadContext::open(QString const& filename, QString const& mimetype, qlo
   m_file.setFileName(filename);
   m_file.open(QIODevice::WriteOnly);
 
-  m_transferId = m_transferClient->createDownloadEvent("NewPipe download",  QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length);
+  CallbackInterface callback("uk.co.flypig.newpipe", "/", "uk.co.flypig.newpipe", "cancelDownload", "restartDownload");
+  m_transferId = m_transferClient->createDownloadEvent("NewPipe download",  QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length, callback);
   m_transferClient->startTransfer(m_transferId);
+  qDebug() << "Started download with transfer ID: " << m_transferId;
 }
 
 bool DownloadContext::ready() const
@@ -81,6 +85,7 @@ void DownloadContext::done()
   if (m_file.isOpen()) {
     m_file.close();
   }
+  m_reply = nullptr;
   setDownloadStatus(DownloadManager::Done);
   m_timer.start();
 
@@ -105,4 +110,14 @@ void DownloadContext::onTimeout()
 {
   setDownloadStatus(DownloadManager::None);
   emit finalise();
+}
+
+int DownloadContext::transferId() const
+{
+  return m_transferId;
+}
+
+QNetworkReply* DownloadContext::reply() const
+{
+  return m_reply;
 }

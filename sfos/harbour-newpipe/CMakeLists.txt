@@ -60,6 +60,7 @@ target_sources(harbour-newpipe PRIVATE
     "src/playlistmodel.cpp"
     "src/downloadmanager.cpp"
     "src/downloadcontext.cpp"
+    "src/dbusadapter.cpp"
 )
 
 # Update the translations

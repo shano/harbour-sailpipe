@@ -9,6 +9,7 @@
 #include "downloadmanager.h"
 
 class TransferEngineClient;
+class QNetworkReply;
 
 class DownloadContext : public QObject
 {
@@ -17,7 +18,7 @@ class DownloadContext : public QObject
   Q_PROPERTY(DownloadManager::DownloadStatus downloadStatus READ downloadStatus NOTIFY downloadStatusChanged)
 
 public:
-  DownloadContext(QString const& page, TransferEngineClient* transferClient, QObject *parent = nullptr);
+  DownloadContext(QString const& page, QNetworkReply* reply, TransferEngineClient* transferClient, QObject *parent = nullptr);
   ~DownloadContext();
 
   qint64 write(QByteArray const& bytes);
@@ -31,6 +32,8 @@ public:
   double progress() const;
   quint64 written() const;
   DownloadManager::DownloadStatus downloadStatus() const;
+  int transferId() const;
+  QNetworkReply* reply() const;
 
 signals:
   void downloadStatusChanged(DownloadManager::DownloadStatus downloadStatus);
@@ -51,6 +54,7 @@ private:
   DownloadManager::DownloadStatus m_downloadStatus;
   TransferEngineClient* m_transferClient;
   int m_transferId;
+  QNetworkReply* m_reply;
 };
 
 #endif // DOWNLOADCONTEXT_H

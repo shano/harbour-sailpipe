@@ -5,11 +5,13 @@
 #include <QUrl>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QDBusContext>
 
 class QQmlEngine;
 class QJSEngine;
 class DownloadContext;
 class TransferEngineClient;
+class DBusAdapter;
 
 class DownloadManager : public QObject
 {
@@ -42,6 +44,10 @@ public slots:
   void downloadFile(QString const url);
   void downloadFileWithName(QString const url, QString const leafname);
 
+  // DBus interface
+  void cancelDownload(int transferId);
+  void restartDownload(int transferId);
+
 private slots:
   void onReadyRead();
   void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
@@ -57,15 +63,19 @@ signals:
 
 private:
   void setDownloadStatus(DownloadStatus downloadStatus);
+  void destroyContext(DownloadContext* context);
 
 private:
   static DownloadManager* m_instance;
   QNetworkAccessManager* m_manager;
   QMap<QString, DownloadContext*> m_running;
+  QMap<int, DownloadContext*> m_transferIds;
   QString m_page;
   DownloadStatus m_downloadStatus;
   float m_progress;
   TransferEngineClient* m_transferClient;
+  DBusAdapter* m_dbusAdapter;
+  bool m_dbusRegistered;
 };
 
 #endif // DOWNLOADMANAGER_H
