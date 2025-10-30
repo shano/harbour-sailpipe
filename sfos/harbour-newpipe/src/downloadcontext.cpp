@@ -26,6 +26,10 @@ DownloadContext::~DownloadContext()
 {
   if (m_file.isOpen()) {
     m_file.close();
+
+    if (m_downloadStatus != DownloadManager::Done) {
+      m_file.remove();
+    }
   }
   m_timer.stop();
 }

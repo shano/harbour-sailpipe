@@ -18,6 +18,7 @@ class DownloadManager : public QObject
   Q_OBJECT
 
   Q_PROPERTY(QString page READ page WRITE setPage NOTIFY pageChanged)
+  Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
   Q_PROPERTY(DownloadStatus downloadStatus READ downloadStatus NOTIFY downloadStatusChanged)
   Q_PROPERTY(float progress READ progress NOTIFY progressChanged)
 
@@ -39,6 +40,8 @@ public:
 
   QString page() const;
   void setPage(QString page);
+  QString name() const;
+  void setName(QString name);
   DownloadStatus downloadStatus() const;
   float progress() const;
 
@@ -61,12 +64,14 @@ private slots:
 
 signals:
   void pageChanged();
+  void nameChanged();
   void downloadStatusChanged();
   void progressChanged();
 
 private:
   void setDownloadStatus(DownloadStatus downloadStatus);
   void destroyContext(DownloadContext* context);
+  QString constructFilename(QString const& name, QString const& extension);
 
 private:
   static DownloadManager* m_instance;
@@ -74,6 +79,7 @@ private:
   QMap<QString, DownloadContext*> m_running;
   QMap<int, DownloadContext*> m_transferIds;
   QString m_page;
+  QString m_name;
   DownloadStatus m_downloadStatus;
   float m_progress;
   TransferEngineClient* m_transferClient;

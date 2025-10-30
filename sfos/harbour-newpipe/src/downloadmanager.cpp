@@ -1,6 +1,8 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QDBusConnection>
+#include <QStandardPaths>
+#include <QDir>
 #include <transferengineclient.h>
 
 #include "dbusadapter.h"
@@ -8,6 +10,9 @@
 #include "downloadmanager.h"
 
 #define MAX_DATA_CHUNK (1024 * 64)
+#define SHORTNAME_CHARS (23)
+#define SHORTNAME_REPLACE "[_\\-,.]"
+#define SHORTNAME_REMOVE "[^[:alnum:][:space:]]"
 
 DownloadManager* DownloadManager::m_instance = nullptr;
 static const QMap<QString, QString> mimetypes = {
@@ -80,6 +85,19 @@ void DownloadManager::setPage(QString page)
   }
 }
 
+QString DownloadManager::name() const
+{
+  return m_name;
+}
+
+void DownloadManager::setName(QString name)
+{
+  if (m_name != name) {
+    m_name = name;
+    emit nameChanged();
+  }
+}
+
 DownloadManager::DownloadStatus DownloadManager::downloadStatus() const
 {
   return m_downloadStatus;
@@ -124,7 +142,7 @@ void DownloadManager::downloadFile(QString const url)
 
   qDebug() << "Download URL: " << url;
   request.setUrl(QUrl(url));
-  request.setMaximumRedirectsAllowed(5);
+  request.setMaximumRedirectsAllowed(50);
   QNetworkReply* reply = m_manager->get(request);
 
   connect(reply, &QNetworkReply::readyRead, this, &DownloadManager::onReadyRead);
@@ -161,7 +179,7 @@ void DownloadManager::onReadyRead()
     if (!context->ready()) {
       QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
       QString extension = mimetypes.value(contentType, QString::fromLatin1("dat"));
-      QString filename = QString::fromLatin1("/home/defaultuser/Downloads/%1.%2").arg(QString::fromLatin1("video"), extension);
+      QString filename = constructFilename(m_name, extension);
       qlonglong length = reply->header(QNetworkRequest::ContentLengthHeader).toInt();
       context->open(filename, contentType, length);
       m_transferIds.insert(context->transferId(), context);
@@ -196,6 +214,7 @@ void DownloadManager::onFinished(QNetworkReply* reply)
   if (reply != nullptr ) {
     DownloadContext* context = reply->property("context").value<DownloadContext*>();
     qDebug() << "onFinished: written: " << context->written();
+    qDebug() << "onFinished: status: " << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     QList<QNetworkReply::RawHeaderPair> const headers = reply->rawHeaderPairs();
     for (QNetworkReply::RawHeaderPair const header : headers) {
       qDebug() << "onFinished: header: " << header.first << " = " << header.second;
@@ -282,4 +301,41 @@ void DownloadManager::cancelDownload(int transferId)
 void DownloadManager::restartDownload(int transferId)
 {
   qDebug() << "DownloadManager restartDownload: " << transferId;
+}
+
+QString DownloadManager::constructFilename(QString const& name, QString const& extension)
+{
+  bool exists;
+  QString directory = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+
+  QDir check(directory);
+  exists = check.exists();
+
+  if (!exists) {
+    exists = check.mkpath(directory);
+  }
+
+  if (!exists) {
+    qDebug() << "Downloads directory doesn't exist and couldn't be created";
+  }
+
+  qint64 epoch = QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000;
+  QString date = QString("%1").arg(epoch, 8, 16, QChar('0'));
+
+  QString shortname = name;
+  shortname = shortname.replace(QRegExp(QString::fromLatin1(SHORTNAME_REPLACE)), QChar(' '));
+  shortname = shortname.remove(QRegExp(QString::fromLatin1(SHORTNAME_REMOVE)));
+  shortname = shortname.toLower();
+  shortname = shortname.simplified();
+  shortname.truncate(SHORTNAME_CHARS);
+  if (shortname.isEmpty()) {
+    shortname = QString::fromLatin1("media");
+  }
+  shortname = shortname.replace(QRegExp(QString::fromLatin1("\\s+")), QChar('_'));
+  QString result = QString::fromLatin1("%1/%2-%3.%4").arg(directory, shortname, date, extension);
+
+  qDebug() << "Filename inputs: " << name << ", " << extension;
+  qDebug() << "Filename output: " << result;
+
+  return result;
 }

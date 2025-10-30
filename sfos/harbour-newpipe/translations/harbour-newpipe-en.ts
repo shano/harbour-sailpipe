@@ -340,19 +340,19 @@
         <translation type="unfinished">Replies</translation>
     </message>
     <message id="newpipe_media-page_header_video">
-        <location filename="../qml/pages/VideoPage.qml" line="49"/>
+        <location filename="../qml/pages/VideoPage.qml" line="50"/>
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_media-page_header_audio">
-        <location filename="../qml/pages/VideoPage.qml" line="54"/>
+        <location filename="../qml/pages/VideoPage.qml" line="55"/>
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_media-page_header_media">
-        <location filename="../qml/pages/VideoPage.qml" line="58"/>
+        <location filename="../qml/pages/VideoPage.qml" line="59"/>
         <source>Media</source>
         <translation type="unfinished"></translation>
     </message>

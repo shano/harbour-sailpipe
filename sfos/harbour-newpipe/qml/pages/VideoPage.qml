@@ -16,6 +16,7 @@ Page {
         extractor.downloadExtract(mediaInfo, url);
         comments.model.loadComments(extractor, url);
         DownloadManager.page = url;
+        DownloadManager.name = name;
     }
 
     SilicaListView {
