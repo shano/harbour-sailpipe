@@ -27,6 +27,8 @@ public:
   QString page() const;
   bool ready() const;
   void done();
+  void cancel();
+  void error();
 
   void setProgress(double progress);
   double progress() const;

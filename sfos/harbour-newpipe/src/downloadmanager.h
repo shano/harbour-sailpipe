@@ -26,6 +26,8 @@ public:
     None,
     Running,
     Done,
+    Cancelled,
+    Error,
   };
   Q_ENUM(DownloadStatus)
 
@@ -43,6 +45,7 @@ public:
 public slots:
   void downloadFile(QString const url);
   void downloadFileWithName(QString const url, QString const leafname);
+  void cancel();
 
   // DBus interface
   void cancelDownload(int transferId);

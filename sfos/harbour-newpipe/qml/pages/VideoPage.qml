@@ -105,6 +105,10 @@ Page {
                     DownloadManager.downloadFile(root.source);
                 }
 
+                onDownloadCancelPressed: {
+                    DownloadManager.cancel();
+                }
+
                 ShareAction {
                     id: shareAction
                     mimeType: "text/x-url"

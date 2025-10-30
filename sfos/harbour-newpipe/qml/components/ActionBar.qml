@@ -13,8 +13,9 @@ Row {
     layoutDirection: Qt.RightToLeft
 
     signal fullscreenPressed
-    signal downloadPressed
     signal sharePressed
+    signal downloadPressed
+    signal downloadCancelPressed
 
     IconButton {
         width: parent.buttonsize
@@ -40,7 +41,7 @@ Row {
         width: parent.buttonsize
         height: parent.buttonsize
 
-        enabled: downloadable && (DownloadManager.downloadStatus !== DownloadManager.Running)
+        enabled: downloadable
         opacity: downloadable || (DownloadManager.downloadStatus === DownloadManager.Running) ? 1.0 : Theme.opacityLow
 
         property bool down: pressed && containsMouse
@@ -56,17 +57,38 @@ Row {
         }
         Image {
             id: downloadDone
+            property string image: "image://newpipe/icon-splus-download-success?"
             anchors.fill: parent
             sourceSize.width: width
             sourceSize.height: height
-            source: Qt.resolvedUrl("image://newpipe/icon-splus-download-success?") + (parent.showPress ? Theme.highlightColor : Theme.primaryColor)
+            source: Qt.resolvedUrl(image) + (parent.showPress ? Theme.highlightColor : Theme.primaryColor)
             opacity: 0.0
+
+            Connections {
+                target: DownloadManager
+                onDownloadStatusChanged: {
+                    switch (DownloadManager.downloadStatus) {
+                    case DownloadManager.Error:
+                        downloadDone.image = "image://newpipe/icon-splus-download-error?";
+                        break;
+                    case DownloadManager.Cancelled:
+                        downloadDone.image = "image://newpipe/icon-splus-download-cancel?";
+                        break;
+                    case DownloadManager.Done:
+                        downloadDone.image = "image://newpipe/icon-splus-download-success?";
+                        break;
+                    default:
+                        // Do nothing;
+                        break;
+                    }
+                }
+            }
         }
         ProgressCircleBase {
             id: downloadProgress
             anchors.fill: parent
-            progressColor: palette.highlightColor
-            backgroundColor: palette.highlightDimmerColor
+            progressColor: palette.primaryColor
+            backgroundColor: Qt.rgba(palette.secondaryColor.r, palette.secondaryColor.g, palette.secondaryColor.b, Theme.opacityLow)
             value: DownloadManager.progress
             visible: false
         }
@@ -83,7 +105,14 @@ Row {
             interval: Theme.minimumPressHighlightTime
         }
 
-        onClicked: downloadPressed()
+        onClicked: {
+            if (DownloadManager.downloadStatus === DownloadManager.Running) {
+                downloadCancelPressed()
+            }
+            else {
+                downloadPressed()
+            }
+        }
     }
 
     states: [
@@ -105,7 +134,7 @@ Row {
         },
         State {
             name: "done"
-            when: DownloadManager.downloadStatus === DownloadManager.Done
+            when: (DownloadManager.downloadStatus === DownloadManager.Done) || (DownloadManager.downloadStatus === DownloadManager.Error) || (DownloadManager.downloadStatus === DownloadManager.Cancelled)
             PropertyChanges {
                 target: downloadButton
                 opacity: 0.0

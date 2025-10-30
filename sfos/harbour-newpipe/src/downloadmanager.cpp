@@ -209,6 +209,22 @@ void DownloadManager::onFinished(QNetworkReply* reply)
 void DownloadManager::onError(QNetworkReply::NetworkError code)
 {
   qDebug() << "onError: error:" << code;
+
+  QNetworkReply* reply = dynamic_cast<QNetworkReply*>(sender());
+  if (reply != nullptr ) {
+    DownloadContext* context = reply->property("context").value<DownloadContext*>();
+    switch (code) {
+      case QNetworkReply::NetworkError::OperationCanceledError:
+        context->cancel();
+        break;
+      case QNetworkReply::NoError:
+        // Do nothing
+        break;
+      default:
+        context->error();
+        break;
+    }
+  }
 }
 
 void DownloadManager::onFinalise()
@@ -234,6 +250,19 @@ void DownloadManager::destroyContext(DownloadContext* context)
       m_running.remove(context->page());
     }
     delete context;
+  }
+}
+
+void DownloadManager::cancel()
+{
+  qDebug() << "DownloadManager cancel: " << m_page;
+  if (m_running.contains(m_page)) {
+    DownloadContext* context = m_running.value(m_page);
+    QNetworkReply* reply = context->reply();
+    reply->abort();
+  }
+  else {
+    qDebug() << "Page to cancel not found: " << m_page;
   }
 }
 

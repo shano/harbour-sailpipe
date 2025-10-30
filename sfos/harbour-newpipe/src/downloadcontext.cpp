@@ -35,7 +35,7 @@ void DownloadContext::open(QString const& filename, QString const& mimetype, qlo
   m_file.setFileName(filename);
   m_file.open(QIODevice::WriteOnly);
 
-  CallbackInterface callback("uk.co.flypig.newpipe", "/", "uk.co.flypig.newpipe", "cancelDownload", "restartDownload");
+  CallbackInterface callback("uk.co.flypig.newpipe", "/", "uk.co.flypig.newpipe", "cancelDownload", "");
   m_transferId = m_transferClient->createDownloadEvent("NewPipe download",  QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length, callback);
   m_transferClient->startTransfer(m_transferId);
   qDebug() << "Started download with transfer ID: " << m_transferId;
@@ -82,14 +82,28 @@ quint64 DownloadContext::written() const
 
 void DownloadContext::done()
 {
+  TransferEngineClient::Status status;
+
   if (m_file.isOpen()) {
     m_file.close();
   }
   m_reply = nullptr;
-  setDownloadStatus(DownloadManager::Done);
+  switch (m_downloadStatus) {
+    case DownloadManager::Cancelled:
+      status = TransferEngineClient::TransferCanceled;
+      break;
+    case DownloadManager::Error:
+      status = TransferEngineClient::TransferInterrupted;
+      break;
+    default:
+      setDownloadStatus(DownloadManager::Done);
+      status = TransferEngineClient::TransferFinished;
+      break;
+  }
+
   m_timer.start();
 
-  m_transferClient->finishTransfer(m_transferId, TransferEngineClient::TransferFinished, QString());
+  m_transferClient->finishTransfer(m_transferId, status, QString());
 }
 
 DownloadManager::DownloadStatus DownloadContext::downloadStatus() const
@@ -104,6 +118,16 @@ void DownloadContext::setDownloadStatus(DownloadManager::DownloadStatus download
 
     emit downloadStatusChanged(m_downloadStatus);
   }
+}
+
+void DownloadContext::cancel()
+{
+  setDownloadStatus(DownloadManager::Cancelled);
+}
+
+void DownloadContext::error()
+{
+  setDownloadStatus(DownloadManager::Error);
 }
 
 void DownloadContext::onTimeout()
