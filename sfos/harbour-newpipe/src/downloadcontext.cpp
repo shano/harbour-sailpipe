@@ -90,7 +90,12 @@ void DownloadContext::done()
 
   if (m_file.isOpen()) {
     m_file.close();
+
+    if (m_downloadStatus != DownloadManager::Done) {
+      m_file.remove();
+    }
   }
+
   m_reply = nullptr;
   switch (m_downloadStatus) {
     case DownloadManager::Cancelled:

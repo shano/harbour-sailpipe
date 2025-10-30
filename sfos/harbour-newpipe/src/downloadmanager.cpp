@@ -143,6 +143,8 @@ void DownloadManager::downloadFile(QString const url)
   qDebug() << "Download URL: " << url;
   request.setUrl(QUrl(url));
   request.setMaximumRedirectsAllowed(50);
+  request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, QVariant(false));
+
   QNetworkReply* reply = m_manager->get(request);
 
   connect(reply, &QNetworkReply::readyRead, this, &DownloadManager::onReadyRead);
@@ -212,6 +214,7 @@ void DownloadManager::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal
 void DownloadManager::onFinished(QNetworkReply* reply)
 {
   if (reply != nullptr ) {
+    int status = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     DownloadContext* context = reply->property("context").value<DownloadContext*>();
     qDebug() << "onFinished: written: " << context->written();
     qDebug() << "onFinished: status: " << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -219,8 +222,14 @@ void DownloadManager::onFinished(QNetworkReply* reply)
     for (QNetworkReply::RawHeaderPair const header : headers) {
       qDebug() << "onFinished: header: " << header.first << " = " << header.second;
     }
-
     context->done();
+
+    if ((status >= 300) && (status < 400)) {
+      QString url = reply->header(QNetworkRequest::LocationHeader).toString();
+      if (!url.isEmpty()) {
+        downloadFile(url);
+      }
+    }
     reply->deleteLater();
   }
 }
