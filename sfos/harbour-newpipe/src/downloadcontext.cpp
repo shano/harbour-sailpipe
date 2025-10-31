@@ -40,7 +40,7 @@ void DownloadContext::open(QString const& filename, QString const& mimetype, qlo
   m_file.open(QIODevice::WriteOnly);
 
   CallbackInterface callback("uk.co.flypig.newpipe", "/", "uk.co.flypig.newpipe", "cancelDownload", "");
-  m_transferId = m_transferClient->createDownloadEvent("NewPipe download",  QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length, callback);
+  m_transferId = m_transferClient->createDownloadEvent("NewPipe download", QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length, callback);
   m_transferClient->startTransfer(m_transferId);
   qDebug() << "Started download with transfer ID: " << m_transferId;
 }

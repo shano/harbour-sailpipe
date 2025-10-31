@@ -113,7 +113,7 @@ void DownloadManager::setDownloadStatus(DownloadStatus downloadStatus)
   if (m_downloadStatus != downloadStatus) {
     m_downloadStatus = downloadStatus;
     switch (m_downloadStatus) {
-    case DownloadStatus::None:
+      case DownloadStatus::None:
         setProgress(0.0);
         break;
       case DownloadStatus::Done:

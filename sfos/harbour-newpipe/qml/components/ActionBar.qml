@@ -64,10 +64,8 @@ Row {
             source: Qt.resolvedUrl(image) + (parent.showPress ? Theme.highlightColor : Theme.primaryColor)
             opacity: 0.0
 
-            Connections {
-                target: DownloadManager
-                onDownloadStatusChanged: {
-                    switch (DownloadManager.downloadStatus) {
+            function setStatusImage() {
+                switch (DownloadManager.downloadStatus) {
                     case DownloadManager.Error:
                         downloadDone.image = "image://newpipe/icon-splus-download-error?";
                         break;
@@ -80,7 +78,17 @@ Row {
                     default:
                         // Do nothing;
                         break;
-                    }
+                }
+            }
+
+            Component.onCompleted: {
+                downloadDone.setStatusImage();
+            }
+
+            Connections {
+                target: DownloadManager
+                onDownloadStatusChanged: {
+                    downloadDone.setStatusImage();
                 }
             }
         }
