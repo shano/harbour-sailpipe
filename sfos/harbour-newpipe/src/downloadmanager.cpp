@@ -17,6 +17,11 @@
 DownloadManager* DownloadManager::m_instance = nullptr;
 static const QMap<QString, QString> mimetypes = {
   {"video/mp4", "mp4"},
+  {"audio/mpegurl", "m3u8"},
+  {"application/x-bittorrent": "torrent"},
+  {"audio/mpeg", "mp3"},
+  {"text/html", "html"},
+  {"text/plain", "txt"},
 };
 
 DownloadManager::DownloadManager(QObject *parent)
