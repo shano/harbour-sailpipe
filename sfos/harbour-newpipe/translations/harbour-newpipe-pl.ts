@@ -288,6 +288,10 @@
         <source>NewPipe</source>
         <translation>NewPipe</translation>
     </message>
+    <message id="newpipe_playlist_page-header">
+        <source>YouTube Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
         <translation>Brak wpisów</translation>
