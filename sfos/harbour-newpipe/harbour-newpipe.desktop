@@ -8,4 +8,4 @@ Name=harbour-newpipe
 [X-Sailjail]
 OrganizationName=uk.co.flypig
 ApplicationName=harbour-newpipe
-Permissions=Internet;Audio
+Permissions=Internet;Audio;Downloads;WebView

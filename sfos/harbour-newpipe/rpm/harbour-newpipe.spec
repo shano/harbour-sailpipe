@@ -47,3 +47,4 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}/lib/appwrapper.so
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_sysconfdir}/sailjail/permissions/harbour-newpipe.profile

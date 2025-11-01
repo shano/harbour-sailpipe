@@ -18,7 +18,7 @@ class DownloadContext : public QObject
   Q_PROPERTY(DownloadManager::DownloadStatus downloadStatus READ downloadStatus NOTIFY downloadStatusChanged)
 
 public:
-  DownloadContext(QString const& page, QNetworkReply* reply, TransferEngineClient* transferClient, QObject *parent = nullptr);
+  DownloadContext(QString const& page, QNetworkReply* reply, TransferEngineClient* transferClient, bool dbusRegistered, QObject *parent = nullptr);
   ~DownloadContext();
 
   qint64 write(QByteArray const& bytes);
@@ -57,6 +57,7 @@ private:
   TransferEngineClient* m_transferClient;
   int m_transferId;
   QNetworkReply* m_reply;
+  bool m_dbusRegistered;
 };
 
 #endif // DOWNLOADCONTEXT_H

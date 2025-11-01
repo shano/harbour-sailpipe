@@ -90,6 +90,9 @@ install(DIRECTORY translations
 install(FILES harbour-newpipe.desktop
     DESTINATION share/applications
 )
+install(FILES harbour-newpipe.profile
+    DESTINATION /etc/sailjail/permissions
+)
 install(FILES icons/86x86/harbour-newpipe.png
     DESTINATION share/icons/hicolor/86x86/apps
 )

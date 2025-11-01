@@ -1,10 +1,11 @@
+#include <QFileInfo>
 #include <transferengineclient.h>
 
 #include "downloadcontext.h"
 
 #define DONE_TIMEOUT (60000)
 
-DownloadContext::DownloadContext(QString const& page, QNetworkReply* reply, TransferEngineClient* transferClient, QObject *parent)
+DownloadContext::DownloadContext(QString const& page, QNetworkReply* reply, TransferEngineClient* transferClient, bool dbusRegistered, QObject *parent)
   : QObject(parent)
   , m_file()
   , m_page(page)
@@ -15,6 +16,7 @@ DownloadContext::DownloadContext(QString const& page, QNetworkReply* reply, Tran
   , m_transferClient(transferClient)
   , m_transferId(0)
   , m_reply(reply)
+  , m_dbusRegistered(dbusRegistered)
 {
   m_timer.setInterval(DONE_TIMEOUT);
   m_timer.setSingleShot(true);
@@ -39,8 +41,11 @@ void DownloadContext::open(QString const& filename, QString const& mimetype, qlo
   m_file.setFileName(filename);
   m_file.open(QIODevice::WriteOnly);
 
-  CallbackInterface callback("uk.co.flypig.newpipe", "/", "uk.co.flypig.newpipe", "cancelDownload", "");
-  m_transferId = m_transferClient->createDownloadEvent("NewPipe download", QUrl(), QUrl("image://theme/harbour-newpipe"), filename, mimetype, length, callback);
+  QUrl localFile = QUrl::fromLocalFile(m_file.fileName());
+  QString const cancelDownload = m_dbusRegistered ? QString::fromLatin1("cancelDownload") : QString::fromLatin1("");
+  CallbackInterface callback(QString::fromLatin1("uk.co.flypig.newpipe"), QString::fromLatin1("/"), QString::fromLatin1("uk.co.flypig.newpipe"), cancelDownload, QString::fromLatin1(""));
+  //% "NewPipe download"
+  m_transferId = m_transferClient->createDownloadEvent(qtTrId("newpipe_transfer_engine-newpipe_download"), QUrl(), QUrl(QString::fromLatin1("image://theme/harbour-newpipe")), localFile, mimetype, length, callback);
   m_transferClient->startTransfer(m_transferId);
   qDebug() << "Started download with transfer ID: " << m_transferId;
 }
@@ -87,13 +92,11 @@ quint64 DownloadContext::written() const
 void DownloadContext::done()
 {
   TransferEngineClient::Status status;
+  bool validFile;
 
   if (m_file.isOpen()) {
     m_file.close();
-
-    if (m_downloadStatus != DownloadManager::Done) {
-      m_file.remove();
-    }
+    validFile = true;
   }
 
   m_reply = nullptr;
@@ -108,6 +111,10 @@ void DownloadContext::done()
       setDownloadStatus(DownloadManager::Done);
       status = TransferEngineClient::TransferFinished;
       break;
+  }
+
+  if (validFile && (m_downloadStatus != DownloadManager::Done)) {
+    m_file.remove();
   }
 
   m_timer.start();

@@ -3,6 +3,7 @@
 #include <QDBusConnection>
 #include <QStandardPaths>
 #include <QDir>
+#include <QFile>
 #include <transferengineclient.h>
 
 #include "dbusadapter.h"
@@ -12,13 +13,13 @@
 #define MAX_DATA_CHUNK (1024 * 64)
 #define SHORTNAME_CHARS (23)
 #define SHORTNAME_REPLACE "[_\\-,.]"
-#define SHORTNAME_REMOVE "[^[:alnum:][:space:]]"
+#define SHORTNAME_REMOVE "[^[:alnum:]\\s]"
 
 DownloadManager* DownloadManager::m_instance = nullptr;
 static const QMap<QString, QString> mimetypes = {
   {"video/mp4", "mp4"},
   {"audio/mpegurl", "m3u8"},
-  {"application/x-bittorrent": "torrent"},
+  {"application/x-bittorrent", "torrent"},
   {"audio/mpeg", "mp3"},
   {"text/html", "html"},
   {"text/plain", "txt"},
@@ -156,7 +157,7 @@ void DownloadManager::downloadFile(QString const url)
   connect(reply, &QNetworkReply::downloadProgress, this, &DownloadManager::onDownloadProgress);
   connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &DownloadManager::onError);
 
-  DownloadContext* context = new DownloadContext(m_page, reply, m_transferClient, this);
+  DownloadContext* context = new DownloadContext(m_page, reply, m_transferClient, m_dbusRegistered, this);
   reply->setProperty("context", QVariant::fromValue(context));
 
   if (m_running.contains(m_page)) {
