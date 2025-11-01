@@ -7,7 +7,6 @@
         <source>%n replies</source>
         <translation type="obsolete">
             <numerusform>%n reply</numerusform>
-            <numerusform>%n replies</numerusform>
         </translation>
     </message>
     <message id="newpipe-replies_page-header">
@@ -72,7 +71,6 @@
         <source>%n videos</source>
         <translation type="obsolete">
             <numerusform>%n video</numerusform>
-            <numerusform>%n videos</numerusform>
         </translation>
     </message>
     <message id="newpipe_playlist_details-detail_uploader">
@@ -275,10 +273,6 @@
     <message id="newpipe_cover-title">
         <source>NewPipe</source>
         <translation>NewPipe</translation>
-    </message>
-    <message id="newpipe_playlist_page-header">
-        <source>YouTube Playlist</source>
-        <translation type="unfinished"></translation>
     </message>
     <message id="newpipe_playlist-no_entries">
         <source>No entries</source>
