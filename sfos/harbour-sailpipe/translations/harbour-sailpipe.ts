@@ -351,5 +351,126 @@
         <source>SailPipe download</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="sailpipe_about-title">
+        <source>About SailPipe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-description">
+        <source>Video and music streaming and downloading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-version">
+        <source>Version</source>
+        <oldsource>Version:</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-maintainer">
+        <source>Maintainer</source>
+        <oldsource>Maintainer:</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-licence">
+        <source>Licence</source>
+        <oldsource>Licence:</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-respect_copyright">
+        <source>Please respect the copyright of all files downloaded using this software</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-summary">
+        <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-subtitle_links">
+        <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-website">
+        <source>Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-email">
+        <source>Email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-newpipe_extractor">
+        <source>About NewPipe Extractor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-newpipe_extractor_description">
+        <source>A library for extracting things from streaming sites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-newpipe_extractor_version">
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-newpipe_extractor_maintainer">
+        <source>Maintainer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-newpipie_extractor_licence">
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-subtitle_contributors">
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-belarusian_translation">
+        <source>Belarusian</source>
+        <oldsource>Belarusian translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-estonian_translation">
+        <source>Estonian</source>
+        <oldsource>Estonian translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-finnish_translation">
+        <source>Finnish</source>
+        <oldsource>Finnish translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-french_translation">
+        <source>French</source>
+        <oldsource>French translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-german_translation">
+        <source>German</source>
+        <oldsource>German translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-italian_translation">
+        <source>Italian</source>
+        <oldsource>Italian translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-polish_translation">
+        <source>Polish</source>
+        <oldsource>Polish translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-russian_translation">
+        <source>Russian</source>
+        <oldsource>Russian translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-swedish_translation">
+        <source>Swedish</source>
+        <oldsource>Swedish translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-turkish_translation">
+        <source>Turkish</source>
+        <oldsource>Turkish translation</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-tralsation_platform">
+        <source>Translation platform</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

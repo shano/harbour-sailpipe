@@ -53,6 +53,8 @@ int main(int argc, char *argv[])
   engine->addImageProvider(QLatin1String("sailpipe"), new ImageProvider());
 
   ctxt->setContextProperty("extractor", extractor.data());
+  ctxt->setContextProperty("sailpipeVersion", SAILPIPE_VERSION);
+  qDebug() << "harbour-sailpipe VERSION string: " << SAILPIPE_VERSION;
 
   view->setSource(SailfishApp::pathTo("qml/harbour-sailpipe.qml"));
   view->show();

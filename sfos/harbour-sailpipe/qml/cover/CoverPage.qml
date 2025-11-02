@@ -46,7 +46,7 @@ CoverBackground {
         }
 
         CoverAction {
-            iconSource: mediaavilable ? Qt.resolvedUrl("image://theme/icon-cover-pause") : Qt.resolvedUrl("image://theme/icon-cover-play")
+            iconSource: Qt.resolvedUrl("image://theme/icon-cover-play")
 
             onTriggered: {
                 console.log("Play/pause");

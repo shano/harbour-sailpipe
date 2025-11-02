@@ -79,6 +79,9 @@ Page {
             MenuItem {
                 //% "About"
                 text: qsTrId("sailpipe_search_page-menu_about")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("../pages/AboutPage.qml"));
+                }
             }
             MenuItem {
                 //% "Service"

@@ -12,6 +12,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/share/harbour-sailpipe/lib")
 
+add_compile_definitions(SAILPIPE_VERSION="0.1")
+
 link_directories(${CMAKE_SOURCE_DIR}/lib/)
 
 add_executable(harbour-sailpipe src/harbour-sailpipe.cpp)
@@ -128,6 +130,7 @@ add_custom_target(distfiles
         qml/pages/FilterPage.qml
         qml/pages/ServicePage.qml
         qml/pages/FullscreenVideoPage.qml
+        qml/pages/AboutPage.qml
         qml/components/VideoPlayer.qml
         qml/components/IconButtonDual.qml
         qml/components/CommentItem.qml
@@ -146,6 +149,7 @@ add_custom_target(distfiles
         qml/components/PlaylistDetails.qml
         qml/components/ProcessIndicator.qml
         qml/components/ActionBar.qml
+        qml/components/InfoRow.qml
         qml/icons/
         rpm/harbour-sailpipe.changes.in
         rpm/harbour-sailpipe.changes.run.in

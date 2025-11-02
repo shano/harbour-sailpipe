@@ -1,7 +1,7 @@
 Name:       harbour-sailpipe
 
 Summary:    Video and music streaming and downloading
-Version:    0
+Version:    0.1
 Release:    1
 License:    LICENSE
 URL:        http://example.org/
