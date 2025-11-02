@@ -191,7 +191,7 @@
         <translation>No tracks</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
-        <location filename="../src/utils.cpp" line="54"/>
+        <location filename="../src/utils.cpp" line="65"/>
         <source>??:??:??</source>
         <translation>??:??:??</translation>
     </message>
@@ -347,7 +347,7 @@
         </translation>
     </message>
     <message id="sailpipe_cover-title">
-        <location filename="../qml/cover/CoverPage.qml" line="9"/>
+        <location filename="../qml/cover/CoverPage.qml" line="28"/>
         <source>SailPipe</source>
         <translation>SailPipe</translation>
     </message>

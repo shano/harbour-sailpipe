@@ -35,10 +35,10 @@ function generate {
 }
 
 # Generate cover action icons
-#generate 32 32 "icon-cover-replay"
+generate 32 32 "icon-cover-replay"
 
 # Generate titles
-#generate 303 86 "sailpipe-title"
+generate 303 86 "sailpipe-title"
 
 # Generate small icons
 generate 32 32 "icon-s-media-view icon-s-media-count"
@@ -53,4 +53,4 @@ generate 64 64 "icon-tab-about icon-tab-playlists icon-tab-video-full icon-tab-v
 generate 96 96 "icon-l-replay icon-l-skip"
 
 # Generate cover
-#generate 117 133 "cover-background"
+generate 117 133 "cover-background"
