@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-sailpipe
+Exec=harbour-sailpipe
+Name=SailPipe
+
+[X-Sailjail]
+OrganizationName=uk.co.flypig
+ApplicationName=harbour-sailpipe
+Permissions=Internet;Audio;Downloads;WebView
