@@ -451,7 +451,7 @@
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
-        <translation type="unfinished">LIcencja</translation>
+        <translation>Licencja</translation>
     </message>
     <message id="sailpipe_about-subtitle_contributors">
         <source>Contributors</source>
