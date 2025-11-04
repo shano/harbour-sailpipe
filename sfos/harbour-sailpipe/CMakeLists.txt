@@ -63,6 +63,7 @@ target_sources(harbour-sailpipe PRIVATE
     "src/downloadmanager.cpp"
     "src/downloadcontext.cpp"
     "src/dbusadapter.cpp"
+    "src/mediajunction.cpp"
 )
 
 # Update the translations

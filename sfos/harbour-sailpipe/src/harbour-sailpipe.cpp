@@ -18,6 +18,7 @@
 #include "playlistmodel.h"
 #include "filtermodel.h"
 #include "downloadmanager.h"
+#include "mediajunction.h"
 
 int main(int argc, char *argv[])
 {
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
   QScopedPointer<Extractor> extractor(new Extractor(app.data()));
   Utils::instantiate();
   DownloadManager::instantiate();
+  MediaJunction::instantiate();
 
   qmlRegisterType<Extractor>("harbour.sailpipe.extractor", 1, 0, "Extractor");
   qmlRegisterType<SearchModel>("harbour.sailpipe.extractor", 1, 0, "SearchModel");
@@ -49,6 +51,7 @@ int main(int argc, char *argv[])
   qmlRegisterType<FilterModel>("harbour.sailpipe.extractor", 1, 0, "FilterModel");
   qmlRegisterSingletonType<Utils>("harbour.sailpipe.extractor", 1, 0, "Utils", Utils::provider);
   qmlRegisterSingletonType<DownloadManager>("harbour.sailpipe.extractor", 1, 0, "DownloadManager", DownloadManager::provider);
+  qmlRegisterSingletonType<MediaJunction>("harbour.sailpipe.extractor", 1, 0, "MediaJunction", MediaJunction::provider);
 
   engine->addImageProvider(QLatin1String("sailpipe"), new ImageProvider());
 
