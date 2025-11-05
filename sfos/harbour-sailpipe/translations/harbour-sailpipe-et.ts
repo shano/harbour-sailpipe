@@ -525,5 +525,9 @@
         <source>Translation platform</source>
         <translation>Tõlkimisel kasutatud teenus</translation>
     </message>
+    <message id="sailpipe-mpris_identity">
+        <source>SailPipe</source>
+        <translation type="unfinished">SailPipe</translation>
+    </message>
 </context>
 </TS>

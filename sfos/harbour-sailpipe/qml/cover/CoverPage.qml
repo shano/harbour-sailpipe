@@ -36,20 +36,23 @@ CoverBackground {
 
     CoverActionList {
         id: coverAction
+        enabled: MediaJunction.controllable
 
         CoverAction {
             iconSource: Utils.getImageUrl("icon-cover-replay")
 
             onTriggered: {
-                console.log("Seek back 10000");
+                console.log("Seek back");
+                MediaJunction.skipBackwardsRequested();
             }
         }
 
         CoverAction {
-            iconSource: Qt.resolvedUrl("image://theme/icon-cover-play")
+            iconSource: MediaJunction.playing ? Qt.resolvedUrl("image://theme/icon-cover-pause") : Qt.resolvedUrl("image://theme/icon-cover-play")
 
             onTriggered: {
                 console.log("Play/pause");
+                MediaJunction.playPauseRequested();
             }
         }
     }

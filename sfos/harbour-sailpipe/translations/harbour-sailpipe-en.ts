@@ -372,19 +372,19 @@
         <translation>Replies</translation>
     </message>
     <message id="sailpipe_media-page_header_video">
-        <location filename="../qml/pages/VideoPage.qml" line="50"/>
+        <location filename="../qml/pages/VideoPage.qml" line="55"/>
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
         <translation>%0 Video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
-        <location filename="../qml/pages/VideoPage.qml" line="55"/>
+        <location filename="../qml/pages/VideoPage.qml" line="60"/>
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
         <translation>%0 Audio</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
-        <location filename="../qml/pages/VideoPage.qml" line="59"/>
+        <location filename="../qml/pages/VideoPage.qml" line="64"/>
         <source>Media</source>
         <translation>Media</translation>
     </message>
@@ -625,6 +625,11 @@
         <location filename="../qml/pages/AboutPage.qml" line="270"/>
         <source>Email</source>
         <translation>Email</translation>
+    </message>
+    <message id="sailpipe-mpris_identity">
+        <location filename="../src/mediajunction.cpp" line="29"/>
+        <source>SailPipe</source>
+        <translation type="unfinished">SailPipe</translation>
     </message>
 </context>
 </TS>

@@ -13,6 +13,7 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(sailfishsilica)
 BuildRequires:  pkgconfig(nemotransferengine-qt5)
+BuildRequires:  pkgconfig(ambermpris)
 BuildRequires:  desktop-file-utils
 BuildRequires:  cmake
 

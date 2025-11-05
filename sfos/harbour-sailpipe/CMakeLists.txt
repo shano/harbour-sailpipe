@@ -7,6 +7,7 @@ include(FindPkgConfig)
 pkg_search_module(SAILFISH sailfishapp REQUIRED)
 pkg_search_module(SILICA REQUIRED sailfishsilica)
 pkg_search_module(TRANSFERENGINE REQUIRED nemotransferengine-qt5)
+pkg_search_module(AMBERMPRIS REQUIRED ambermpris)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -25,6 +26,7 @@ target_include_directories(harbour-sailpipe PRIVATE
     ${SAILFISH_INCLUDE_DIRS}>
     ${SILICA_INCLUDE_DIRS}
     ${TRANSFERENGINE_INCLUDE_DIRS}
+    ${AMBERMPRIS_INCLUDE_DIRS}
     PRIVATE "${CMAKE_SOURCE_DIR}/include"
 )
 target_link_libraries(harbour-sailpipe
@@ -32,6 +34,7 @@ target_link_libraries(harbour-sailpipe
     ${SAILFISH_LDFLAGS}
     ${SILICA_LIBRARIES}
     ${TRANSFERENGINE_LIBRARIES}
+    ${AMBERMPRIS_LIBRARIES}
     -l:appwrapper.so
 )
 target_sources(harbour-sailpipe PRIVATE

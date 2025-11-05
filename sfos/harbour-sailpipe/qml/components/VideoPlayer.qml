@@ -9,6 +9,7 @@ Item {
 
     property alias source: media.source
     property alias thumbnail: image.source
+    property string name
     property bool controlsvisible: false
     property int skipTimeShort: 10
     property int skipTimeLong: 60
@@ -18,6 +19,46 @@ Item {
     property bool controllable: isControllable()
     property bool forceVisible: controllable
     readonly property bool portrait: video.sourceRect.width < video.sourceRect.height
+
+    function playPause() {
+        if (forceVisible) {
+            forceVisible = false;
+            closeControls();
+        }
+        else {
+            openControls()
+        }
+        if (playing) {
+            media.pause()
+        }
+        else {
+            media.play()
+        }
+    }
+
+    function reverse() {
+        openControls()
+        media.seek(media.position - (1000 * skipTimeShort))
+        mediaslider.value = mediaslider.value - (1000 * skipTimeShort)
+    }
+
+    function reverseLong() {
+        openControls()
+        media.seek(media.position - (1000 * skipTimeLong))
+        mediaslider.value = mediaslider.value - (1000 * skipTimeLong)
+    }
+
+    function forwards() {
+        openControls()
+        media.seek(media.position + (1000 * skipTimeShort))
+        mediaslider.value = mediaslider.value + (1000 * skipTimeShort)
+    }
+
+    function forwardsLong() {
+        openControls()
+        media.seek(media.position + (1000 * skipTimeLong))
+        mediaslider.value = mediaslider.value + (1000 * skipTimeLong)
+    }
 
     onPortraitChanged: {
         if (portrait) {
@@ -101,6 +142,44 @@ Item {
         }
     }
 
+    Binding {
+        target: MediaJunction
+        property: "playing"
+        value: playing
+    }
+    Binding {
+        target: MediaJunction
+        property: "position"
+        value: media.position
+    }
+    Binding {
+        target: MediaJunction
+        property: "duration"
+        value: media.duration
+    }
+    Binding {
+        target: MediaJunction
+        property: "title"
+        value: root.name
+    }
+    Binding {
+        target: MediaJunction
+        property: "controllable"
+        value: controllable
+    }
+    Binding {
+        target: MediaJunction
+        property: "thumbnail"
+        value: root.thumbnail
+    }
+
+    Connections {
+        target: MediaJunction
+        onPlayPauseRequested: playPause()
+        onSkipBackwardsRequested: reverse()
+        onSkipForwardsRequested: forwards()
+    }
+
     VideoOutput {
         id: video
         anchors.fill: parent
@@ -173,21 +252,7 @@ Item {
             icon.source: (playing ? Qt.resolvedUrl("image://theme/icon-l-pause?") : Qt.resolvedUrl("image://theme/icon-l-play?"))
                     + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
-            onClicked: {
-                if (forceVisible) {
-                    forceVisible = false;
-                    closeControls();
-                }
-                else {
-                    openControls()
-                }
-                if (playing) {
-                    media.pause()
-                }
-                else {
-                    media.play()
-                }
-            }
+            onClicked: playPause()
         }
 
         IconButtonDual {
@@ -199,16 +264,8 @@ Item {
             anchors.rightMargin: controlgap
             icon.source: Qt.resolvedUrl("image://sailpipe/icon-l-replay?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
-            onShortClick: {
-                openControls()
-                media.seek(media.position - (1000 * skipTimeShort))
-                mediaslider.value = mediaslider.value - (1000 * skipTimeShort)
-            }
-            onLongClick: {
-                openControls()
-                media.seek(media.position - (1000 * skipTimeLong))
-                mediaslider.value = mediaslider.value - (1000 * skipTimeLong)
-            }
+            onShortClick: reverse()
+            onLongClick: reverseLong()
         }
 
         IconButtonDual {
@@ -220,16 +277,8 @@ Item {
             anchors.leftMargin: controlgap
             icon.source: Qt.resolvedUrl("image://sailpipe/icon-l-skip?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
-            onShortClick: {
-                openControls()
-                media.seek(media.position + (1000 * skipTimeShort))
-                mediaslider.value = mediaslider.value + (1000 * skipTimeShort)
-            }
-            onLongClick: {
-                openControls()
-                media.seek(media.position + (1000 * skipTimeLong))
-                mediaslider.value = mediaslider.value + (1000 * skipTimeLong)
-            }
+            onShortClick: fowards()
+            onLongClick: forwardsLong()
         }
 
         Slider {

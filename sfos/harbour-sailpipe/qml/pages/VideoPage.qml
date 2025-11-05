@@ -17,6 +17,11 @@ Page {
         comments.model.loadComments(extractor, url);
         DownloadManager.page = url;
         DownloadManager.name = name;
+        MediaJunction.controllable = false;
+    }
+
+    Component.onDestruction: {
+        MediaJunction.controllable = false;
     }
 
     SilicaListView {
@@ -85,6 +90,7 @@ Page {
                     height: parent.height
                     source: root.source
                     thumbnail: root.thumbnail
+                    name: root.name
                 }
             }
 
