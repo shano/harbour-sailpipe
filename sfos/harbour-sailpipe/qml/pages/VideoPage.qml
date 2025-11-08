@@ -91,6 +91,7 @@ Page {
                     source: root.source
                     thumbnail: root.thumbnail
                     name: root.name
+                    uploader: root.mediaInfo.uploaderName
                 }
             }
 

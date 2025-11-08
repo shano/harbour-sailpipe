@@ -6,6 +6,16 @@ CoverBackground {
     id: cover
 
     Image {
+        anchors.fill: parent
+        fillMode: Image.PreserveAspectCrop
+        horizontalAlignment: Image.AlignHCenter
+        verticalAlignment: Image.AlignVCenter
+        source: MediaJunction.thumbnail
+        opacity: 0.25
+        visible: MediaJunction.controllable
+    }
+
+    Image {
         id: background
         visible: true
         anchors.horizontalCenter: parent.horizontalCenter
@@ -32,6 +42,55 @@ CoverBackground {
             elide: Text.ElideNone
             maximumLineCount: 3
         }
+
+        Label {
+            color: Theme.highlightColor
+            width: parent.width
+            text: MediaJunction.creator
+            fontSizeMode: Text.VerticalFit
+            font.pixelSize: Theme.fontSizeMedium
+            wrapMode: Text.NoWrap
+            truncationMode: TruncationMode.Fade
+            elide: Text.ElideNone
+            maximumLineCount: 1
+            visible: MediaJunction.controllable
+        }
+
+        Item {
+            width: parent.width
+            height: title.height
+            visible: MediaJunction.controllable
+
+            Label {
+                id: title
+                color: Theme.primaryColor
+                width: parent.width
+                text: MediaJunction.title
+                fontSizeMode: Text.VerticalFit
+                font.pixelSize: Theme.fontSizeMedium
+                wrapMode: Text.WordWrap
+                maximumLineCount: 2
+                onLineLaidOut: {
+                    if (line.number == maximumLineCount - 1) {
+                        line.width = parent.width * 4
+                    }
+                }
+            }
+
+            OpacityRampEffect {
+                offset: 0.5
+                sourceItem: title
+                enabled: title.implicitWidth > title.width
+            }
+        }
+    }
+
+    Progress {
+        y: parent.height * 0.6
+        width: parent.width
+        height: Theme.itemSizeMedium
+        progress: MediaJunction.position / MediaJunction.duration
+        running: MediaJunction.playing
     }
 
     CoverActionList {

@@ -10,6 +10,7 @@ Item {
     property alias source: media.source
     property alias thumbnail: image.source
     property string name
+    property string uploader
     property bool controlsvisible: false
     property int skipTimeShort: 10
     property int skipTimeLong: 60
@@ -164,6 +165,11 @@ Item {
     }
     Binding {
         target: MediaJunction
+        property: "creator"
+        value: root.uploader
+    }
+    Binding {
+        target: MediaJunction
         property: "controllable"
         value: controllable
     }
@@ -277,7 +283,7 @@ Item {
             anchors.leftMargin: controlgap
             icon.source: Qt.resolvedUrl("image://sailpipe/icon-l-skip?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
-            onShortClick: fowards()
+            onShortClick: forwards()
             onLongClick: forwardsLong()
         }
 

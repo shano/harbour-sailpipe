@@ -347,7 +347,7 @@
         </translation>
     </message>
     <message id="sailpipe_cover-title">
-        <location filename="../qml/cover/CoverPage.qml" line="28"/>
+        <location filename="../qml/cover/CoverPage.qml" line="38"/>
         <source>SailPipe</source>
         <translation>SailPipe</translation>
     </message>
@@ -627,7 +627,7 @@
         <translation>Email</translation>
     </message>
     <message id="sailpipe-mpris_identity">
-        <location filename="../src/mediajunction.cpp" line="29"/>
+        <location filename="../src/mediajunction.cpp" line="30"/>
         <source>SailPipe</source>
         <translation type="unfinished">SailPipe</translation>
     </message>

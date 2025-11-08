@@ -14,6 +14,7 @@ class MediaJunction : public QObject
   Q_PROPERTY(int duration READ duration WRITE setDuration NOTIFY durationChanged)
   Q_PROPERTY(bool playing READ playing WRITE setPlaying NOTIFY playingChanged)
   Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
+  Q_PROPERTY(QString creator READ creator WRITE setCreator NOTIFY creatorChanged)
   Q_PROPERTY(QString thumbnail READ thumbnail WRITE setThumbnail NOTIFY thumbnailChanged)
 public:
   explicit MediaJunction(QObject *parent = nullptr);
@@ -26,6 +27,7 @@ public:
   int duration() const;
   bool playing() const;
   QString title() const;
+  QString creator() const;
   QString thumbnail() const;
 
   void setControllable(bool controllable);
@@ -33,6 +35,7 @@ public:
   void setDuration(int duration);
   void setPlaying(bool playing);
   void setTitle(QString title);
+  void setCreator(QString creator);
   void setThumbnail(QString thumbnail);
 
 signals:
@@ -41,6 +44,7 @@ signals:
   void durationChanged();
   void playingChanged();
   void titleChanged();
+  void creatorChanged();
   void thumbnailChanged();
 
   void playPauseRequested();
@@ -55,6 +59,7 @@ private:
   int m_duration;
   bool m_playing;
   QString m_title;
+  QString m_creator;
   QString m_thumbnail;
   Amber::MprisPlayer* m_mpris;
 };

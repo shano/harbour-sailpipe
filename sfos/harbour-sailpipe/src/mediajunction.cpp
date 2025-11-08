@@ -16,6 +16,7 @@ MediaJunction::MediaJunction(QObject *parent)
   , m_duration(0)
   , m_playing(false)
   , m_title()
+  , m_creator()
   , m_thumbnail()
   , m_mpris(new MprisPlayer(this))
 {
@@ -78,6 +79,11 @@ QString MediaJunction::title() const
   return m_title;
 }
 
+QString MediaJunction::creator() const
+{
+  return m_creator;
+}
+
 QString MediaJunction::thumbnail() const
 {
   return m_thumbnail;
@@ -135,6 +141,16 @@ void MediaJunction::setTitle(QString title)
     emit titleChanged();
     m_mpris->metaData()->setTitle(m_title);
     qDebug() << "MediaJunction: title: " << m_title;
+  }
+}
+
+void MediaJunction::setCreator(QString creator)
+{
+  if (m_creator!= creator) {
+    m_creator = creator;
+    emit creatorChanged();
+    m_mpris->metaData()->setContributingArtist(m_creator);
+    qDebug() << "MediaJunction: creator: " << m_creator;
   }
 }
 

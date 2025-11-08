@@ -126,6 +126,7 @@ add_custom_target(distfiles
         harbour-sailpipe.desktop
         qml/harbour-sailpipe.qml
         qml/cover/CoverPage.qml
+        qml/cover/Progress.qml
         qml/pages/SearchPage.qml
         qml/pages/VideoPage.qml
         qml/pages/RepliesPage.qml
