@@ -86,11 +86,13 @@ CoverBackground {
     }
 
     Progress {
-        y: parent.height * 0.6
-        width: parent.width
-        height: Theme.itemSizeMedium
+        x: Theme.paddingLarge / 2.0
+        y: parent.height * 0.65
+        width: parent.width - Theme.paddingLarge
+        height: Theme.itemSizeSmall / 2.0
         progress: MediaJunction.position / MediaJunction.duration
         running: MediaJunction.playing
+        visible: MediaJunction.controllable
     }
 
     CoverActionList {
