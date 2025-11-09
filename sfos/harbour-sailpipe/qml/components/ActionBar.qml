@@ -16,6 +16,7 @@ Row {
     signal sharePressed
     signal downloadPressed
     signal downloadCancelPressed
+    signal openPagePressed
 
     IconButton {
         width: parent.buttonsize
@@ -121,6 +122,16 @@ Row {
                 downloadPressed()
             }
         }
+    }
+
+    IconButton {
+        width: parent.buttonsize
+        height: parent.buttonsize
+        icon.sourceSize.width: width
+        icon.sourceSize.height: height
+        icon.source: Qt.resolvedUrl("image://sailpipe/icon-splus-url-open?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
+
+        onClicked: openPagePressed()
     }
 
     states: [

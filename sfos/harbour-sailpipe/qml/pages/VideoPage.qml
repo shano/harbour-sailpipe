@@ -117,6 +117,10 @@ Page {
                     DownloadManager.cancel();
                 }
 
+                onOpenPagePressed: {
+                    Qt.openUrlExternally(url)
+                }
+
                 ShareAction {
                     id: shareAction
                     mimeType: "text/x-url"
