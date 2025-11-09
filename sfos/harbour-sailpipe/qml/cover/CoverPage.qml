@@ -26,6 +26,7 @@ CoverBackground {
     }
 
     Column {
+        id: info
         x: Theme.paddingLarge
         y: Theme.paddingLarge
         width: cover.width - 2 * x
@@ -86,9 +87,10 @@ CoverBackground {
     }
 
     Progress {
-        x: Theme.paddingLarge / 2.0
-        y: parent.height * 0.65
-        width: parent.width - Theme.paddingLarge
+        x: Theme.paddingLarge
+        anchors.top: info.bottom
+        anchors.topMargin: Theme.paddingLarge
+        width: parent.width - (2.0 * Theme.paddingLarge)
         height: Theme.itemSizeSmall / 2.0
         progress: MediaJunction.position / MediaJunction.duration
         running: MediaJunction.playing

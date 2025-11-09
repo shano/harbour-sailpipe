@@ -3,93 +3,81 @@ import Sailfish.Silica 1.0
 
 Item {
     id: root
-    property alias running: progress.running
-    property alias progress: progress.progress
+    property alias running: progressShader.running
+    property alias progress: progressShader.progress
 
     Timer {
-        interval: 100
+        interval: 32
         repeat: true
         running: root.running
-        onTriggered: progress.count = (progress.count + 1) % 50
+        onTriggered: progressShader.count = (progressShader.count + 1) % 100
     }
 
     ShaderEffect {
-        id: progress
+        id: progressShader
 
         anchors.fill: parent
 
         property bool running: false
-        property real progress: 0.5
+        property real progress: 0.0
         property int count: 0
-        property color colour: Theme.rgba(Theme.primaryColor, 0.75)
-        property Image pattern: Image { source: Theme._patternImage; fillMode: Image.Tile }
-        property size backgroundScale: Qt.size(width / pattern.width, height / pattern.height)
-        property size centerSize: Qt.size(0.5 * (width - height) / width, 0.1);
+        property color colour: Theme.rgba(Theme.highlightColor, 0.75)
+        property size size: Qt.size(width, height)
+        property size p1: Qt.size(20.0, 20.0)
+        property size p2: Qt.size((progress * (width - 40.0)) + 20.0, height - 20.0)
+        property real corner: 20.0
+        property real radius: height / 2.2;
 
         vertexShader: "
             uniform highp mat4 qt_Matrix;
             attribute highp vec4 qt_Vertex;
             attribute highp vec2 qt_MultiTexCoord0;
-            varying highp vec2 coord;
+            varying highp vec2 pos;
 
             void main() {
-                coord = qt_MultiTexCoord0;
                 gl_Position = qt_Matrix * qt_Vertex;
+                pos = qt_Vertex.xy;
             }"
 
         fragmentShader: "
-            varying highp vec2 coord;
+            varying highp vec2 pos;
             uniform lowp float qt_Opacity;
             uniform lowp float progress;
             uniform lowp int count;
             uniform lowp vec4 colour;
-            uniform lowp sampler2D pattern;
-            uniform lowp vec2 backgroundScale;
-            uniform lowp vec2 centerSize;
-
-            const float PI = 3.14159265358979323846264;
-            const float border = 0.3;
-            const float sigma = 0.35;
-            const float brightness = 0.5;
-            const float dropoff = 0.1;
-            const float pulse = 0.15f;
+            uniform lowp vec2 size;
+            uniform lowp vec2 p1;
+            uniform lowp vec2 p2;
+            uniform lowp float corner;
+            uniform lowp float radius;
+            const float minpaint = 0.4;
+            const float maxpaint = 0.6;
 
             void main() {
-                lowp float width = 1.0 + dropoff;
-                lowp float upper = (progress * width);
-                lowp float lower = upper - dropoff;
-                lowp float x = coord.x * width;
+                lowp float x = pos.x;
+                lowp float y = pos.y;
                 lowp float paint;
-                float cycle = pulse + (pulse * sin(2.0 * PI * (1.0 - (float(count) / 50.0f) + (5.0f * coord.x) + (0.0f * coord.y))));
-                lowp vec2 patternCoord;
-                lowp float patternValue;
-                mediump vec2 normalize;
-                mediump vec2 edge;
-                mediump float disc;
-                mediump float shi;
+                lowp float centre;
+                lowp float effectiveRadius;
 
-                if (x < lower) {
-                    paint = 1.0 + cycle;
-                }
-                else {
-                    if (x > upper) {
-                        paint = cycle;
-                    }
-                    else {
-                        paint = (0.5 * (cos((PI / 1.0) * ((x - lower) / dropoff)) + 1.0)) + cycle;
-                    }
+                lowp float dx = (x < p1.x) ? (p1.x - x) : ((x < p2.x) ? 0.0 : (x - p2.x));
+                lowp float dy = (y < p1.y) ? (p1.y - y) : ((y < p2.y) ? 0.0 : (y - p2.y));
+                lowp float d = sqrt(pow(dx, 2.0) + pow(dy, 2.0));
+                lowp float z = max(corner - d, 0.0);
+                paint = z / corner;
+
+                for (centre = (float(count) / 100.0) * (size.x / 4.0); centre < size.x + radius; centre += size.x / 4.0) {
+                    effectiveRadius = min(radius, max(radius + (0.9 * size.x * ((centre / size.x) - (progress + (corner / (size.x * 0.6))))), 0.0));
+                    effectiveRadius *= min(corner * ((centre - 1.3 * corner) / size.x), 1.0);
+                    effectiveRadius *= min(corner * ((size.x - centre - corner) / size.x), 1.0);
+                    d = sqrt(pow(centre - x, 2.0) + pow((size.y / 2.0) - y, 2.0));
+                    z = max(effectiveRadius - d, 0.0) * effectiveRadius / corner;
+                    paint += z / effectiveRadius;
                 }
 
-                patternCoord = coord * backgroundScale;
-                patternCoord = vec2(mod(patternCoord.x, 1.0), mod(patternCoord.y, 1.0));
-                patternValue = texture2D(pattern, patternCoord).a;
+                paint = ((paint > minpaint) && (paint < maxpaint)) ? 1.0 : 0.0;
 
-                normalize = 1.0 - (2.0 * centerSize);
-                edge = max(vec2(0.0), abs(coord - 0.5) - centerSize) / normalize;
-                disc = 1.0 - smoothstep(0.0, 1.0, length(edge) / border);
-                shi = min(1.0, exp2(-dot(edge, edge) / (sigma * sigma)));
-                gl_FragColor = paint * qt_Opacity * mix(vec4(0.0) * (shi * (1.0 - disc)), colour, min(1.0, (brightness * shi * (1.0 + shi + 2.0 * disc) *  0.25 + shi * patternValue)));
-
+                gl_FragColor = paint * qt_Opacity * colour;
                 return;
             }"
     }

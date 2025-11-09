@@ -347,7 +347,7 @@
         </translation>
     </message>
     <message id="sailpipe_cover-title">
-        <location filename="../qml/cover/CoverPage.qml" line="38"/>
+        <location filename="../qml/cover/CoverPage.qml" line="39"/>
         <source>SailPipe</source>
         <translation>SailPipe</translation>
     </message>
