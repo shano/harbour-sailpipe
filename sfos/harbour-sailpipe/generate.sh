@@ -35,7 +35,7 @@ function generate {
 }
 
 # Generate cover action icons
-generate 32 32 "icon-cover-replay"
+generate 32 32 "icon-cover-replay icon-cover-replay-light"
 
 # Generate titles
 generate 303 86 "sailpipe-title"

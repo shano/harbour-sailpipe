@@ -10,6 +10,8 @@ class QJSEngine;
 class Utils : public QObject
 {
   Q_OBJECT
+
+  Q_PROPERTY(QString replayIcon READ replayIcon NOTIFY colorSchemeChanged)
 public:
   explicit Utils(QObject *parent = nullptr);
   static void instantiate(QObject* parent = nullptr);
@@ -20,6 +22,11 @@ public:
   Q_INVOKABLE static QDateTime epochToDateTime(qint64 epoch);
   Q_INVOKABLE QString getImageDir() const;
   Q_INVOKABLE QString getImageUrl(QString const &id) const;
+
+  QString replayIcon() const;
+
+signals:
+  void colorSchemeChanged();
 
 private:
   static Utils* m_instance;

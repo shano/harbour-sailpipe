@@ -191,7 +191,7 @@
         <translation>No tracks</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
-        <location filename="../src/utils.cpp" line="65"/>
+        <location filename="../src/utils.cpp" line="67"/>
         <source>??:??:??</source>
         <translation>??:??:??</translation>
     </message>

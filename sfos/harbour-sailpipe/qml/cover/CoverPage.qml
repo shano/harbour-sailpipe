@@ -102,7 +102,7 @@ CoverBackground {
         enabled: MediaJunction.controllable
 
         CoverAction {
-            iconSource: Utils.getImageUrl("icon-cover-replay")
+            iconSource: Utils.replayIcon
 
             onTriggered: {
                 console.log("Seek back");

@@ -20,6 +20,8 @@ Utils::Utils(QObject *parent) : QObject(parent)
   }
 
   m_imageDir = SailfishApp::pathTo("qml/images/z" + dir).toString(QUrl::RemoveScheme) + "/";
+
+  connect(silicaTheme, &Silica::Theme::colorSchemeChanged, this, &Utils::colorSchemeChanged);
 }
 
 void Utils::instantiate(QObject* parent) {
@@ -82,6 +84,13 @@ QString Utils::getImageDir() const
 
 QString Utils::getImageUrl(QString const &id) const
 {
-    return m_imageDir + id + QString::fromLatin1(".png");
+  Silica::Theme *silicaTheme = Silica::Theme::instance();
+  QString suffix = silicaTheme->colorScheme() == Silica::Theme::DarkOnLight ? QString::fromLatin1("-light") : QString();
+  return m_imageDir + id + suffix + QString::fromLatin1(".png");
+}
+
+QString Utils::replayIcon() const
+{
+  return getImageUrl(QString::fromLatin1("icon-cover-replay"));
 }
 
