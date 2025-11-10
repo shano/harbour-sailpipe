@@ -8,6 +8,7 @@
         <translation type="obsolete">
             <numerusform>%n reply</numerusform>
             <numerusform>%n replies</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-replies_page-header">
@@ -41,6 +42,7 @@
         <translation type="unfinished">
             <numerusform>%n item</numerusform>
             <numerusform>%n items</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_subscriber_count" numerus="yes">
@@ -49,6 +51,7 @@
         <translation type="unfinished">
             <numerusform>%n subscriber</numerusform>
             <numerusform>%n subscribers</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_inforow">
@@ -61,6 +64,7 @@
         <translation type="unfinished">
             <numerusform>%n item</numerusform>
             <numerusform>%n items</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
@@ -76,6 +80,7 @@
         <translation type="obsolete">
             <numerusform>%n video</numerusform>
             <numerusform>%n videos</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">
@@ -91,6 +96,7 @@
         <translation type="unfinished">
             <numerusform>%n item</numerusform>
             <numerusform>%n items</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-channeltab-header_about">
@@ -243,6 +249,7 @@
         <translation type="unfinished">
             <numerusform>%n reply</numerusform>
             <numerusform>%n replies</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe_cover-title">
@@ -470,6 +477,10 @@
     </message>
     <message id="sailpipe_about-tralsation_platform">
         <source>Translation platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe-mpris_identity">
+        <source>SailPipe</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
