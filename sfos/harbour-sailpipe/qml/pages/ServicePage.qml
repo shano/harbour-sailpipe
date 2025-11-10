@@ -48,10 +48,6 @@ Page {
             name: "Media.ccc.de"
         }
         ListElement {
-            service: Extractor.PeertubeService
-            name: "PeerTube"
-        }
-        ListElement {
             service: Extractor.BandcampService
             name: "Bandcamp"
         }
