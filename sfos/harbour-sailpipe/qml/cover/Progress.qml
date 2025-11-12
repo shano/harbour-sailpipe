@@ -5,6 +5,7 @@ Item {
     id: root
     property alias running: progressShader.running
     property alias progress: progressShader.progress
+    property alias seekable: progressShader.seekable
 
     Timer {
         interval: 32
@@ -20,6 +21,7 @@ Item {
 
         property bool running: false
         property real progress: 0.0
+        property bool seekable: true
         property int count: 0
         property color colour: Theme.rgba(Theme.highlightColor, 0.75)
         property size size: Qt.size(width, height)
@@ -43,6 +45,7 @@ Item {
             varying highp vec2 pos;
             uniform lowp float qt_Opacity;
             uniform lowp float progress;
+            uniform lowp bool seekable;
             uniform lowp int count;
             uniform lowp vec4 colour;
             uniform lowp vec2 size;
@@ -56,15 +59,19 @@ Item {
             void main() {
                 lowp float x = pos.x;
                 lowp float y = pos.y;
-                lowp float paint;
+                lowp float paint = 0.0;
                 lowp float centre;
                 lowp float effectiveRadius;
+                lowp float z;
+                lowp float d;
 
-                lowp float dx = (x < p1.x) ? (p1.x - x) : ((x < p2.x) ? 0.0 : (x - p2.x));
-                lowp float dy = (y < p1.y) ? (p1.y - y) : ((y < p2.y) ? 0.0 : (y - p2.y));
-                lowp float d = sqrt(pow(dx, 2.0) + pow(dy, 2.0));
-                lowp float z = max(corner - d, 0.0);
-                paint = z / corner;
+                if (seekable) {
+                    lowp float dx = (x < p1.x) ? (p1.x - x) : ((x < p2.x) ? 0.0 : (x - p2.x));
+                    lowp float dy = (y < p1.y) ? (p1.y - y) : ((y < p2.y) ? 0.0 : (y - p2.y));
+                    d = sqrt(pow(dx, 2.0) + pow(dy, 2.0));
+                    z = max(corner - d, 0.0);
+                    paint = z / corner;
+                }
 
                 for (centre = (float(count) / 100.0) * (size.x / 4.0); centre < size.x + radius; centre += size.x / 4.0) {
                     effectiveRadius = min(radius, max(radius + (0.9 * size.x * ((centre / size.x) - (progress + (corner / (size.x * 0.6))))), 0.0));

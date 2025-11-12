@@ -92,7 +92,8 @@ CoverBackground {
         anchors.topMargin: Theme.paddingLarge
         width: parent.width - (2.0 * Theme.paddingLarge)
         height: Theme.itemSizeSmall / 2.0
-        progress: MediaJunction.position / MediaJunction.duration
+        progress: MediaJunction.duration > 0.0 ? MediaJunction.position / MediaJunction.duration : 0.0
+        seekable: MediaJunction.duration > 0.0
         running: MediaJunction.playing
         visible: MediaJunction.controllable
     }
