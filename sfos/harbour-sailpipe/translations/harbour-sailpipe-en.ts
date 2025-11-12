@@ -479,105 +479,147 @@
         <translation>SailPipe download</translation>
     </message>
     <message id="sailpipe_about-title">
-        <location filename="../qml/pages/AboutPage.qml" line="25"/>
         <source>About SailPipe</source>
-        <translation>About SailPipe</translation>
+        <translation type="vanished">About SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-about_sailpipe">
+        <source>About SailPipe</source>
+        <translation type="obsolete">About SailPipe</translation>
     </message>
     <message id="sailpipe_about-description">
-        <location filename="../qml/pages/AboutPage.qml" line="36"/>
+        <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>Video and music streaming and downloading</source>
         <translation>Video and music streaming and downloading</translation>
     </message>
     <message id="sailpipe_about-version">
-        <location filename="../qml/pages/AboutPage.qml" line="49"/>
+        <location filename="../qml/pages/AboutPage.qml" line="54"/>
         <source>Version</source>
         <oldsource>Version:</oldsource>
         <translation>Version</translation>
     </message>
     <message id="sailpipe_about-maintainer">
-        <location filename="../qml/pages/AboutPage.qml" line="58"/>
+        <location filename="../qml/pages/AboutPage.qml" line="60"/>
         <source>Maintainer</source>
         <oldsource>Maintainer:</oldsource>
         <translation>Maintainer</translation>
     </message>
     <message id="sailpipe_about-licence">
-        <location filename="../qml/pages/AboutPage.qml" line="67"/>
+        <location filename="../qml/pages/AboutPage.qml" line="66"/>
         <source>Licence</source>
         <oldsource>Licence:</oldsource>
         <translation>Licence</translation>
     </message>
     <message id="sailpipe_about-respect_copyright">
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="72"/>
         <source>Please respect the copyright of all files downloaded using this software</source>
         <translation>Please respect the copyright of all files downloaded using this software</translation>
     </message>
     <message id="sailpipe_about-summary">
-        <location filename="../qml/pages/AboutPage.qml" line="90"/>
+        <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
         <translation>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor">
-        <location filename="../qml/pages/AboutPage.qml" line="104"/>
-        <source>About NewPipe Extractor</source>
-        <translation>About NewPipe Extractor</translation>
+        <source>NewPipe Extractor</source>
+        <oldsource>About NewPipe Extractor</oldsource>
+        <translation type="obsolete">NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
-        <location filename="../qml/pages/AboutPage.qml" line="109"/>
+        <location filename="../qml/pages/AboutPage.qml" line="105"/>
         <source>A library for extracting things from streaming sites</source>
         <translation>A library for extracting things from streaming sites</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
-        <location filename="../qml/pages/AboutPage.qml" line="122"/>
+        <location filename="../qml/pages/AboutPage.qml" line="118"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_maintainer">
-        <location filename="../qml/pages/AboutPage.qml" line="131"/>
+        <location filename="../qml/pages/AboutPage.qml" line="124"/>
         <source>Maintainer</source>
         <translation>Maintainer</translation>
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
-        <location filename="../qml/pages/AboutPage.qml" line="140"/>
+        <location filename="../qml/pages/AboutPage.qml" line="130"/>
         <source>Licence</source>
         <translation>Licence</translation>
     </message>
     <message id="sailpipe_about-subtitle_contributors">
-        <location filename="../qml/pages/AboutPage.qml" line="149"/>
         <source>Contributors</source>
-        <translation>Contributors</translation>
+        <translation type="vanished">Contributors</translation>
+    </message>
+    <message id="sailpipe_about-title_about_sailpipe">
+        <location filename="../qml/pages/AboutPage.qml" line="25"/>
+        <source>About SailPipe</source>
+        <translation type="unfinished">About SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-section_general">
+        <location filename="../qml/pages/AboutPage.qml" line="36"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_newpipe_extractor">
+        <location filename="../qml/pages/AboutPage.qml" line="100"/>
+        <source>NewPipe Extractor</source>
+        <translation type="unfinished">NewPipe Extractor</translation>
+    </message>
+    <message id="sailpipe_about-section_contributors">
+        <location filename="../qml/pages/AboutPage.qml" line="136"/>
+        <source>Contributors</source>
+        <translation type="unfinished">Contributors</translation>
+    </message>
+    <message id="sailpipe_about-contributors_description">
+        <location filename="../qml/pages/AboutPage.qml" line="141"/>
+        <source>The amazing team of SailPipe contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-sailing_to_coffee">
+        <location filename="../qml/pages/AboutPage.qml" line="154"/>
+        <source>Sailing-to-Coffee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-opal">
+        <location filename="../qml/pages/AboutPage.qml" line="160"/>
+        <source>Opal modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-testing">
+        <location filename="../qml/pages/AboutPage.qml" line="166"/>
+        <source>Testing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="154"/>
+        <location filename="../qml/pages/AboutPage.qml" line="172"/>
         <source>Belarusian</source>
         <oldsource>Belarusian translation</oldsource>
         <translation>Belarusian</translation>
     </message>
     <message id="sailpipe_about-estonian_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="163"/>
+        <location filename="../qml/pages/AboutPage.qml" line="178"/>
         <source>Estonian</source>
         <oldsource>Estonian translation</oldsource>
         <translation>Estonian</translation>
     </message>
     <message id="sailpipe_about-finnish_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="172"/>
+        <location filename="../qml/pages/AboutPage.qml" line="184"/>
         <source>Finnish</source>
         <oldsource>Finnish translation</oldsource>
         <translation>Finnish</translation>
     </message>
     <message id="sailpipe_about-french_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="181"/>
+        <location filename="../qml/pages/AboutPage.qml" line="190"/>
         <source>French</source>
         <oldsource>French translation</oldsource>
         <translation>French</translation>
     </message>
     <message id="sailpipe_about-german_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="190"/>
+        <location filename="../qml/pages/AboutPage.qml" line="196"/>
         <source>German</source>
         <oldsource>German translation</oldsource>
         <translation>German</translation>
     </message>
     <message id="sailpipe_about-italian_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="199"/>
+        <location filename="../qml/pages/AboutPage.qml" line="202"/>
         <source>Italian</source>
         <oldsource>Italian translation</oldsource>
         <translation>Italian</translation>
@@ -589,40 +631,49 @@
         <translation>Polish</translation>
     </message>
     <message id="sailpipe_about-russian_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="217"/>
+        <location filename="../qml/pages/AboutPage.qml" line="214"/>
         <source>Russian</source>
         <oldsource>Russian translation</oldsource>
         <translation>Russian</translation>
     </message>
     <message id="sailpipe_about-swedish_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="226"/>
+        <location filename="../qml/pages/AboutPage.qml" line="220"/>
         <source>Swedish</source>
         <oldsource>Swedish translation</oldsource>
         <translation>Swedish</translation>
     </message>
     <message id="sailpipe_about-turkish_translation">
-        <location filename="../qml/pages/AboutPage.qml" line="235"/>
+        <location filename="../qml/pages/AboutPage.qml" line="226"/>
         <source>Turkish</source>
         <oldsource>Turkish translation</oldsource>
         <translation>Turkish</translation>
     </message>
+    <message id="sailpipe_about-romanian_translation">
+        <location filename="../qml/pages/AboutPage.qml" line="232"/>
+        <source>Romanian</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="sailpipe_about-tralsation_platform">
-        <location filename="../qml/pages/AboutPage.qml" line="244"/>
+        <location filename="../qml/pages/AboutPage.qml" line="238"/>
         <source>Translation platform</source>
         <translation>Translation platform</translation>
     </message>
-    <message id="sailpipe_about-subtitle_links">
-        <location filename="../qml/pages/AboutPage.qml" line="253"/>
+    <message id="sailpipe_about-section_links">
+        <location filename="../qml/pages/AboutPage.qml" line="244"/>
         <source>Links</source>
-        <translation>Links</translation>
+        <translation type="unfinished">Links</translation>
+    </message>
+    <message id="sailpipe_about-subtitle_links">
+        <source>Links</source>
+        <translation type="vanished">Links</translation>
     </message>
     <message id="sailpipe_about-website">
-        <location filename="../qml/pages/AboutPage.qml" line="263"/>
+        <location filename="../qml/pages/AboutPage.qml" line="254"/>
         <source>Website</source>
         <translation>Website</translation>
     </message>
     <message id="sailpipe_about-email">
-        <location filename="../qml/pages/AboutPage.qml" line="270"/>
+        <location filename="../qml/pages/AboutPage.qml" line="261"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>

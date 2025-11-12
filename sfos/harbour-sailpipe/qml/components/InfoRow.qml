@@ -10,45 +10,32 @@ Item {
     property alias value: valueText.text
     property real leftMargin: Theme.horizontalPageMargin
     property real rightMargin: Theme.horizontalPageMargin
-    property real midlineRatio: 0.5
-    property real midlineMin: 0.0
-    property real midlineMax: width
-    property real midLine: Math.min(Math.max((width * midlineRatio), midlineMin), midlineMax)
+    property real midlineRatio: 0.4
+    property real midlineMin: Theme.fontSizeSmall * 5
+    property real midlineMax: Theme.fontSizeSmall * 10
+    property real midline: Math.min(Math.max((width * midlineRatio), midlineMin), midlineMax)
     property int pixelSize: Theme.fontSizeSmall
-    property alias labelTextBold: labelText.font.bold
-    property alias valueTextBold: valueText.font.bold
 
-    Text {
+    Label {
         id: labelText
 
+        x: detailItem.leftMargin
         y: Theme.paddingSmall
-        anchors {
-            left: parent.left
-            right: parent.right
-            rightMargin: midLine + Theme.paddingSmall
-            leftMargin: detailItem.leftMargin
-        }
+        width: midline - detailItem.leftMargin - Theme.paddingSmall
         horizontalAlignment: Text.AlignLeft
-        color: Theme.primaryColor
+        color: Theme.secondaryColor
         font.pixelSize: pixelSize
-        textFormat: Text.PlainText
         wrapMode: Text.Wrap
     }
 
-    Text {
+    Label {
         id: valueText
 
+        x: midline
         y: Theme.paddingSmall
-        anchors {
-            left: parent.left
-            right: parent.right
-            leftMargin: midLine + Theme.paddingSmall
-            rightMargin: detailItem.rightMargin
-        }
+        width: parent.width - midline - detailItem.rightMargin
         horizontalAlignment: Text.AlignLeft
         color: Theme.primaryColor
         font.pixelSize: pixelSize
-        textFormat: Text.PlainText
-        wrapMode: Text.Wrap
-    }
+  }
 }

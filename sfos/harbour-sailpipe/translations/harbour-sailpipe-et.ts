@@ -406,7 +406,7 @@
     </message>
     <message id="sailpipe_about-title">
         <source>About SailPipe</source>
-        <translation>Rakenduse teave: SailPipe</translation>
+        <translation type="vanished">Rakenduse teave: SailPipe</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
@@ -437,7 +437,7 @@
     </message>
     <message id="sailpipe_about-subtitle_links">
         <source>Links</source>
-        <translation>Lingid</translation>
+        <translation type="vanished">Lingid</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
@@ -448,8 +448,9 @@
         <translation>E-posti aadress</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor">
-        <source>About NewPipe Extractor</source>
-        <translation>Teegi teave: NewPipe Extractor</translation>
+        <source>NewPipe Extractor</source>
+        <oldsource>About NewPipe Extractor</oldsource>
+        <translation type="obsolete">Teegi teave: NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
@@ -469,7 +470,7 @@
     </message>
     <message id="sailpipe_about-subtitle_contributors">
         <source>Contributors</source>
-        <translation>Kaasautorid</translation>
+        <translation type="vanished">Kaasautorid</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
@@ -528,6 +529,50 @@
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
         <translation type="unfinished">SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-sailing_to_coffee">
+        <source>Sailing-to-Coffee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-opal">
+        <source>Opal modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-testing">
+        <source>Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-romanian_translation">
+        <source>Romanian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-about_sailpipe">
+        <source>About SailPipe</source>
+        <translation type="obsolete">Rakenduse teave: SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-contributors_description">
+        <source>The amazing team of SailPipe contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-title_about_sailpipe">
+        <source>About SailPipe</source>
+        <translation type="unfinished">Rakenduse teave: SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-section_general">
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_newpipe_extractor">
+        <source>NewPipe Extractor</source>
+        <translation type="unfinished">Teegi teave: NewPipe Extractor</translation>
+    </message>
+    <message id="sailpipe_about-section_contributors">
+        <source>Contributors</source>
+        <translation type="unfinished">Kaasautorid</translation>
+    </message>
+    <message id="sailpipe_about-section_links">
+        <source>Links</source>
+        <translation type="unfinished">Lingid</translation>
     </message>
 </context>
 </TS>

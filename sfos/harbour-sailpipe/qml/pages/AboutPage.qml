@@ -22,13 +22,18 @@ Page {
 
             PageHeader {
                 //% "About SailPipe"
-                title: qsTrId("sailpipe_about-title")
+                title: qsTrId("sailpipe_about-title_about_sailpipe")
             }
 
             Image {
                 anchors.topMargin: Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
                 source  : Qt.resolvedUrl("image://sailpipe/sailpipe-title")
+            }
+
+            SectionHeader {
+                //% "General"
+                text: qsTrId("sailpipe_about-section_general")
             }
 
             Label {
@@ -48,27 +53,18 @@ Page {
                 //% "Version"
                 label: qsTrId("sailpipe_about-version")
                 value: sailpipeVersion
-                midlineRatio: 0.3
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Maintainer"
                 label: qsTrId("sailpipe_about-maintainer")
                 value: "David Llewellyn-Jones"
-                midlineRatio: 0.3
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Licence"
                 label: qsTrId("sailpipe_about-licence")
                 value: "GPLv3.0"
-                midlineRatio: 0.3
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             Label {
@@ -100,8 +96,8 @@ Page {
             }
 
             SectionHeader {
-                //% "About NewPipe Extractor"
-                text: qsTrId("sailpipe_about-newpipe_extractor")
+                //% "NewPipe Extractor"
+                text: qsTrId("sailpipe_about-section_newpipe_extractor")
             }
 
             Label {
@@ -121,136 +117,131 @@ Page {
                 //% "Version"
                 label: qsTrId("sailpipe_about-newpipe_extractor_version")
                 value: "0.24.5"
-                midlineRatio: 0.3
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Maintainer"
                 label: qsTrId("sailpipe_about-newpipe_extractor_maintainer")
                 value: "TeamNewPipe"
-                midlineRatio: 0.3
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Licence"
                 label: qsTrId("sailpipe_about-newpipie_extractor_licence")
                 value: "GPLv3.0"
-                midlineRatio: 0.3
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             SectionHeader {
                 //% "Contributors"
-                text: qsTrId("sailpipe_about-subtitle_contributors")
+                text: qsTrId("sailpipe_about-section_contributors")
+            }
+
+            Label {
+                //% "The amazing team of SailPipe contributors"
+                text: qsTrId("sailpipe_about-contributors_description")
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                anchors {
+                    leftMargin: Theme.horizontalPageMargin
+                    rightMargin: Theme.horizontalPageMargin
+                    left: parent.left
+                    right: parent.right
+                }
+            }
+
+            InfoRow {
+                //% "Sailing-to-Coffee"
+                label: qsTrId("sailpipe_about-sailing_to_coffee")
+                value: "Thilo"
+            }
+
+            InfoRow {
+                //% "Opal modules"
+                label: qsTrId("sailpipe_about-opal")
+                value: "Mirian Margiani"
+            }
+
+            InfoRow {
+                //% "Testing"
+                label: qsTrId("sailpipe_about-testing")
+                value: "ExPLIT"
             }
 
             InfoRow {
                 //% "Belarusian"
                 label: qsTrId("sailpipe_about-belarusian_translation")
                 value: "Toha"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Estonian"
                 label: qsTrId("sailpipe_about-estonian_translation")
                 value: "Priit Jõerüüt"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Finnish"
                 label: qsTrId("sailpipe_about-finnish_translation")
                 value: "Elmeri Länsiharju"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "French"
                 label: qsTrId("sailpipe_about-french_translation")
                 value: "Robin Grenet"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "German"
                 label: qsTrId("sailpipe_about-german_translation")
                 value: "thigg, Leif-Jöran Olsson"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Italian"
                 label: qsTrId("sailpipe_about-italian_translation")
                 value: "legacychimera247"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Polish"
                 label: qsTrId("sailpipe_about-polish_translation")
                 value: "Paweł Koszała"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Russian"
                 label: qsTrId("sailpipe_about-russian_translation")
                 value: "RoundedRectangle"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Swedish"
                 label: qsTrId("sailpipe_about-swedish_translation")
                 value: "Leif-Jöran Olsson"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             InfoRow {
                 //% "Turkish"
                 label: qsTrId("sailpipe_about-turkish_translation")
                 value: "Oğuz Ersen"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
+            }
+
+            InfoRow {
+                //% "Romanian"
+                label: qsTrId("sailpipe_about-romanian_translation")
+                value: "dumol"
             }
 
             InfoRow {
                 //% "Translation platform"
                 label: qsTrId("sailpipe_about-tralsation_platform")
                 value: "Weblate"
-                midlineRatio: 0.5
-                midlineMin: Theme.fontSizeSmall * 5
-                midlineMax: Theme.fontSizeSmall * 10
             }
 
             SectionHeader {
                 //% "Links"
-                text: qsTrId("sailpipe_about-subtitle_links")
+                text: qsTrId("sailpipe_about-section_links")
             }
 
             Row {

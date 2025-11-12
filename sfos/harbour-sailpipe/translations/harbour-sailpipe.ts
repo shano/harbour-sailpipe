@@ -351,10 +351,6 @@
         <source>SailPipe download</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="sailpipe_about-title">
-        <source>About SailPipe</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
         <translation type="unfinished"></translation>
@@ -382,20 +378,12 @@
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="sailpipe_about-subtitle_links">
-        <source>Links</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="sailpipe_about-email">
         <source>Email</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="sailpipe_about-newpipe_extractor">
-        <source>About NewPipe Extractor</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
@@ -412,10 +400,6 @@
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="sailpipe_about-subtitle_contributors">
-        <source>Contributors</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
@@ -474,6 +458,46 @@
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-sailing_to_coffee">
+        <source>Sailing-to-Coffee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-opal">
+        <source>Opal modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-testing">
+        <source>Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-romanian_translation">
+        <source>Romanian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-contributors_description">
+        <source>The amazing team of SailPipe contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-title_about_sailpipe">
+        <source>About SailPipe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_general">
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_newpipe_extractor">
+        <source>NewPipe Extractor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_contributors">
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_links">
+        <source>Links</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

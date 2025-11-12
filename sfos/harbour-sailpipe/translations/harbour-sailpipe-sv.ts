@@ -410,7 +410,7 @@
     </message>
     <message id="sailpipe_about-title">
         <source>About SailPipe</source>
-        <translation>Om SailPipe</translation>
+        <translation type="vanished">Om SailPipe</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
@@ -441,7 +441,7 @@
     </message>
     <message id="sailpipe_about-subtitle_links">
         <source>Links</source>
-        <translation>Länkar</translation>
+        <translation type="vanished">Länkar</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
@@ -452,8 +452,9 @@
         <translation>E-post</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor">
-        <source>About NewPipe Extractor</source>
-        <translation>Om NewPipe Extractor</translation>
+        <source>NewPipe Extractor</source>
+        <oldsource>About NewPipe Extractor</oldsource>
+        <translation type="obsolete">Om NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
@@ -473,7 +474,7 @@
     </message>
     <message id="sailpipe_about-subtitle_contributors">
         <source>Contributors</source>
-        <translation>Bidragsgivare</translation>
+        <translation type="vanished">Bidragsgivare</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
@@ -532,6 +533,50 @@
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
         <translation type="unfinished">SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-sailing_to_coffee">
+        <source>Sailing-to-Coffee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-opal">
+        <source>Opal modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-testing">
+        <source>Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-romanian_translation">
+        <source>Romanian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-about_sailpipe">
+        <source>About SailPipe</source>
+        <translation type="obsolete">Om SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-contributors_description">
+        <source>The amazing team of SailPipe contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-title_about_sailpipe">
+        <source>About SailPipe</source>
+        <translation type="unfinished">Om SailPipe</translation>
+    </message>
+    <message id="sailpipe_about-section_general">
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-section_newpipe_extractor">
+        <source>NewPipe Extractor</source>
+        <translation type="unfinished">Om NewPipe Extractor</translation>
+    </message>
+    <message id="sailpipe_about-section_contributors">
+        <source>Contributors</source>
+        <translation type="unfinished">Bidragsgivare</translation>
+    </message>
+    <message id="sailpipe_about-section_links">
+        <source>Links</source>
+        <translation type="unfinished">Länkar</translation>
     </message>
 </context>
 </TS>
