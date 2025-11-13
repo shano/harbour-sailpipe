@@ -551,42 +551,42 @@
     <message id="sailpipe_about-title_about_sailpipe">
         <location filename="../qml/pages/AboutPage.qml" line="25"/>
         <source>About SailPipe</source>
-        <translation type="unfinished">About SailPipe</translation>
+        <translation>About SailPipe</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <location filename="../qml/pages/AboutPage.qml" line="36"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <location filename="../qml/pages/AboutPage.qml" line="100"/>
         <source>NewPipe Extractor</source>
-        <translation type="unfinished">NewPipe Extractor</translation>
+        <translation>NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <location filename="../qml/pages/AboutPage.qml" line="136"/>
         <source>Contributors</source>
-        <translation type="unfinished">Contributors</translation>
+        <translation>Contributors</translation>
     </message>
     <message id="sailpipe_about-contributors_description">
         <location filename="../qml/pages/AboutPage.qml" line="141"/>
         <source>The amazing team of SailPipe contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>The amazing team of SailPipe contributors</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <location filename="../qml/pages/AboutPage.qml" line="154"/>
         <source>Sailing-to-Coffee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sailing-to-Coffee</translation>
     </message>
     <message id="sailpipe_about-opal">
         <location filename="../qml/pages/AboutPage.qml" line="160"/>
         <source>Opal modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Opal modules</translation>
     </message>
     <message id="sailpipe_about-testing">
         <location filename="../qml/pages/AboutPage.qml" line="166"/>
         <source>Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Testing</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <location filename="../qml/pages/AboutPage.qml" line="172"/>
@@ -651,7 +651,7 @@
     <message id="sailpipe_about-romanian_translation">
         <location filename="../qml/pages/AboutPage.qml" line="232"/>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Romanian</translation>
     </message>
     <message id="sailpipe_about-tralsation_platform">
         <location filename="../qml/pages/AboutPage.qml" line="238"/>
@@ -661,7 +661,7 @@
     <message id="sailpipe_about-section_links">
         <location filename="../qml/pages/AboutPage.qml" line="244"/>
         <source>Links</source>
-        <translation type="unfinished">Links</translation>
+        <translation>Links</translation>
     </message>
     <message id="sailpipe_about-subtitle_links">
         <source>Links</source>
@@ -680,7 +680,7 @@
     <message id="sailpipe-mpris_identity">
         <location filename="../src/mediajunction.cpp" line="30"/>
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
 </context>
 </TS>
