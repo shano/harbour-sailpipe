@@ -62,9 +62,9 @@
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
         <translation>
-            <numerusform>Un video</numerusform>
-            <numerusform>%n videouri</numerusform>
-            <numerusform>%n de videouri</numerusform>
+            <numerusform>Un element</numerusform>
+            <numerusform>%n elemente</numerusform>
+            <numerusform>%n de elemente</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
@@ -113,19 +113,19 @@
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
-        <translation>Videoclipuri scurte</translation>
+        <translation>Clipuri scurte</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
-        <translation>Niciun videoclip scurt</translation>
+        <translation>Niciun clip scurt</translation>
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation>În direct</translation>
+        <translation>Live-uri</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation>Nicio transmisiune în direct</translation>
+        <translation>Niciun live</translation>
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
@@ -182,11 +182,11 @@
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
-        <translation>Piste audio</translation>
+        <translation>Piste</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-tracks">
         <source>No tracks</source>
-        <translation>Nicio pistă audio</translation>
+        <translation>Nicio pistă</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
@@ -336,7 +336,7 @@
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
-        <translation>Piste audio</translation>
+        <translation>Piste</translation>
     </message>
     <message id="sailpipe_filter_name-users">
         <source>Users</source>
@@ -407,7 +407,7 @@
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
-        <translation>A bibliotecă ce permite descărcarea de materiale audio și video</translation>
+        <translation>O bibliotecă ce permite descărcarea de materiale audio și video</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
         <source>Version</source>
@@ -481,7 +481,7 @@
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
@@ -489,39 +489,39 @@
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Module Opal</translation>
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Testare</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Română</translation>
     </message>
     <message id="sailpipe_about-contributors_description">
         <source>The amazing team of SailPipe contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Minunata echipă de contribuitori SailPipe</translation>
     </message>
     <message id="sailpipe_about-title_about_sailpipe">
         <source>About SailPipe</source>
-        <translation type="unfinished">Despre SailPipe</translation>
+        <translation>Despre SailPipe</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Generice</translation>
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
-        <translation type="unfinished"></translation>
+        <translation>NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
-        <translation type="unfinished">Contribuitori</translation>
+        <translation>Contribuitori</translation>
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
-        <translation type="unfinished">Linkuri</translation>
+        <translation>Linkuri</translation>
     </message>
 </context>
 </TS>
