@@ -268,6 +268,7 @@ Item {
             anchors.verticalCenter: playbutton.verticalCenter
             anchors.right: playbutton.left
             anchors.rightMargin: controlgap
+            visible: media.seekable
             icon.source: Qt.resolvedUrl("image://sailpipe/icon-l-replay?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
             onShortClick: reverse()
@@ -281,6 +282,7 @@ Item {
             anchors.verticalCenter: playbutton.verticalCenter
             anchors.left: playbutton.right
             anchors.leftMargin: controlgap
+            visible: media.seekable
             icon.source: Qt.resolvedUrl("image://sailpipe/icon-l-skip?") + (pressed ? Theme.highlightColor : Theme.primaryColor)
 
             onShortClick: forwards()
@@ -292,6 +294,7 @@ Item {
             anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
+            visible: media.seekable
             minimumValue: 0
             maximumValue: Math.max(1, media.duration)
             stepSize: 1
