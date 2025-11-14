@@ -104,11 +104,11 @@
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished">Julkaisija</translation>
+        <translation>Julkaisija</translation>
     </message>
     <message id="sailpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished">Kuvaus</translation>
+        <translation>Kuvaus</translation>
     </message>
     <message id="sailpipe-playlist_no-entries">
         <source>No entries</source>
@@ -181,11 +181,11 @@
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
-        <translation type="unfinished">Ei tuloksia</translation>
+        <translation>Ei tuloksia</translation>
     </message>
     <message id="sailpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Aloita haku kirjoittamalla jotakin</translation>
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
@@ -233,15 +233,15 @@
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished">Julkaisija</translation>
+        <translation>Julkaisija</translation>
     </message>
     <message id="sailpipe_media_details-detail_date">
         <source>Upload date</source>
-        <translation type="unfinished">Julkaistu</translation>
+        <translation>Julkaistu</translation>
     </message>
     <message id="sailpipe_media_details-detail_length">
         <source>Length</source>
-        <translation type="unfinished">Kesto</translation>
+        <translation>Kesto</translation>
     </message>
     <message id="sailpipe_media_details-detail_category">
         <source>Category</source>
@@ -249,11 +249,11 @@
     </message>
     <message id="sailpipe_media_details-detail_licence">
         <source>Licence</source>
-        <translation type="unfinished">Lisenssi</translation>
+        <translation>Lisenssi</translation>
     </message>
     <message id="sailpipe_media_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished">Kuvaus</translation>
+        <translation>Kuvaus</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
@@ -261,14 +261,14 @@
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n vastaus</numerusform>
             <numerusform>%n vastausta</numerusform>
         </translation>
     </message>
     <message id="sailpipe_cover-title">
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
@@ -280,12 +280,12 @@
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
-        <translation type="unfinished">Vastaukset</translation>
+        <translation>Vastaukset</translation>
     </message>
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation type="unfinished">Youtube-video</translation>
+        <translation>%0 video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
@@ -318,15 +318,15 @@
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki</translation>
     </message>
     <message id="sailpipe_filter_name-videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videot</translation>
     </message>
     <message id="sailpipe_filter_name-channels">
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavat</translation>
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
@@ -389,7 +389,7 @@
     <message id="sailpipe_about-licence">
         <source>Licence</source>
         <oldsource>Licence:</oldsource>
-        <translation type="unfinished">Lisenssi</translation>
+        <translation>Lisenssi</translation>
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
@@ -421,7 +421,7 @@
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
-        <translation type="unfinished">Lisenssi</translation>
+        <translation>Lisenssi</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
@@ -479,7 +479,7 @@
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
