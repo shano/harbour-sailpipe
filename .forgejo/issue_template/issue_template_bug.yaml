@@ -9,15 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for completing this bug report. We're always keen to hear about any issues you experience using SailPipe.
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+        Thanks for completing this bug report. I'm always keen to hear about any issues you experience using SailPipe so that they can be fixed.
   - type: textarea
     id: description
     attributes:
@@ -52,11 +44,10 @@ body:
       label: Configuration
       description: Please provide details of which version of Sailfish OS you're using, which version of SailPipe and any other relevant aspects of your device configuration that may be relevant to the issue.
     validations:
-      required: true
+      required: false
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
       description: Please copy and paste or attach any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
-
