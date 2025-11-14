@@ -1,10 +1,10 @@
 Name:       harbour-sailpipe
 
 Summary:    Video and music streaming and downloading
-Version:    0.3
+Version:    0.4
 Release:    1
 License:    LICENSE
-URL:        http://example.org/
+URL:        https://www.flypig.co.uk/newpipe
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
