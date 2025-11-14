@@ -528,23 +528,23 @@
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
-        <translation type="unfinished"></translation>
+        <translation>Väike kohv purjede all</translation>
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Opali moodulid</translation>
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Testimine</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>rumeenia keel</translation>
     </message>
     <message id="sailpipe_about-about_sailpipe">
         <source>About SailPipe</source>
@@ -552,27 +552,27 @@
     </message>
     <message id="sailpipe_about-contributors_description">
         <source>The amazing team of SailPipe contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe&apos;i kaasautorite suurepärane seltskond</translation>
     </message>
     <message id="sailpipe_about-title_about_sailpipe">
         <source>About SailPipe</source>
-        <translation type="unfinished">Rakenduse teave: SailPipe</translation>
+        <translation>Rakenduse teave: SailPipe</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Üldist</translation>
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
-        <translation type="unfinished">Teegi teave: NewPipe Extractor</translation>
+        <translation>Teegi teave: NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
-        <translation type="unfinished">Kaasautorid</translation>
+        <translation>Kaasautorid</translation>
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
-        <translation type="unfinished">Lingid</translation>
+        <translation>Lingid</translation>
     </message>
 </context>
 </TS>
