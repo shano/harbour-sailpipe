@@ -381,7 +381,7 @@
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
-        <translation>Používateľské rozhranie NewPipe Extractora pre streamovanie a sťahovanie videí a pesničiek z niekoľkých online služieb, vrátane YouTube, SoundCloudu, Media.cc.de a Bandcampu.</translation>
+        <translation>Používateľské rozhranie NewPipe Extractora pre streamovanie a sťahovanie videí a pesničiek z niekoľkých online služieb, vrátane YouTube, SoundCloudu, Media.ccc.de a Bandcampu.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
