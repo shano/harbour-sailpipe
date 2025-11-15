@@ -517,7 +517,7 @@
     <message id="sailpipe_about-summary">
         <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
-        <translation>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</translation>
+        <translation>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor">
         <source>NewPipe Extractor</source>
