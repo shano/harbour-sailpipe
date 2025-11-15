@@ -38,17 +38,17 @@
     <message id="sailpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n resultat</numerusform>
+            <numerusform>%n resultater</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_subscriber_count" numerus="yes">
         <source>%n subscribers</source>
         <oldsource>%n subscriber(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n subscriber</numerusform>
-            <numerusform>%n subscribers</numerusform>
+        <translation>
+            <numerusform>%n abonnement</numerusform>
+            <numerusform>%n abonnementer</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_inforow">
@@ -80,7 +80,7 @@
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Opplaster</translation>
     </message>
     <message id="sailpipe_playlist_details-detail_description">
         <source>Description</source>
@@ -107,19 +107,19 @@
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Snutter</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen snutter</translation>
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation>Live</translation>
+        <translation>Direkte</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen direktesendinger</translation>
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
@@ -139,68 +139,68 @@
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
-        <translation type="unfinished"></translation>
+        <translation>??:??:??</translation>
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Søkfilter</translation>
     </message>
     <message id="sailpipe_search_page-menu_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Om</translation>
     </message>
     <message id="sailpipe_search_page-menu_filter">
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter</translation>
     </message>
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Search %0</translation>
+        <translation>Søk på %0</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Ingen innlegg</translation>
     </message>
     <message id="sailpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Skriv søkeord</translation>
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjeneste</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjeneste</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Spor</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-tracks">
         <source>No tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen spor</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonnenter</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifisert</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_no">
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nei</translation>
     </message>
     <message id="sailpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketter</translation>
     </message>
     <message id="sailpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
@@ -212,27 +212,27 @@
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Opplaster</translation>
     </message>
     <message id="sailpipe_media_details-detail_date">
         <source>Upload date</source>
-        <translation type="unfinished"></translation>
+        <translation>Publiseringsdato</translation>
     </message>
     <message id="sailpipe_media_details-detail_length">
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengde</translation>
     </message>
     <message id="sailpipe_media_details-detail_category">
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategori</translation>
     </message>
     <message id="sailpipe_media_details-detail_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisens</translation>
     </message>
     <message id="sailpipe_media_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
@@ -240,22 +240,22 @@
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
-        <translation type="unfinished">
-            <numerusform>%n reply</numerusform>
-            <numerusform>%n replies</numerusform>
+        <translation>
+            <numerusform>%n svar</numerusform>
+            <numerusform>%n svar</numerusform>
         </translation>
     </message>
     <message id="sailpipe_cover-title">
         <source>SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SailPipe</translation>
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Ingen innlegg</translation>
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er ingen videoer i denne spillelisten</translation>
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
@@ -293,7 +293,7 @@
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Spilleliste %0</translation>
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
