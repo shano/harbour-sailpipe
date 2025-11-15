@@ -33,7 +33,7 @@
     </message>
     <message id="sailpipe-searchitem-stream_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="sailpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
@@ -53,7 +53,7 @@
     </message>
     <message id="sailpipe-searchitem-channel_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="sailpipe-searchitem-playlist_stream_count" numerus="yes">
         <source>%n items</source>
@@ -65,7 +65,7 @@
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="sailpipe-playlist_no-entries">
         <source>No entries</source>
@@ -84,7 +84,7 @@
     </message>
     <message id="sailpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message id="sailpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
@@ -95,15 +95,15 @@
     </message>
     <message id="sailpipe-channeltab-header_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Om</translation>
     </message>
     <message id="sailpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videoer</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen videoer</translation>
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
@@ -115,7 +115,7 @@
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Live</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
@@ -123,19 +123,19 @@
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillelister</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen spillelister</translation>
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Album</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen album</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
@@ -380,11 +380,11 @@
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettside</translation>
     </message>
     <message id="sailpipe_about-email">
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-post</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
@@ -454,11 +454,11 @@
     </message>
     <message id="sailpipe_about-tralsation_platform">
         <source>Translation platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Oversettelsesplattform</translation>
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
@@ -498,7 +498,7 @@
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Lenker</translation>
     </message>
 </context>
 </TS>
