@@ -20,7 +20,7 @@ BuildRequires:  cmake
 %description
 Provides a Sailfish user interface to the NewPipe Extractor for streaming and
 downloading video and music from multiple online services, including YouTube,
-SoundCloud, Media.cc.de and Bandcamp.
+SoundCloud, Media.ccc.de and Bandcamp.
 
 %global _missing_build_ids_terminate_build 0
 %define __requires_exclude ^lib/appwrapper.*$

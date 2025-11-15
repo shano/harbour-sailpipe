@@ -82,7 +82,7 @@ Page {
             }
 
             Label {
-                //% "A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp."
+                //% "A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp."
                 text: qsTrId("sailpipe_about-summary")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
