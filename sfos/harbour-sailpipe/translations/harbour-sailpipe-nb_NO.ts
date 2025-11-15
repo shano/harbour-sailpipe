@@ -259,37 +259,37 @@
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
-        <translation type="unfinished">Replies</translation>
+        <translation>Svar</translation>
     </message>
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation type="unfinished">YouTube Video</translation>
+        <translation>Video %0</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Låt %0</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Media</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <source>%0 Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanal &amp;0</translation>
     </message>
     <message id="sailpipe_channel-page_header_user">
         <source>%0 User</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruker %0</translation>
     </message>
     <message id="sailpipe_channel-page_header_artist">
         <source>%0 Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Artist %0</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel_default">
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanal</translation>
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
@@ -297,86 +297,86 @@
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message id="sailpipe_filter_name-videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videoer</translation>
     </message>
     <message id="sailpipe_filter_name-channels">
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanaler</translation>
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillelister</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
-        <translation type="unfinished"></translation>
+        <translation>Låter</translation>
     </message>
     <message id="sailpipe_filter_name-music_videos">
         <source>Music videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Musikkvideoer</translation>
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Musikk album</translation>
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Musikk spillelister</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Spor</translation>
     </message>
     <message id="sailpipe_filter_name-users">
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukere</translation>
     </message>
     <message id="sailpipe_filter_name-conferences">
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Konferanser</translation>
     </message>
     <message id="sailpipe_filter_name-events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrangement</translation>
     </message>
     <message id="sailpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Sepia-videoer</translation>
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <source>SailPipe download</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe-nedlasting</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Video- og musikkstrømming og nedlasting</translation>
     </message>
     <message id="sailpipe_about-version">
         <source>Version</source>
         <oldsource>Version:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Versjon</translation>
     </message>
     <message id="sailpipe_about-maintainer">
         <source>Maintainer</source>
         <oldsource>Maintainer:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Vedlikeholder</translation>
     </message>
     <message id="sailpipe_about-licence">
         <source>Licence</source>
         <oldsource>Licence:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Lisens</translation>
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
-        <translation type="unfinished"></translation>
+        <translation>Respekter opphavsretten og lisensen for alle filer du laster ned med dette programmet</translation>
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett brukergrenesesnitt for NewPipe Extractor for strømming og nedlasting av video og musikk fra flere online tjenester, inkudert YouTube, SoundCloud, Media.ccc.de og Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
@@ -388,19 +388,19 @@
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett bibliotek for å ekstrahere fra strømmingsider</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versjon</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_maintainer">
         <source>Maintainer</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedlikeholder</translation>
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisens</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
@@ -490,7 +490,7 @@
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
