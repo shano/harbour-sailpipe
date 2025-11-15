@@ -10,7 +10,7 @@ Item {
     property alias value: valueText.text
     property real leftMargin: Theme.horizontalPageMargin
     property real rightMargin: Theme.horizontalPageMargin
-    property real midlineRatio: 0.4
+    property real midlineRatio: 0.45
     property real midlineMin: Theme.fontSizeSmall * 5
     property real midlineMax: Theme.fontSizeSmall * 10
     property real midline: Math.min(Math.max((width * midlineRatio), midlineMin), midlineMax)
