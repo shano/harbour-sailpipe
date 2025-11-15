@@ -405,7 +405,7 @@
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
         <oldsource>Belarusian translation</oldsource>
-        <translation>Hviterussisk</translation>
+        <translation>Belarusisk</translation>
     </message>
     <message id="sailpipe_about-estonian_translation">
         <source>Estonian</source>
@@ -470,7 +470,7 @@
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation>Testing</translation>
+        <translation>Tester</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
