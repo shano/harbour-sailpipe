@@ -208,7 +208,7 @@
     <message id="sailpipe_search_page-menu_service">
         <location filename="../qml/pages/SearchPage.qml" line="88"/>
         <source>Service</source>
-        <translation>Service</translation>
+        <translation>Select service</translation>
     </message>
     <message id="sailpipe_search_page-menu_filter">
         <location filename="../qml/pages/SearchPage.qml" line="95"/>
@@ -266,7 +266,7 @@
     <message id="sailpipe_service_page-page_header">
         <location filename="../qml/pages/ServicePage.qml" line="17"/>
         <source>Service</source>
-        <translation>Service</translation>
+        <translation>Select service</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <location filename="../qml/components/ChannelAbout.qml" line="48"/>
