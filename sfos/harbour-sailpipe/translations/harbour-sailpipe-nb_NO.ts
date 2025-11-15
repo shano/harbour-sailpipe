@@ -58,9 +58,9 @@
     <message id="sailpipe-searchitem-playlist_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n innlegg</numerusform>
+            <numerusform>%n innlegg</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
@@ -88,9 +88,9 @@
     </message>
     <message id="sailpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n innlegg</numerusform>
+            <numerusform>%n innlegg</numerusform>
         </translation>
     </message>
     <message id="sailpipe-channeltab-header_about">
@@ -168,11 +168,11 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished">Tjeneste</translation>
+        <translation>Velg Tjeneste</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished">Tjeneste</translation>
+        <translation>Velg tjeneste</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
@@ -204,11 +204,11 @@
     </message>
     <message id="sailpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke aktuelt</translation>
     </message>
     <message id="sailpipe_media_details-detail_likes_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke aktuelt</translation>
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
@@ -236,7 +236,7 @@
     </message>
     <message id="sailpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke aktuelt</translation>
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
@@ -247,7 +247,7 @@
     </message>
     <message id="sailpipe_cover-title">
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
@@ -490,7 +490,7 @@
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
-        <translation type="unfinished">NewPipe Extractor</translation>
+        <translation>NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
