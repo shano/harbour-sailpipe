@@ -131,7 +131,7 @@
     </message>
     <message id="sailpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
-        <translation>Žiadne playlisty</translation>
+        <translation>Žiadne zoznamy videí</translation>
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
@@ -192,7 +192,7 @@
     </message>
     <message id="sailpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation>Verifikovaný</translation>
+        <translation>Overený</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
@@ -318,19 +318,19 @@
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
-        <translation>Pesničky</translation>
+        <translation>Hudobné piesne</translation>
     </message>
     <message id="sailpipe_filter_name-music_videos">
         <source>Music videos</source>
-        <translation>Video klipy</translation>
+        <translation>Hudobné videá</translation>
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
-        <translation>Albumy</translation>
+        <translation>Hudobné albumy</translation>
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation>Zoznamy pesničiek</translation>
+        <translation>Hudobné zoznamy</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
