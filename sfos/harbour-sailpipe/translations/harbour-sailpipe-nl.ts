@@ -38,17 +38,17 @@
     <message id="sailpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n resultaat</numerusform>
+            <numerusform>%n resultaten</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_subscriber_count" numerus="yes">
         <source>%n subscribers</source>
         <oldsource>%n subscriber(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n subscriber</numerusform>
-            <numerusform>%n subscribers</numerusform>
+        <translation>
+            <numerusform>%n abonnee</numerusform>
+            <numerusform>%n abonnees</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_inforow">
@@ -58,9 +58,9 @@
     <message id="sailpipe-searchitem-playlist_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n resultaat</numerusform>
+            <numerusform>%n resultaten</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
@@ -88,9 +88,9 @@
     </message>
     <message id="sailpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n detail</numerusform>
+            <numerusform>%n details</numerusform>
         </translation>
     </message>
     <message id="sailpipe-channeltab-header_about">
@@ -139,7 +139,7 @@
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
-        <translation type="unfinished">??:??:??</translation>
+        <translation>??:??:??</translation>
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
@@ -156,23 +156,23 @@
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Search %0</translation>
+        <translation>Zoek %0</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Geen resultaten</translation>
     </message>
     <message id="sailpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Vul zoektekst in</translation>
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished">Service</translation>
+        <translation>Selecteer service</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished">Service</translation>
+        <translation>Selecteer service</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
@@ -240,9 +240,9 @@
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
-        <translation type="unfinished">
-            <numerusform>%n reply</numerusform>
-            <numerusform>%n replies</numerusform>
+        <translation>
+            <numerusform>%n antwoord</numerusform>
+            <numerusform>%n antwoorden</numerusform>
         </translation>
     </message>
     <message id="sailpipe_cover-title">
@@ -251,25 +251,25 @@
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Niets gevonden</translation>
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation>Er zijn geen video&apos;s in deze playlist</translation>
+        <translation>Er zijn geen video&apos;s in deze afspeellijst</translation>
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
-        <translation type="unfinished">Replies</translation>
+        <translation>Antwoorden</translation>
     </message>
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation type="unfinished">YouTube Video</translation>
+        <translation>%0 Video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation type="unfinished">%0 Audio</translation>
+        <translation>%0 Audio</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
@@ -309,7 +309,7 @@
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation>Afspeellijst</translation>
+        <translation>Afspeellijsten</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
@@ -325,7 +325,7 @@
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Afspeellijsten muziek</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
