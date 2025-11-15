@@ -8,6 +8,7 @@
         <translation type="obsolete">
             <numerusform>%n reply</numerusform>
             <numerusform>%n replies</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-replies_page-header">
@@ -79,6 +80,7 @@
         <translation type="obsolete">
             <numerusform>%n video</numerusform>
             <numerusform>%n videos</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">

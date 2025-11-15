@@ -329,7 +329,7 @@
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tracks</translation>
     </message>
     <message id="sailpipe_filter_name-users">
         <source>Users</source>
@@ -368,7 +368,7 @@
     <message id="sailpipe_about-licence">
         <source>Licence</source>
         <oldsource>Licence:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Licentie</translation>
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
@@ -400,7 +400,7 @@
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Licentie</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
@@ -458,7 +458,7 @@
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SailPipe</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
