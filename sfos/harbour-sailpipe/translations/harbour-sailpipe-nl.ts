@@ -33,7 +33,7 @@
     </message>
     <message id="sailpipe-searchitem-stream_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="sailpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
@@ -53,7 +53,7 @@
     </message>
     <message id="sailpipe-searchitem-channel_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="sailpipe-searchitem-playlist_stream_count" numerus="yes">
         <source>%n items</source>
@@ -65,7 +65,7 @@
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
         <source>%0 • %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 • %1</translation>
     </message>
     <message id="sailpipe-playlist_no-entries">
         <source>No entries</source>
@@ -80,11 +80,11 @@
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Uploader</translation>
     </message>
     <message id="sailpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Omschrijving</translation>
     </message>
     <message id="sailpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
@@ -95,63 +95,63 @@
     </message>
     <message id="sailpipe-channeltab-header_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Over</translation>
     </message>
     <message id="sailpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Video&apos;s</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen video&apos;s</translation>
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Shorts</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen shorts</translation>
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Live</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen livestreams</translation>
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Afspeellijsten</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen afspeellijsten</translation>
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Albums</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen albums</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">??:??:??</translation>
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoekfilter</translation>
     </message>
     <message id="sailpipe_search_page-menu_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Over</translation>
     </message>
     <message id="sailpipe_search_page-menu_filter">
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter</translation>
     </message>
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
@@ -168,75 +168,75 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Service</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Service</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Tracks</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-tracks">
         <source>No tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen tracks</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonnees</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation type="unfinished"></translation>
+        <translation>Geverifieerd</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_no">
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nee</translation>
     </message>
     <message id="sailpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Tags</translation>
     </message>
     <message id="sailpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N.v.t.</translation>
     </message>
     <message id="sailpipe_media_details-detail_likes_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N.v.t.</translation>
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Uploader</translation>
     </message>
     <message id="sailpipe_media_details-detail_date">
         <source>Upload date</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum upload</translation>
     </message>
     <message id="sailpipe_media_details-detail_length">
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengte</translation>
     </message>
     <message id="sailpipe_media_details-detail_category">
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Categorie</translation>
     </message>
     <message id="sailpipe_media_details-detail_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Licentie</translation>
     </message>
     <message id="sailpipe_media_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Omschrijving</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N.v.t.</translation>
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
@@ -247,7 +247,7 @@
     </message>
     <message id="sailpipe_cover-title">
         <source>SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
@@ -255,7 +255,7 @@
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn geen video&apos;s in deze playlist</translation>
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
@@ -269,47 +269,47 @@
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%0 Audio</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Media</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <source>%0 Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Kanaal</translation>
     </message>
     <message id="sailpipe_channel-page_header_user">
         <source>%0 User</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Gebruiker</translation>
     </message>
     <message id="sailpipe_channel-page_header_artist">
         <source>%0 Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Artiest</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel_default">
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanaal</translation>
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Afspeellijst</translation>
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message id="sailpipe_filter_name-videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Video&apos;s</translation>
     </message>
     <message id="sailpipe_filter_name-channels">
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanalen</translation>
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Afspeellijst</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
