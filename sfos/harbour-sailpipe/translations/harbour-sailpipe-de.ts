@@ -221,11 +221,11 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation>Dienst</translation>
+        <translation>Dienst auswählen</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation>Dienst</translation>
+        <translation>Dienst auswählen</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
