@@ -206,11 +206,11 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation>Obsługa</translation>
+        <translation type="unfinished">Obsługa</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation>Obsługa</translation>
+        <translation type="unfinished">Obsługa</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
