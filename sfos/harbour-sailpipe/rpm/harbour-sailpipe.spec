@@ -1,7 +1,7 @@
 Name:       harbour-sailpipe
 
 Summary:    Video and music streaming and downloading
-Version:    0.4
+Version:    0.5
 Release:    1
 License:    LICENSE
 URL:        https://www.flypig.co.uk/newpipe

@@ -13,7 +13,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/share/harbour-sailpipe/lib")
 
-add_compile_definitions(SAILPIPE_VERSION="0.4")
+add_compile_definitions(SAILPIPE_VERSION="0.5")
 
 link_directories(${CMAKE_SOURCE_DIR}/lib/)
 
