@@ -309,7 +309,7 @@
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation>Listas</translation>
+        <translation>Listas de reproducción</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
