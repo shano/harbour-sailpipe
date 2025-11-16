@@ -168,11 +168,11 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation>Selecteer service</translation>
+        <translation>Selecteer streamingdienst</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation>Selecteer service</translation>
+        <translation>Selecteer streamingdienst</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
@@ -376,7 +376,7 @@
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
-        <translation>Een gebruikersinterface voor de NewPipe Extractor om muziek en video&apos;s te streamen en downloaden van meedere online diensten, zoals YouTube, SoundCloud, Media.cc.de en Bandcamp.</translation>
+        <translation>Een gebruikersinterface voor de NewPipe Extractor om muziek en video&apos;s te streamen en downloaden van meedere online diensten, zoals YouTube, SoundCloud, Media.ccc.de en Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
@@ -462,7 +462,7 @@
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
-        <translation>Zeilen-naar-Koffie</translation>
+        <translation>Sailing-to-Coffee</translation>
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
