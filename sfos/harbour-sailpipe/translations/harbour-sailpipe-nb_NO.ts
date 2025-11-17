@@ -131,11 +131,11 @@
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation>Album</translation>
+        <translation>Albumer</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
-        <translation>Ingen album</translation>
+        <translation>Ingen albumer</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
@@ -143,7 +143,7 @@
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
-        <translation>Søkfilter</translation>
+        <translation>Søkefilter</translation>
     </message>
     <message id="sailpipe_search_page-menu_about">
         <source>About</source>
@@ -168,7 +168,7 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation>Velg Tjeneste</translation>
+        <translation>Velg tjeneste</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
@@ -264,7 +264,7 @@
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation>Video %0</translation>
+        <translation>%0 Video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
@@ -321,7 +321,7 @@
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
-        <translation>Musikk album</translation>
+        <translation>Musikk albumer</translation>
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
@@ -349,11 +349,11 @@
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <source>SailPipe download</source>
-        <translation>SailPipe-nedlasting</translation>
+        <translation>SailPipe nedlasting</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
-        <translation>Video- og musikkstrømming og nedlasting</translation>
+        <translation>Video, musikkstrømming og nedlasting</translation>
     </message>
     <message id="sailpipe_about-version">
         <source>Version</source>
@@ -405,7 +405,7 @@
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
         <oldsource>Belarusian translation</oldsource>
-        <translation>Belarusisk</translation>
+        <translation>Viterussisk</translation>
     </message>
     <message id="sailpipe_about-estonian_translation">
         <source>Estonian</source>
@@ -470,7 +470,7 @@
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation>Tester</translation>
+        <translation>Testing</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
