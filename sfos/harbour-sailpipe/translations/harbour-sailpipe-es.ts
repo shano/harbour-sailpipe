@@ -462,7 +462,7 @@
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
-        <translation>Navengado-con-café</translation>
+        <translation>Sailing-to-Coffee</translation>
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
