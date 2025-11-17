@@ -220,7 +220,7 @@
     </message>
     <message id="sailpipe_media_details-detail_length">
         <source>Length</source>
-        <translation>Longitud</translation>
+        <translation>Duración</translation>
     </message>
     <message id="sailpipe_media_details-detail_category">
         <source>Category</source>
