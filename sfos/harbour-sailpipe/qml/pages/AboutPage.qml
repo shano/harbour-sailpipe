@@ -168,6 +168,12 @@ Page {
             }
 
             InfoRow {
+                //% "Project poet"
+                label: qsTrId("sailpipe_about-poet")
+                value: "Leif-Jöran Olsson"
+            }
+
+            InfoRow {
                 //% "Belarusian"
                 label: qsTrId("sailpipe_about-belarusian_translation")
                 value: "Toha"
