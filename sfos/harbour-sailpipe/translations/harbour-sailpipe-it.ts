@@ -401,8 +401,9 @@
         <translation>Per favore rispetta i diritti d&apos;autore sui file scaricati con questa applicazione</translation>
     </message>
     <message id="sailpipe_about-summary">
-        <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
-        <translation>Un&apos;interfaccia per l&apos;estrattore NewPipe per trasmettere e scaricare video e musica da più servizi online, tra cui YouTube, SoundCloud, Media.ccc.de e Bandcamp.</translation>
+        <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
+        <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
+        <translation type="unfinished">Un&apos;interfaccia per l&apos;estrattore NewPipe per trasmettere e scaricare video e musica da più servizi online, tra cui YouTube, SoundCloud, Media.ccc.de e Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
@@ -525,6 +526,10 @@
     <message id="sailpipe_about-section_links">
         <source>Links</source>
         <translation>Collegamenti</translation>
+    </message>
+    <message id="sailpipe_about-poet">
+        <source>Project poet</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

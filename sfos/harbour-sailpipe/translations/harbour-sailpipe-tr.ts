@@ -400,7 +400,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="sailpipe_about-summary">
-        <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</source>
+        <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
+        <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="sailpipe_about-website">
@@ -523,6 +524,10 @@
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="sailpipe_about-poet">
+        <source>Project poet</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
