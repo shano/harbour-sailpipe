@@ -86,9 +86,9 @@
     <message id="sailpipe-searchitem-playlist_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n item</numerusform>
-            <numerusform>%n items</numerusform>
+        <translation>
+            <numerusform>%n kohde</numerusform>
+            <numerusform>%n kohdetta</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-playlist_inforow">
@@ -97,9 +97,9 @@
     </message>
     <message id="sailpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n kohde</numerusform>
+            <numerusform>%n kohdetta</numerusform>
         </translation>
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">
@@ -116,63 +116,63 @@
     </message>
     <message id="sailpipe-channeltab-header_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja</translation>
     </message>
     <message id="sailpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation type="unfinished">Videot</translation>
+        <translation>Videot</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei videoita</translation>
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Lyhyet</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei lyhyitä</translation>
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Suora</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei suoralähetyksiä</translation>
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Soittolistat</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei soittolistoja</translation>
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Albumit</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei albumeita</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
-        <translation type="unfinished"></translation>
+        <translation>??:??:??</translation>
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakusuodatin</translation>
     </message>
     <message id="sailpipe_search_page-menu_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja</translation>
     </message>
     <message id="sailpipe_search_page-menu_filter">
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Suodatin</translation>
     </message>
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
@@ -189,47 +189,47 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse palvelu</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse palvelu</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Raidat</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-tracks">
         <source>No tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei raitoja</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilaajia</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation type="unfinished"></translation>
+        <translation>Vahvistettu</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kyllä</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_no">
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei</translation>
     </message>
     <message id="sailpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Tunnisteet</translation>
     </message>
     <message id="sailpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei saatavilla</translation>
     </message>
     <message id="sailpipe_media_details-detail_likes_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei saatavilla</translation>
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
@@ -257,7 +257,7 @@
     </message>
     <message id="sailpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei saatavilla</translation>
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
@@ -276,7 +276,7 @@
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Soittolistalla ei ole videoita</translation>
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
