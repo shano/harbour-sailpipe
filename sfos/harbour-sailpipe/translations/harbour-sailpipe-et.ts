@@ -434,7 +434,7 @@
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation type="unfinished">NewPipe&apos;i Extractori kasutajaliides, mis võimaldab voogedastada ja vaadata muusikat ja videoid mitmetest võrguteenustest, sealhulgas YouTube, SoundCloud, Media.ccc.de ja Bandcamp.</translation>
+        <translation>NewPipe&apos;i Extractori kasutajaliides, mis võimaldab voogedastada ja vaadata muusikat ja videoid mitmetest võrguteenustest, sealhulgas YouTube, SoundCloud, Media.ccc.de ja Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-subtitle_links">
         <source>Links</source>
