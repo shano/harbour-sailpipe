@@ -403,7 +403,7 @@
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation type="unfinished">Un&apos;interfaccia per l&apos;estrattore NewPipe per trasmettere e scaricare video e musica da più servizi online, tra cui YouTube, SoundCloud, Media.ccc.de e Bandcamp.</translation>
+        <translation>Un&apos;interfaccia per l&apos;estrattore NewPipe per trasmettere e scaricare video e musica da più servizi online, tra cui YouTube, SoundCloud, Media.ccc.de e Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
