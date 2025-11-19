@@ -117,15 +117,15 @@
     </message>
     <message id="sailpipe-channeltab-header_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О канале</translation>
     </message>
     <message id="sailpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Видео</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет видео</translation>
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
@@ -133,31 +133,31 @@
     </message>
     <message id="sailpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет Shorts</translation>
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Трансляции</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет трансляций</translation>
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Плейлисты</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет плейлистов</translation>
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Альбомы</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет альбомов</translation>
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
@@ -165,20 +165,20 @@
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Фильтр</translation>
     </message>
     <message id="sailpipe_search_page-menu_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе</translation>
     </message>
     <message id="sailpipe_search_page-menu_filter">
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Фильтры</translation>
     </message>
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Поиск %0</translation>
+        <translation>Искать на %0</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
@@ -186,51 +186,51 @@
     </message>
     <message id="sailpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Введите что-нибудь в поле поиска</translation>
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберете сервис</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать сервис</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Релизы</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-tracks">
         <source>No tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет релизов</translation>
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Подписчики</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified">
         <source>Verified</source>
-        <translation type="unfinished"></translation>
+        <translation>Верифицирован</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_yes">
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Да</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified_no">
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет</translation>
     </message>
     <message id="sailpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Теги</translation>
     </message>
     <message id="sailpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Н/Д</translation>
     </message>
     <message id="sailpipe_media_details-detail_likes_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Н/Д</translation>
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
@@ -258,7 +258,7 @@
     </message>
     <message id="sailpipe_channel_details-detail_subscribers_not_applicable">
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>Н/Д</translation>
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
@@ -274,11 +274,11 @@
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
-        <translation type="unfinished">Не найдено</translation>
+        <translation>Ничего нет</translation>
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>В плейлисте нет видео</translation>
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
@@ -287,106 +287,106 @@
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation type="unfinished">Видео YouTube</translation>
+        <translation>Видео %0</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Аудио %0</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Медиа</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <source>%0 Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал %0</translation>
     </message>
     <message id="sailpipe_channel-page_header_user">
         <source>%0 User</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользователь %0</translation>
     </message>
     <message id="sailpipe_channel-page_header_artist">
         <source>%0 Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполнитель %0</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel_default">
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал</translation>
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Плейлист %0</translation>
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Всё</translation>
     </message>
     <message id="sailpipe_filter_name-videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Видео</translation>
     </message>
     <message id="sailpipe_filter_name-channels">
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Каналы</translation>
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Плейлисты</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
-        <translation type="unfinished"></translation>
+        <translation>Музыка</translation>
     </message>
     <message id="sailpipe_filter_name-music_videos">
         <source>Music videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Музыкальные видео</translation>
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Музыкальные альбомы</translation>
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Музыкальные плейлисты</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Релизы</translation>
     </message>
     <message id="sailpipe_filter_name-users">
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользователи</translation>
     </message>
     <message id="sailpipe_filter_name-conferences">
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Конференции</translation>
     </message>
     <message id="sailpipe_filter_name-events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>События</translation>
     </message>
     <message id="sailpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Видео Sepia</translation>
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <source>SailPipe download</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка SailPipe</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Стриминг и загрузка видео и музыки</translation>
     </message>
     <message id="sailpipe_about-version">
         <source>Version</source>
         <oldsource>Version:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Версия</translation>
     </message>
     <message id="sailpipe_about-maintainer">
         <source>Maintainer</source>
         <oldsource>Maintainer:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Разработчик</translation>
     </message>
     <message id="sailpipe_about-licence">
         <source>Licence</source>
@@ -395,32 +395,32 @@
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, соблюдайте авторские права всех файлов, загруженных при помощи этого программного обеспечения</translation>
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Интерфейс для NewPipe Extractor для стриминга и загрузки видео и музыки с онлайн-сервисов, включая YouTube, SoundCloud, Media.ccc.de и Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Веб-сайт</translation>
     </message>
     <message id="sailpipe_about-email">
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Почта</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
-        <translation type="unfinished"></translation>
+        <translation>Библиотека для извлечения информации со стриминговых сервисов</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_maintainer">
         <source>Maintainer</source>
-        <translation type="unfinished"></translation>
+        <translation>Разработчик</translation>
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
@@ -429,56 +429,56 @@
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
         <oldsource>Belarusian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Белорусский</translation>
     </message>
     <message id="sailpipe_about-estonian_translation">
         <source>Estonian</source>
         <oldsource>Estonian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Эстонский</translation>
     </message>
     <message id="sailpipe_about-finnish_translation">
         <source>Finnish</source>
         <oldsource>Finnish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Финский</translation>
     </message>
     <message id="sailpipe_about-french_translation">
         <source>French</source>
         <oldsource>French translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Французский</translation>
     </message>
     <message id="sailpipe_about-german_translation">
         <source>German</source>
         <oldsource>German translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Немецкий</translation>
     </message>
     <message id="sailpipe_about-italian_translation">
         <source>Italian</source>
         <oldsource>Italian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Итальянский</translation>
     </message>
     <message id="sailpipe_about-polish_translation">
         <source>Polish</source>
         <oldsource>Polish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Польский</translation>
     </message>
     <message id="sailpipe_about-russian_translation">
         <source>Russian</source>
         <oldsource>Russian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Русский</translation>
     </message>
     <message id="sailpipe_about-swedish_translation">
         <source>Swedish</source>
         <oldsource>Swedish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Шведский</translation>
     </message>
     <message id="sailpipe_about-turkish_translation">
         <source>Turkish</source>
         <oldsource>Turkish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Турецкий</translation>
     </message>
     <message id="sailpipe_about-tralsation_platform">
         <source>Translation platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Платформа перевода</translation>
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
@@ -490,27 +490,27 @@
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Модули Opal</translation>
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Тестирование</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Румынский</translation>
     </message>
     <message id="sailpipe_about-contributors_description">
         <source>The amazing team of SailPipe contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Прекрасная команда участников в разработке SailPipe</translation>
     </message>
     <message id="sailpipe_about-title_about_sailpipe">
         <source>About SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation>О SailPipe</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Основное</translation>
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
@@ -518,11 +518,11 @@
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Участники в разработке</translation>
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылки</translation>
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
