@@ -510,7 +510,7 @@
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektový básník</translation>
     </message>
 </context>
 </TS>
