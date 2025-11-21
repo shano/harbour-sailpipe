@@ -503,7 +503,7 @@
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjektpoet</translation>
     </message>
 </context>
 </TS>
