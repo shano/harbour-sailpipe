@@ -542,7 +542,7 @@
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Poeta projektu</translation>
     </message>
 </context>
 </TS>
