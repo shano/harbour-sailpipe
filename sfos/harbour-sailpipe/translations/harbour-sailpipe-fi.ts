@@ -66,9 +66,9 @@
     <message id="sailpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation>
-            <numerusform>%n video</numerusform>
-            <numerusform>%n videota</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_subscriber_count" numerus="yes">
