@@ -174,11 +174,11 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished">Serviciu</translation>
+        <translation>Selectare serviciu</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished">Serviciu</translation>
+        <translation>Selectare serviciu</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
@@ -388,7 +388,7 @@
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation type="unfinished">O interfață pentru NewPipe Extractor ce permite redarea și descărcarea de materiale audio și video online de pe platforme precum YouTube, SoundCloud, Media.ccc.de și Bandcamp.</translation>
+        <translation>O interfață pentru NewPipe Extractor ce permite redarea și descărcarea de materiale audio și video de pe platforme precum YouTube, SoundCloud, Media.ccc.de și Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-subtitle_links">
         <source>Links</source>
@@ -486,7 +486,7 @@
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sailing-to-Coffee</translation>
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
@@ -526,7 +526,7 @@
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Poetul proiectului</translation>
     </message>
 </context>
 </TS>
