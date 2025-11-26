@@ -99,11 +99,11 @@
     </message>
     <message id="sailpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation>Video&apos;s</translation>
+        <translation>Video’s</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
-        <translation>Geen video&apos;s</translation>
+        <translation>Geen video’s</translation>
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
@@ -156,7 +156,7 @@
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation>Zoek %0</translation>
+        <translation>Zoek op %0</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
@@ -241,8 +241,8 @@
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
         <translation>
-            <numerusform>%n antwoord</numerusform>
-            <numerusform>%n antwoorden</numerusform>
+            <numerusform>%n reactie</numerusform>
+            <numerusform>%n reacties</numerusform>
         </translation>
     </message>
     <message id="sailpipe_cover-title">
@@ -255,7 +255,7 @@
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
-        <translation>Er zijn geen video&apos;s in deze afspeellijst</translation>
+        <translation>Er zijn geen video’s in deze afspeellijst</translation>
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
@@ -264,12 +264,12 @@
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation>%0 Video</translation>
+        <translation>%0-video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation>%0 Audio</translation>
+        <translation>%0-audio</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
@@ -277,15 +277,15 @@
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <source>%0 Channel</source>
-        <translation>%0 Kanaal</translation>
+        <translation>%0-kanaal</translation>
     </message>
     <message id="sailpipe_channel-page_header_user">
         <source>%0 User</source>
-        <translation>%0 Gebruiker</translation>
+        <translation>%0-gebruiker</translation>
     </message>
     <message id="sailpipe_channel-page_header_artist">
         <source>%0 Artist</source>
-        <translation>%0 Artiest</translation>
+        <translation>%0-artiest</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel_default">
         <source>Channel</source>
@@ -293,7 +293,7 @@
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
-        <translation>%0 Afspeellijst</translation>
+        <translation>%0-afspeellijst</translation>
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
@@ -301,7 +301,7 @@
     </message>
     <message id="sailpipe_filter_name-videos">
         <source>Videos</source>
-        <translation>Video&apos;s</translation>
+        <translation>Video’s</translation>
     </message>
     <message id="sailpipe_filter_name-channels">
         <source>Channels</source>
@@ -317,7 +317,7 @@
     </message>
     <message id="sailpipe_filter_name-music_videos">
         <source>Music videos</source>
-        <translation>Muziekvideo&apos;s</translation>
+        <translation>Muziekvideo’s</translation>
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
@@ -325,7 +325,7 @@
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation>Afspeellijsten muziek</translation>
+        <translation>Muziekafspeellijsten</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
@@ -345,7 +345,7 @@
     </message>
     <message id="sailpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
-        <translation>Video&apos;s in sepia</translation>
+        <translation>Video’s in sepia</translation>
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <source>SailPipe download</source>
@@ -372,12 +372,12 @@
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
-        <translation>Neem a.j.b. de auteursrechten in acht van alle bestanden die je met dit programma downloadt</translation>
+        <translation>Neem de auteursrechten in acht van alle bestanden die je met dit programma downloadt</translation>
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation>Een gebruikersinterface voor de NewPipe Extractor om muziek en video&apos;s te streamen en downloaden van meedere online diensten, zoals YouTube, SoundCloud, Media.ccc.de en Bandcamp.</translation>
+        <translation>Een gebruikersinterface voor de NewPipe Extractor om muziek en video’s te streamen en downloaden van meerdere online diensten, zoals YouTube, SoundCloud, Media.ccc.de en Bandcamp.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
@@ -389,7 +389,7 @@
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
-        <translation>Een bibliotheek om bestanden te extraheren uit streaming-sites</translation>
+        <translation>Een bibliotheek om bestanden te extraheren uit streamingsites</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
         <source>Version</source>
