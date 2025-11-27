@@ -185,7 +185,7 @@
     </message>
     <message id="sailpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation>Gib Text ein um zu suchen</translation>
+        <translation>Suchbegriff eingeben...</translation>
     </message>
     <message id="sailpipe-filter-name_all">
         <source>All</source>
@@ -410,7 +410,7 @@
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
-        <translation>Video- und Musikstreaming und Download</translation>
+        <translation>Video- und Musikstreaming sowie Download</translation>
     </message>
     <message id="sailpipe_about-version">
         <source>Version</source>
