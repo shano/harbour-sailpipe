@@ -66,9 +66,9 @@
     <message id="sailpipe-searchitem-channel_stream_count" numerus="yes">
         <source>%n items</source>
         <oldsource>%n item(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n kohde</numerusform>
+            <numerusform>%n kohdetta</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_subscriber_count" numerus="yes">
@@ -140,7 +140,7 @@
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
-        <translation>Ei suoralähetyksiä</translation>
+        <translation>Ei suoria lähetyksiä</translation>
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
@@ -245,7 +245,7 @@
     </message>
     <message id="sailpipe_media_details-detail_category">
         <source>Category</source>
-        <translation type="unfinished">Kategoria</translation>
+        <translation>Kategoria</translation>
     </message>
     <message id="sailpipe_media_details-detail_licence">
         <source>Licence</source>
@@ -272,7 +272,7 @@
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
-        <translation type="unfinished">Ei tuloksia</translation>
+        <translation>Ei tuloksia</translation>
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
@@ -285,7 +285,7 @@
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation>%0 video</translation>
+        <translation type="unfinished">%0 video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
@@ -294,7 +294,7 @@
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Media</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <source>%0 Channel</source>
@@ -310,7 +310,7 @@
     </message>
     <message id="sailpipe_channel-page_header_channel_default">
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanava</translation>
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
@@ -330,61 +330,61 @@
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation type="unfinished">Soittolistat</translation>
+        <translation>Soittolistat</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
-        <translation type="unfinished"></translation>
+        <translation>Musiikkikappaleet</translation>
     </message>
     <message id="sailpipe_filter_name-music_videos">
         <source>Music videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Musiikkivideot</translation>
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Musiikkialbumit</translation>
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Musiikkisoittolistat</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
-        <translation type="unfinished">Raidat</translation>
+        <translation>Raidat</translation>
     </message>
     <message id="sailpipe_filter_name-users">
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjät</translation>
     </message>
     <message id="sailpipe_filter_name-conferences">
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Konferenssit</translation>
     </message>
     <message id="sailpipe_filter_name-events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumat</translation>
     </message>
     <message id="sailpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Seepiavideot</translation>
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <source>SailPipe download</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe-lataus</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Suoratoista tai lataa videoita ja musiikkia</translation>
     </message>
     <message id="sailpipe_about-version">
         <source>Version</source>
         <oldsource>Version:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Versio</translation>
     </message>
     <message id="sailpipe_about-maintainer">
         <source>Maintainer</source>
         <oldsource>Maintainer:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ylläpitäjä</translation>
     </message>
     <message id="sailpipe_about-licence">
         <source>Licence</source>
@@ -393,32 +393,32 @@
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunnioitathan kaikkien tällä ohjelmistolla ladattujen tiedostojen tekijänoikeuksia</translation>
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Käyttöliittymä NewPipe Extractorille videoiden ja musiikin suoratoistamiseen tai lataamiseen useista verkkopalveluista, kuten YouTubesta, Soundcloudista, Media.ccc.de:sta ja Bandcampistä.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkkosivusto</translation>
     </message>
     <message id="sailpipe_about-email">
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Sähköposti</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjasto sisällön poimimiseen suoratoistosivustoilta</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versio</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_maintainer">
         <source>Maintainer</source>
-        <translation type="unfinished"></translation>
+        <translation>Ylläpitäjä</translation>
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
@@ -427,56 +427,56 @@
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
         <oldsource>Belarusian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Valkovenäjä</translation>
     </message>
     <message id="sailpipe_about-estonian_translation">
         <source>Estonian</source>
         <oldsource>Estonian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Viro</translation>
     </message>
     <message id="sailpipe_about-finnish_translation">
         <source>Finnish</source>
         <oldsource>Finnish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Suomi</translation>
     </message>
     <message id="sailpipe_about-french_translation">
         <source>French</source>
         <oldsource>French translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ranska</translation>
     </message>
     <message id="sailpipe_about-german_translation">
         <source>German</source>
         <oldsource>German translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Saksa</translation>
     </message>
     <message id="sailpipe_about-italian_translation">
         <source>Italian</source>
         <oldsource>Italian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Italia</translation>
     </message>
     <message id="sailpipe_about-polish_translation">
         <source>Polish</source>
         <oldsource>Polish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Puola</translation>
     </message>
     <message id="sailpipe_about-russian_translation">
         <source>Russian</source>
         <oldsource>Russian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Venäjä</translation>
     </message>
     <message id="sailpipe_about-swedish_translation">
         <source>Swedish</source>
         <oldsource>Swedish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ruotsi</translation>
     </message>
     <message id="sailpipe_about-turkish_translation">
         <source>Turkish</source>
         <oldsource>Turkish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Turkki</translation>
     </message>
     <message id="sailpipe_about-tralsation_platform">
         <source>Translation platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Käännösalusta</translation>
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
@@ -484,47 +484,47 @@
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sailing-to-Coffee</translation>
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Opal-moduulit</translation>
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Testaus</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Romania</translation>
     </message>
     <message id="sailpipe_about-contributors_description">
         <source>The amazing team of SailPipe contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipeen osallistuneiden upea joukko</translation>
     </message>
     <message id="sailpipe_about-title_about_sailpipe">
         <source>About SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja SailPipesta</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Yleinen</translation>
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
-        <translation type="unfinished"></translation>
+        <translation>NewPipe Extractor</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Osallistujat</translation>
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkit</translation>
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektirunoilija</translation>
     </message>
 </context>
 </TS>
