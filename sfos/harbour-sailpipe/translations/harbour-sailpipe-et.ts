@@ -577,7 +577,7 @@
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekti luuletaja</translation>
     </message>
 </context>
 </TS>
