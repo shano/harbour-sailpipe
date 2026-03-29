@@ -46,9 +46,10 @@
     <message id="sailpipe-searchitem-channel_subscriber_count" numerus="yes">
         <source>%n subscribers</source>
         <oldsource>%n subscriber(s)</oldsource>
-        <translation type="unfinished">
-            <numerusform>%n subscriber</numerusform>
-            <numerusform>%n subscribers</numerusform>
+        <translation>
+            <numerusform>%n abonents</numerusform>
+            <numerusform>%n abonenti</numerusform>
+            <numerusform>%n abonentu</numerusform>
         </translation>
     </message>
     <message id="sailpipe-searchitem-channel_inforow">
@@ -80,11 +81,11 @@
     </message>
     <message id="sailpipe_playlist_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Augšupielādēja</translation>
     </message>
     <message id="sailpipe_playlist_details-detail_description">
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Apraksts</translation>
     </message>
     <message id="sailpipe_playlist_detail-item-count" numerus="yes">
         <source>%n items</source>
@@ -95,11 +96,11 @@
     </message>
     <message id="sailpipe-channeltab-header_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Par</translation>
     </message>
     <message id="sailpipe-channeltab-header_videos">
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Video</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-videos">
         <source>No videos</source>
@@ -107,7 +108,7 @@
     </message>
     <message id="sailpipe-channeltab-header_shorts">
         <source>Shorts</source>
-        <translation type="unfinished"></translation>
+        <translation>Īsie video</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-shorts">
         <source>No shorts</source>
@@ -115,7 +116,7 @@
     </message>
     <message id="sailpipe-channeltab-header_live">
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiešraides</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-livestreams">
         <source>No livestreams</source>
@@ -123,7 +124,7 @@
     </message>
     <message id="sailpipe-channeltab-header_playlists">
         <source>Playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Atskaņošanas saraksti</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-playlists">
         <source>No playlists</source>
@@ -131,7 +132,7 @@
     </message>
     <message id="sailpipe-channeltab-header_albums">
         <source>Albums</source>
-        <translation type="unfinished"></translation>
+        <translation>Albumi</translation>
     </message>
     <message id="sailpipe-channeltab-placeholder_no-albums">
         <source>No albums</source>
@@ -139,7 +140,7 @@
     </message>
     <message id="sailpipe-utils_length_unknown">
         <source>??:??:??</source>
-        <translation type="unfinished"></translation>
+        <translation>??:??:??</translation>
     </message>
     <message id="sailpipe_filter_page-page_header">
         <source>Search Filter</source>
@@ -147,7 +148,7 @@
     </message>
     <message id="sailpipe_search_page-menu_about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Par lietotni</translation>
     </message>
     <message id="sailpipe_search_page-menu_filter">
         <source>Filter</source>
@@ -156,15 +157,15 @@
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Search %0</translation>
+        <translation>Meklēt %0 vietnē</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Neatrada nevienu ierakstu</translation>
     </message>
     <message id="sailpipe_search_page-search_enter_some_text">
         <source>Enter some text to search</source>
-        <translation type="unfinished">Enter some text to search</translation>
+        <translation>Ievadiet kaut ko, ko meklēt</translation>
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
@@ -184,7 +185,7 @@
     </message>
     <message id="sailpipe_channel_details-detail_subscribers">
         <source>Subscribers</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonenti</translation>
     </message>
     <message id="sailpipe_channel_details-detail_verified">
         <source>Verified</source>
@@ -200,7 +201,7 @@
     </message>
     <message id="sailpipe_channel_details-detail_tags">
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Birkas</translation>
     </message>
     <message id="sailpipe_media_details-detail_views_not_applicable">
         <source>N/A</source>
@@ -212,7 +213,7 @@
     </message>
     <message id="sailpipe_media_details-detail_uploader">
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Augšupielādēja</translation>
     </message>
     <message id="sailpipe_media_details-detail_date">
         <source>Upload date</source>
@@ -220,15 +221,15 @@
     </message>
     <message id="sailpipe_media_details-detail_length">
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilgums</translation>
     </message>
     <message id="sailpipe_media_details-detail_category">
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorija</translation>
     </message>
     <message id="sailpipe_media_details-detail_licence">
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence</translation>
     </message>
     <message id="sailpipe_media_details-detail_description">
         <source>Description</source>
@@ -240,9 +241,10 @@
     </message>
     <message id="sailpipe_comment_item-replies" numerus="yes">
         <source>%n replies</source>
-        <translation type="unfinished">
-            <numerusform>%n reply</numerusform>
-            <numerusform>%n replies</numerusform>
+        <translation>
+            <numerusform>%n atbilde</numerusform>
+            <numerusform>%n atbildes</numerusform>
+            <numerusform>%n atbildes</numerusform>
         </translation>
     </message>
     <message id="sailpipe_cover-title">
@@ -251,7 +253,7 @@
     </message>
     <message id="sailpipe_playlist-no_entries">
         <source>No entries</source>
-        <translation type="unfinished">No entries</translation>
+        <translation>Nav nekā</translation>
     </message>
     <message id="sailpipe_playlist-no_videos">
         <source>There are no videos in this playlist</source>
@@ -259,7 +261,7 @@
     </message>
     <message id="sailpipe_replies-page_header">
         <source>Replies</source>
-        <translation type="unfinished">Replies</translation>
+        <translation>Atbildes</translation>
     </message>
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
