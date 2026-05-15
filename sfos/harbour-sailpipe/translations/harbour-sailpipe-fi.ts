@@ -177,7 +177,7 @@
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Haku %0</translation>
+        <translation>Hae %0</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
@@ -285,12 +285,12 @@
     <message id="sailpipe_media-page_header_video">
         <source>%0 Video</source>
         <oldsource>%1 Video</oldsource>
-        <translation type="unfinished">%0 video</translation>
+        <translation>%0 Video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <source>%0 Audio</source>
         <oldsource>%1 Audio</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>%0 Äänet</translation>
     </message>
     <message id="sailpipe_media-page_header_media">
         <source>Media</source>
@@ -298,15 +298,15 @@
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <source>%0 Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Kanava</translation>
     </message>
     <message id="sailpipe_channel-page_header_user">
         <source>%0 User</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Käyttäjä</translation>
     </message>
     <message id="sailpipe_channel-page_header_artist">
         <source>%0 Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Artisti</translation>
     </message>
     <message id="sailpipe_channel-page_header_channel_default">
         <source>Channel</source>
@@ -314,7 +314,7 @@
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <source>%0 Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 Soittolista</translation>
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
