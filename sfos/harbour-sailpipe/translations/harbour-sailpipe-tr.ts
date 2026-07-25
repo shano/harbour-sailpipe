@@ -150,7 +150,7 @@
     <message id="sailpipe_search_page-search_placeholder">
         <source>Search %0</source>
         <oldsource>Search</oldsource>
-        <translation type="unfinished">Ara %0</translation>
+        <translation>%0 ara</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <source>No entries</source>
@@ -194,11 +194,11 @@
     </message>
     <message id="sailpipe_search_page-menu_service">
         <source>Service</source>
-        <translation type="unfinished">Hizmet</translation>
+        <translation>Hizmet seç</translation>
     </message>
     <message id="sailpipe_service_page-page_header">
         <source>Service</source>
-        <translation type="unfinished">Hizmet</translation>
+        <translation>Hizmet seç</translation>
     </message>
     <message id="sailpipe-channeltab-header_tracks">
         <source>Tracks</source>
@@ -322,213 +322,213 @@
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <source>SailPipe download</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe indir</translation>
     </message>
     <message id="sailpipe_filter_name-all">
         <source>All</source>
-        <translation type="unfinished">Tümü</translation>
+        <translation>Tümü</translation>
     </message>
     <message id="sailpipe_filter_name-videos">
         <source>Videos</source>
-        <translation type="unfinished">Videolar</translation>
+        <translation>Videolar</translation>
     </message>
     <message id="sailpipe_filter_name-channels">
         <source>Channels</source>
-        <translation type="unfinished">Kanallar</translation>
+        <translation>Kanallar</translation>
     </message>
     <message id="sailpipe_filter_name-playlists">
         <source>Playlists</source>
-        <translation type="unfinished">Oynatma listeleri</translation>
+        <translation>Oynatma listeleri</translation>
     </message>
     <message id="sailpipe_filter_name-music_songs">
         <source>Music songs</source>
-        <translation type="unfinished">Müzik şarkıları</translation>
+        <translation>Müzik şarkıları</translation>
     </message>
     <message id="sailpipe_filter_name-music_videos">
         <source>Music videos</source>
-        <translation type="unfinished">Müzik videoları</translation>
+        <translation>Müzik videoları</translation>
     </message>
     <message id="sailpipe_filter_name-music_albums">
         <source>Music albums</source>
-        <translation type="unfinished">Müzik albümleri</translation>
+        <translation>Müzik albümleri</translation>
     </message>
     <message id="sailpipe_filter_name-music_playlists">
         <source>Music playlists</source>
-        <translation type="unfinished">Müzik oynatma listeleri</translation>
+        <translation>Müzik oynatma listeleri</translation>
     </message>
     <message id="sailpipe_filter_name-tracks">
         <source>Tracks</source>
-        <translation type="unfinished">Şarkılar</translation>
+        <translation>Şarkılar</translation>
     </message>
     <message id="sailpipe_filter_name-users">
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcılar</translation>
     </message>
     <message id="sailpipe_filter_name-conferences">
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Konferanslar</translation>
     </message>
     <message id="sailpipe_filter_name-events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Etkinlikler</translation>
     </message>
     <message id="sailpipe_filter_name-sepia_videos">
         <source>Sepia videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Sepya videolar</translation>
     </message>
     <message id="sailpipe_about-description">
         <source>Video and music streaming and downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Video ve müzik yayınlama ve indirme</translation>
     </message>
     <message id="sailpipe_about-version">
         <source>Version</source>
         <oldsource>Version:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm</translation>
     </message>
     <message id="sailpipe_about-maintainer">
         <source>Maintainer</source>
         <oldsource>Maintainer:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Geliştirici</translation>
     </message>
     <message id="sailpipe_about-licence">
         <source>Licence</source>
         <oldsource>Licence:</oldsource>
-        <translation type="unfinished">Lisans</translation>
+        <translation>Lisans</translation>
     </message>
     <message id="sailpipe_about-respect_copyright">
         <source>Please respect the copyright of all files downloaded using this software</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen bu yazılım ile indirilen tüm dosyaların telif haklarına saygı gösterin</translation>
     </message>
     <message id="sailpipe_about-summary">
         <source>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp.</source>
         <oldsource>A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.cc.de and Bandcamp.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>YouTube, SoundCloud, Media.ccc.de ve Bandcamp gibi çeşitli çevrim içi hizmetlerden video ve müzik yayınlamak ve indirmek için NewPipe Çıkarıcı kullanıcı arayüzü.</translation>
     </message>
     <message id="sailpipe_about-website">
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Web sitesi</translation>
     </message>
     <message id="sailpipe_about-email">
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-posta</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_description">
         <source>A library for extracting things from streaming sites</source>
-        <translation type="unfinished"></translation>
+        <translation>Yayın sitelerinden içerik çıkarmak için bir kütüphane</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_version">
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm</translation>
     </message>
     <message id="sailpipe_about-newpipe_extractor_maintainer">
         <source>Maintainer</source>
-        <translation type="unfinished"></translation>
+        <translation>Geliştirici</translation>
     </message>
     <message id="sailpipe_about-newpipie_extractor_licence">
         <source>Licence</source>
-        <translation type="unfinished">Lisans</translation>
+        <translation>Lisans</translation>
     </message>
     <message id="sailpipe_about-belarusian_translation">
         <source>Belarusian</source>
         <oldsource>Belarusian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Belarusça</translation>
     </message>
     <message id="sailpipe_about-estonian_translation">
         <source>Estonian</source>
         <oldsource>Estonian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Estonca</translation>
     </message>
     <message id="sailpipe_about-finnish_translation">
         <source>Finnish</source>
         <oldsource>Finnish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Fince</translation>
     </message>
     <message id="sailpipe_about-french_translation">
         <source>French</source>
         <oldsource>French translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Fransızca</translation>
     </message>
     <message id="sailpipe_about-german_translation">
         <source>German</source>
         <oldsource>German translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Almanca</translation>
     </message>
     <message id="sailpipe_about-italian_translation">
         <source>Italian</source>
         <oldsource>Italian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>İtalyanca</translation>
     </message>
     <message id="sailpipe_about-polish_translation">
         <source>Polish</source>
         <oldsource>Polish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Lehçe</translation>
     </message>
     <message id="sailpipe_about-russian_translation">
         <source>Russian</source>
         <oldsource>Russian translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Rusça</translation>
     </message>
     <message id="sailpipe_about-swedish_translation">
         <source>Swedish</source>
         <oldsource>Swedish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>İsveççe</translation>
     </message>
     <message id="sailpipe_about-turkish_translation">
         <source>Turkish</source>
         <oldsource>Turkish translation</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Türkçe</translation>
     </message>
     <message id="sailpipe_about-tralsation_platform">
         <source>Translation platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Çeviri platformu</translation>
     </message>
     <message id="sailpipe-mpris_identity">
         <source>SailPipe</source>
-        <translation type="unfinished">SailPipe</translation>
+        <translation>SailPipe</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <source>Sailing-to-Coffee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sailing-to-Coffee</translation>
     </message>
     <message id="sailpipe_about-opal">
         <source>Opal modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Opal modülleri</translation>
     </message>
     <message id="sailpipe_about-testing">
         <source>Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message id="sailpipe_about-romanian_translation">
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Rumence</translation>
     </message>
     <message id="sailpipe_about-contributors_description">
         <source>The amazing team of SailPipe contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe&apos;a katkıda bulunan muhteşem ekip</translation>
     </message>
     <message id="sailpipe_about-title_about_sailpipe">
         <source>About SailPipe</source>
-        <translation type="unfinished"></translation>
+        <translation>SailPipe hakkında</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Genel</translation>
     </message>
     <message id="sailpipe_about-section_newpipe_extractor">
         <source>NewPipe Extractor</source>
-        <translation type="unfinished"></translation>
+        <translation>NewPipe Çıkarıcı</translation>
     </message>
     <message id="sailpipe_about-section_contributors">
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkıda bulunanlar</translation>
     </message>
     <message id="sailpipe_about-section_links">
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Bağlantılar</translation>
     </message>
     <message id="sailpipe_about-poet">
         <source>Project poet</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje şairi</translation>
     </message>
 </context>
 </TS>
