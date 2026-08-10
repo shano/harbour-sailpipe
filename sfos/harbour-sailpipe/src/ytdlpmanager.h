@@ -60,6 +60,7 @@ private slots:
   void onLatestReleaseReply();
   void onAssetDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
   void onAssetDownloadFinished();
+  void onChecksumReply();
   void onVersionCheckFinished();
 
 private:
@@ -69,6 +70,7 @@ private:
   void setProgress(float progress);
   void startDownload(QString const& downloadUrl);
   QString getInstalledVersion();
+  static QByteArray sha256(QByteArray const& data);
 
 private:
   static YtDlpManager* m_instance;
@@ -80,6 +82,8 @@ private:
   float m_progress;
   QThreadPool m_threadPool;
   QFutureWatcher<QString> m_versionWatcher;
+  QByteArray m_pendingData;
+  QString m_pendingAssetName;
 };
 
 #endif // YTDLPMANAGER_H

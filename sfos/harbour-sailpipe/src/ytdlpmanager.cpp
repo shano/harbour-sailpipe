@@ -9,6 +9,7 @@
 #include <QProcess>
 #include <QNetworkRequest>
 #include <QUrlQuery>
+#include <QCryptographicHash>
 #include <QtConcurrent/QtConcurrent>
 
 #include "ytdlpmanager.h"
@@ -223,21 +224,65 @@ void YtDlpManager::onAssetDownloadFinished()
     return;
   }
 
-  QByteArray data = reply->readAll();
+  m_pendingData = reply->readAll();
+  m_pendingAssetName = releaseAssetName();
   reply->deleteLater();
+
+  QNetworkRequest checksumRequest{QUrl(QStringLiteral("https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-256SUMS"))};
+  checksumRequest.setRawHeader("Accept", "text/plain");
+  checksumRequest.setRawHeader("User-Agent", "harbour-sailpipe");
+  checksumRequest.setMaximumRedirectsAllowed(10);
+  checksumRequest.setAttribute(QNetworkRequest::FollowRedirectsAttribute, QVariant(true));
+
+  m_activeReply = m_manager->get(checksumRequest);
+  connect(m_activeReply, &QNetworkReply::finished, this, &YtDlpManager::onChecksumReply);
+}
+
+void YtDlpManager::onChecksumReply()
+{
+  QNetworkReply* reply = m_activeReply;
+  m_activeReply = nullptr;
+
+  bool verified = false;
+
+  if (reply->error() == QNetworkReply::NoError) {
+    QStringList checksumLines = QString::fromUtf8(reply->readAll())
+      .split(QChar('\n'), QString::SkipEmptyParts);
+
+    QByteArray hash = sha256(m_pendingData);
+    QString expectedHash = QString::fromUtf8(hash.toHex());
+
+    for (QString const& line : checksumLines) {
+      int spaceIdx = line.indexOf(QStringLiteral("  "));
+      if (spaceIdx < 0) {
+        continue;
+      }
+      QString lineHash = line.left(spaceIdx);
+      QString lineName = line.mid(spaceIdx + 2);
+      if ((lineName == m_pendingAssetName) && (lineHash.compare(expectedHash, Qt::CaseInsensitive) == 0)) {
+        verified = true;
+        break;
+      }
+    }
+  }
+  reply->deleteLater();
+
+  if (!verified) {
+    emit errorOccurred(QStringLiteral("SHA-256 checksum verification failed"));
+    setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
+    m_pendingData.clear();
+    return;
+  }
 
   QString path = binaryPath();
   QDir().mkpath(QFileInfo(path).absolutePath());
 
-  QString assetName = releaseAssetName();
   bool ok = false;
-  if (assetName.endsWith(QStringLiteral(".zip"))) {
-    // armv7l asset ships zipped. Extraction requires the `unzip`
-    // command-line tool to be present on-device.
-    QString tmpZip = QString("%1.zip").arg(path);
+  if (m_pendingAssetName.endsWith(QStringLiteral(".zip"))) {
+    QString tmpZip = QString("%1.zip.new").arg(path);
     QFile zipFile(tmpZip);
     if (zipFile.open(QIODevice::WriteOnly)) {
-      zipFile.write(data);
+      zipFile.write(m_pendingData);
       zipFile.close();
 
       QProcess unzip;
@@ -247,7 +292,6 @@ void YtDlpManager::onAssetDownloadFinished()
       QFile::remove(tmpZip);
 
       if (ok) {
-        // The zip contains a single file; find it and rename to binaryPath().
         QDir dir(QFileInfo(path).absolutePath());
         QStringList entries = dir.entryList(QDir::Files);
         for (QString const& entry : entries) {
@@ -261,13 +305,18 @@ void YtDlpManager::onAssetDownloadFinished()
     }
   }
   else {
-    QFile outFile(path);
-    ok = outFile.open(QIODevice::WriteOnly);
+    QString tempPath = path + QStringLiteral(".new");
+    QFile tempFile(tempPath);
+    ok = tempFile.open(QIODevice::WriteOnly);
     if (ok) {
-      outFile.write(data);
-      outFile.close();
+      tempFile.write(m_pendingData);
+      tempFile.close();
+      QFile::remove(path);
+      ok = QFile::rename(tempPath, path);
     }
   }
+
+  m_pendingData.clear();
 
   if (ok) {
     QFile::setPermissions(path, QFile::permissions(path)
@@ -278,6 +327,11 @@ void YtDlpManager::onAssetDownloadFinished()
     emit errorOccurred(QStringLiteral("Failed to install yt-dlp binary"));
     setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
   }
+}
+
+QByteArray YtDlpManager::sha256(QByteArray const& data)
+{
+  return QCryptographicHash::hash(data, QCryptographicHash::Sha256);
 }
 
 QString YtDlpManager::getInstalledVersion()
