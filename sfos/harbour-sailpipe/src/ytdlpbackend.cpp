@@ -8,6 +8,7 @@
 #define SEARCH_PAGE_SIZE 20
 #define COMMENT_PAGE_SIZE 20
 #define CHANNEL_PAGE_SIZE 30
+#define PLAYLIST_PAGE_SIZE 30
 
 int YtDlpBackend::pageOffset(QJsonObject const& in)
 {
@@ -237,17 +238,51 @@ QJsonDocument YtDlpBackend::getMoreChannelItems(QJsonObject const& in)
 
 QJsonDocument YtDlpBackend::getPlaylistInfo(QJsonObject const& in)
 {
-  Q_UNUSED(in)
-  return QJsonDocument(QJsonObject());
+  QString url = in[QStringLiteral("url")].toString();
+
+  YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
+    << QStringLiteral("--flat-playlist")
+    << QStringLiteral("-J")
+    << url);
+
+  if (!process.success) {
+    return QJsonDocument(QJsonObject());
+  }
+
+  QJsonObject info = process.output.object();
+  QJsonArray entries = info[QStringLiteral("entries")].toArray();
+
+  QJsonObject result = YtDlpTranslate::searchResults(entries, 0, PLAYLIST_PAGE_SIZE, entries.size());
+  QJsonObject extra = YtDlpTranslate::playlistExtra(info);
+  for (auto it = extra.constBegin(); it != extra.constEnd(); ++it) {
+    result[it.key()] = it.value();
+  }
+
+  return QJsonDocument(result);
 }
 
 QJsonDocument YtDlpBackend::getMorePlaylistItems(QJsonObject const& in)
 {
-  Q_UNUSED(in)
-  return QJsonDocument(QJsonObject());
+  QString url = in[QStringLiteral("url")].toString();
+  int offset = pageOffset(in);
+
+  YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
+    << QStringLiteral("--flat-playlist")
+    << QStringLiteral("-J")
+    << url);
+
+  if (!process.success) {
+    return QJsonDocument(QJsonObject());
+  }
+
+  QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
+  QJsonObject result = YtDlpTranslate::searchResults(entries, offset, PLAYLIST_PAGE_SIZE, entries.size());
+  return QJsonDocument(result);
 }
 
 QJsonDocument YtDlpBackend::getAvailableContentFilter()
 {
-  return QJsonDocument(QJsonObject());
+  QJsonObject result;
+  result[QStringLiteral("stringList")] = QJsonArray{QStringLiteral("all")};
+  return QJsonDocument(result);
 }
