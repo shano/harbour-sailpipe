@@ -157,9 +157,12 @@ void DownloadManager::downloadFile(QString const url)
     QString targetPath = constructFilename(m_name, extension);
 
     if (m_ytDlpContext) {
+      // Leave `finalise` connected so the superseded context still reaches
+      // onFinalise() and gets deleteLater()'d once its process exits; only
+      // the two signals that would directly corrupt the displayed status/
+      // progress of the new download are disconnected.
       disconnect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
       disconnect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
-      disconnect(m_ytDlpContext, &YtDlpDownloadContext::finalise, this, &DownloadManager::onFinalise);
     }
 
     m_ytDlpContext = new YtDlpDownloadContext(m_page, m_page, targetPath, this);
@@ -304,10 +307,14 @@ void DownloadManager::onFinalise()
 
   YtDlpDownloadContext* ytDlpContext = dynamic_cast<YtDlpDownloadContext*>(sender());
   if (ytDlpContext) {
-    if (m_page == ytDlpContext->page()) {
-      setDownloadStatus(None);
-    }
+    // Only touch the displayed status if this is still the tracked context —
+    // a superseded context (see downloadFile()) stays connected to finalise()
+    // purely for cleanup and must not affect what the current download shows,
+    // even if it happens to share the same page.
     if (m_ytDlpContext == ytDlpContext) {
+      if (m_page == ytDlpContext->page()) {
+        setDownloadStatus(None);
+      }
       m_ytDlpContext = nullptr;
     }
     ytDlpContext->deleteLater();
