@@ -1,0 +1,33 @@
+{
+  "_type": "url",
+  "ie_key": "Youtube",
+  "id": "OVyOmaVySZc",
+  "url": "https://www.youtube.com/watch?v=OVyOmaVySZc",
+  "title": "Jolla C2 Community Phone: First look & Sailfish OS 5.0 preview #sailfishos #privacyfromfinland",
+  "description": "We're excited to introduce the Jolla C2, packed with features you asked for and powered by Sailfish OS 5.0. In this video, we'll\u00a0...",
+  "duration": 250.0,
+  "channel_id": "UCgK45xp5j9vJMJ3odffESjA",
+  "channel": "Jolla",
+  "channel_url": "https://www.youtube.com/channel/UCgK45xp5j9vJMJ3odffESjA",
+  "uploader": "Jolla",
+  "uploader_id": "@jolla",
+  "uploader_url": "https://www.youtube.com/@jolla",
+  "thumbnails": [
+    {
+      "url": "https://i.ytimg.com/vi/OVyOmaVySZc/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLAHUDZ-IQo6UTY5VkwSIOP5KgOPSA",
+      "height": 202,
+      "width": 360
+    },
+    {
+      "url": "https://i.ytimg.com/vi/OVyOmaVySZc/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLCdGUKHOvfhvm_n2lsz9qvyV5D0zw",
+      "height": 404,
+      "width": 720
+    }
+  ],
+  "timestamp": null,
+  "release_timestamp": null,
+  "availability": null,
+  "view_count": 58811,
+  "live_status": null,
+  "channel_is_verified": true
+}

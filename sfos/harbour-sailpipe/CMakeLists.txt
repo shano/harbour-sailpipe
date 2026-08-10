@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(harbour-sailpipe CXX)
 
+enable_testing()
+
 find_package(Qt5 COMPONENTS Core Network Qml Gui Quick LinguistTools REQUIRED)
 
 include(FindPkgConfig)
@@ -118,6 +120,8 @@ install(DIRECTORY qml/images/
     DESTINATION share/harbour-sailpipe/qml/images
     FILES_MATCHING PATTERN "z*/*.png"
 )
+
+add_subdirectory(tests)
 
 # Get the other files reachable from the project tree in Qt Creator
 FILE(GLOB ImageFiles "qml/images/*/*.png")
