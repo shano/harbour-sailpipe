@@ -33,12 +33,17 @@ Page {
         searchTimer.restart()
     }
 
+    property string errorMessage
+
     Connections {
         target: extractor
         onServiceChanged: {
             searchModel.clear();
             filterModel.populate(extractor);
             searchTimer.restart()
+        }
+        onErrorOccurred: {
+            page.errorMessage = message;
         }
     }
 
@@ -155,5 +160,21 @@ Page {
             url: model.url
             infoRow: model.infoRow
         }
+    }
+
+    Label {
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            leftMargin: Theme.horizontalPageMargin
+            rightMargin: Theme.horizontalPageMargin
+            bottomMargin: Theme.paddingLarge
+        }
+        text: page.errorMessage
+        visible: text.length > 0
+        wrapMode: Text.WordWrap
+        color: Theme.highlightColor
+        horizontalAlignment: Text.AlignHCenter
     }
 }
