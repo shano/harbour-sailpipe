@@ -101,8 +101,20 @@ QJsonDocument YtDlpBackend::getMoreSearchItems(QJsonObject const& in)
 
 QJsonDocument YtDlpBackend::downloadExtract(QJsonObject const& in)
 {
-  Q_UNUSED(in)
-  return QJsonDocument(QJsonObject());
+  QString url = in[QStringLiteral("url")].toString();
+
+  YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
+    << QStringLiteral("-f")
+    << QStringLiteral("best[ext=mp4]/best")
+    << QStringLiteral("-J")
+    << url);
+
+  if (!process.success) {
+    return QJsonDocument(QJsonObject());
+  }
+
+  QJsonObject result = YtDlpTranslate::mediaInfo(process.output.object());
+  return QJsonDocument(result);
 }
 
 QJsonDocument YtDlpBackend::getCommentsInfo(QJsonObject const& in)
