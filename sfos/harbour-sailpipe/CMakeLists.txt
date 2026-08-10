@@ -126,7 +126,10 @@ install(DIRECTORY qml/images/
     FILES_MATCHING PATTERN "z*/*.png"
 )
 
-add_subdirectory(tests)
+find_package(Qt5 COMPONENTS Test QUIET)
+if(Qt5Test_FOUND)
+  add_subdirectory(tests)
+endif()
 
 # Get the other files reachable from the project tree in Qt Creator
 FILE(GLOB ImageFiles "qml/images/*/*.png")
