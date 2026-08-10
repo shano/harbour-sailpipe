@@ -122,6 +122,16 @@ QFuture<QJsonDocument> Extractor::invokeAsync(QString const methodName, QJsonDoc
   return QtConcurrent::run(&m_threadPool, invoke, &Invoke::run);
 }
 
+void Extractor::emitErrorIfPresent(QJsonDocument const& result)
+{
+  if (result.isObject()) {
+    QJsonObject obj = result.object();
+    if (obj.contains(QStringLiteral("error"))) {
+      emit errorOccurred(obj[QStringLiteral("error")].toString());
+    }
+  }
+}
+
 void Extractor::search(SearchModel* searchModel, QString const& searchTerm, QStringList const& contentFilter, QString const& sortFilter)
 {
   QJsonObject json;
@@ -147,6 +157,7 @@ void Extractor::search(SearchModel* searchModel, QString const& searchTerm, QStr
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, searchModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["relatedItems"].toArray();
@@ -191,6 +202,7 @@ void Extractor::searchMore(SearchModel* searchModel, QString const& searchTerm, 
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, searchModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["itemsList"].toArray();
@@ -223,6 +235,7 @@ void Extractor::downloadExtract(MediaInfo* mediaInfo, QString const& url)
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, url, mediaInfo, lifetimeCheck]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       mediaInfo->parseJson(result.object());
@@ -248,6 +261,7 @@ void Extractor::getComments(CommentModel* commentModel, QString const& url)
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, commentModel, lifetimeCheck]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["relatedItems"].toArray();
@@ -281,6 +295,7 @@ void Extractor::getMoreComments(CommentModel* commentModel, QString const& url, 
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, commentModel, lifetimeCheck]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["itemsList"].toArray();
@@ -313,6 +328,7 @@ void Extractor::appendMoreComments(CommentModel* commentModel, QString const& ur
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, commentModel, lifetimeCheck]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["itemsList"].toArray();
@@ -344,6 +360,7 @@ void Extractor::getChannelInfo(ChannelInfo* channelInfo, LinkHandlerModel* linkH
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, channelInfo, lifetimeCheck, linkHandlerModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       channelInfo->parseJson(result.object());
@@ -371,6 +388,7 @@ void Extractor::getChannelTabInfo(ChannelTabInfo* channelTabInfo, ListLinkHandle
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, channelTabInfo, lifetimeChannelTabInfo, videoModel, lifetimeCVideoModel]() {
     if (!lifetimeChannelTabInfo->destroyed() && !lifetimeCVideoModel->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       channelTabInfo->parseJson(result.object());
@@ -417,6 +435,7 @@ void Extractor::getMoreChannelItems(ListLinkHandler* linkHandler, PageRef* page,
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, videoModel, lifetimeCheck]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["itemsList"].toArray();
@@ -451,6 +470,7 @@ void Extractor::getPlaylistInfo(PlaylistModel* playlistModel, QString const& url
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, playlistModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["relatedItems"].toArray();
@@ -489,6 +509,7 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, playlistModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["itemsList"].toArray();
@@ -523,6 +544,7 @@ void Extractor::getAvailableContentFilter(FilterModel* filterModel)
   QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, filterModel]() {
     if (!lifetimeCheck->destroyed()) {
       QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
       //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
 
       QJsonArray items = result.object()["stringList"].toArray();

@@ -10,6 +10,13 @@
 #define CHANNEL_PAGE_SIZE 30
 #define PLAYLIST_PAGE_SIZE 30
 
+static QJsonDocument errorResult(QString const& message)
+{
+  QJsonObject obj;
+  obj[QStringLiteral("error")] = message;
+  return QJsonDocument(obj);
+}
+
 int YtDlpBackend::pageOffset(QJsonObject const& in)
 {
   QJsonObject page = in[QStringLiteral("page")].toObject();
@@ -74,7 +81,7 @@ QJsonDocument YtDlpBackend::searchFor(QJsonObject const& in)
     << QString("ytsearch%1:%2").arg(requested).arg(searchTerm));
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
@@ -94,7 +101,7 @@ QJsonDocument YtDlpBackend::getMoreSearchItems(QJsonObject const& in)
     << QString("ytsearch%1:%2").arg(requested).arg(searchTerm));
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
@@ -113,7 +120,7 @@ QJsonDocument YtDlpBackend::downloadExtract(QJsonObject const& in)
     << url);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonObject result = YtDlpTranslate::mediaInfo(process.output.object());
@@ -133,7 +140,7 @@ QJsonDocument YtDlpBackend::getCommentsInfo(QJsonObject const& in)
     << url, 60000);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray comments = process.output.object()[QStringLiteral("comments")].toArray();
@@ -155,7 +162,7 @@ QJsonDocument YtDlpBackend::getMoreCommentItems(QJsonObject const& in)
     << url, 60000);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray comments = process.output.object()[QStringLiteral("comments")].toArray();
@@ -175,7 +182,7 @@ QJsonDocument YtDlpBackend::getChannelInfo(QJsonObject const& in)
     << url);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonObject info = process.output.object();
@@ -201,15 +208,16 @@ QJsonDocument YtDlpBackend::getChannelTabInfo(QJsonObject const& in)
 
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("--flat-playlist")
+    << QStringLiteral("--playlist-end") << QString::number(CHANNEL_PAGE_SIZE)
     << QStringLiteral("-J")
-    << url);
+    << url, 60000);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
-  QJsonObject result = YtDlpTranslate::searchResults(entries, 0, CHANNEL_PAGE_SIZE, entries.size());
+  QJsonObject result = YtDlpTranslate::searchResults(entries, 0, CHANNEL_PAGE_SIZE, CHANNEL_PAGE_SIZE);
   result[QStringLiteral("contentFilters")] = QJsonArray{QStringLiteral("videos")};
   result[QStringLiteral("sortFilter")] = QString();
 
@@ -221,18 +229,20 @@ QJsonDocument YtDlpBackend::getMoreChannelItems(QJsonObject const& in)
   QJsonObject linkHandler = in;
   QString url = linkHandler[QStringLiteral("url")].toString();
   int offset = pageOffset(in);
+  int requested = offset + CHANNEL_PAGE_SIZE;
 
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("--flat-playlist")
+    << QStringLiteral("--playlist-end") << QString::number(requested)
     << QStringLiteral("-J")
-    << url);
+    << url, 60000);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
-  QJsonObject result = YtDlpTranslate::searchResults(entries, offset, CHANNEL_PAGE_SIZE, entries.size());
+  QJsonObject result = YtDlpTranslate::searchResults(entries, offset, CHANNEL_PAGE_SIZE, requested);
   return QJsonDocument(result);
 }
 
@@ -242,17 +252,18 @@ QJsonDocument YtDlpBackend::getPlaylistInfo(QJsonObject const& in)
 
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("--flat-playlist")
+    << QStringLiteral("--playlist-end") << QString::number(PLAYLIST_PAGE_SIZE)
     << QStringLiteral("-J")
-    << url);
+    << url, 60000);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonObject info = process.output.object();
   QJsonArray entries = info[QStringLiteral("entries")].toArray();
 
-  QJsonObject result = YtDlpTranslate::searchResults(entries, 0, PLAYLIST_PAGE_SIZE, entries.size());
+  QJsonObject result = YtDlpTranslate::searchResults(entries, 0, PLAYLIST_PAGE_SIZE, PLAYLIST_PAGE_SIZE);
   QJsonObject extra = YtDlpTranslate::playlistExtra(info);
   for (auto it = extra.constBegin(); it != extra.constEnd(); ++it) {
     result[it.key()] = it.value();
@@ -265,18 +276,20 @@ QJsonDocument YtDlpBackend::getMorePlaylistItems(QJsonObject const& in)
 {
   QString url = in[QStringLiteral("url")].toString();
   int offset = pageOffset(in);
+  int requested = offset + PLAYLIST_PAGE_SIZE;
 
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("--flat-playlist")
+    << QStringLiteral("--playlist-end") << QString::number(requested)
     << QStringLiteral("-J")
-    << url);
+    << url, 60000);
 
   if (!process.success) {
-    return QJsonDocument(QJsonObject());
+    return errorResult(process.errorMessage);
   }
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
-  QJsonObject result = YtDlpTranslate::searchResults(entries, offset, PLAYLIST_PAGE_SIZE, entries.size());
+  QJsonObject result = YtDlpTranslate::searchResults(entries, offset, PLAYLIST_PAGE_SIZE, requested);
   return QJsonDocument(result);
 }
 

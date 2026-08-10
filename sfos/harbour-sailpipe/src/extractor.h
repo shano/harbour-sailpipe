@@ -63,11 +63,14 @@ public slots:
 signals:
   void extracted(QString const& url);
   void serviceChanged();
+  void errorOccurred(QString message);
 
 private:
   QJsonDocument invokeSync(QString const methodName, QJsonDocument const* in);
 
   QFuture<QJsonDocument> invokeAsync(QString const methodName, QJsonDocument const* in);
+
+  void emitErrorIfPresent(QJsonDocument const& result);
 
 public:
   graal_isolate_t* m_isolate;
