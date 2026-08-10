@@ -12,6 +12,7 @@ class QJSEngine;
 class DownloadContext;
 class TransferEngineClient;
 class DBusAdapter;
+class YtDlpDownloadContext;
 
 class DownloadManager : public QObject
 {
@@ -85,6 +86,7 @@ private:
   TransferEngineClient* m_transferClient;
   DBusAdapter* m_dbusAdapter;
   bool m_dbusRegistered;
+  YtDlpDownloadContext* m_ytDlpContext;
 };
 
 #endif // DOWNLOADMANAGER_H

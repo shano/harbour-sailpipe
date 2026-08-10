@@ -2,6 +2,7 @@
 #include <QNetworkReply>
 #include <QDBusConnection>
 #include <QStandardPaths>
+#include <QRegularExpression>
 #include <QDir>
 #include <QFile>
 #include <transferengineclient.h>
@@ -9,6 +10,7 @@
 #include "dbusadapter.h"
 #include "downloadcontext.h"
 #include "downloadmanager.h"
+#include "ytdlpdownloadcontext.h"
 
 #define MAX_DATA_CHUNK (1024 * 64)
 #define SHORTNAME_CHARS (23)
@@ -35,6 +37,7 @@ DownloadManager::DownloadManager(QObject *parent)
   , m_progress(0.0)
   , m_transferClient(new TransferEngineClient(this))
   , m_dbusRegistered(false)
+  , m_ytDlpContext(nullptr)
 {
   connect(m_manager, &QNetworkAccessManager::finished, this, &DownloadManager::onFinished);
 
@@ -144,6 +147,25 @@ void DownloadManager::setProgress(float progress)
 
 void DownloadManager::downloadFile(QString const url)
 {
+  static QRegularExpression const youtubeHost(QStringLiteral("(^|\\.)youtube\\.com$|(^|\\.)youtu\\.be$"));
+
+  QUrl pageUrl(m_page);
+  bool isYouTube = youtubeHost.match(pageUrl.host()).hasMatch();
+
+  if (isYouTube) {
+    QString extension = QStringLiteral("mp4");
+    QString targetPath = constructFilename(m_name, extension);
+
+    m_ytDlpContext = new YtDlpDownloadContext(m_page, m_page, targetPath, this);
+    connect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
+    connect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
+    connect(m_ytDlpContext, &YtDlpDownloadContext::finalise, this, &DownloadManager::onFinalise);
+
+    setProgress(0.0);
+    m_ytDlpContext->start();
+    return;
+  }
+
   QNetworkRequest request;
 
   qDebug() << "Download URL: " << url;
@@ -271,6 +293,18 @@ void DownloadManager::onFinalise()
     disconnect(context, &DownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
     disconnect(context, &DownloadContext::finalise, this, &DownloadManager::onFinalise);
     destroyContext(context);
+    return;
+  }
+
+  YtDlpDownloadContext* ytDlpContext = dynamic_cast<YtDlpDownloadContext*>(sender());
+  if (ytDlpContext) {
+    if (m_page == ytDlpContext->page()) {
+      setDownloadStatus(None);
+    }
+    if (m_ytDlpContext == ytDlpContext) {
+      m_ytDlpContext = nullptr;
+    }
+    ytDlpContext->deleteLater();
   }
 }
 
@@ -290,7 +324,10 @@ void DownloadManager::destroyContext(DownloadContext* context)
 void DownloadManager::cancel()
 {
   qDebug() << "DownloadManager cancel: " << m_page;
-  if (m_running.contains(m_page)) {
+  if (m_ytDlpContext && (m_ytDlpContext->page() == m_page)) {
+    m_ytDlpContext->cancel();
+  }
+  else if (m_running.contains(m_page)) {
     DownloadContext* context = m_running.value(m_page);
     QNetworkReply* reply = context->reply();
     reply->abort();
