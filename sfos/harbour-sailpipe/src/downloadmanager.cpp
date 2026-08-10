@@ -79,6 +79,11 @@ void DownloadManager::setPage(QString page)
       disconnect(context, &DownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
     }
 
+    if (m_ytDlpContext && (m_ytDlpContext->page() == m_page)) {
+      disconnect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
+      disconnect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
+    }
+
     m_page = page;
 
     if (m_running.contains(m_page)) {
@@ -86,6 +91,12 @@ void DownloadManager::setPage(QString page)
       connect(context, &DownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
       setProgress(context->progress());
       setDownloadStatus(context->downloadStatus());
+    }
+    else if (m_ytDlpContext && (m_ytDlpContext->page() == m_page)) {
+      connect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
+      connect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
+      setProgress(m_ytDlpContext->progress());
+      setDownloadStatus(m_ytDlpContext->downloadStatus());
     }
     else {
       setDownloadStatus(DownloadStatus::None);
@@ -165,7 +176,7 @@ void DownloadManager::downloadFile(QString const url)
       disconnect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
     }
 
-    m_ytDlpContext = new YtDlpDownloadContext(m_page, m_page, targetPath, this);
+    m_ytDlpContext = new YtDlpDownloadContext(m_page, m_page, targetPath, m_transferClient, m_dbusRegistered, this);
     connect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
     connect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
     connect(m_ytDlpContext, &YtDlpDownloadContext::finalise, this, &DownloadManager::onFinalise);
@@ -357,6 +368,9 @@ void DownloadManager::cancelDownload(int transferId)
     DownloadContext* context = m_transferIds.value(transferId);
     QNetworkReply* reply = context->reply();
     reply->abort();
+  }
+  else if (m_ytDlpContext && (m_ytDlpContext->transferId() == transferId)) {
+    m_ytDlpContext->cancel();
   }
   else {
     qDebug() << "Transfer ID to cancel not found: " << transferId;
