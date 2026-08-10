@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QThreadPool>
+#include <QFutureWatcher>
 
 class QQmlEngine;
 class QJSEngine;
@@ -58,6 +60,7 @@ private slots:
   void onLatestReleaseReply();
   void onAssetDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
   void onAssetDownloadFinished();
+  void onVersionCheckFinished();
 
 private:
   void setStatus(Status status);
@@ -65,6 +68,7 @@ private:
   void setLatestVersion(QString const& version);
   void setProgress(float progress);
   void startDownload(QString const& downloadUrl);
+  QString getInstalledVersion();
 
 private:
   static YtDlpManager* m_instance;
@@ -74,6 +78,8 @@ private:
   QString m_installedVersion;
   QString m_latestVersion;
   float m_progress;
+  QThreadPool m_threadPool;
+  QFutureWatcher<QString> m_versionWatcher;
 };
 
 #endif // YTDLPMANAGER_H

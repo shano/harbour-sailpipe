@@ -9,6 +9,7 @@
 #include <QProcess>
 #include <QNetworkRequest>
 #include <QUrlQuery>
+#include <QtConcurrent/QtConcurrent>
 
 #include "ytdlpmanager.h"
 
@@ -24,7 +25,10 @@ YtDlpManager::YtDlpManager(QObject *parent)
   , m_installedVersion()
   , m_latestVersion()
   , m_progress(0.0)
+  , m_threadPool()
+  , m_versionWatcher()
 {
+  connect(&m_versionWatcher, &QFutureWatcher<QString>::finished, this, &YtDlpManager::onVersionCheckFinished);
   refreshInstalledVersion();
 }
 
@@ -127,21 +131,18 @@ void YtDlpManager::refreshInstalledVersion()
     return;
   }
 
-  QProcess process;
-  process.start(binaryPath(), QStringList() << QStringLiteral("--version"));
-  if (process.waitForFinished(5000) && (process.exitCode() == 0)) {
-    QString version = QString::fromUtf8(process.readAllStandardOutput()).trimmed();
-    setInstalledVersion(version);
-    setStatus(Installed);
-  }
-  else {
-    setInstalledVersion(QString());
-    setStatus(Error);
-  }
+  QFuture<QString> future = QtConcurrent::run(&m_threadPool, [this]() {
+    return getInstalledVersion();
+  });
+  m_versionWatcher.setFuture(future);
 }
 
 void YtDlpManager::checkForUpdate()
 {
+  if (m_status == CheckingForUpdate || m_status == Downloading) {
+    return;
+  }
+
   setStatus(CheckingForUpdate);
 
   QNetworkRequest request{QUrl(QStringLiteral(GITHUB_LATEST_RELEASE_URL))};
@@ -174,6 +175,10 @@ void YtDlpManager::onLatestReleaseReply()
 
 void YtDlpManager::install()
 {
+  if (m_status == CheckingForUpdate || m_status == Downloading) {
+    return;
+  }
+
   QString assetName = releaseAssetName();
   QString downloadUrl = QString("https://github.com/yt-dlp/yt-dlp/releases/latest/download/%1").arg(assetName);
   startDownload(downloadUrl);
@@ -271,5 +276,28 @@ void YtDlpManager::onAssetDownloadFinished()
   else {
     emit errorOccurred(QStringLiteral("Failed to install yt-dlp binary"));
     setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
+  }
+}
+
+QString YtDlpManager::getInstalledVersion()
+{
+  QProcess process;
+  process.start(binaryPath(), QStringList() << QStringLiteral("--version"));
+  if (process.waitForFinished(5000) && (process.exitCode() == 0)) {
+    return QString::fromUtf8(process.readAllStandardOutput()).trimmed();
+  }
+  return QString();
+}
+
+void YtDlpManager::onVersionCheckFinished()
+{
+  QString version = m_versionWatcher.result();
+  if (version.isEmpty()) {
+    setInstalledVersion(QString());
+    setStatus(Error);
+  }
+  else {
+    setInstalledVersion(version);
+    setStatus(Installed);
   }
 }
