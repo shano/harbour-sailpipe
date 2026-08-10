@@ -44,16 +44,16 @@ Page {
                 label: qsTrId("sailpipe_settings-ytdlp_status")
                 value: {
                     switch (YtDlp.status) {
-                    case YtDlpManager.NotInstalled:
+                    case YtDlp.NotInstalled:
                         //% "Not installed"
                         return qsTrId("sailpipe_settings-ytdlp_status_not_installed");
-                    case YtDlpManager.Installed:
+                    case YtDlp.Installed:
                         //% "Installed"
                         return qsTrId("sailpipe_settings-ytdlp_status_installed");
-                    case YtDlpManager.CheckingForUpdate:
+                    case YtDlp.CheckingForUpdate:
                         //% "Checking for updates…"
                         return qsTrId("sailpipe_settings-ytdlp_status_checking");
-                    case YtDlpManager.Downloading:
+                    case YtDlp.Downloading:
                         //% "Downloading…"
                         return qsTrId("sailpipe_settings-ytdlp_status_downloading");
                     default:
@@ -78,7 +78,7 @@ Page {
             ProgressBar {
                 width: parent.width
                 x: Theme.horizontalPageMargin
-                visible: YtDlp.status === YtDlpManager.Downloading
+                visible: YtDlp.status === YtDlp.Downloading
                 value: YtDlp.progress
                 minimumValue: 0.0
                 maximumValue: 1.0
@@ -91,18 +91,18 @@ Page {
                 Button {
                     //% "Check for Updates"
                     text: qsTrId("sailpipe_settings-ytdlp_check_updates")
-                    enabled: YtDlp.status !== YtDlpManager.Downloading && YtDlp.status !== YtDlpManager.CheckingForUpdate
+                    enabled: YtDlp.status !== YtDlp.Downloading && YtDlp.status !== YtDlp.CheckingForUpdate
                     onClicked: YtDlp.checkForUpdate()
                 }
 
                 Button {
                     //% "Install"
-                    text: YtDlp.status === YtDlpManager.NotInstalled
+                    text: YtDlp.status === YtDlp.NotInstalled
                         ? qsTrId("sailpipe_settings-ytdlp_install")
                         : qsTrId("sailpipe_settings-ytdlp_update")
-                    enabled: YtDlp.status !== YtDlpManager.Downloading
+                    enabled: YtDlp.status !== YtDlp.Downloading
                     onClicked: {
-                        if (YtDlp.status === YtDlpManager.NotInstalled) {
+                        if (YtDlp.status === YtDlp.NotInstalled) {
                             YtDlp.install();
                         } else {
                             YtDlp.update();
