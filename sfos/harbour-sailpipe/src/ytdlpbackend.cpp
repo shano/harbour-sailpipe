@@ -6,6 +6,7 @@
 #include "ytdlpbackend.h"
 
 #define SEARCH_PAGE_SIZE 20
+#define COMMENT_PAGE_SIZE 20
 
 int YtDlpBackend::pageOffset(QJsonObject const& in)
 {
@@ -119,14 +120,45 @@ QJsonDocument YtDlpBackend::downloadExtract(QJsonObject const& in)
 
 QJsonDocument YtDlpBackend::getCommentsInfo(QJsonObject const& in)
 {
-  Q_UNUSED(in)
-  return QJsonDocument(QJsonObject());
+  QString url = in[QStringLiteral("url")].toString();
+
+  YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
+    << QStringLiteral("--write-comments")
+    << QStringLiteral("--extractor-args")
+    << QStringLiteral("youtube:max_comments=100")
+    << QStringLiteral("-J")
+    << QStringLiteral("--no-download")
+    << url, 60000);
+
+  if (!process.success) {
+    return QJsonDocument(QJsonObject());
+  }
+
+  QJsonArray comments = process.output.object()[QStringLiteral("comments")].toArray();
+  QJsonObject result = YtDlpTranslate::commentResults(comments, 0, COMMENT_PAGE_SIZE);
+  return QJsonDocument(result);
 }
 
 QJsonDocument YtDlpBackend::getMoreCommentItems(QJsonObject const& in)
 {
-  Q_UNUSED(in)
-  return QJsonDocument(QJsonObject());
+  QString url = in[QStringLiteral("url")].toString();
+  int offset = pageOffset(in);
+
+  YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
+    << QStringLiteral("--write-comments")
+    << QStringLiteral("--extractor-args")
+    << QStringLiteral("youtube:max_comments=100")
+    << QStringLiteral("-J")
+    << QStringLiteral("--no-download")
+    << url, 60000);
+
+  if (!process.success) {
+    return QJsonDocument(QJsonObject());
+  }
+
+  QJsonArray comments = process.output.object()[QStringLiteral("comments")].toArray();
+  QJsonObject result = YtDlpTranslate::commentResults(comments, offset, COMMENT_PAGE_SIZE);
+  return QJsonDocument(result);
 }
 
 QJsonDocument YtDlpBackend::getChannelInfo(QJsonObject const& in)
