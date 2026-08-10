@@ -196,7 +196,8 @@ void YtDlpManager::startDownload(QString const& downloadUrl)
 
   QNetworkRequest request{QUrl(downloadUrl)};
   request.setMaximumRedirectsAllowed(10);
-  request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+  request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, QVariant(true));
+  request.setRawHeader("User-Agent", "harbour-sailpipe");
 
   m_activeReply = m_manager->get(request);
   connect(m_activeReply, &QNetworkReply::downloadProgress, this, &YtDlpManager::onAssetDownloadProgress);

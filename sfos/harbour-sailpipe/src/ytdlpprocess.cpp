@@ -25,7 +25,7 @@ YtDlpProcess::Result YtDlpProcess::run(QStringList const& args, int timeoutMs)
 
   if (process.exitCode() != 0) {
     QString stderrOutput = QString::fromUtf8(process.readAllStandardError());
-    QStringList lines = stderrOutput.split(QChar('\n'), Qt::SkipEmptyParts);
+    QStringList lines = stderrOutput.split(QChar('\n'), QString::SkipEmptyParts);
     result.errorMessage = lines.isEmpty() ? QStringLiteral("yt-dlp failed") : lines.last();
     return result;
   }
