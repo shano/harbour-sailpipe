@@ -11,9 +11,11 @@ YtDlpDownloadContext::YtDlpDownloadContext(QString const& page, QString const& s
   , m_process(new QProcess(this))
   , m_downloadStatus(DownloadManager::None)
   , m_progress(0.0)
+  , m_finalised(false)
 {
   connect(m_process, &QProcess::readyReadStandardOutput, this, &YtDlpDownloadContext::onReadyReadStandardOutput);
   connect(m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &YtDlpDownloadContext::onFinished);
+  connect(m_process, &QProcess::errorOccurred, this, &YtDlpDownloadContext::onErrorOccurred);
 }
 
 YtDlpDownloadContext::~YtDlpDownloadContext()
@@ -93,6 +95,11 @@ void YtDlpDownloadContext::onReadyReadStandardOutput()
 
 void YtDlpDownloadContext::onFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
+  if (m_finalised) {
+    return;
+  }
+  m_finalised = true;
+
   if ((exitStatus == QProcess::NormalExit) && (exitCode == 0)) {
     setProgress(1.0);
     setDownloadStatus(DownloadManager::Done);
@@ -100,5 +107,18 @@ void YtDlpDownloadContext::onFinished(int exitCode, QProcess::ExitStatus exitSta
   else if (m_downloadStatus != DownloadManager::Cancelled) {
     setDownloadStatus(DownloadManager::Error);
   }
+  emit finalise();
+}
+
+void YtDlpDownloadContext::onErrorOccurred(QProcess::ProcessError error)
+{
+  Q_UNUSED(error)
+
+  if (m_finalised) {
+    return;
+  }
+  m_finalised = true;
+
+  setDownloadStatus(DownloadManager::Error);
   emit finalise();
 }

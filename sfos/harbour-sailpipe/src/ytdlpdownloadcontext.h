@@ -31,6 +31,7 @@ signals:
 private slots:
   void onReadyReadStandardOutput();
   void onFinished(int exitCode, QProcess::ExitStatus exitStatus);
+  void onErrorOccurred(QProcess::ProcessError error);
 
 private:
   void setDownloadStatus(DownloadManager::DownloadStatus downloadStatus);
@@ -43,6 +44,7 @@ private:
   QProcess* m_process;
   DownloadManager::DownloadStatus m_downloadStatus;
   float m_progress;
+  bool m_finalised;
 };
 
 #endif // YTDLPDOWNLOADCONTEXT_H

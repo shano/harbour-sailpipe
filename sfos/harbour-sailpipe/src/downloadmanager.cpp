@@ -156,6 +156,12 @@ void DownloadManager::downloadFile(QString const url)
     QString extension = QStringLiteral("mp4");
     QString targetPath = constructFilename(m_name, extension);
 
+    if (m_ytDlpContext) {
+      disconnect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
+      disconnect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
+      disconnect(m_ytDlpContext, &YtDlpDownloadContext::finalise, this, &DownloadManager::onFinalise);
+    }
+
     m_ytDlpContext = new YtDlpDownloadContext(m_page, m_page, targetPath, this);
     connect(m_ytDlpContext, &YtDlpDownloadContext::downloadStatusChanged, this, &DownloadManager::setDownloadStatus);
     connect(m_ytDlpContext, &YtDlpDownloadContext::progressChanged, this, &DownloadManager::setProgress);
