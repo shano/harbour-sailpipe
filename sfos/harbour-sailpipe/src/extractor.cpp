@@ -18,6 +18,7 @@
 #include "listlinkhandler.h"
 #include "linkhandlermodel.h"
 #include "filtermodel.h"
+#include "ytdlpbackend.h"
 
 #include "extractor.h"
 
@@ -100,12 +101,23 @@ QString Extractor::serviceName() const
 
 QJsonDocument Extractor::invokeSync(QString const methodName, QJsonDocument const* in)
 {
+  if (m_service == YouTubeService) {
+    return YtDlpBackend::invoke(methodName, *in);
+  }
+
   Invoke* invoke = new Invoke(this, methodName, in);
   return invoke->run();
 }
 
 QFuture<QJsonDocument> Extractor::invokeAsync(QString const methodName, QJsonDocument const* in)
 {
+  if (m_service == YouTubeService) {
+    QJsonDocument document = in ? *in : QJsonDocument();
+    return QtConcurrent::run(&m_threadPool, [methodName, document]() {
+      return YtDlpBackend::invoke(methodName, document);
+    });
+  }
+
   Invoke* invoke = new Invoke(this, methodName, in);
   return QtConcurrent::run(&m_threadPool, invoke, &Invoke::run);
 }
