@@ -18,9 +18,10 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  cmake
 
 %description
-Provides a Sailfish user interface to the NewPipe Extractor for streaming and
-downloading video and music from multiple online services, including YouTube,
-SoundCloud, Media.ccc.de and Bandcamp.
+Provides a Sailfish user interface for streaming and downloading video and
+music from multiple online services. YouTube is handled via yt-dlp;
+SoundCloud, Media.ccc.de, PeerTube and Bandcamp are handled via the NewPipe
+Extractor.
 
 %global _missing_build_ids_terminate_build 0
 %define __requires_exclude ^lib/appwrapper.*$

@@ -69,6 +69,11 @@ target_sources(harbour-sailpipe PRIVATE
     "src/downloadcontext.cpp"
     "src/dbusadapter.cpp"
     "src/mediajunction.cpp"
+    "src/ytdlpmanager.cpp"
+    "src/ytdlpprocess.cpp"
+    "src/ytdlptranslate.cpp"
+    "src/ytdlpbackend.cpp"
+    "src/ytdlpdownloadcontext.cpp"
 )
 
 # Update the translations
