@@ -244,6 +244,7 @@ void YtDlpManager::onChecksumReply()
   m_activeReply = nullptr;
 
   bool verified = false;
+  QString verifyError;
 
   if (reply->error() == QNetworkReply::NoError) {
     QStringList checksumLines = QString::fromUtf8(reply->readAll())
@@ -264,11 +265,17 @@ void YtDlpManager::onChecksumReply()
         break;
       }
     }
+    if (!verified) {
+      verifyError = QStringLiteral("SHA-256 checksum verification failed");
+    }
+  }
+  else {
+    verifyError = reply->errorString();
   }
   reply->deleteLater();
 
   if (!verified) {
-    emit errorOccurred(QStringLiteral("SHA-256 checksum verification failed"));
+    emit errorOccurred(verifyError);
     setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
     m_pendingData.clear();
     return;
@@ -311,7 +318,6 @@ void YtDlpManager::onChecksumReply()
     if (ok) {
       tempFile.write(m_pendingData);
       tempFile.close();
-      QFile::remove(path);
       ok = QFile::rename(tempPath, path);
     }
   }
