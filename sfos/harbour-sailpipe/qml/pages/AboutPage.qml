@@ -132,6 +132,30 @@ Page {
             }
 
             SectionHeader {
+                //% "yt-dlp"
+                text: qsTrId("sailpipe_about-section_ytdlp")
+            }
+
+            Label {
+                //% "YouTube extraction and downloads use yt-dlp instead of NewPipe Extractor, since YouTube changes frequently enough that yt-dlp's faster release cadence keeps things working. Manage installs and updates from Settings."
+                text: qsTrId("sailpipe_about-ytdlp_description")
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                anchors {
+                    leftMargin: Theme.horizontalPageMargin
+                    rightMargin: Theme.horizontalPageMargin
+                    left: parent.left
+                    right: parent.right
+                }
+            }
+
+            InfoRow {
+                //% "Installed version"
+                label: qsTrId("sailpipe_about-ytdlp_version")
+                value: YtDlp.installedVersion.length > 0 ? YtDlp.installedVersion : "—"
+            }
+
+            SectionHeader {
                 //% "Contributors"
                 text: qsTrId("sailpipe_about-section_contributors")
             }

@@ -84,6 +84,13 @@ Page {
                 }
             }
             MenuItem {
+                //% "Settings"
+                text: qsTrId("sailpipe_search_page-menu_settings")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("../pages/SettingsPage.qml"));
+                }
+            }
+            MenuItem {
                 //% "Service"
                 text: qsTrId("sailpipe_search_page-menu_service")
                 onClicked: {

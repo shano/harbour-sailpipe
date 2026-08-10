@@ -27,9 +27,20 @@ Page {
 
             onClicked: {
                 extractor.service = model.service
-                pageStack.pop();
+                if ((model.service === Extractor.YouTubeService) && (YtDlp.status === YtDlpManager.NotInstalled)) {
+                    pageStack.replace(Qt.resolvedUrl("SettingsPage.qml"));
+                    //% "Install yt-dlp to use YouTube"
+                    notice.show(qsTrId("sailpipe_service_page-ytdlp_required_notice"));
+                }
+                else {
+                    pageStack.pop();
+                }
             }
         }
+    }
+
+    Notice {
+        id: notice
     }
 
     ListModel {
