@@ -97,10 +97,14 @@ Page {
                 }
 
                 Button {
-                    //% "Install"
-                    text: YtDlp.status === YtDlp.NotInstalled
-                        ? qsTrId("sailpipe_settings-ytdlp_install")
-                        : qsTrId("sailpipe_settings-ytdlp_update")
+                    text: {
+                        if (YtDlp.status === YtDlp.NotInstalled) {
+                            //% "Install"
+                            return qsTrId("sailpipe_settings-ytdlp_install");
+                        }
+                        //% "Update"
+                        return qsTrId("sailpipe_settings-ytdlp_update");
+                    }
                     enabled: YtDlp.status !== YtDlp.Downloading
                     onClicked: {
                         if (YtDlp.status === YtDlp.NotInstalled) {

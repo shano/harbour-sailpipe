@@ -1,3 +1,4 @@
+#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -217,8 +218,18 @@ void YtDlpManager::onAssetDownloadFinished()
   QNetworkReply* reply = m_activeReply;
   m_activeReply = nullptr;
 
+  int httpStatus = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+  qDebug() << "yt-dlp asset download finished: error=" << reply->error()
+           << "errorString=" << reply->errorString()
+           << "httpStatus=" << httpStatus
+           << "url=" << reply->url();
+
   if (reply->error() != QNetworkReply::NoError) {
-    emit errorOccurred(reply->errorString());
+    QString message = reply->errorString();
+    if (message.isEmpty()) {
+      message = QStringLiteral("Network error downloading yt-dlp (HTTP %1)").arg(httpStatus);
+    }
+    emit errorOccurred(message);
     setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
     reply->deleteLater();
     return;
@@ -226,7 +237,14 @@ void YtDlpManager::onAssetDownloadFinished()
 
   m_pendingData = reply->readAll();
   m_pendingAssetName = releaseAssetName();
+  qDebug() << "yt-dlp asset downloaded:" << m_pendingAssetName << "bytes=" << m_pendingData.size();
   reply->deleteLater();
+
+  if (m_pendingData.isEmpty()) {
+    emit errorOccurred(QStringLiteral("Downloaded yt-dlp asset was empty (HTTP %1)").arg(httpStatus));
+    setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
+    return;
+  }
 
   QNetworkRequest checksumRequest{QUrl(QStringLiteral("https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-256SUMS"))};
   checksumRequest.setRawHeader("Accept", "text/plain");
@@ -246,12 +264,21 @@ void YtDlpManager::onChecksumReply()
   bool verified = false;
   QString verifyError;
 
+  int httpStatus = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+  qDebug() << "yt-dlp checksum reply: error=" << reply->error()
+           << "errorString=" << reply->errorString()
+           << "httpStatus=" << httpStatus;
+
   if (reply->error() == QNetworkReply::NoError) {
-    QStringList checksumLines = QString::fromUtf8(reply->readAll())
+    QByteArray checksumBody = reply->readAll();
+    QStringList checksumLines = QString::fromUtf8(checksumBody)
       .split(QChar('\n'), QString::SkipEmptyParts);
 
     QByteArray hash = sha256(m_pendingData);
     QString expectedHash = QString::fromUtf8(hash.toHex());
+    qDebug() << "yt-dlp checksum: expecting entry for" << m_pendingAssetName
+              << "computedHash=" << expectedHash
+              << "checksumLines=" << checksumLines.size();
 
     for (QString const& line : checksumLines) {
       int spaceIdx = line.indexOf(QStringLiteral("  "));
@@ -266,11 +293,15 @@ void YtDlpManager::onChecksumReply()
       }
     }
     if (!verified) {
-      verifyError = QStringLiteral("SHA-256 checksum verification failed");
+      verifyError = QStringLiteral("SHA-256 checksum verification failed (HTTP %1, %2 lines received)")
+        .arg(httpStatus).arg(checksumLines.size());
     }
   }
   else {
     verifyError = reply->errorString();
+    if (verifyError.isEmpty()) {
+      verifyError = QStringLiteral("Network error fetching checksum (HTTP %1)").arg(httpStatus);
+    }
   }
   reply->deleteLater();
 
@@ -334,6 +365,8 @@ void YtDlpManager::onChecksumReply()
   }
 
   m_pendingData.clear();
+
+  qDebug() << "yt-dlp install write: ok=" << ok << "path=" << path << "installError=" << installError;
 
   if (ok) {
     QFile::setPermissions(path, QFile::permissions(path)
