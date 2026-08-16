@@ -38,20 +38,20 @@ cpp/lib
 cpp/main
 
 # Built files for the Sailfish OS app
-sfos/build-harbour-sailpipe-*
-sfos/harbour-sailpipe/include
-sfos/harbour-sailpipe/lib
-sfos/harbour-sailpipe/harbour-sailpipe.pro.user
-sfos/harbour-sailpipe/translations/*.qm
-sfos/harbour-sailpipe/.weblate
-sfos/harbour-sailpipe/qml/images/
+sfos/build-harbour-sailreel-*
+sfos/harbour-sailreel/include
+sfos/harbour-sailreel/lib
+sfos/harbour-sailreel/harbour-sailreel.pro.user
+sfos/harbour-sailreel/translations/*.qm
+sfos/harbour-sailreel/.weblate
+sfos/harbour-sailreel/qml/images/
 
 # CMake
 CMakeCache.txt
 CMakeFiles/
 CMakeLists.txt.user
 QtCreatorDeployment.txt
-sfos/harbour-sailpipe/Makefile
+sfos/harbour-sailreel/Makefile
 cmake_install.cmake
 debugfiles.list
 debuglinks.list
@@ -59,7 +59,7 @@ debugsourcefiles.list
 debugsources.list
 documentation.list
 elfbins.list
-sfos/harbour-sailpipe/harbour-sailpipe
-sfos/harbour-sailpipe/harbour-sailpipe_autogen/
+sfos/harbour-sailreel/harbour-sailreel
+sfos/harbour-sailreel/harbour-sailreel_autogen/
 install_manifest.txt
 

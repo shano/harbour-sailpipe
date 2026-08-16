@@ -64,7 +64,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: appwrapper-aarch64
-          path: sfos/harbour-sailpipe
+          path: sfos/harbour-sailreel
 
       - name: Build RPM via Sailfish Platform SDK
         id: build
@@ -72,12 +72,12 @@ jobs:
         with:
           arch: "aarch64"
           release: ${{ env.SFOS_RELEASE }}
-          source-dir: "sfos/harbour-sailpipe"
+          source-dir: "sfos/harbour-sailreel"
           fix-version: false
 
       - uses: actions/upload-artifact@v4
         with:
-          name: harbour-sailpipe-rpm
+          name: harbour-sailreel-rpm
           path: RPMS
 
       - name: Attach RPM to release

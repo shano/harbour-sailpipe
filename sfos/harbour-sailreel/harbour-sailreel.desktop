@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-sailreel
+Exec=harbour-sailreel
+Name=SailReel
+
+[X-Sailjail]
+OrganizationName=io.github.shano
+ApplicationName=harbour-sailreel
+Permissions=Internet;Audio;Downloads;WebView
