@@ -1,0 +1,84 @@
+name: Build and release Sailfish RPM
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+env:
+  # Must match (or be compatible with) the Sailfish OS version on target
+  # devices. Check on-device under Settings > About product. Update this
+  # when bumping to a newer Sailfish release.
+  SFOS_RELEASE: "5.1.0.11"
+  GRAALVM_URL: "https://download.oracle.com/graalvm/23/latest/graalvm-jdk-23_linux-aarch64_bin.tar.gz"
+
+jobs:
+  build-appwrapper:
+    # GraalVM only ships Linux builds for x64/aarch64 (no armv7hl), so this
+    # only ever targets aarch64 devices (e.g. Xperia 10 II).
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential zlib1g-dev libcurl4-openssl-dev libreadline-dev
+
+      - name: Install GraalVM
+        run: |
+          mkdir -p "$RUNNER_TEMP/graalvm"
+          curl -fsSL "$GRAALVM_URL" -o "$RUNNER_TEMP/graalvm/graalvm.tar.gz"
+          tar -xf "$RUNNER_TEMP/graalvm/graalvm.tar.gz" -C "$RUNNER_TEMP/graalvm"
+          GRAALVM_DIR=$(find "$RUNNER_TEMP/graalvm" -maxdepth 1 -type d -name 'graalvm-jdk-*')
+          echo "GRAALVM_HOME=$GRAALVM_DIR" >> "$GITHUB_ENV"
+          echo "JAVA_HOME=$GRAALVM_DIR" >> "$GITHUB_ENV"
+
+      - name: Native-compile NewPipeExtractor appwrapper
+        working-directory: java/NewPipeExtractor
+        run: ./gradlew nativeCompile
+
+      - name: Collect appwrapper artifacts
+        run: |
+          mkdir -p artifacts/include artifacts/lib
+          cp java/NewPipeExtractor/appwrapper/build/native/nativeCompile/*.h artifacts/include/
+          cp java/NewPipeExtractor/appwrapper/build/native/nativeCompile/appwrapper.so artifacts/lib/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: appwrapper-aarch64
+          path: artifacts
+
+  build-rpm:
+    needs: build-appwrapper
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: appwrapper-aarch64
+          path: sfos/harbour-sailpipe
+
+      - name: Build RPM via Sailfish Platform SDK
+        id: build
+        uses: R1tschY/sailfish-build-rpm@v1
+        with:
+          arch: "aarch64"
+          release: ${{ env.SFOS_RELEASE }}
+          source-dir: "sfos/harbour-sailpipe"
+          fix-version: false
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harbour-sailpipe-rpm
+          path: RPMS
+
+      - name: Attach RPM to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: RPMS/**/*.rpm
