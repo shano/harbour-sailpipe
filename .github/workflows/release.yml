@@ -6,6 +6,9 @@ on:
       - "v*"
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 env:
   # Must match (or be compatible with) the Sailfish OS version on target
   # devices. Check on-device under Settings > About product. Update this
