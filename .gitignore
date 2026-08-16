@@ -63,3 +63,7 @@ sfos/harbour-sailreel/harbour-sailreel
 sfos/harbour-sailreel/harbour-sailreel_autogen/
 install_manifest.txt
 
+
+# Local build directories (not part of the mb2/RPM build tree)
+sfos/harbour-sailreel/build/
+sfos/harbour-sailreel/tests/build/
