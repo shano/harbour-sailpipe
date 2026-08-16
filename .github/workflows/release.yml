@@ -66,6 +66,12 @@ jobs:
           name: appwrapper-aarch64
           path: sfos/harbour-sailreel
 
+      - name: Set RPM version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          sed -i "s/^Version:.*/Version:    ${TAG_VERSION}/" sfos/harbour-sailreel/rpm/harbour-sailreel.spec
+
       - name: Build RPM via Sailfish Platform SDK
         id: build
         uses: R1tschY/sailfish-build-rpm@v1
