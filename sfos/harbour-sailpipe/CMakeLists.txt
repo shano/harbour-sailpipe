@@ -80,7 +80,7 @@ target_sources(harbour-sailpipe PRIVATE
 # See https://doc.qt.io/archives/qt-5.15/cmake-manual.html
 # See https://doc.qt.io/archives/qt-5.15/qtlinguist-cmake-qt5-create-translation.html
 FILE(GLOB TsFiles "translations/*.ts")
-set_source_files_properties(${TsFiles} PROPERTIES OUTPUT_LOCATION "translations/")
+set_source_files_properties(${TsFiles} PROPERTIES OUTPUT_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/translations")
 set(Qt5_LRELEASE_EXECUTABLE Qt5::lrelease -idbased)
 qt5_create_translation(TRANSLATION_QM_FILES
     "qml/"
