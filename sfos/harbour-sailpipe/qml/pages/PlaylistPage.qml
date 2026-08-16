@@ -54,9 +54,9 @@ Page {
             }
         }
 
-        ViewPlaceholder {
-            enabled: playlist.count === 0
-            textFormat: Text.RichText
+        ProcessIndicator {
+            loading: playlist.model.loading
+            count: playlist.count
             //% "No entries"
             text: qsTrId("sailpipe_playlist-no_entries")
             //% "There are no videos in this playlist"

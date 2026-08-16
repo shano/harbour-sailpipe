@@ -52,5 +52,14 @@ Page {
             replyCount: model.replyCount
             page: model.page
         }
+
+        ProcessIndicator {
+            loading: comments.model.loading
+            count: comments.count
+            //% "No comments"
+            text: qsTrId("sailpipe_comments-no_entries")
+            //% "There are no comments here"
+            hintText: qsTrId("sailpipe_comments-no_entries_hint")
+        }
     }
 }
