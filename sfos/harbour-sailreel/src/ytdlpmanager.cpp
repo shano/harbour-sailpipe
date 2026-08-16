@@ -311,14 +311,25 @@ void YtDlpManager::onChecksumReply()
       }
     }
   }
-  else {
+  QString installError;
+  if (!m_pendingAssetName.endsWith(QStringLiteral(".zip"))) {
     QString tempPath = path + QStringLiteral(".new");
     QFile tempFile(tempPath);
     ok = tempFile.open(QIODevice::WriteOnly);
-    if (ok) {
+    if (!ok) {
+      installError = tempFile.errorString();
+    }
+    else {
       tempFile.write(m_pendingData);
       tempFile.close();
-      ok = QFile::rename(tempPath, path);
+      // QFile::rename() refuses to overwrite an existing destination, so a
+      // prior install (or a stale file) must be cleared first — the zip
+      // branch above already does this before its own rename.
+      QFile::remove(path);
+      ok = tempFile.rename(path);
+      if (!ok) {
+        installError = tempFile.errorString();
+      }
     }
   }
 
@@ -330,7 +341,10 @@ void YtDlpManager::onChecksumReply()
     refreshInstalledVersion();
   }
   else {
-    emit errorOccurred(QStringLiteral("Failed to install yt-dlp binary"));
+    QString detail = installError.isEmpty()
+      ? QStringLiteral("Failed to install yt-dlp binary")
+      : QStringLiteral("Failed to install yt-dlp binary: %1").arg(installError);
+    emit errorOccurred(detail);
     setStatus(m_installedVersion.isEmpty() ? NotInstalled : Installed);
   }
 }
