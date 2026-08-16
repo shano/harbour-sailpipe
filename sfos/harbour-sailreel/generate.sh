@@ -12,7 +12,7 @@ ratios="1.0 1.25 1.5 1.75 2.0"
 sizes="86 108 128 172 256"
 for size in ${sizes}; do
 	mkdir -p "./icons/${size}x${size}"
-        inkscape --batch-process -o "./icons/${size}x${size}/harbour-sailpipe.png" -w $size -h $size "inputs/harbour-sailpipe.svg"
+        inkscape --batch-process -o "./icons/${size}x${size}/harbour-sailreel.png" -w $size -h $size "inputs/harbour-sailreel.svg"
 done
 
 # Create the ratio directories
@@ -36,9 +36,6 @@ function generate {
 
 # Generate cover action icons
 generate 32 32 "icon-cover-replay icon-cover-replay-light"
-
-# Generate titles
-generate 303 86 "sailpipe-title"
 
 # Generate small icons
 generate 32 32 "icon-s-media-view icon-s-media-count"
