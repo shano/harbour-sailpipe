@@ -56,8 +56,18 @@ jobs:
           name: harbour-sailreel-rpm-${{ matrix.arch }}
           path: RPMS
 
-      - name: Attach RPM to release
-        if: startsWith(github.ref, 'refs/tags/')
+  release:
+    needs: build-rpm
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: harbour-sailreel-rpm-*
+          path: RPMS
+          merge-multiple: true
+
+      - name: Attach RPMs to release
         uses: softprops/action-gh-release@v2
         with:
           files: RPMS/**/*.rpm
