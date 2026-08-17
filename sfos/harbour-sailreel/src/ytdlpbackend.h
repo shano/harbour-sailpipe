@@ -20,8 +20,6 @@ private:
   static QJsonDocument getMoreChannelItems(QJsonObject const& in);
   static QJsonDocument getPlaylistInfo(QJsonObject const& in);
   static QJsonDocument getMorePlaylistItems(QJsonObject const& in);
-  static QJsonDocument getAvailableContentFilter();
-
   static int pageOffset(QJsonObject const& in);
 };
 

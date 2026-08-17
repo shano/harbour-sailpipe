@@ -60,9 +60,6 @@ QJsonDocument YtDlpBackend::invoke(QString const& methodName, QJsonDocument cons
   else if (methodName == QStringLiteral("getMorePlaylistItems")) {
     return getMorePlaylistItems(inObject);
   }
-  else if (methodName == QStringLiteral("getAvailableContentFilter")) {
-    return getAvailableContentFilter();
-  }
   else if (methodName == QStringLiteral("tearDown")) {
     return QJsonDocument(QJsonObject());
   }
@@ -290,12 +287,5 @@ QJsonDocument YtDlpBackend::getMorePlaylistItems(QJsonObject const& in)
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
   QJsonObject result = YtDlpTranslate::searchResults(entries, offset, PLAYLIST_PAGE_SIZE, requested);
-  return QJsonDocument(result);
-}
-
-QJsonDocument YtDlpBackend::getAvailableContentFilter()
-{
-  QJsonObject result;
-  result[QStringLiteral("stringList")] = QJsonArray{QStringLiteral("all")};
   return QJsonDocument(result);
 }

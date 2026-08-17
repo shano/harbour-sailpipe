@@ -12,21 +12,9 @@ Page {
     property bool busy: false
     property int displayCount: 0
     readonly property alias pendingSearch: searchTimer.running
-    property FilterModel filterModel: FilterModel {
-        id: filterModel
-        onModelReset: {
-            if (!filterValid(searchModel.contentFilter)) {
-                searchModel.contentFilter = defaultFilter;
-            }
-        }
-    }
     property SearchModel searchModel: SearchModel {
         id: searchModel
         onContentFilterChanged: searchTimer.restart()
-    }
-
-    Component.onCompleted: {
-        filterModel.populate(extractor);
     }
 
     onSearchTermChanged: {
@@ -37,11 +25,6 @@ Page {
 
     Connections {
         target: extractor
-        onServiceChanged: {
-            searchModel.clear();
-            filterModel.populate(extractor);
-            searchTimer.restart()
-        }
         onErrorOccurred: {
             page.errorMessage = message;
         }
@@ -94,17 +77,6 @@ Page {
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("../pages/SettingsPage.qml"));
                 }
-            }
-            MenuItem {
-                //% "Filter"
-                text: qsTrId("sailpipe_search_page-menu_filter")
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("../pages/FilterPage.qml"), {
-                        filterModel: page.filterModel,
-                        searchModel: page.searchModel
-                    });
-                }
-                enabled: filterModel.count > 0
             }
         }
 

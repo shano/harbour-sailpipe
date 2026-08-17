@@ -16,7 +16,6 @@
 #include "linkhandlermodel.h"
 #include "channeltablistmodel.h"
 #include "playlistmodel.h"
-#include "filtermodel.h"
 #include "downloadmanager.h"
 #include "mediajunction.h"
 #include "ytdlpmanager.h"
@@ -50,7 +49,6 @@ int main(int argc, char *argv[])
   qmlRegisterType<ListLinkHandler>("harbour.sailpipe.extractor", 1, 0, "ListLinkHandler");
   qmlRegisterType<LinkHandlerModel>("harbour.sailpipe.extractor", 1, 0, "LinkHandlerModel");
   qmlRegisterType<ChannelTabListModel>("harbour.sailpipe.extractor", 1, 0, "ChannelTabListModel");
-  qmlRegisterType<FilterModel>("harbour.sailpipe.extractor", 1, 0, "FilterModel");
   qmlRegisterSingletonType<Utils>("harbour.sailpipe.extractor", 1, 0, "Utils", Utils::provider);
   qmlRegisterSingletonType<DownloadManager>("harbour.sailpipe.extractor", 1, 0, "DownloadManager", DownloadManager::provider);
   qmlRegisterSingletonType<MediaJunction>("harbour.sailpipe.extractor", 1, 0, "MediaJunction", MediaJunction::provider);

@@ -436,32 +436,3 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
   watcher->setFuture(invokeAsync("getMorePlaylistItems", &document));
 }
 
-void Extractor::getAvailableContentFilter(FilterModel* filterModel)
-{
-  QJsonObject json;
-  QJsonArray filters;
-  QJsonDocument document;
-
-  document = QJsonDocument(json);
-
-  QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();
-  LifetimeCheck* lifetimeCheck = new LifetimeCheck(filterModel, watcher);
-  QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, filterModel]() {
-    if (!lifetimeCheck->destroyed()) {
-      QJsonDocument result = watcher->result();
-      emitErrorIfPresent(result);
-      //qDebug() << "Result: " << result.toJson(QJsonDocument::Indented);
-
-      QJsonArray items = result.object()["stringList"].toArray();
-      QStringList filterResults;
-      for (QJsonValue const& item : items) {
-        QString name = item.toString();
-        filterResults.append(name);
-      }
-      filterModel->replaceAll(filterResults);
-    }
-
-    delete watcher;
-  });
-  watcher->setFuture(invokeAsync("getAvailableContentFilter", &document));
-}

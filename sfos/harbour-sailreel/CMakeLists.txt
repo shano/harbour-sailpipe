@@ -36,7 +36,6 @@ target_link_libraries(harbour-sailreel
 )
 target_sources(harbour-sailreel PRIVATE
     "src/extractor.cpp"
-    "src/filtermodel.cpp"
     "src/searchmodel.cpp"
     "src/searchitem.cpp"
     "src/searchitemstream.cpp"
@@ -134,7 +133,6 @@ add_custom_target(distfiles
         qml/pages/RepliesPage.qml
         qml/pages/ChannelPage.qml
         qml/pages/PlaylistPage.qml
-        qml/pages/FilterPage.qml
         qml/pages/FullscreenVideoPage.qml
         qml/pages/AboutPage.qml
         qml/components/VideoPlayer.qml
