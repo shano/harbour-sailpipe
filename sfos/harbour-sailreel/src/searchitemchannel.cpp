@@ -70,13 +70,9 @@ void SearchItemChannel::parseJson(QJsonObject const& json)
 
 QString SearchItemChannel::getInfoRow() const
 {
-  //% "%n items"
-  QString const& streamCount = qtTrId("sailpipe-searchitem-channel_stream_count", std::max(0ll, m_streamCount));
-
+  // yt-dlp's flat-playlist channel entries never populate a real video
+  // count (playlist_count is always null here), so only subscriber count
+  // is shown — a stream count would always read "0 items".
   //% "%n subscribers"
-  QString const& subscriberCount = qtTrId("sailpipe-searchitem-channel_subscriber_count", std::max(0ll, m_subscriberCount));
-
-  //% "%0 • %1"
-  QString const& format = qtTrId("sailpipe-searchitem-channel_inforow");
-  return QString(format).arg(streamCount).arg(subscriberCount);
+  return qtTrId("sailpipe-searchitem-channel_subscriber_count", std::max(0ll, m_subscriberCount));
 }
