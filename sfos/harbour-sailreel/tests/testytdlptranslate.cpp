@@ -121,6 +121,7 @@ void TestYtDlpTranslate::mediaInfo_mapsContentFromResolvedUrl()
 
   QVERIFY(!result["name"].toString().isEmpty());
   QVERIFY(!result["content"].toString().isEmpty());
+  QCOMPARE(result["uploaderUrl"].toString(), QStringLiteral("https://www.youtube.com/channel/UCuAXFkgsw1L7xaCfnd5JJOw"));
   QCOMPARE(result["description"].toObject()["type"].toInt(), 3);
 }
 

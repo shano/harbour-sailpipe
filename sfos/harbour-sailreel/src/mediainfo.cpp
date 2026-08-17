@@ -9,6 +9,7 @@ MediaInfo::MediaInfo(QObject *parent)
   : QObject(parent)
   , m_name()
   , m_uploaderName()
+  , m_uploaderUrl()
   , m_category()
   , m_viewCount(0)
   , m_likeCount(0)
@@ -52,6 +53,11 @@ QString MediaInfo::name() const
 QString MediaInfo::uploaderName() const
 {
   return m_uploaderName;
+}
+
+QString MediaInfo::uploaderUrl() const
+{
+  return m_uploaderUrl;
 }
 
 QString MediaInfo::category() const
@@ -112,6 +118,14 @@ void MediaInfo::setUploaderName(QString const& uploaderName)
   if (m_uploaderName != uploaderName) {
     m_uploaderName = uploaderName;
     emit uploaderNameChanged();
+  }
+}
+
+void MediaInfo::setUploaderUrl(QString const& uploaderUrl)
+{
+  if (m_uploaderUrl != uploaderUrl) {
+    m_uploaderUrl = uploaderUrl;
+    emit uploaderUrlChanged();
   }
 }
 
@@ -202,6 +216,7 @@ QList<MediaInfo::MediaInfoSignal> MediaInfo::parseJsonChanges(QJsonObject const&
   QList<MediaInfoSignal> emissions;
   QString name;
   QString uploaderName;
+  QString uploaderUrl;
   QString category;
   qint64 viewCount;
   qint64 likeCount;
@@ -221,6 +236,11 @@ QList<MediaInfo::MediaInfoSignal> MediaInfo::parseJsonChanges(QJsonObject const&
   if (m_uploaderName != uploaderName) {
     m_uploaderName = uploaderName;
     emissions << &MediaInfo::uploaderNameChanged;
+  }
+  uploaderUrl = json["uploaderUrl"].toString();
+  if (m_uploaderUrl != uploaderUrl) {
+    m_uploaderUrl = uploaderUrl;
+    emissions << &MediaInfo::uploaderUrlChanged;
   }
   category = json["category"].toString();
   if (m_category != category) {

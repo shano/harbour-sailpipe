@@ -138,6 +138,9 @@ QJsonObject mediaInfo(QJsonObject const& info)
   result[QStringLiteral("uploaderName")] = firstNonEmpty(
     info[QStringLiteral("uploader")].toString(),
     info[QStringLiteral("channel")].toString());
+  result[QStringLiteral("uploaderUrl")] = firstNonEmpty(
+    info[QStringLiteral("channel_url")].toString(),
+    info[QStringLiteral("uploader_url")].toString());
   result[QStringLiteral("category")] = categories.isEmpty() ? QString() : categories[0].toString();
   result[QStringLiteral("viewCount")] = info[QStringLiteral("view_count")].toInt(0);
   result[QStringLiteral("likeCount")] = info[QStringLiteral("like_count")].toInt(0);

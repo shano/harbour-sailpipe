@@ -9,6 +9,7 @@ class MediaInfo : public QObject
 {
   Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
   Q_PROPERTY(QString uploaderName READ uploaderName WRITE setUploaderName NOTIFY uploaderNameChanged)
+  Q_PROPERTY(QString uploaderUrl READ uploaderUrl WRITE setUploaderUrl NOTIFY uploaderUrlChanged)
   Q_PROPERTY(QString category READ category WRITE setCategory NOTIFY categoryChanged)
   Q_PROPERTY(qint64 viewCount READ viewCount WRITE setViewCount NOTIFY viewCountChanged)
   Q_PROPERTY(qint64 likeCount READ likeCount WRITE setLikeCount NOTIFY likeCountChanged)
@@ -35,6 +36,7 @@ public:
 public slots:
   QString name() const;
   QString uploaderName() const;
+  QString uploaderUrl() const;
   QString category() const;
   qint64 viewCount() const;
   qint64 likeCount() const;
@@ -47,6 +49,7 @@ public slots:
 
   void setName(QString const& name);
   void setUploaderName(QString const& uploaderName);
+  void setUploaderUrl(QString const& uploaderUrl);
   void setCategory(QString const& category);
   void setViewCount(qint64 viewCount);
   void setLikeCount(qint64 likeCount);
@@ -67,6 +70,7 @@ private:
 signals:
   void nameChanged();
   void uploaderNameChanged();
+  void uploaderUrlChanged();
   void categoryChanged();
   void viewCountChanged();
   void likeCountChanged();
@@ -80,6 +84,7 @@ signals:
 private:
   QString m_name;
   QString m_uploaderName;
+  QString m_uploaderUrl;
   QString m_category;
   qint64 m_viewCount;
   qint64 m_likeCount;

@@ -117,6 +117,28 @@ Page {
                 text: root.name
             }
 
+            Label {
+                id: uploaderLabel
+                x: Theme.paddingLarge
+                width: parent.width - (2 * Theme.paddingLarge)
+                color: uploaderMouseArea.pressed ? Theme.highlightColor : Theme.secondaryHighlightColor
+                truncationMode: TruncationMode.Fade
+                text: root.mediaInfo.uploaderName
+                visible: text.length > 0
+
+                MouseArea {
+                    id: uploaderMouseArea
+                    anchors.fill: parent
+                    enabled: root.mediaInfo.uploaderUrl.length > 0
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("ChannelPage.qml"), {
+                            name: root.mediaInfo.uploaderName,
+                            url: root.mediaInfo.uploaderUrl
+                        });
+                    }
+                }
+            }
+
             MediaDetails {
                 mediaInfo: root.mediaInfo
             }
