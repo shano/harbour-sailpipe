@@ -347,8 +347,8 @@
     </message>
     <message id="sailpipe_cover-title">
         <location filename="../qml/cover/CoverPage.qml" line="39"/>
-        <source>SailPipe</source>
-        <translation>SailPipe</translation>
+        <source>SailReel</source>
+        <translation>SailReel</translation>
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <location filename="../qml/pages/PlaylistPage.qml" line="40"/>
@@ -473,8 +473,8 @@
     </message>
     <message id="sailpipe_transfer_engine-sailpipe_download">
         <location filename="../src/downloadcontext.cpp" line="48"/>
-        <source>SailPipe download</source>
-        <translation>SailPipe download</translation>
+        <source>SailReel download</source>
+        <translation>SailReel download</translation>
     </message>
     <message id="sailpipe_about-title">
         <source>About SailPipe</source>
@@ -549,8 +549,8 @@
     </message>
     <message id="sailpipe_about-title_about_sailpipe">
         <location filename="../qml/pages/AboutPage.qml" line="25"/>
-        <source>About SailPipe</source>
-        <translation>About SailPipe</translation>
+        <source>About SailReel</source>
+        <translation>About SailReel</translation>
     </message>
     <message id="sailpipe_about-section_general">
         <location filename="../qml/pages/AboutPage.qml" line="36"/>
@@ -569,8 +569,8 @@
     </message>
     <message id="sailpipe_about-contributors_description">
         <location filename="../qml/pages/AboutPage.qml" line="141"/>
-        <source>The amazing team of SailPipe contributors</source>
-        <translation>The amazing team of SailPipe contributors</translation>
+        <source>The amazing team of SailReel contributors</source>
+        <translation>The amazing team of SailReel contributors</translation>
     </message>
     <message id="sailpipe_about-sailing_to_coffee">
         <location filename="../qml/pages/AboutPage.qml" line="154"/>
@@ -683,8 +683,8 @@
     </message>
     <message id="sailpipe-mpris_identity">
         <location filename="../src/mediajunction.cpp" line="30"/>
-        <source>SailPipe</source>
-        <translation>SailPipe</translation>
+        <source>SailReel</source>
+        <translation>SailReel</translation>
     </message>
 </context>
 </TS>
