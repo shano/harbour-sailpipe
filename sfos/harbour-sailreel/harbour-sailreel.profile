@@ -12,6 +12,7 @@
 # x-sailjail-permission = Internet
 # x-sailjail-permission = Audio
 # x-sailjail-permission = Downloads
+# x-sailjail-permission = Videos
 # x-sailjail-permission = WebView
 
 dbus-user.own io.github.shano.harbour-sailreel

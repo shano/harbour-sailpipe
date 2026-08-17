@@ -385,7 +385,10 @@ void DownloadManager::restartDownload(int transferId)
 QString DownloadManager::constructFilename(QString const& name, QString const& extension)
 {
   bool exists;
-  QString directory = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+  QStandardPaths::StandardLocation location = (extension == QStringLiteral("mp4"))
+    ? QStandardPaths::MoviesLocation
+    : QStandardPaths::DownloadLocation;
+  QString directory = QStandardPaths::writableLocation(location);
 
   QDir check(directory);
   exists = check.exists();
@@ -395,7 +398,7 @@ QString DownloadManager::constructFilename(QString const& name, QString const& e
   }
 
   if (!exists) {
-    qDebug() << "Downloads directory doesn't exist and couldn't be created";
+    qDebug() << "Download directory doesn't exist and couldn't be created";
   }
 
   qint64 epoch = QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000;

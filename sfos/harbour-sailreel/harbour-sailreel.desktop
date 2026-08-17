@@ -8,4 +8,4 @@ Name=SailReel
 [X-Sailjail]
 OrganizationName=io.github.shano
 ApplicationName=harbour-sailreel
-Permissions=Internet;Audio;Downloads;WebView
+Permissions=Internet;Audio;Downloads;Videos;WebView
