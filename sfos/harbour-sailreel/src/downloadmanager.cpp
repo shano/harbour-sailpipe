@@ -1,4 +1,6 @@
 #include <QDBusConnection>
+#include <QDateTime>
+#include <QDebug>
 #include <QStandardPaths>
 #include <QDir>
 #include <QFile>
