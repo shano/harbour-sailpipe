@@ -1,5 +1,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QVector>
+#include <QtConcurrent/QtConcurrent>
+#include <algorithm>
 
 #include "ytdlpprocess.h"
 #include "ytdlptranslate.h"
@@ -9,6 +12,7 @@
 #define COMMENT_PAGE_SIZE 20
 #define CHANNEL_PAGE_SIZE 30
 #define PLAYLIST_PAGE_SIZE 30
+#define SUBSCRIPTION_FEED_PER_CHANNEL 10
 
 static QJsonDocument errorResult(QString const& message)
 {
@@ -59,6 +63,9 @@ QJsonDocument YtDlpBackend::invoke(QString const& methodName, QJsonDocument cons
   }
   else if (methodName == QStringLiteral("getMorePlaylistItems")) {
     return getMorePlaylistItems(inObject);
+  }
+  else if (methodName == QStringLiteral("getSubscriptionFeed")) {
+    return getSubscriptionFeed(inObject);
   }
   else if (methodName == QStringLiteral("tearDown")) {
     return QJsonDocument(QJsonObject());
@@ -295,5 +302,84 @@ QJsonDocument YtDlpBackend::getMorePlaylistItems(QJsonObject const& in)
 
   QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
   QJsonObject result = YtDlpTranslate::searchResults(entries, offset, PLAYLIST_PAGE_SIZE, requested);
+  return QJsonDocument(result);
+}
+
+namespace {
+
+QJsonArray fetchChannelVideos(QString const& channelUrl)
+{
+  QJsonArray items;
+
+  QString videosUrl = channelUrl.endsWith(QLatin1Char('/'))
+    ? channelUrl + QStringLiteral("videos")
+    : channelUrl + QStringLiteral("/videos");
+
+  YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
+    << QStringLiteral("--flat-playlist")
+    << QStringLiteral("--playlist-end") << QString::number(SUBSCRIPTION_FEED_PER_CHANNEL)
+    << QStringLiteral("-J")
+    << videosUrl, 60000);
+
+  // A single subscribed channel failing to fetch (deleted, private, network
+  // blip) shouldn't take down the whole aggregate feed — it just
+  // contributes no items.
+  if (process.success) {
+    QJsonArray entries = process.output.object()[QStringLiteral("entries")].toArray();
+    for (QJsonValue const& entry : entries) {
+      items.append(YtDlpTranslate::streamItem(entry.toObject()));
+    }
+  }
+
+  return items;
+}
+
+qint64 uploadEpoch(QJsonObject const& item)
+{
+  return static_cast<qint64>(item[QStringLiteral("uploadDate")].toObject()[QStringLiteral("offsetDateTime")].toDouble());
+}
+
+} // namespace
+
+QJsonDocument YtDlpBackend::getSubscriptionFeed(QJsonObject const& in)
+{
+  QJsonArray channelUrls = in[QStringLiteral("channelUrls")].toArray();
+
+  // Each subscribed channel is a separate yt-dlp subprocess invocation;
+  // running them concurrently keeps the wait roughly at the slowest single
+  // channel rather than the sum of all of them.
+  QVector<QFuture<QJsonArray>> futures;
+  for (QJsonValue const& urlValue : channelUrls) {
+    QString channelUrl = urlValue.toString();
+    futures.append(QtConcurrent::run(fetchChannelVideos, channelUrl));
+  }
+
+  QJsonArray allItems;
+  for (QFuture<QJsonArray>& future : futures) {
+    future.waitForFinished();
+    for (QJsonValue const& item : future.result()) {
+      allItems.append(item);
+    }
+  }
+
+  QVector<QJsonObject> sortable;
+  sortable.reserve(allItems.size());
+  for (QJsonValue const& item : allItems) {
+    sortable.append(item.toObject());
+  }
+  std::stable_sort(sortable.begin(), sortable.end(), [](QJsonObject const& a, QJsonObject const& b) {
+    return uploadEpoch(a) > uploadEpoch(b);
+  });
+
+  QJsonArray sortedItems;
+  for (QJsonObject const& item : sortable) {
+    sortedItems.append(item);
+  }
+
+  QJsonObject result;
+  result[QStringLiteral("relatedItems")] = sortedItems;
+  result[QStringLiteral("itemsList")] = sortedItems;
+  result[QStringLiteral("nextPage")] = QJsonObject();
+
   return QJsonDocument(result);
 }

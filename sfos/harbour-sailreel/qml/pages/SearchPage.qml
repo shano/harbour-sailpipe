@@ -78,6 +78,13 @@ Page {
                     pageStack.push(Qt.resolvedUrl("../pages/SettingsPage.qml"));
                 }
             }
+            MenuItem {
+                //% "Subscriptions"
+                text: qsTrId("sailpipe_search_page-menu_subscriptions")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("../pages/SubscriptionsPage.qml"));
+                }
+            }
         }
 
         header: Column {

@@ -18,6 +18,7 @@
 #include "playlistmodel.h"
 #include "downloadmanager.h"
 #include "mediajunction.h"
+#include "subscriptionmanager.h"
 #include "ytdlpmanager.h"
 
 int main(int argc, char *argv[])
@@ -34,6 +35,7 @@ int main(int argc, char *argv[])
   Utils::instantiate();
   DownloadManager::instantiate();
   MediaJunction::instantiate();
+  SubscriptionManager::instantiate();
   YtDlpManager::instantiate();
 
   qmlRegisterType<Extractor>("harbour.sailpipe.extractor", 1, 0, "Extractor");
@@ -52,6 +54,7 @@ int main(int argc, char *argv[])
   qmlRegisterSingletonType<Utils>("harbour.sailpipe.extractor", 1, 0, "Utils", Utils::provider);
   qmlRegisterSingletonType<DownloadManager>("harbour.sailpipe.extractor", 1, 0, "DownloadManager", DownloadManager::provider);
   qmlRegisterSingletonType<MediaJunction>("harbour.sailpipe.extractor", 1, 0, "MediaJunction", MediaJunction::provider);
+  qmlRegisterSingletonType<SubscriptionManager>("harbour.sailpipe.extractor", 1, 0, "Subscriptions", SubscriptionManager::provider);
   qmlRegisterSingletonType<YtDlpManager>("harbour.sailpipe.extractor", 1, 0, "YtDlp", YtDlpManager::provider);
 
   engine->addImageProvider(QLatin1String("sailpipe"), new ImageProvider());

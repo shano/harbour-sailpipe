@@ -13,16 +13,25 @@ Page {
     property LinkHandlerModel linkHandlerModel: LinkHandlerModel { }
     readonly property real iconScale: 1.5
     property alias tabListModel: tabs.model
+    property bool subscribed: false
 
     Component.onCompleted: {
         tabListModel.addAboutTab(extractor, aboutTab);
         extractor.getChannelInfo(channelInfo, linkHandlerModel, url);
+        subscribed = Subscriptions.isSubscribed(url);
     }
 
     Connections {
         target: extractor
         onExtracted: {
             tabListModel.generateModel(extractor, linkHandlerModel);
+        }
+    }
+
+    Connections {
+        target: Subscriptions
+        onSubscriptionsChanged: {
+            subscribed = Subscriptions.isSubscribed(root.url);
         }
     }
 
@@ -71,7 +80,7 @@ Page {
                 }
 
                 Column {
-                    width: parent.width - thumbnail.width - Theme.paddingLarge
+                    width: parent.width - thumbnail.width - subscribeButton.width - (2 * Theme.paddingLarge)
                     anchors.verticalCenter: parent.verticalCenter
 
                     Label {
@@ -90,6 +99,22 @@ Page {
                         width: parent.width
                         truncationMode: TruncationMode.Fade
                         visible: !!root.infoRow
+                    }
+                }
+
+                IconButton {
+                    id: subscribeButton
+                    anchors.verticalCenter: parent.verticalCenter
+                    icon.source: root.subscribed
+                        ? "image://theme/icon-m-favorite-selected"
+                        : "image://theme/icon-m-favorite"
+
+                    onClicked: {
+                        if (root.subscribed) {
+                            Subscriptions.unsubscribe(root.url);
+                        } else {
+                            Subscriptions.subscribe(root.url, root.name, root.thumbnail.toString());
+                        }
                     }
                 }
             }

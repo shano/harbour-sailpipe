@@ -435,3 +435,34 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
   watcher->setFuture(invokeAsync("getMorePlaylistItems", &document));
 }
 
+void Extractor::getSubscriptionFeed(SearchModel* feedModel, QStringList const& channelUrls)
+{
+  QJsonObject json;
+  QJsonArray urls;
+  for (QString const& url : channelUrls) {
+    urls.append(url);
+  }
+  json["channelUrls"] = urls;
+  QJsonDocument document(json);
+
+  QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();
+  LifetimeCheck* lifetimeCheck = new LifetimeCheck(feedModel, watcher);
+  QObject::connect(watcher, &QFutureWatcher<QJsonDocument>::finished, [this, watcher, lifetimeCheck, feedModel]() {
+    if (!lifetimeCheck->destroyed()) {
+      QJsonDocument result = watcher->result();
+      emitErrorIfPresent(result);
+
+      QJsonArray items = result.object()["relatedItems"].toArray();
+      QList<SearchItem const*> feedResults;
+      for (QJsonValue const& item : items) {
+        SearchItem const* deserialised = SearchItem::createSearchItem(item.toObject(), feedModel);
+        feedResults.append(deserialised);
+      }
+      feedModel->replaceAll(feedResults);
+    }
+
+    delete watcher;
+  });
+  watcher->setFuture(invokeAsync("getSubscriptionFeed", &document));
+}
+

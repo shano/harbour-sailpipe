@@ -61,6 +61,7 @@ target_sources(harbour-sailreel PRIVATE
     "src/downloadmanager.cpp"
     "src/dbusadapter.cpp"
     "src/mediajunction.cpp"
+    "src/subscriptionmanager.cpp"
     "src/ytdlpmanager.cpp"
     "src/ytdlpprocess.cpp"
     "src/ytdlptranslate.cpp"
@@ -133,6 +134,8 @@ add_custom_target(distfiles
         qml/pages/RepliesPage.qml
         qml/pages/ChannelPage.qml
         qml/pages/PlaylistPage.qml
+        qml/pages/SubscriptionsPage.qml
+        qml/pages/ManageSubscriptionsPage.qml
         qml/pages/FullscreenVideoPage.qml
         qml/pages/AboutPage.qml
         qml/components/VideoPlayer.qml

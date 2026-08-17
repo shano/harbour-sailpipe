@@ -33,6 +33,7 @@ public slots:
   void getMoreChannelItems(ListLinkHandler* linkHandler, PageRef* page, SearchModel* videoModel);
   void getPlaylistInfo(PlaylistModel* playlistModel, QString const& url);
   void getMorePlaylistItems(PlaylistModel* playlistModel, QString const& url, PageRef* page);
+  void getSubscriptionFeed(SearchModel* feedModel, QStringList const& channelUrls);
 
 signals:
   void extracted(QString const& url);
