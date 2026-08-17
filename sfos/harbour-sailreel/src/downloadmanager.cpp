@@ -45,7 +45,7 @@ DownloadManager::DownloadManager(QObject *parent)
   QDBusConnection connection = QDBusConnection::sessionBus();
   m_dbusRegistered = connection.registerObject(QString::fromLatin1("/"), this);
   if (m_dbusRegistered) {
-    m_dbusRegistered = connection.registerService(QString::fromLatin1("io.github.shano.sailreel"));
+    m_dbusRegistered = connection.registerService(QString::fromLatin1("io.github.shano.harbour-sailreel"));
   }
 }
 

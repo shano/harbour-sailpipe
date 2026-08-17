@@ -14,4 +14,4 @@
 # x-sailjail-permission = Downloads
 # x-sailjail-permission = WebView
 
-dbus-user.own io.github.shano.sailreel
+dbus-user.own io.github.shano.harbour-sailreel

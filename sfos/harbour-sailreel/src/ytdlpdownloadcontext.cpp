@@ -45,7 +45,7 @@ void YtDlpDownloadContext::start()
 
   QUrl localFile = QUrl::fromLocalFile(m_targetPath);
   QString const cancelDownload = m_dbusRegistered ? QString::fromLatin1("cancelDownload") : QString::fromLatin1("");
-  CallbackInterface callback(QString::fromLatin1("io.github.shano.sailreel"), QString::fromLatin1("/"), QString::fromLatin1("io.github.shano.sailreel"), cancelDownload, QString::fromLatin1(""));
+  CallbackInterface callback(QString::fromLatin1("io.github.shano.harbour-sailreel"), QString::fromLatin1("/"), QString::fromLatin1("io.github.shano.harbour-sailreel"), cancelDownload, QString::fromLatin1(""));
   // yt-dlp writes the file itself, so the final size isn't known up front.
   qlonglong length = 0;
   //% "SailReel download"

@@ -9,7 +9,7 @@ class DownloadManager;
 class DBusAdapter : public QDBusAbstractAdaptor
 {
   Q_OBJECT
-  Q_CLASSINFO("D-Bus Interface", "io.github.shano.sailreel")
+  Q_CLASSINFO("D-Bus Interface", "io.github.shano.harbour-sailreel")
 
 public:
   explicit DBusAdapter(DownloadManager* DownloadManager);

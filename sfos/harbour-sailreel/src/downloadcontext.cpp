@@ -43,7 +43,7 @@ void DownloadContext::open(QString const& filename, QString const& mimetype, qlo
 
   QUrl localFile = QUrl::fromLocalFile(m_file.fileName());
   QString const cancelDownload = m_dbusRegistered ? QString::fromLatin1("cancelDownload") : QString::fromLatin1("");
-  CallbackInterface callback(QString::fromLatin1("io.github.shano.sailreel"), QString::fromLatin1("/"), QString::fromLatin1("io.github.shano.sailreel"), cancelDownload, QString::fromLatin1(""));
+  CallbackInterface callback(QString::fromLatin1("io.github.shano.harbour-sailreel"), QString::fromLatin1("/"), QString::fromLatin1("io.github.shano.harbour-sailreel"), cancelDownload, QString::fromLatin1(""));
   //% "SailReel download"
   m_transferId = m_transferClient->createDownloadEvent(qtTrId("sailpipe_transfer_engine-sailpipe_download"), QUrl(), QUrl(QString::fromLatin1("image://theme/harbour-sailreel")), localFile, mimetype, length, callback);
   m_transferClient->startTransfer(m_transferId);
