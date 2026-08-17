@@ -315,8 +315,15 @@ QJsonArray fetchChannelVideos(QString const& channelUrl)
     ? channelUrl + QStringLiteral("videos")
     : channelUrl + QStringLiteral("/videos");
 
+  // Plain --flat-playlist never populates timestamp/upload_date for a
+  // channel's video listing (confirmed live) — every entry's uploadDate
+  // would be 0, degrading the cross-channel merge sort below into
+  // per-channel insertion order (all of one channel, then the next).
+  // youtubetab:approximate_date fills in a real (day-granularity)
+  // timestamp without the cost of full per-video extraction.
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("--flat-playlist")
+    << QStringLiteral("--extractor-args") << QStringLiteral("youtubetab:approximate_date")
     << QStringLiteral("--playlist-end") << QString::number(SUBSCRIPTION_FEED_PER_CHANNEL)
     << QStringLiteral("-J")
     << videosUrl, 60000);
