@@ -185,9 +185,17 @@ QJsonDocument YtDlpBackend::getChannelInfo(QJsonObject const& in)
   QJsonObject info = process.output.object();
   QJsonObject result = YtDlpTranslate::channelInfo(info);
 
+  // yt-dlp's flat-playlist on a bare channel URL returns one entry per
+  // channel tab (Videos/Live/Shorts as pseudo-playlists), not the videos
+  // within a tab — the "/videos" suffix is required to list actual videos.
+  QString channelUrl = result[QStringLiteral("url")].toString();
+  QString videosUrl = channelUrl.endsWith(QLatin1Char('/'))
+    ? channelUrl + QStringLiteral("videos")
+    : channelUrl + QStringLiteral("/videos");
+
   QJsonObject videosTab;
-  videosTab[QStringLiteral("originalUrl")] = url;
-  videosTab[QStringLiteral("url")] = url;
+  videosTab[QStringLiteral("originalUrl")] = videosUrl;
+  videosTab[QStringLiteral("url")] = videosUrl;
   videosTab[QStringLiteral("id")] = QStringLiteral("videos");
   videosTab[QStringLiteral("contentFilters")] = QJsonArray{QStringLiteral("videos")};
   videosTab[QStringLiteral("sortFilter")] = QString();
