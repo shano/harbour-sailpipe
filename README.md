@@ -31,6 +31,12 @@ with full media controls (MPRIS-integrated, so lock-screen and Bluetooth
 controls work), and download videos straight to your device's `Videos`
 folder via the system Transfer Engine.
 
+<p align="center">
+<img src="screenshots/search.png" width="220" alt="Search results">
+<img src="screenshots/video.png" width="220" alt="Video playback with comments">
+<img src="screenshots/settings.png" width="220" alt="yt-dlp settings">
+</p>
+
 ## yt-dlp integration
 
 All YouTube access goes through [yt-dlp](https://github.com/yt-dlp/yt-dlp),
@@ -51,8 +57,8 @@ and install it via Storeman, File Browser, or:
 pkcon install-local --allow-untrusted harbour-sailreel-<version>.aarch64.rpm
 ```
 
-Currently built for **aarch64** only (e.g. Xperia 10 II/III and other
-64-bit ARM devices).
+Built for both **aarch64** (e.g. Xperia 10 II/III and other 64-bit ARM
+devices) and **armv7hl** (older 32-bit ARM devices).
 
 ## Building from source
 
