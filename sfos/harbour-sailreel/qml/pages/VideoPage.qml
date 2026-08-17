@@ -76,6 +76,13 @@ Page {
                 }
             }
 
+            Rectangle {
+                // TEMPORARY diagnostic marker — remove once ActionBar visibility is understood.
+                width: parent.width
+                height: 80
+                color: "red"
+            }
+
             ActionBar {
                 x: Theme.paddingLarge
                 width: parent.width - (2 * Theme.paddingLarge)
