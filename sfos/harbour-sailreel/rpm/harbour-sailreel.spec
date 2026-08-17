@@ -4,7 +4,7 @@ Summary:    Video and music streaming and downloading
 Version:    0.5
 Release:    1
 License:    LICENSE
-URL:        https://github.com/shano/harbour-sailpipe
+URL:        https://github.com/shano/harbour-sailreel
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2

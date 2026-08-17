@@ -286,14 +286,14 @@ Page {
                     //% "Website"
                     text: qsTrId("sailpipe_about-website")
                     enabled: true
-                    onClicked: Qt.openUrlExternally("https://github.com/shano/harbour-sailpipe")
+                    onClicked: Qt.openUrlExternally("https://github.com/shano/harbour-sailreel")
                 }
                 Button {
                     id : disconnect
                     //% "Report an Issue"
                     text: qsTrId("sailpipe_about-report_issue")
                     enabled: true
-                    onClicked: Qt.openUrlExternally("https://github.com/shano/harbour-sailpipe/issues")
+                    onClicked: Qt.openUrlExternally("https://github.com/shano/harbour-sailreel/issues")
                 }
             }
         }
