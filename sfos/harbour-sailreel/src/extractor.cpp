@@ -16,7 +16,6 @@
 #include "channeltabinfo.h"
 #include "listlinkhandler.h"
 #include "linkhandlermodel.h"
-#include "filtermodel.h"
 #include "ytdlpbackend.h"
 
 #include "extractor.h"
