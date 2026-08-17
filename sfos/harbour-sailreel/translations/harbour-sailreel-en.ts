@@ -686,5 +686,165 @@
         <source>SailReel</source>
         <translation>SailReel</translation>
     </message>
+    <message id="sailpipe_about-report_issue">
+        <location filename="../qml/pages/AboutPage.qml" line="257"/>
+        <source>Report an Issue</source>
+        <translation>Report an Issue</translation>
+    </message>
+    <message id="sailpipe_about-section_ytdlp">
+        <location filename="../qml/pages/AboutPage.qml" line="102"/>
+        <source>yt-dlp</source>
+        <translation>yt-dlp</translation>
+    </message>
+    <message id="sailpipe_about-ytdlp_description">
+        <location filename="../qml/pages/AboutPage.qml" line="107"/>
+        <source>YouTube extraction and downloads use yt-dlp, a separate open-source tool this app downloads and manages itself. Manage installs and updates from Settings.</source>
+        <translation>YouTube extraction and downloads use yt-dlp, a separate open-source tool this app downloads and manages itself. Manage installs and updates from Settings.</translation>
+    </message>
+    <message id="sailpipe_about-ytdlp_version">
+        <location filename="../qml/pages/AboutPage.qml" line="120"/>
+        <source>Installed version</source>
+        <translation>Installed version</translation>
+    </message>
+    <message id="sailpipe_comments-no_entries">
+        <location filename="../qml/pages/VideoPage.qml" line="137"/>
+        <source>No comments</source>
+        <translation>No comments</translation>
+    </message>
+    <message id="sailpipe_comments-no_entries_hint">
+        <location filename="../qml/pages/RepliesPage.qml" line="61"/>
+        <source>There are no comments here</source>
+        <translation>There are no comments here</translation>
+    </message>
+    <message id="sailpipe_search_page-menu_settings">
+        <location filename="../qml/pages/SearchPage.qml" line="75"/>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message id="sailpipe_search_page-menu_subscriptions">
+        <location filename="../qml/pages/SearchPage.qml" line="82"/>
+        <source>Subscriptions</source>
+        <translation>Subscriptions</translation>
+    </message>
+    <message id="sailpipe_settings-section_ytdlp">
+        <location filename="../qml/pages/SettingsPage.qml" line="26"/>
+        <source>yt-dlp (YouTube backend)</source>
+        <translation>yt-dlp (YouTube backend)</translation>
+    </message>
+    <message id="sailpipe_settings-title">
+        <location filename="../qml/pages/SettingsPage.qml" line="21"/>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_check_updates">
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
+        <source>Check for Updates</source>
+        <translation>Check for Updates</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_description">
+        <location filename="../qml/pages/SettingsPage.qml" line="31"/>
+        <source>YouTube extraction and downloads use yt-dlp, a separate open-source tool that needs to be installed and kept up to date on this device.</source>
+        <translation>YouTube extraction and downloads use yt-dlp, a separate open-source tool that needs to be installed and kept up to date on this device.</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_error">
+        <location filename="../qml/pages/SettingsPage.qml" line="122"/>
+        <source>yt-dlp error: %1</source>
+        <translation>yt-dlp error: %1</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_install">
+        <location filename="../qml/pages/SettingsPage.qml" line="102"/>
+        <source>Install</source>
+        <translation>Install</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_installed_version">
+        <location filename="../qml/pages/SettingsPage.qml" line="68"/>
+        <source>Installed version</source>
+        <translation>Installed version</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_latest_version">
+        <location filename="../qml/pages/SettingsPage.qml" line="74"/>
+        <source>Latest version</source>
+        <translation>Latest version</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_status">
+        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_status_checking">
+        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
+        <source>Checking for updates…</source>
+        <translation>Checking for updates…</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_status_downloading">
+        <location filename="../qml/pages/SettingsPage.qml" line="58"/>
+        <source>Downloading…</source>
+        <translation>Downloading…</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_status_error">
+        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_status_installed">
+        <location filename="../qml/pages/SettingsPage.qml" line="52"/>
+        <source>Installed</source>
+        <translation>Installed</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_status_not_installed">
+        <location filename="../qml/pages/SettingsPage.qml" line="49"/>
+        <source>Not installed</source>
+        <translation>Not installed</translation>
+    </message>
+    <message id="sailpipe_settings-ytdlp_update">
+        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
+        <source>Update</source>
+        <translation>Update</translation>
+    </message>
+    <message id="sailpipe_subscriptions_page-header">
+        <location filename="../qml/pages/SubscriptionsPage.qml" line="54"/>
+        <source>Subscriptions</source>
+        <translation>Subscriptions</translation>
+    </message>
+    <message id="sailpipe_subscriptions_page-menu_manage">
+        <location filename="../qml/pages/SubscriptionsPage.qml" line="38"/>
+        <source>Manage subscriptions</source>
+        <translation>Manage subscriptions</translation>
+    </message>
+    <message id="sailpipe_subscriptions_page-menu_refresh">
+        <location filename="../qml/pages/SubscriptionsPage.qml" line="45"/>
+        <source>Refresh</source>
+        <translation>Refresh</translation>
+    </message>
+    <message id="sailpipe_subscriptions_page-no_entries">
+        <location filename="../qml/pages/SubscriptionsPage.qml" line="61"/>
+        <source>No subscriptions</source>
+        <translation>No subscriptions</translation>
+    </message>
+    <message id="sailpipe_subscriptions_page-no_entries_hint">
+        <location filename="../qml/pages/SubscriptionsPage.qml" line="63"/>
+        <source>Subscribe to channels to see their videos here</source>
+        <translation>Subscribe to channels to see their videos here</translation>
+    </message>
+    <message id="sailpipe_manage_subscriptions_page-header">
+        <location filename="../qml/pages/ManageSubscriptionsPage.qml" line="18"/>
+        <source>Manage Subscriptions</source>
+        <translation>Manage Subscriptions</translation>
+    </message>
+    <message id="sailpipe_manage_subscriptions_page-no_entries_hint">
+        <location filename="../qml/pages/ManageSubscriptionsPage.qml" line="26"/>
+        <source>Subscribe to channels to see them here</source>
+        <translation>Subscribe to channels to see them here</translation>
+    </message>
+    <message id="sailpipe_manage_subscriptions_page-remove">
+        <location filename="../qml/pages/ManageSubscriptionsPage.qml" line="66"/>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message id="sailpipe_manage_subscriptions_page-removing">
+        <location filename="../qml/pages/ManageSubscriptionsPage.qml" line="70"/>
+        <source>Removing</source>
+        <translation>Removing</translation>
+    </message>
 </context>
 </TS>
