@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
   int result;
 
   QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
-  QCoreApplication::setOrganizationName("uk.co.flypig");
+  QCoreApplication::setOrganizationName("io.github.shano");
   QCoreApplication::setApplicationName("harbour-sailreel");
   QScopedPointer<QQuickView> view(SailfishApp::createView());
   QQmlContext* ctxt = view->rootContext();
