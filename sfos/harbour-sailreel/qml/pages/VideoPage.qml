@@ -76,44 +76,35 @@ Page {
                 }
             }
 
-            Item {
-                // TEMPORARY diagnostic wrapper — forces the space to exist
-                // in the Column regardless of ActionBar's own height, to
-                // isolate whether this is a layout-collapse or a
-                // icon-rendering issue. Remove once understood.
-                width: parent.width
-                height: 80
+            ActionBar {
+                x: Theme.paddingLarge
+                width: parent.width - (2 * Theme.paddingLarge)
+                downloadable: (root.source != "")
 
-                ActionBar {
-                    x: Theme.paddingLarge
-                    width: parent.width - (2 * Theme.paddingLarge)
-                    downloadable: (root.source != "")
+                onFullscreenPressed: {
+                    video.state = "hidden"
+                }
 
-                    onFullscreenPressed: {
-                        video.state = "hidden"
-                    }
+                onSharePressed: {
+                    shareAction.resources = [{ "type": "text/x-url", "status": root.url.toString() }];
+                    shareAction.trigger();
+                }
 
-                    onSharePressed: {
-                        shareAction.resources = [{ "type": "text/x-url", "status": root.url.toString() }];
-                        shareAction.trigger();
-                    }
+                onDownloadPressed: {
+                    DownloadManager.downloadFile(root.source);
+                }
 
-                    onDownloadPressed: {
-                        DownloadManager.downloadFile(root.source);
-                    }
+                onDownloadCancelPressed: {
+                    DownloadManager.cancel();
+                }
 
-                    onDownloadCancelPressed: {
-                        DownloadManager.cancel();
-                    }
+                onOpenPagePressed: {
+                    Qt.openUrlExternally(url)
+                }
 
-                    onOpenPagePressed: {
-                        Qt.openUrlExternally(url)
-                    }
-
-                    ShareAction {
-                        id: shareAction
-                        mimeType: "text/x-url"
-                    }
+                ShareAction {
+                    id: shareAction
+                    mimeType: "text/x-url"
                 }
             }
 
