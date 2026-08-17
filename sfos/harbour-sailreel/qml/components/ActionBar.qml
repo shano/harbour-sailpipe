@@ -5,7 +5,7 @@ import harbour.sailpipe.extractor 1.0
 Row {
     id: root
 
-    readonly property int buttonsize: Theme.iconSizeSmallPlus
+    readonly property int buttonsize: Theme.iconSizeMedium
     property bool downloadable: false
 
     height: buttonsize
