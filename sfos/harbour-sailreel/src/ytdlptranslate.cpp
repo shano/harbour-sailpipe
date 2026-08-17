@@ -68,6 +68,43 @@ QJsonObject streamItem(QJsonObject const& entry)
   return item;
 }
 
+QJsonObject channelItem(QJsonObject const& entry)
+{
+  QJsonObject item;
+
+  item[QStringLiteral("infoType")] = QStringLiteral("CHANNEL");
+  item[QStringLiteral("name")] = firstNonEmpty(
+    entry[QStringLiteral("channel")].toString(),
+    entry[QStringLiteral("title")].toString());
+  item[QStringLiteral("thumbnails")] = entry[QStringLiteral("thumbnails")].toArray();
+  // Unlike a video entry, the channel URL is already correct as-is —
+  // urlFromEntry()'s watch?v=<id> fallback would be wrong here, since
+  // a channel entry's "id" is a channel id, not a video id.
+  item[QStringLiteral("url")] = entry[QStringLiteral("url")].toString();
+  item[QStringLiteral("description")] = entry[QStringLiteral("description")].toString();
+  item[QStringLiteral("subscriberCount")] = entry[QStringLiteral("channel_follower_count")].toInt(0);
+  item[QStringLiteral("streamCount")] = entry[QStringLiteral("playlist_count")].toInt(0);
+  item[QStringLiteral("verified")] = entry[QStringLiteral("channel_is_verified")].toBool(false);
+
+  return item;
+}
+
+namespace {
+
+QJsonObject searchResultItem(QJsonObject const& entry)
+{
+  // yt-dlp's flat-playlist search results mix video and channel cards in
+  // the same entry list, distinguishable only by ie_key — everything
+  // else (channel entries have no "duration", playlist ones no "id"
+  // that resolves to a video) is too unreliable to key off directly.
+  if (entry[QStringLiteral("ie_key")].toString() == QStringLiteral("YoutubeTab")) {
+    return channelItem(entry);
+  }
+  return streamItem(entry);
+}
+
+} // namespace
+
 QJsonObject searchResults(QJsonArray const& entries, int offset, int pageSize, int totalRequested)
 {
   QJsonObject result;
@@ -75,7 +112,7 @@ QJsonObject searchResults(QJsonArray const& entries, int offset, int pageSize, i
 
   int end = qMin(entries.size(), offset + pageSize);
   for (int i = offset; i < end; ++i) {
-    items.append(streamItem(entries[i].toObject()));
+    items.append(searchResultItem(entries[i].toObject()));
   }
 
   result[QStringLiteral("relatedItems")] = items;

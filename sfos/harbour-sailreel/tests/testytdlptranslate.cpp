@@ -22,6 +22,8 @@ private:
 private slots:
   void streamItem_mapsTitleAndUrl();
   void streamItem_fallsBackToWatchUrlWhenWebpageUrlMissing();
+  void channelItem_mapsSubscriberCountAndUrl();
+  void searchResults_classifiesChannelEntryAsChannelNotStream();
   void searchResults_setsNextPageWhenMoreAvailable();
   void searchResults_omitsNextPageWhenExhausted();
   void mediaInfo_mapsContentFromResolvedUrl();
@@ -48,6 +50,36 @@ void TestYtDlpTranslate::streamItem_fallsBackToWatchUrlWhenWebpageUrlMissing()
   QJsonObject result = YtDlpTranslate::streamItem(entry);
 
   QCOMPARE(result["url"].toString(), QStringLiteral("https://www.youtube.com/watch?v=abc123"));
+}
+
+void TestYtDlpTranslate::channelItem_mapsSubscriberCountAndUrl()
+{
+  QJsonObject entry = loadFixture("ytdlp_channel_search_entry.json");
+
+  QJsonObject result = YtDlpTranslate::channelItem(entry);
+
+  QCOMPARE(result["infoType"].toString(), QStringLiteral("CHANNEL"));
+  QCOMPARE(result["name"].toString(), QStringLiteral("The Spiffing Brit"));
+  QCOMPARE(result["url"].toString(), QStringLiteral("https://www.youtube.com/channel/UCRHXUZ0BxbkU2MYZgsuFgkQ"));
+  QCOMPARE(result["subscriberCount"].toInt(), 4480000);
+  QVERIFY(result["verified"].toBool());
+}
+
+void TestYtDlpTranslate::searchResults_classifiesChannelEntryAsChannelNotStream()
+{
+  QJsonObject channelEntry = loadFixture("ytdlp_channel_search_entry.json");
+  QJsonObject videoEntry = loadFixture("ytdlp_search_entry.json");
+
+  QJsonArray entries;
+  entries.append(channelEntry);
+  entries.append(videoEntry);
+
+  QJsonObject result = YtDlpTranslate::searchResults(entries, 0, 10, 10);
+
+  QJsonArray items = result["relatedItems"].toArray();
+  QCOMPARE(items.size(), 2);
+  QCOMPARE(items[0].toObject()["infoType"].toString(), QStringLiteral("CHANNEL"));
+  QCOMPARE(items[1].toObject()["infoType"].toString(), QStringLiteral("STREAM"));
 }
 
 void TestYtDlpTranslate::searchResults_setsNextPageWhenMoreAvailable()

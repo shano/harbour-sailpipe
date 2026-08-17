@@ -7,6 +7,7 @@
 namespace YtDlpTranslate {
 
 QJsonObject streamItem(QJsonObject const& entry);
+QJsonObject channelItem(QJsonObject const& entry);
 QJsonObject searchResults(QJsonArray const& entries, int offset, int pageSize, int totalRequested);
 QJsonObject mediaInfo(QJsonObject const& info);
 QJsonObject commentItem(QJsonObject const& comment);

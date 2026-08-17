@@ -1,0 +1,30 @@
+{
+  "_type": "url",
+  "url": "https://www.youtube.com/channel/UCRHXUZ0BxbkU2MYZgsuFgkQ",
+  "id": "UCRHXUZ0BxbkU2MYZgsuFgkQ",
+  "ie_key": "YoutubeTab",
+  "channel": "The Spiffing Brit",
+  "uploader": "The Spiffing Brit",
+  "channel_id": "UCRHXUZ0BxbkU2MYZgsuFgkQ",
+  "channel_url": "https://www.youtube.com/channel/UCRHXUZ0BxbkU2MYZgsuFgkQ",
+  "title": "The Spiffing Brit",
+  "uploader_id": "@thespiffingbrit",
+  "uploader_url": "https://www.youtube.com/@thespiffingbrit",
+  "channel_follower_count": 4480000,
+  "thumbnails": [
+    {
+      "url": "//yt3.googleusercontent.com/redacted=s88-c-k-c0x00ffffff-no-rj-mo",
+      "height": 88,
+      "width": 88
+    },
+    {
+      "url": "//yt3.googleusercontent.com/redacted=s176-c-k-c0x00ffffff-no-rj-mo",
+      "height": 176,
+      "width": 176
+    }
+  ],
+  "playlist_count": null,
+  "description": "Hey all welcome to the channel HAVE A BUSINESS ENQUIRY? Email Here: thespiffingbusiness@gmail.com Content is mostly...",
+  "channel_is_verified": true,
+  "__x_forwarded_for_ip": null
+}
