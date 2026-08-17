@@ -36,8 +36,8 @@ Page {
 
             PageHeader {
                 id: header
-                //% "%0 Playlist"
-                title: qsTrId("sailpipe_playlist_page-header_playlist").arg(extractor.serviceName)
+                //% "YouTube Playlist"
+                title: qsTrId("sailpipe_playlist_page-header_playlist")
             }
 
             Label {

@@ -96,13 +96,6 @@ Page {
                 }
             }
             MenuItem {
-                //% "Service"
-                text: qsTrId("sailpipe_search_page-menu_service")
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("../pages/ServicePage.qml"));
-                }
-            }
-            MenuItem {
                 //% "Filter"
                 text: qsTrId("sailpipe_search_page-menu_filter")
                 onClicked: {
@@ -128,8 +121,8 @@ Page {
             SearchField {
                 id: searchField
                 width: parent.width
-                //% "Search %0"
-                placeholderText: qsTrId("sailpipe_search_page-search_placeholder").arg(extractor.serviceName)
+                //% "Search YouTube"
+                placeholderText: qsTrId("sailpipe_search_page-search_placeholder")
                 // Predictive text actually messes up the clear button so it only
                 // works if there's more than one word (weird!), but predictive
                 // is likely to be the more useful of the two, so I've left it on

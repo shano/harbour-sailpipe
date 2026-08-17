@@ -4,7 +4,7 @@
 
 # SailReel
 
-**Stream and download video & audio on Sailfish OS.**
+**Stream and download YouTube video on Sailfish OS.**
 
 [![Build and release](https://github.com/shano/harbour-sailreel/actions/workflows/release.yml/badge.svg)](https://github.com/shano/harbour-sailreel/actions/workflows/release.yml)
 [![Latest release](https://img.shields.io/github/v/release/shano/harbour-sailreel)](https://github.com/shano/harbour-sailreel/releases/latest)
@@ -24,38 +24,23 @@
 ## What it is
 
 A native Sailfish Silica app for searching, streaming, and downloading
-video and audio from:
+video from **YouTube**.
 
-- **YouTube**
-- **SoundCloud**
-- **media.ccc.de**
-- **PeerTube**
-- **Bandcamp**
-
-Search, browse channels and playlists, read comments, play video/audio
-in-app with full media controls (MPRIS-integrated, so lock-screen and
-Bluetooth controls work), and download things to your device via the
-system Transfer Engine.
+Search, browse channels and playlists, read comments, play video in-app
+with full media controls (MPRIS-integrated, so lock-screen and Bluetooth
+controls work), and download videos straight to your device's `Videos`
+folder via the system Transfer Engine.
 
 ## yt-dlp integration
 
-YouTube changes how it serves content often enough that a general-purpose
-extractor library struggles to keep up. So YouTube is handled differently
-from everything else:
+All YouTube access goes through [yt-dlp](https://github.com/yt-dlp/yt-dlp),
+a standalone binary the app downloads and manages itself (Settings →
+yt-dlp) — never bundled or auto-run without your say-so. Kept independent
+of app releases, so YouTube support can be patched the moment upstream
+yt-dlp ships a fix, without waiting on a SailReel update.
 
-- **YouTube** → [yt-dlp](https://github.com/yt-dlp/yt-dlp), a standalone
-  binary the app downloads and manages itself (Settings → yt-dlp). Kept
-  independent of app releases so YouTube support can be patched the
-  moment upstream yt-dlp ships a fix, without waiting on a SailReel
-  update.
-- **Everything else** (SoundCloud, media.ccc.de, PeerTube, Bandcamp) →
-  [NewPipe Extractor](https://github.com/TeamNewPipe/NewPipeExtractor),
-  compiled to a native library via GraalVM and called in-process.
-
-The yt-dlp binary is downloaded straight from GitHub Releases, verified
-against its published SHA-256 checksum before install, and updated
-on-demand from the Settings page — never bundled or auto-run without your
-say-so.
+The yt-dlp binary is downloaded straight from GitHub Releases and
+verified against its published SHA-256 checksum before install.
 
 ## Installing
 
@@ -67,24 +52,21 @@ pkcon install-local --allow-untrusted harbour-sailreel-<version>.aarch64.rpm
 ```
 
 Currently built for **aarch64** only (e.g. Xperia 10 II/III and other
-64-bit ARM devices) — GraalVM, which compiles the NewPipe Extractor
-native library, doesn't ship a 32-bit ARM (armv7hl) build.
+64-bit ARM devices).
 
 ## Building from source
 
 CI builds via the Sailfish Platform SDK — see
 [`.github/workflows/release.yml`](.github/workflows/release.yml) for the
-full pipeline: GraalVM native-compiles the NewPipe Extractor bridge, then
-[`mb2`](https://docs.sailfishos.org/Tools/Sailfish_SDK/) builds the RPM
-against the target Sailfish OS release. Push a `vX.Y.Z` tag to trigger a
-release build.
+full pipeline: [`mb2`](https://docs.sailfishos.org/Tools/Sailfish_SDK/)
+builds the RPM against the target Sailfish OS release. Push a `vX.Y.Z`
+tag to trigger a release build.
 
 ## Acknowledgements
 
 - [flypig](https://codeberg.org/flypig) — original NewPipe-for-Sailfish
   author
 - [legacychimera247](https://codeberg.org/legacychimera247) — contributor
-- [TeamNewPipe](https://github.com/TeamNewPipe) — NewPipe Extractor
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) contributors
 
 This project uses [Weblate](https://weblate.org/) translation software to

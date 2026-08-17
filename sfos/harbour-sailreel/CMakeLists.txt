@@ -13,11 +13,8 @@ pkg_search_module(AMBERMPRIS REQUIRED ambermpris)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/share/harbour-sailreel/lib")
 
 add_compile_definitions(SAILPIPE_VERSION="0.5")
-
-link_directories(${CMAKE_SOURCE_DIR}/lib/)
 
 add_executable(harbour-sailreel src/harbour-sailreel.cpp)
 target_compile_definitions(harbour-sailreel PRIVATE
@@ -29,7 +26,6 @@ target_include_directories(harbour-sailreel PRIVATE
     ${SILICA_INCLUDE_DIRS}
     ${TRANSFERENGINE_INCLUDE_DIRS}
     ${AMBERMPRIS_INCLUDE_DIRS}
-    PRIVATE "${CMAKE_SOURCE_DIR}/include"
 )
 target_link_libraries(harbour-sailreel
     Qt5::Quick
@@ -37,12 +33,10 @@ target_link_libraries(harbour-sailreel
     ${SILICA_LIBRARIES}
     ${TRANSFERENGINE_LIBRARIES}
     ${AMBERMPRIS_LIBRARIES}
-    -l:appwrapper.so
 )
 target_sources(harbour-sailreel PRIVATE
     "src/extractor.cpp"
     "src/filtermodel.cpp"
-    "src/invoke.cpp"
     "src/searchmodel.cpp"
     "src/searchitem.cpp"
     "src/searchitemstream.cpp"
@@ -66,7 +60,6 @@ target_sources(harbour-sailreel PRIVATE
     "src/tabbartabinfo.cpp"
     "src/playlistmodel.cpp"
     "src/downloadmanager.cpp"
-    "src/downloadcontext.cpp"
     "src/dbusadapter.cpp"
     "src/mediajunction.cpp"
     "src/ytdlpmanager.cpp"
@@ -118,9 +111,6 @@ install(FILES icons/128x128/harbour-sailreel.png
 install(FILES icons/172x172/harbour-sailreel.png
     DESTINATION share/icons/hicolor/172x172/apps
 )
-install(FILES lib/appwrapper.so
-    DESTINATION share/harbour-sailreel/lib
-)
 install(DIRECTORY qml/images/
     DESTINATION share/harbour-sailreel/qml/images
     FILES_MATCHING PATTERN "z*/*.png"
@@ -145,7 +135,6 @@ add_custom_target(distfiles
         qml/pages/ChannelPage.qml
         qml/pages/PlaylistPage.qml
         qml/pages/FilterPage.qml
-        qml/pages/ServicePage.qml
         qml/pages/FullscreenVideoPage.qml
         qml/pages/AboutPage.qml
         qml/components/VideoPlayer.qml

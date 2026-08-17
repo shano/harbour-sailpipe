@@ -3,13 +3,10 @@
 
 #include <QObject>
 #include <QUrl>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
 #include <QDBusContext>
 
 class QQmlEngine;
 class QJSEngine;
-class DownloadContext;
 class TransferEngineClient;
 class DBusAdapter;
 class YtDlpDownloadContext;
@@ -56,10 +53,6 @@ public slots:
   void restartDownload(int transferId);
 
 private slots:
-  void onReadyRead();
-  void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-  void onFinished(QNetworkReply* reply);
-  void onError(QNetworkReply::NetworkError code);
   void setProgress(float progress);
   void onFinalise();
 
@@ -71,14 +64,10 @@ signals:
 
 private:
   void setDownloadStatus(DownloadStatus downloadStatus);
-  void destroyContext(DownloadContext* context);
   QString constructFilename(QString const& name, QString const& extension);
 
 private:
   static DownloadManager* m_instance;
-  QNetworkAccessManager* m_manager;
-  QMap<QString, DownloadContext*> m_running;
-  QMap<int, DownloadContext*> m_transferIds;
   QString m_page;
   QString m_name;
   DownloadStatus m_downloadStatus;

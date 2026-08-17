@@ -53,30 +53,8 @@ Page {
 
             PageHeader {
                 id: header
-                title: {
-                    var title = "";
-                    switch (extractor.service) {
-                    case Extractor.YouTubeService:
-                    case Extractor.MediaCCCService:
-                    case Extractor.PeertubeService:
-                        //% "%0 Channel"
-                        title = qsTrId("sailpipe_channel-page_header_channel").arg(extractor.serviceName);
-                        break;
-                    case Extractor.SoundcloudService:
-                        //% "%0 User"
-                        title = qsTrId("sailpipe_channel-page_header_user").arg(extractor.serviceName);
-                        break;
-                    case Extractor.BandcampService:
-                        //% "%0 Artist"
-                        title = qsTrId("sailpipe_channel-page_header_artist").arg(extractor.serviceName);
-                        break;
-                    default:
-                        //% "Channel"
-                        title = qsTrId("sailpipe_channel-page_header_channel_default");
-                        break;
-                    }
-                    return title;
-                }
+                //% "YouTube Channel"
+                title: qsTrId("sailpipe_channel-page_header_channel")
             }
 
             Row {

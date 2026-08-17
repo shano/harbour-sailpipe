@@ -45,27 +45,8 @@ Page {
 
             PageHeader {
                 id: header
-                title: {
-                    var title = "";
-                    switch (extractor.service) {
-                    case Extractor.YouTubeService:
-                    case Extractor.MediaCCCService:
-                    case Extractor.PeertubeService:
-                        //% "%0 Video"
-                        title = qsTrId("sailpipe_media-page_header_video").arg(extractor.serviceName);
-                        break;
-                    case Extractor.SoundcloudService:
-                    case Extractor.BandcampService:
-                        //% "%0 Audio"
-                        title = qsTrId("sailpipe_media-page_header_audio").arg(extractor.serviceName);
-                        break;
-                    default:
-                        //% "Media"
-                        title = qsTrId("sailpipe_media-page_header_media");
-                        break;
-                    }
-                    return title;
-                }
+                //% "YouTube Video"
+                title: qsTrId("sailpipe_media-page_header_video")
             }
 
             Connections {

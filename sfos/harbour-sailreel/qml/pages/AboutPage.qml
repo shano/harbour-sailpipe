@@ -85,7 +85,7 @@ Page {
             }
 
             Label {
-                //% "A user interface to the NewPipe Extractor for streaming and downloading video and music from multiple online services, including YouTube, SoundCloud, Media.ccc.de and Bandcamp."
+                //% "A user interface to yt-dlp for streaming and downloading video from YouTube."
                 text: qsTrId("sailpipe_about-summary")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
@@ -99,48 +99,12 @@ Page {
             }
 
             SectionHeader {
-                //% "NewPipe Extractor"
-                text: qsTrId("sailpipe_about-section_newpipe_extractor")
-            }
-
-            Label {
-                //% "A library for extracting things from streaming sites"
-                text: qsTrId("sailpipe_about-newpipe_extractor_description")
-                wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                anchors {
-                    leftMargin: Theme.horizontalPageMargin
-                    rightMargin: Theme.horizontalPageMargin
-                    left: parent.left
-                    right: parent.right
-                }
-            }
-
-            InfoRow {
-                //% "Version"
-                label: qsTrId("sailpipe_about-newpipe_extractor_version")
-                value: "0.24.5"
-            }
-
-            InfoRow {
-                //% "Maintainer"
-                label: qsTrId("sailpipe_about-newpipe_extractor_maintainer")
-                value: "TeamNewPipe"
-            }
-
-            InfoRow {
-                //% "Licence"
-                label: qsTrId("sailpipe_about-newpipie_extractor_licence")
-                value: "GPLv3.0"
-            }
-
-            SectionHeader {
                 //% "yt-dlp"
                 text: qsTrId("sailpipe_about-section_ytdlp")
             }
 
             Label {
-                //% "YouTube extraction and downloads use yt-dlp instead of NewPipe Extractor, since YouTube changes frequently enough that yt-dlp's faster release cadence keeps things working. Manage installs and updates from Settings."
+                //% "YouTube extraction and downloads use yt-dlp, a separate open-source tool this app downloads and manages itself. Manage installs and updates from Settings."
                 text: qsTrId("sailpipe_about-ytdlp_description")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall

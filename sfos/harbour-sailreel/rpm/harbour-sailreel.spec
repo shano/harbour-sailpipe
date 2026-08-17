@@ -1,6 +1,6 @@
 Name:       harbour-sailreel
 
-Summary:    Video and music streaming and downloading
+Summary:    YouTube video streaming and downloading
 Version:    0.5
 Release:    1
 License:    LICENSE
@@ -19,13 +19,10 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  cmake
 
 %description
-Provides a Sailfish user interface for streaming and downloading video and
-music from multiple online services. YouTube is handled via yt-dlp;
-SoundCloud, Media.ccc.de, PeerTube and Bandcamp are handled via the NewPipe
-Extractor.
+Provides a Sailfish user interface for streaming and downloading video
+from YouTube, via yt-dlp.
 
 %global _missing_build_ids_terminate_build 0
-%define __requires_exclude ^lib/appwrapper.*$
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -49,7 +46,6 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_datadir}/%{name}
-%{_datadir}/%{name}/lib/appwrapper.so
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_sysconfdir}/sailjail/permissions/harbour-sailreel.profile
