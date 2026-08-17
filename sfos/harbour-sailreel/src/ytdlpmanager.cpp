@@ -1,8 +1,10 @@
+#include <QDateTime>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QStandardPaths>
+#include <QTextStream>
 #include <QSysInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -16,6 +18,22 @@
 #include "ytdlpmanager.h"
 
 #define GITHUB_LATEST_RELEASE_URL "https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest"
+
+// Sailfish's qDebug() output goes to journald via libsailfishapp's message
+// handler, which isn't reliably readable without systemd-journal group
+// membership. Mirror install diagnostics to a plain file too so they can be
+// read directly regardless of journal permissions.
+static void logToFile(QString const& line)
+{
+  QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  QDir().mkpath(dataDir);
+  QFile logFile(dataDir + QStringLiteral("/debug.log"));
+  if (logFile.open(QIODevice::Append | QIODevice::Text)) {
+    QTextStream stream(&logFile);
+    stream << QDateTime::currentDateTime().toString(Qt::ISODate) << ' ' << line << '\n';
+  }
+  qDebug() << line;
+}
 
 YtDlpManager* YtDlpManager::m_instance = nullptr;
 
@@ -177,12 +195,16 @@ void YtDlpManager::onLatestReleaseReply()
 
 void YtDlpManager::install()
 {
+  logToFile(QStringLiteral("install() called, status=%1").arg(m_status));
   if (m_status == CheckingForUpdate || m_status == Downloading) {
+    logToFile(QStringLiteral("install() ignored, already busy"));
     return;
   }
 
   QString assetName = releaseAssetName();
   QString downloadUrl = QString("https://github.com/yt-dlp/yt-dlp/releases/latest/download/%1").arg(assetName);
+  logToFile(QStringLiteral("install() starting download: asset=%1 url=%2 cpuArch=%3")
+    .arg(assetName, downloadUrl, QSysInfo::currentCpuArchitecture()));
   startDownload(downloadUrl);
 }
 
@@ -202,6 +224,7 @@ void YtDlpManager::startDownload(QString const& downloadUrl)
   request.setRawHeader("User-Agent", "harbour-sailreel");
 
   m_activeReply = m_manager->get(request);
+  logToFile(QStringLiteral("startDownload() request sent to %1").arg(downloadUrl));
   connect(m_activeReply, &QNetworkReply::downloadProgress, this, &YtDlpManager::onAssetDownloadProgress);
   connect(m_activeReply, &QNetworkReply::finished, this, &YtDlpManager::onAssetDownloadFinished);
 }
@@ -219,10 +242,8 @@ void YtDlpManager::onAssetDownloadFinished()
   m_activeReply = nullptr;
 
   int httpStatus = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-  qDebug() << "yt-dlp asset download finished: error=" << reply->error()
-           << "errorString=" << reply->errorString()
-           << "httpStatus=" << httpStatus
-           << "url=" << reply->url();
+  logToFile(QStringLiteral("asset download finished: error=%1 errorString=%2 httpStatus=%3 url=%4")
+    .arg(reply->error()).arg(reply->errorString(), QString::number(httpStatus), reply->url().toString()));
 
   if (reply->error() != QNetworkReply::NoError) {
     QString message = reply->errorString();
@@ -237,7 +258,7 @@ void YtDlpManager::onAssetDownloadFinished()
 
   m_pendingData = reply->readAll();
   m_pendingAssetName = releaseAssetName();
-  qDebug() << "yt-dlp asset downloaded:" << m_pendingAssetName << "bytes=" << m_pendingData.size();
+  logToFile(QStringLiteral("asset downloaded: %1 bytes=%2").arg(m_pendingAssetName).arg(m_pendingData.size()));
   reply->deleteLater();
 
   if (m_pendingData.isEmpty()) {
@@ -265,9 +286,8 @@ void YtDlpManager::onChecksumReply()
   QString verifyError;
 
   int httpStatus = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-  qDebug() << "yt-dlp checksum reply: error=" << reply->error()
-           << "errorString=" << reply->errorString()
-           << "httpStatus=" << httpStatus;
+  logToFile(QStringLiteral("checksum reply: error=%1 errorString=%2 httpStatus=%3")
+    .arg(reply->error()).arg(reply->errorString(), QString::number(httpStatus)));
 
   if (reply->error() == QNetworkReply::NoError) {
     QByteArray checksumBody = reply->readAll();
@@ -276,9 +296,8 @@ void YtDlpManager::onChecksumReply()
 
     QByteArray hash = sha256(m_pendingData);
     QString expectedHash = QString::fromUtf8(hash.toHex());
-    qDebug() << "yt-dlp checksum: expecting entry for" << m_pendingAssetName
-              << "computedHash=" << expectedHash
-              << "checksumLines=" << checksumLines.size();
+    logToFile(QStringLiteral("checksum: expecting entry for %1 computedHash=%2 checksumLines=%3")
+      .arg(m_pendingAssetName, expectedHash, QString::number(checksumLines.size())));
 
     for (QString const& line : checksumLines) {
       int spaceIdx = line.indexOf(QStringLiteral("  "));
@@ -366,7 +385,8 @@ void YtDlpManager::onChecksumReply()
 
   m_pendingData.clear();
 
-  qDebug() << "yt-dlp install write: ok=" << ok << "path=" << path << "installError=" << installError;
+  logToFile(QStringLiteral("install write: ok=%1 path=%2 installError=%3")
+    .arg(ok ? QStringLiteral("true") : QStringLiteral("false"), path, installError));
 
   if (ok) {
     QFile::setPermissions(path, QFile::permissions(path)
