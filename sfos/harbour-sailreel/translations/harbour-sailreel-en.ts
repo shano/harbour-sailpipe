@@ -217,9 +217,8 @@
     </message>
     <message id="sailpipe_search_page-search_placeholder">
         <location filename="../qml/pages/SearchPage.qml" line="120"/>
-        <source>Search %0</source>
-        <oldsource>Search</oldsource>
-        <translation>Search %0</translation>
+        <source>Search YouTube</source>
+        <translation>Search YouTube</translation>
     </message>
     <message id="sailpipe_search_page-search_no_entries">
         <location filename="../qml/pages/SearchPage.qml" line="139"/>
@@ -353,8 +352,8 @@
     </message>
     <message id="sailpipe_playlist_page-header_playlist">
         <location filename="../qml/pages/PlaylistPage.qml" line="40"/>
-        <source>%0 Playlist</source>
-        <translation>%0 Playlist</translation>
+        <source>YouTube Playlist</source>
+        <translation>YouTube Playlist</translation>
     </message>
     <message id="sailpipe_playlist-no_entries">
         <location filename="../qml/pages/PlaylistPage.qml" line="61"/>
@@ -373,9 +372,8 @@
     </message>
     <message id="sailpipe_media-page_header_video">
         <location filename="../qml/pages/VideoPage.qml" line="55"/>
-        <source>%0 Video</source>
-        <oldsource>%1 Video</oldsource>
-        <translation>%0 Video</translation>
+        <source>YouTube Video</source>
+        <translation>YouTube Video</translation>
     </message>
     <message id="sailpipe_media-page_header_audio">
         <location filename="../qml/pages/VideoPage.qml" line="60"/>
@@ -390,8 +388,8 @@
     </message>
     <message id="sailpipe_channel-page_header_channel">
         <location filename="../qml/pages/ChannelPage.qml" line="63"/>
-        <source>%0 Channel</source>
-        <translation>%0 Channel</translation>
+        <source>YouTube Channel</source>
+        <translation>YouTube Channel</translation>
     </message>
     <message id="sailpipe_channel-page_header_user">
         <location filename="../qml/pages/ChannelPage.qml" line="67"/>

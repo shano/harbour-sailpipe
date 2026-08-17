@@ -18,6 +18,9 @@ env:
 jobs:
   build-rpm:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: ["aarch64", "armv7hl"]
     steps:
       - uses: actions/checkout@v4
 
@@ -31,14 +34,14 @@ jobs:
         id: build
         uses: R1tschY/sailfish-build-rpm@v1
         with:
-          arch: "aarch64"
+          arch: ${{ matrix.arch }}
           release: ${{ env.SFOS_RELEASE }}
           source-dir: "sfos/harbour-sailreel"
           fix-version: false
 
       - uses: actions/upload-artifact@v4
         with:
-          name: harbour-sailreel-rpm
+          name: harbour-sailreel-rpm-${{ matrix.arch }}
           path: RPMS
 
       - name: Attach RPM to release
