@@ -11,9 +11,11 @@ Item {
     property alias thumbnail: image.source
     property string name
     property string uploader
+    property string videoUrl
     property bool controlsvisible: false
     property int skipTimeShort: 10
     property int skipTimeLong: 60
+    property bool resumed: false
 
     readonly property int controlgap: 2 * Theme.paddingLarge
     readonly property bool playing: (media.playbackState == MediaPlayer.PlayingState)
@@ -136,6 +138,16 @@ Item {
         onPositionChanged: {
             mediaslider.value = position
         }
+        onDurationChanged: {
+            if (!root.resumed && (duration > 0) && (root.videoUrl.length > 0)) {
+                root.resumed = true;
+                var resumeMs = WatchHistory.positionMs(root.videoUrl);
+                if ((resumeMs > 3000) && (resumeMs < duration * 0.95)) {
+                    seek(resumeMs);
+                    mediaslider.value = resumeMs;
+                }
+            }
+        }
         onStatusChanged: {
             if (status == MediaPlayer.EndOfMedia) {
                 seek(0);
@@ -215,6 +227,24 @@ Item {
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
             visible: !controllable || forceVisible || !media.hasVideo
+        }
+    }
+
+    Timer {
+        id: progressSaveTimer
+        interval: 5000
+        running: playing
+        repeat: true
+        onTriggered: {
+            if ((root.videoUrl.length > 0) && (media.duration > 0)) {
+                WatchHistory.setProgress(root.videoUrl, media.position, media.duration);
+            }
+        }
+    }
+
+    Component.onDestruction: {
+        if ((root.videoUrl.length > 0) && (media.duration > 0) && (media.position > 0)) {
+            WatchHistory.setProgress(root.videoUrl, media.position, media.duration);
         }
     }
 

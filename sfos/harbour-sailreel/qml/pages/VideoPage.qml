@@ -81,6 +81,7 @@ Page {
                     thumbnail: root.thumbnail
                     name: root.name
                     uploader: root.mediaInfo.uploaderName
+                    videoUrl: root.url
 
                     onPlaybackError: {
                         root.errorMessage = message;

@@ -20,6 +20,7 @@
 #include "mediajunction.h"
 #include "subscriptionmanager.h"
 #include "ytdlpmanager.h"
+#include "watchhistorymanager.h"
 
 int main(int argc, char *argv[])
 {
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
   MediaJunction::instantiate();
   SubscriptionManager::instantiate();
   YtDlpManager::instantiate();
+  WatchHistoryManager::instantiate();
 
   qmlRegisterType<Extractor>("harbour.sailpipe.extractor", 1, 0, "Extractor");
   qmlRegisterType<SearchModel>("harbour.sailpipe.extractor", 1, 0, "SearchModel");
@@ -56,6 +58,7 @@ int main(int argc, char *argv[])
   qmlRegisterSingletonType<MediaJunction>("harbour.sailpipe.extractor", 1, 0, "MediaJunction", MediaJunction::provider);
   qmlRegisterSingletonType<SubscriptionManager>("harbour.sailpipe.extractor", 1, 0, "Subscriptions", SubscriptionManager::provider);
   qmlRegisterSingletonType<YtDlpManager>("harbour.sailpipe.extractor", 1, 0, "YtDlp", YtDlpManager::provider);
+  qmlRegisterSingletonType<WatchHistoryManager>("harbour.sailpipe.extractor", 1, 0, "WatchHistory", WatchHistoryManager::provider);
 
   engine->addImageProvider(QLatin1String("sailpipe"), new ImageProvider());
 

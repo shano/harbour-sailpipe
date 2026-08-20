@@ -8,6 +8,7 @@ Image {
 
     property int infoType
     property bool pressed
+    property real watchedFraction: 0
 
     fillMode: Image.PreserveAspectCrop
     verticalAlignment: Image.AlignVCenter
@@ -51,5 +52,16 @@ Image {
         fillMode: Image.PreserveAspectFit
         source: "image://theme/icon-m-media-playlists"
         highlighted: thumbnail.pressed
+    }
+
+    // Watched-progress bar, YouTube-style: a thin bar along the bottom
+    // edge showing how far into the video playback last got to.
+    Rectangle {
+        visible: (watchedFraction > 0.02) && (thumbnail.status === Image.Ready)
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        height: Theme.paddingSmall / 2
+        width: parent.width * Math.min(watchedFraction, 1.0)
+        color: Theme.highlightColor
     }
 }

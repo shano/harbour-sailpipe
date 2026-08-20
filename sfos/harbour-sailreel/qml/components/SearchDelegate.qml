@@ -38,6 +38,7 @@ BackgroundItem {
             width: Theme.iconSizeLarge * iconScale
             height: Theme.iconSizeMedium * iconScale
             pressed: delegate.pressed
+            watchedFraction: (delegate.infoType === SearchItem.Stream) ? WatchHistory.fractionFor(delegate.url) : 0
         }
 
         Column {

@@ -62,6 +62,7 @@ target_sources(harbour-sailreel PRIVATE
     "src/dbusadapter.cpp"
     "src/mediajunction.cpp"
     "src/subscriptionmanager.cpp"
+    "src/watchhistorymanager.cpp"
     "src/ytdlpmanager.cpp"
     "src/ytdlpprocess.cpp"
     "src/ytdlptranslate.cpp"
