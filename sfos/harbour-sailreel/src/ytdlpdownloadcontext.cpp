@@ -55,6 +55,11 @@ void YtDlpDownloadContext::start()
 
   QStringList args;
   args << QStringLiteral("-f") << QStringLiteral("best[ext=mp4]/best")
+       // See YtDlpBackend::downloadExtract: android_vr's URLs currently
+       // 403 for anything but a PO token we have no way to provide
+       // (yt-dlp/yt-dlp#17348, #16150) — this download invocation is
+       // subject to the same client-selection behaviour.
+       << QStringLiteral("--extractor-args") << QStringLiteral("youtube:player_client=default,-android_vr")
        << QStringLiteral("-o") << m_targetPath
        << QStringLiteral("--newline")
        << QStringLiteral("--progress-template") << QStringLiteral("download:PROGRESS %(progress._percent_str)s")
