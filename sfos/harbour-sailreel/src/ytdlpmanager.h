@@ -18,6 +18,7 @@ class YtDlpManager : public QObject
   Q_PROPERTY(QString installedVersion READ installedVersion NOTIFY installedVersionChanged)
   Q_PROPERTY(QString latestVersion READ latestVersion NOTIFY latestVersionChanged)
   Q_PROPERTY(float progress READ progress NOTIFY progressChanged)
+  Q_PROPERTY(bool sponsorBlockEnabled READ sponsorBlockEnabled WRITE setSponsorBlockEnabled NOTIFY sponsorBlockEnabledChanged)
 
 public:
   enum Status {
@@ -42,6 +43,11 @@ public:
   QString installedVersion() const;
   QString latestVersion() const;
   float progress() const;
+  bool sponsorBlockEnabled() const;
+  void setSponsorBlockEnabled(bool enabled);
+
+  // The categories passed to yt-dlp's --sponsorblock-remove when enabled.
+  static QString sponsorBlockCategories();
 
 public slots:
   void refreshInstalledVersion();
@@ -54,6 +60,7 @@ signals:
   void installedVersionChanged();
   void latestVersionChanged();
   void progressChanged();
+  void sponsorBlockEnabledChanged();
   void errorOccurred(QString message);
 
 private slots:
@@ -84,6 +91,7 @@ private:
   QFutureWatcher<QString> m_versionWatcher;
   QByteArray m_pendingData;
   QString m_pendingAssetName;
+  bool m_sponsorBlockEnabled;
 };
 
 #endif // YTDLPMANAGER_H

@@ -11,6 +11,7 @@
 #include <QJsonArray>
 #include <QProcess>
 #include <QNetworkRequest>
+#include <QSettings>
 #include <QUrlQuery>
 #include <QCryptographicHash>
 #include <QtConcurrent/QtConcurrent>
@@ -18,6 +19,7 @@
 #include "ytdlpmanager.h"
 
 #define GITHUB_LATEST_RELEASE_URL "https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest"
+#define SPONSORBLOCK_CATEGORIES "sponsor,selfpromo,interaction"
 
 // Sailfish's qDebug() output goes to journald via libsailfishapp's message
 // handler, which isn't reliably readable without systemd-journal group
@@ -35,6 +37,12 @@ static void logToFile(QString const& line)
   qDebug() << line;
 }
 
+static QString settingsPath()
+{
+  QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  return dataDir + QStringLiteral("/settings.ini");
+}
+
 YtDlpManager* YtDlpManager::m_instance = nullptr;
 
 YtDlpManager::YtDlpManager(QObject *parent)
@@ -47,9 +55,18 @@ YtDlpManager::YtDlpManager(QObject *parent)
   , m_progress(0.0)
   , m_threadPool()
   , m_versionWatcher()
+  , m_sponsorBlockEnabled(false)
 {
   connect(&m_versionWatcher, &QFutureWatcher<QString>::finished, this, &YtDlpManager::onVersionCheckFinished);
   refreshInstalledVersion();
+
+  // Explicit path inside AppDataLocation rather than QSettings' default
+  // org/app-derived ~/.config/<org>/<app>.conf — that path isn't confirmed
+  // whitelisted by sailjail (see the earlier OrganizationName sandbox
+  // write-failure this session), whereas AppDataLocation already is
+  // (SubscriptionManager, debug.log, and the yt-dlp binary all write there).
+  QSettings settings(settingsPath(), QSettings::IniFormat);
+  m_sponsorBlockEnabled = settings.value(QStringLiteral("sponsorBlockEnabled"), false).toBool();
 }
 
 void YtDlpManager::instantiate(QObject* parent)
@@ -108,6 +125,26 @@ QString YtDlpManager::latestVersion() const
 float YtDlpManager::progress() const
 {
   return m_progress;
+}
+
+bool YtDlpManager::sponsorBlockEnabled() const
+{
+  return m_sponsorBlockEnabled;
+}
+
+void YtDlpManager::setSponsorBlockEnabled(bool enabled)
+{
+  if (m_sponsorBlockEnabled != enabled) {
+    m_sponsorBlockEnabled = enabled;
+    QSettings settings(settingsPath(), QSettings::IniFormat);
+    settings.setValue(QStringLiteral("sponsorBlockEnabled"), enabled);
+    emit sponsorBlockEnabledChanged();
+  }
+}
+
+QString YtDlpManager::sponsorBlockCategories()
+{
+  return QStringLiteral(SPONSORBLOCK_CATEGORIES);
 }
 
 void YtDlpManager::setStatus(Status status)

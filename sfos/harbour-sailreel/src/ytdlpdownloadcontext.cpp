@@ -62,8 +62,13 @@ void YtDlpDownloadContext::start()
        << QStringLiteral("--extractor-args") << QStringLiteral("youtube:player_client=default,-android_vr")
        << QStringLiteral("-o") << m_targetPath
        << QStringLiteral("--newline")
-       << QStringLiteral("--progress-template") << QStringLiteral("download:PROGRESS %(progress._percent_str)s")
-       << m_sourceUrl;
+       << QStringLiteral("--progress-template") << QStringLiteral("download:PROGRESS %(progress._percent_str)s");
+
+  if (YtDlpManager::getInstance().sponsorBlockEnabled()) {
+    args << QStringLiteral("--sponsorblock-remove") << YtDlpManager::sponsorBlockCategories();
+  }
+
+  args << m_sourceUrl;
 
   m_process->start(YtDlpManager::binaryPath(), args);
 }

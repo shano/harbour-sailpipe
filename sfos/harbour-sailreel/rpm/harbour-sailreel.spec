@@ -7,6 +7,7 @@ License:    LICENSE
 URL:        https://github.com/shano/harbour-sailreel
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   ffmpeg
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)

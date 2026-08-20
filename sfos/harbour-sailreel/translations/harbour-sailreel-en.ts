@@ -851,5 +851,20 @@
         <source>This video could not be played</source>
         <translation>This video could not be played</translation>
     </message>
+    <message id="sailpipe_settings-section_sponsorblock">
+        <location filename="../qml/pages/SettingsPage.qml" line="120"/>
+        <source>SponsorBlock</source>
+        <translation>SponsorBlock</translation>
+    </message>
+    <message id="sailpipe_settings-sponsorblock_description">
+        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
+        <source>Removes sponsor, self-promo, and &quot;like/subscribe&quot; segments from downloaded videos, using the community-maintained SponsorBlock database. Only applies to downloads, not in-app playback.</source>
+        <translation>Removes sponsor, self-promo, and &quot;like/subscribe&quot; segments from downloaded videos, using the community-maintained SponsorBlock database. Only applies to downloads, not in-app playback.</translation>
+    </message>
+    <message id="sailpipe_settings-sponsorblock_toggle">
+        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <source>Remove sponsor segments from downloads</source>
+        <translation>Remove sponsor segments from downloads</translation>
+    </message>
 </context>
 </TS>

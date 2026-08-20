@@ -116,6 +116,33 @@ Page {
                 }
             }
 
+            SectionHeader {
+                //% "SponsorBlock"
+                text: qsTrId("sailpipe_settings-section_sponsorblock")
+            }
+
+            Label {
+                //% "Removes sponsor, self-promo, and \"like/subscribe\" segments from downloaded videos, using the community-maintained SponsorBlock database. Only applies to downloads, not in-app playback."
+                text: qsTrId("sailpipe_settings-sponsorblock_description")
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                anchors {
+                    leftMargin: Theme.horizontalPageMargin
+                    rightMargin: Theme.horizontalPageMargin
+                    left: parent.left
+                    right: parent.right
+                }
+            }
+
+            TextSwitch {
+                //% "Remove sponsor segments from downloads"
+                text: qsTrId("sailpipe_settings-sponsorblock_toggle")
+                checked: YtDlp.sponsorBlockEnabled
+                onCheckedChanged: {
+                    YtDlp.sponsorBlockEnabled = checked;
+                }
+            }
+
             Connections {
                 target: YtDlp
                 onErrorOccurred: {
