@@ -36,7 +36,11 @@ Page {
         repeat: false
         onTriggered: {
             searchModel.searchTerm = searchTerm;
-            searchModel.search(extractor);
+            if (searchTerm.length > 0) {
+                searchModel.search(extractor);
+            } else {
+                searchModel.clear();
+            }
         }
     }
 
