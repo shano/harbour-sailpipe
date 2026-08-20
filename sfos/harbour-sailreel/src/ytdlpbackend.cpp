@@ -118,9 +118,14 @@ QJsonDocument YtDlpBackend::downloadExtract(QJsonObject const& in)
 {
   QString url = in[QStringLiteral("url")].toString();
 
+  // android_vr currently requires a GVS PO token for any format other than
+  // 18, and even format 18 has been intermittently 403ing lately
+  // (confirmed on-device, matches yt-dlp/yt-dlp#17348 and #16150) — exclude
+  // it and let yt-dlp's normal client fallback chain pick a working one.
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("-f")
     << QStringLiteral("best[ext=mp4]/best")
+    << QStringLiteral("--extractor-args") << QStringLiteral("youtube:player_client=default,-android_vr")
     << QStringLiteral("-J")
     << url);
 
