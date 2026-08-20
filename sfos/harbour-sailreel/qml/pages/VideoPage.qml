@@ -11,6 +11,7 @@ Page {
     property string url
     property MediaInfo mediaInfo: MediaInfo { id: mediaInfo }
     property alias source: mediaInfo.content
+    property string errorMessage
 
     Component.onCompleted: {
         extractor.downloadExtract(mediaInfo, url);
@@ -22,6 +23,13 @@ Page {
 
     Component.onDestruction: {
         MediaJunction.controllable = false;
+    }
+
+    Connections {
+        target: extractor
+        onErrorOccurred: {
+            root.errorMessage = message;
+        }
     }
 
     SilicaListView {
@@ -73,6 +81,10 @@ Page {
                     thumbnail: root.thumbnail
                     name: root.name
                     uploader: root.mediaInfo.uploaderName
+
+                    onPlaybackError: {
+                        root.errorMessage = message;
+                    }
                 }
             }
 
@@ -161,6 +173,22 @@ Page {
             //% "There are no comments here"
             hintText: qsTrId("sailpipe_comments-no_entries_hint")
         }
+    }
+
+    Label {
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            leftMargin: Theme.horizontalPageMargin
+            rightMargin: Theme.horizontalPageMargin
+            bottomMargin: Theme.paddingLarge
+        }
+        text: root.errorMessage
+        visible: text.length > 0
+        wrapMode: Text.WordWrap
+        color: Theme.highlightColor
+        horizontalAlignment: Text.AlignHCenter
     }
 }
 

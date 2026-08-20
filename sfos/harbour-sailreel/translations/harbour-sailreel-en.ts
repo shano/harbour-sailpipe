@@ -846,5 +846,10 @@
         <source>Removing</source>
         <translation>Removing</translation>
     </message>
+    <message id="sailpipe_video_player-playback_error">
+        <location filename="../qml/components/VideoPlayer.qml" line="146"/>
+        <source>This video could not be played</source>
+        <translation>This video could not be played</translation>
+    </message>
 </context>
 </TS>

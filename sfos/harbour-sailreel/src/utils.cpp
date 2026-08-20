@@ -1,5 +1,10 @@
 #include <sailfishapp.h>
 
+#include <QDateTime>
+#include <QDebug>
+#include <QDir>
+#include <QFile>
+#include <QStandardPaths>
 #include <QTextStream>
 #include <silicatheme.h>
 #include <math.h>
@@ -87,6 +92,18 @@ QString Utils::getImageUrl(QString const &id) const
   Silica::Theme *silicaTheme = Silica::Theme::instance();
   QString suffix = silicaTheme->colorScheme() == Silica::Theme::DarkOnLight ? QString::fromLatin1("-light") : QString();
   return m_imageDir + id + suffix + QString::fromLatin1(".png");
+}
+
+void Utils::logDebug(QString const& message)
+{
+  QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  QDir().mkpath(dataDir);
+  QFile logFile(dataDir + QStringLiteral("/debug.log"));
+  if (logFile.open(QIODevice::Append | QIODevice::Text)) {
+    QTextStream stream(&logFile);
+    stream << QDateTime::currentDateTime().toString(Qt::ISODate) << ' ' << message << '\n';
+  }
+  qDebug() << message;
 }
 
 QString Utils::replayIcon() const

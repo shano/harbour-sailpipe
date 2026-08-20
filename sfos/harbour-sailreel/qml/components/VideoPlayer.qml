@@ -127,6 +127,8 @@ Item {
         controlsvisible = false
     }
 
+    signal playbackError(string message)
+
     MediaPlayer {
         id: media
         autoPlay: false
@@ -140,6 +142,20 @@ Item {
                 forceVisible = true;
                 openControls();
             }
+            // MediaPlayer.error's own signal doesn't always fire for a
+            // stream URL that fails to load at all (as opposed to failing
+            // mid-playback) — InvalidMedia here is the only reliable signal
+            // that the resolved yt-dlp URL genuinely couldn't be played.
+            if (status == MediaPlayer.InvalidMedia) {
+                Utils.logDebug("VideoPlayer: InvalidMedia for source=" + media.source + " errorString=" + media.errorString);
+                //% "This video could not be played"
+                root.playbackError(media.errorString.length > 0 ? media.errorString : qsTrId("sailpipe_video_player-playback_error"));
+            }
+        }
+        onError: {
+            Utils.logDebug("VideoPlayer: MediaPlayer error=" + error + " errorString=" + errorString);
+            //% "This video could not be played"
+            root.playbackError(errorString.length > 0 ? errorString : qsTrId("sailpipe_video_player-playback_error"));
         }
     }
 

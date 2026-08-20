@@ -22,6 +22,7 @@ public:
   Q_INVOKABLE static QDateTime epochToDateTime(qint64 epoch);
   Q_INVOKABLE QString getImageDir() const;
   Q_INVOKABLE QString getImageUrl(QString const &id) const;
+  Q_INVOKABLE static void logDebug(QString const& message);
 
   QString replayIcon() const;
 

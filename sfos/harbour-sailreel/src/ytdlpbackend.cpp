@@ -4,6 +4,7 @@
 #include <QtConcurrent/QtConcurrent>
 #include <algorithm>
 
+#include "utils.h"
 #include "ytdlpprocess.h"
 #include "ytdlptranslate.h"
 #include "ytdlpbackend.h"
@@ -124,10 +125,16 @@ QJsonDocument YtDlpBackend::downloadExtract(QJsonObject const& in)
     << url);
 
   if (!process.success) {
+    Utils::logDebug(QStringLiteral("downloadExtract failed for %1: %2").arg(url, process.errorMessage));
     return errorResult(process.errorMessage);
   }
 
-  QJsonObject result = YtDlpTranslate::mediaInfo(process.output.object());
+  QJsonObject rawInfo = process.output.object();
+  Utils::logDebug(QStringLiteral("downloadExtract succeeded for %1: format_id=%2 ext=%3 protocol=%4 url=%5")
+    .arg(url, rawInfo[QStringLiteral("format_id")].toString(), rawInfo[QStringLiteral("ext")].toString(),
+         rawInfo[QStringLiteral("protocol")].toString(), rawInfo[QStringLiteral("url")].toString()));
+
+  QJsonObject result = YtDlpTranslate::mediaInfo(rawInfo);
   return QJsonDocument(result);
 }
 
