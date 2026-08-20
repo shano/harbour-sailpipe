@@ -858,13 +858,13 @@
     </message>
     <message id="sailpipe_settings-sponsorblock_description">
         <location filename="../qml/pages/SettingsPage.qml" line="125"/>
-        <source>Removes sponsor, self-promo, and &quot;like/subscribe&quot; segments from downloaded videos, using the community-maintained SponsorBlock database. Only applies to downloads, not in-app playback.</source>
-        <translation>Removes sponsor, self-promo, and &quot;like/subscribe&quot; segments from downloaded videos, using the community-maintained SponsorBlock database. Only applies to downloads, not in-app playback.</translation>
+        <source>Removes sponsor, self-promo, and &quot;like/subscribe&quot; segments from downloaded videos, and skips them automatically during in-app playback, using the community-maintained SponsorBlock database.</source>
+        <translation>Removes sponsor, self-promo, and &quot;like/subscribe&quot; segments from downloaded videos, and skips them automatically during in-app playback, using the community-maintained SponsorBlock database.</translation>
     </message>
     <message id="sailpipe_settings-sponsorblock_toggle">
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
-        <source>Remove sponsor segments from downloads</source>
-        <translation>Remove sponsor segments from downloads</translation>
+        <source>Remove sponsor segments</source>
+        <translation>Remove sponsor segments</translation>
     </message>
     <message id="sailpipe_extractor-error_temporarily_unavailable">
         <location filename="../src/extractor.cpp" line="52"/>

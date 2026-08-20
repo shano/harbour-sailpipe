@@ -29,6 +29,7 @@ target_include_directories(harbour-sailreel PRIVATE
 )
 target_link_libraries(harbour-sailreel
     Qt5::Quick
+    Qt5::Network
     ${SAILFISH_LDFLAGS}
     ${SILICA_LIBRARIES}
     ${TRANSFERENGINE_LIBRARIES}
@@ -68,6 +69,7 @@ target_sources(harbour-sailreel PRIVATE
     "src/ytdlptranslate.cpp"
     "src/ytdlpbackend.cpp"
     "src/ytdlpdownloadcontext.cpp"
+    "src/sponsorblockclient.cpp"
 )
 
 # Update the translations

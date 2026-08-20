@@ -21,6 +21,7 @@
 #include "subscriptionmanager.h"
 #include "ytdlpmanager.h"
 #include "watchhistorymanager.h"
+#include "sponsorblockclient.h"
 
 int main(int argc, char *argv[])
 {
@@ -39,6 +40,7 @@ int main(int argc, char *argv[])
   SubscriptionManager::instantiate();
   YtDlpManager::instantiate();
   WatchHistoryManager::instantiate();
+  SponsorBlockClient::instantiate();
 
   qmlRegisterType<Extractor>("harbour.sailpipe.extractor", 1, 0, "Extractor");
   qmlRegisterType<SearchModel>("harbour.sailpipe.extractor", 1, 0, "SearchModel");
@@ -59,6 +61,7 @@ int main(int argc, char *argv[])
   qmlRegisterSingletonType<SubscriptionManager>("harbour.sailpipe.extractor", 1, 0, "Subscriptions", SubscriptionManager::provider);
   qmlRegisterSingletonType<YtDlpManager>("harbour.sailpipe.extractor", 1, 0, "YtDlp", YtDlpManager::provider);
   qmlRegisterSingletonType<WatchHistoryManager>("harbour.sailpipe.extractor", 1, 0, "WatchHistory", WatchHistoryManager::provider);
+  qmlRegisterSingletonType<SponsorBlockClient>("harbour.sailpipe.extractor", 1, 0, "SponsorBlock", SponsorBlockClient::provider);
 
   engine->addImageProvider(QLatin1String("sailpipe"), new ImageProvider());
 

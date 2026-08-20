@@ -122,7 +122,7 @@ Page {
             }
 
             Label {
-                //% "Removes sponsor, self-promo, and \"like/subscribe\" segments from downloaded videos, using the community-maintained SponsorBlock database. Only applies to downloads, not in-app playback."
+                //% "Removes sponsor, self-promo, and \"like/subscribe\" segments from downloaded videos, and skips them automatically during in-app playback, using the community-maintained SponsorBlock database."
                 text: qsTrId("sailpipe_settings-sponsorblock_description")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
@@ -135,7 +135,7 @@ Page {
             }
 
             TextSwitch {
-                //% "Remove sponsor segments from downloads"
+                //% "Remove sponsor segments"
                 text: qsTrId("sailpipe_settings-sponsorblock_toggle")
                 checked: YtDlp.sponsorBlockEnabled
                 onCheckedChanged: {

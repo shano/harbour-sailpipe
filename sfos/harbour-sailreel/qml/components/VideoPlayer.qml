@@ -16,6 +16,34 @@ Item {
     property int skipTimeShort: 10
     property int skipTimeLong: 60
     property bool resumed: false
+    property var sponsorSegments: []
+
+    onVideoUrlChanged: {
+        sponsorSegments = [];
+        if (YtDlp.sponsorBlockEnabled && (videoUrl.length > 0)) {
+            SponsorBlock.fetchSegments(videoUrl);
+        }
+    }
+
+    Connections {
+        target: SponsorBlock
+        onSegmentsReady: {
+            if (videoUrl === root.videoUrl) {
+                root.sponsorSegments = segments;
+            }
+        }
+    }
+
+    function skipSponsorSegment(positionMs) {
+        for (var i = 0; i < sponsorSegments.length; i++) {
+            var segment = sponsorSegments[i];
+            if ((positionMs >= segment.startMs) && (positionMs < segment.endMs - 250)) {
+                media.seek(segment.endMs);
+                mediaslider.value = segment.endMs;
+                return;
+            }
+        }
+    }
 
     readonly property int controlgap: 2 * Theme.paddingLarge
     readonly property bool playing: (media.playbackState == MediaPlayer.PlayingState)
@@ -137,6 +165,7 @@ Item {
         autoLoad: true
         onPositionChanged: {
             mediaslider.value = position
+            root.skipSponsorSegment(position)
         }
         onDurationChanged: {
             if (!root.resumed && (duration > 0) && (root.videoUrl.length > 0)) {
