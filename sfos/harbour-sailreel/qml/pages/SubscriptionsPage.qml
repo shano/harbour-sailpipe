@@ -12,14 +12,14 @@ Page {
         refresh();
     }
 
-    function refresh() {
+    function refresh(forceRefresh) {
         var urls = Subscriptions.allUrls();
         if (urls.length === 0) {
             feedModel.clear();
             return;
         }
         feedModel.loading = true;
-        extractor.getSubscriptionFeed(feedModel, urls);
+        extractor.getSubscriptionFeed(feedModel, urls, !!forceRefresh);
     }
 
     SilicaListView {
@@ -44,7 +44,7 @@ Page {
                 //% "Refresh"
                 text: qsTrId("sailpipe_subscriptions_page-menu_refresh")
                 onClicked: {
-                    root.refresh();
+                    root.refresh(true);
                 }
             }
         }

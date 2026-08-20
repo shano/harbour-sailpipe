@@ -452,7 +452,7 @@ void Extractor::getMorePlaylistItems(PlaylistModel* playlistModel, QString const
   watcher->setFuture(invokeAsync("getMorePlaylistItems", &document));
 }
 
-void Extractor::getSubscriptionFeed(SearchModel* feedModel, QStringList const& channelUrls)
+void Extractor::getSubscriptionFeed(SearchModel* feedModel, QStringList const& channelUrls, bool forceRefresh)
 {
   QJsonObject json;
   QJsonArray urls;
@@ -460,6 +460,7 @@ void Extractor::getSubscriptionFeed(SearchModel* feedModel, QStringList const& c
     urls.append(url);
   }
   json["channelUrls"] = urls;
+  json["forceRefresh"] = forceRefresh;
   QJsonDocument document(json);
 
   QFutureWatcher<QJsonDocument>* watcher = new QFutureWatcher<QJsonDocument>();

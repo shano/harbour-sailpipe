@@ -1,5 +1,10 @@
+#include <QDateTime>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QStandardPaths>
 #include <QVector>
 #include <QtConcurrent/QtConcurrent>
 #include <algorithm>
@@ -14,6 +19,7 @@
 #define CHANNEL_PAGE_SIZE 30
 #define PLAYLIST_PAGE_SIZE 30
 #define SUBSCRIPTION_FEED_PER_CHANNEL 10
+#define SUBSCRIPTION_CACHE_TTL_SECS 3600
 
 static QJsonDocument errorResult(QString const& message)
 {
@@ -358,11 +364,63 @@ qint64 uploadEpoch(QJsonObject const& item)
   return static_cast<qint64>(item[QStringLiteral("uploadDate")].toObject()[QStringLiteral("offsetDateTime")].toDouble());
 }
 
+QString subscriptionCachePath()
+{
+  QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  return dataDir + QStringLiteral("/subscriptions_cache.json");
+}
+
+// Returns a null array if there's no cache, or it's older than
+// SUBSCRIPTION_CACHE_TTL_SECS.
+QJsonArray readSubscriptionCache()
+{
+  QFile file(subscriptionCachePath());
+  if (!file.open(QIODevice::ReadOnly)) {
+    return QJsonArray();
+  }
+
+  QJsonObject cache = QJsonDocument::fromJson(file.readAll()).object();
+  qint64 cachedAt = static_cast<qint64>(cache[QStringLiteral("cachedAt")].toDouble());
+  qint64 age = QDateTime::currentSecsSinceEpoch() - cachedAt;
+  if (age > SUBSCRIPTION_CACHE_TTL_SECS) {
+    return QJsonArray();
+  }
+
+  return cache[QStringLiteral("items")].toArray();
+}
+
+void writeSubscriptionCache(QJsonArray const& items)
+{
+  QString path = subscriptionCachePath();
+  QDir().mkpath(QFileInfo(path).absolutePath());
+
+  QJsonObject cache;
+  cache[QStringLiteral("cachedAt")] = QDateTime::currentSecsSinceEpoch();
+  cache[QStringLiteral("items")] = items;
+
+  QFile file(path);
+  if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+    file.write(QJsonDocument(cache).toJson(QJsonDocument::Compact));
+  }
+}
+
 } // namespace
 
 QJsonDocument YtDlpBackend::getSubscriptionFeed(QJsonObject const& in)
 {
   QJsonArray channelUrls = in[QStringLiteral("channelUrls")].toArray();
+  bool forceRefresh = in[QStringLiteral("forceRefresh")].toBool(false);
+
+  if (!forceRefresh) {
+    QJsonArray cached = readSubscriptionCache();
+    if (!cached.isEmpty()) {
+      QJsonObject cachedResult;
+      cachedResult[QStringLiteral("relatedItems")] = cached;
+      cachedResult[QStringLiteral("itemsList")] = cached;
+      cachedResult[QStringLiteral("nextPage")] = QJsonObject();
+      return QJsonDocument(cachedResult);
+    }
+  }
 
   // Each subscribed channel is a separate yt-dlp subprocess invocation;
   // running them concurrently keeps the wait roughly at the slowest single
@@ -394,6 +452,8 @@ QJsonDocument YtDlpBackend::getSubscriptionFeed(QJsonObject const& in)
   for (QJsonObject const& item : sortable) {
     sortedItems.append(item);
   }
+
+  writeSubscriptionCache(sortedItems);
 
   QJsonObject result;
   result[QStringLiteral("relatedItems")] = sortedItems;
