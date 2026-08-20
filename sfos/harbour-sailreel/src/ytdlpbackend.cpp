@@ -381,7 +381,7 @@ QJsonArray readSubscriptionCache()
 
   QJsonObject cache = QJsonDocument::fromJson(file.readAll()).object();
   qint64 cachedAt = static_cast<qint64>(cache[QStringLiteral("cachedAt")].toDouble());
-  qint64 age = QDateTime::currentSecsSinceEpoch() - cachedAt;
+  qint64 age = (QDateTime::currentMSecsSinceEpoch() / 1000) - cachedAt;
   if (age > SUBSCRIPTION_CACHE_TTL_SECS) {
     return QJsonArray();
   }
@@ -395,7 +395,7 @@ void writeSubscriptionCache(QJsonArray const& items)
   QDir().mkpath(QFileInfo(path).absolutePath());
 
   QJsonObject cache;
-  cache[QStringLiteral("cachedAt")] = QDateTime::currentSecsSinceEpoch();
+  cache[QStringLiteral("cachedAt")] = static_cast<qint64>(QDateTime::currentMSecsSinceEpoch() / 1000);
   cache[QStringLiteral("items")] = items;
 
   QFile file(path);
