@@ -125,7 +125,7 @@ QJsonDocument YtDlpBackend::downloadExtract(QJsonObject const& in)
   YtDlpProcess::Result process = YtDlpProcess::run(QStringList()
     << QStringLiteral("-f")
     << QStringLiteral("best[ext=mp4]/best")
-    << QStringLiteral("--extractor-args") << QStringLiteral("youtube:player_client=default,-android_vr")
+    << QStringLiteral("--extractor-args") << QStringLiteral("youtube:player_client=all,-android_vr")
     << QStringLiteral("-J")
     << url);
 
