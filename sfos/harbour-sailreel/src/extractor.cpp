@@ -38,12 +38,29 @@ QFuture<QJsonDocument> Extractor::invokeAsync(QString const methodName, QJsonDoc
   });
 }
 
+namespace {
+
+// yt-dlp's client-rotation errors are transient (its supported client list
+// drifts release-to-release and self-heals on the next yt-dlp auto-update)
+// — surface something a user can act on instead of raw yt-dlp stderr.
+QString friendlyErrorMessage(QString const& rawError)
+{
+  if (rawError.contains(QStringLiteral("No player clients have been requested"))
+      || rawError.contains(QStringLiteral("Forbidden"))) {
+    //% "Video temporarily unavailable, please try again shortly"
+    return qtTrId("sailpipe_extractor-error_temporarily_unavailable");
+  }
+  return rawError;
+}
+
+} // namespace
+
 void Extractor::emitErrorIfPresent(QJsonDocument const& result)
 {
   if (result.isObject()) {
     QJsonObject obj = result.object();
     if (obj.contains(QStringLiteral("error"))) {
-      emit errorOccurred(obj[QStringLiteral("error")].toString());
+      emit errorOccurred(friendlyErrorMessage(obj[QStringLiteral("error")].toString()));
     }
   }
 }

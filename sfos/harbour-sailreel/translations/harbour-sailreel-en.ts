@@ -866,5 +866,10 @@
         <source>Remove sponsor segments from downloads</source>
         <translation>Remove sponsor segments from downloads</translation>
     </message>
+    <message id="sailpipe_extractor-error_temporarily_unavailable">
+        <location filename="../src/extractor.cpp" line="52"/>
+        <source>Video temporarily unavailable, please try again shortly</source>
+        <translation>Video temporarily unavailable, please try again shortly</translation>
+    </message>
 </context>
 </TS>
