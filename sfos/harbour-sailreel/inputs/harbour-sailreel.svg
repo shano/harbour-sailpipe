@@ -5,11 +5,35 @@
    height="86px"
    viewBox="0 0 86 86"
    xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3FC6F1" />
+      <stop offset="100%" stop-color="#0A6FB0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Off-circle badge: full circle with the bottom-right quadrant
+       replaced by a concave scoop, matching the Sailfish/Harbour icon
+       convention (Camera, BitSailor, OSMScout, SailCat all use this). -->
   <path
-     d="M 30 6 Q 80 44 66 80 L 34 80 Z"
-     fill="#0AA1DD" />
-  <rect x="28" y="78" width="4" height="8" rx="1" fill="#294B61" />
+     d="M 81 43 A 38 38 0 1 1 43 5 A 38 38 0 0 1 81 43 Z"
+     fill="url(#badge)" />
   <path
-     d="M 44 34 L 44 58 L 61 46 Z"
-     fill="#FFFFFF" />
+     d="M 43 81 A 26 26 0 0 0 69 55 A 38 38 0 0 0 43 81 Z"
+     fill="#08517F" />
+
+  <!-- Film reel: a punched disc (evenodd) with four sprocket holes in a
+       diamond layout plus a centre hub, echoing the reference artwork's
+       reel glyph. -->
+  <path
+     fill-rule="evenodd"
+     fill="#FFFFFF"
+     d="
+       M 60 40 A 20 20 0 1 0 20 40 A 20 20 0 1 0 60 40 Z
+       M 47.5 29 A 7.5 7.5 0 1 0 32.5 29 A 7.5 7.5 0 1 0 47.5 29 Z
+       M 47.5 51 A 7.5 7.5 0 1 0 32.5 51 A 7.5 7.5 0 1 0 47.5 51 Z
+       M 58.5 40 A 7.5 7.5 0 1 0 43.5 40 A 7.5 7.5 0 1 0 58.5 40 Z
+       M 36.5 40 A 7.5 7.5 0 1 0 21.5 40 A 7.5 7.5 0 1 0 36.5 40 Z
+       M 43 40 A 3 3 0 1 0 37 40 A 3 3 0 1 0 43 40 Z
+     " />
 </svg>
